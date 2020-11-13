@@ -20,7 +20,7 @@ const OffsetCards = () => {
             <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">
               Community
             </h4>
-            <p className="text-gray-600 text-center text-lg">
+            <p className="text-gray-600 text-center">
               Creating a space of love and connection with your instructors.
             </p>
           </div>

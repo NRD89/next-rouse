@@ -17,15 +17,16 @@ const Footer = () => {
         <h1 className="text-center text-lg font-bold lg:text-2xl">
           There's so much more to come,
           <br />
-          subsbribe and stay informed.
+          subscribe and stay informed.
         </h1>
 
         <div className="flex justify-center mt-6">
           <form
-            name="digital"
+            name="subscribe"
             method="POST"
             data-netlify="true"
-            action="/?subscribe-success=true"
+            action="/success"
+            data-netlify-honeypot="bot-field"
           >
             <div className="bg-white rounded-md">
               <div className="flex flex-wrap justify-between md:flex-row">
@@ -36,6 +37,7 @@ const Footer = () => {
                   className="m-1 p-2 appearance-none text-gray-700 text-sm"
                   placeholder="Enter your email"
                 />
+                <input type="hidden" name="form-name" value="subscribe" />
                 <button
                   type="submit"
                   className="w-full btn-sm bg-indigo-600 rounded-lg font-semibold uppercase lg:w-auto"
@@ -62,15 +64,11 @@ const Footer = () => {
           </div>
           <div className="flex mt-4 md:m-0">
             <div className="-mx-4">
-            <Link href="/about">
-              <a className="px-4 text-sm">
-                About
-              </a>
+              <Link href="/about">
+                <a className="px-4 text-sm">About</a>
               </Link>
               <Link href="/roadmap">
-              <a className="px-4 text-sm">
-                Roadmap
-              </a>
+                <a className="px-4 text-sm">Roadmap</a>
               </Link>
             </div>
           </div>
