@@ -1,4 +1,4 @@
-const fetch = require("node-fetch")
+import fetch from "node-fetch"
 const apiURL = "http://localhost:1337"
 // process.env.GATSBY_API_URL ||
 

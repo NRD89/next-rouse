@@ -1,6 +1,7 @@
 import Head from "next/head"
 // import "../styles/base.css"
-import "../styles/tailwind.css"
+import "../styles/main.css"
+import { AuthProvider } from "../context/UserAuthContext"
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -8,7 +9,9 @@ export default function MyApp({ Component, pageProps }) {
       <Head>
         <title>Tailwindcss Emotion</title>
       </Head>
-      <Component {...pageProps} />
+      <AuthProvider>
+        <Component className="font-inter antialiased tracking-tight" {...pageProps} />
+      </AuthProvider>
     </>
   )
 }

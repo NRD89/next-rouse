@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react"
-import tw from "@tailwindcssinjs/macro"
-import styled from "@emotion/styled"
 import Link from "next/link"
 import Image from "./Image"
 
@@ -55,12 +53,10 @@ const Header = () => {
           {/* Site branding */}
           <div className="mr-4">
             {/* Logo */}
-            <Link href="/" aria-label="Cruip">
+            <Link href="/" aria-label="Home">
               <a className="block max-w-logo py-3">
                 <Image
                   path={"rouse-logo-white-center-symbol.png"}
-                  width={320}
-                  height={69}
                 />
               </a>
             </Link>
@@ -70,7 +66,21 @@ const Header = () => {
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
               <li>
-                <Link href="/signin">
+                <Link href="/about">
+                  <a className="font-medium text-gray-100 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                    About
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/roadmap">
+                  <a className="font-medium text-gray-100 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                    Roadmap
+                  </a>
+                </Link>
+              </li>
+              {/* <li>
+                <Link href="/sign-in">
                   <a className="font-medium text-gray-200 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                     Sign in
                   </a>
@@ -78,7 +88,7 @@ const Header = () => {
               </li>
               <li>
                 <div>
-                  <Link href="/signup">
+                  <Link href="/road-map">
                     <a className="btn-sm text-gray-200 bg-darkBlueBg hover:bg-gray-800 ml-3 px-5 py-3 rounded-md">
                       <span>Sign up</span>
                       <svg
@@ -94,7 +104,7 @@ const Header = () => {
                     </a>
                   </Link>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>

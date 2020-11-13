@@ -9,19 +9,62 @@ module.exports = {
       colors: {
         darkBlueBg: "#14192f",
       },
+      fontFamily: {
+        inter: ["Inter", "Arial", "sans-serif"],
+      },
       spacing: {
         100: "32rem",
+      },
+      letterSpacing: {
+        tightish: "-.02em",
       },
       height: {
         scroll: "2000px",
       },
       maxWidth: {
-        logo: '280px',
-      }
+        logo: "280px",
+      },
+      customForms: (theme) => ({
+        default: {
+          "input, textarea, multiselect, select, checkbox, radio": {
+            backgroundColor: theme("colors.white"),
+            borderColor: theme("colors.gray.300"),
+            borderRadius: theme("borderRadius.default"),
+            "&:focus": {
+              outline: undefined,
+              boxShadow: undefined,
+              borderColor: theme("colors.gray.500"),
+            },
+          },
+          "input, textarea, multiselect, select": {
+            backgroundColor: theme("colors.white"),
+            fontSize: undefined,
+            lineHeight: undefined,
+            paddingTop: theme("spacing.3"),
+            paddingRight: theme("spacing.4"),
+            paddingBottom: theme("spacing.3"),
+            paddingLeft: theme("spacing.4"),
+          },
+          "input, textarea": {
+            "&::placeholder": {
+              color: theme("colors.gray.500"),
+            },
+          },
+          select: {
+            paddingRight: theme("spacing.10"),
+            iconColor: theme("colors.gray.400"),
+          },
+          "checkbox, radio": {
+            color: theme("colors.gray.800"),
+            backgroundColor: theme("colors.white"),
+            borderRadius: theme("borderRadius.sm"),
+          },
+        },
+      }),
     },
   },
   variants: {},
-  plugins: [require("@tailwindcss/ui")],
+  plugins: [require("@tailwindcss/ui"), require("@tailwindcss/custom-forms")],
 }
 
 // module.exports = {
