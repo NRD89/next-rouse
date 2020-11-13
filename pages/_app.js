@@ -7,7 +7,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Tailwindcss Emotion</title>
+        <title>Rouse Yoga</title>
       </Head>
       <AuthProvider>
         <Component className="font-inter antialiased tracking-tight" {...pageProps} />
