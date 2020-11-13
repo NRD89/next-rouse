@@ -66,7 +66,7 @@ const DigitalSubModal = ({ open, setOpen }) => {
                       method="POST"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
-                      action="/success"
+                      action="/?success=true"
                     >
                       <div className="flex flex-wrap -mx-3 mb-4">
                         <div className="w-full px-3">
