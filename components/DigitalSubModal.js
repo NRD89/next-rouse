@@ -66,7 +66,7 @@ const DigitalSubModal = ({ open, setOpen }) => {
                       method="POST"
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
-                      action="/?success=true"
+                      action="/success"
                     >
                       <div className="flex flex-wrap -mx-3 mb-4">
                         <div className="w-full px-3">
@@ -124,17 +124,6 @@ const DigitalSubModal = ({ open, setOpen }) => {
                           </button>
                         </div>
                       </div>
-                      {/* <div className="text-sm text-gray-500 text-center mt-3">
-                    By creating an account, you agree to the{" "}
-                    <a className="underline" href="#0">
-                      terms & conditions
-                    </a>
-                    , and our{" "}
-                    <a className="underline" href="#0">
-                      privacy policy
-                    </a>
-                    .
-                  </div> */}
                     </form>
 
                     {/* {error.length > 1 ? (

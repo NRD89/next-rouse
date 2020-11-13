@@ -5,7 +5,7 @@ const roadmap = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-darkBlueBg">
       <Header />
-      <main className="mt-48 bg-darkBlueBg flex-grow mb-24">
+      <main className="mt-48 bg-darkBlueBg flex-grow mb-24 px-6">
         <div className="w-full text-center">
           <h1 className="font-bold h1 text-gray-100 capitalize">Roadmap</h1>
         </div>

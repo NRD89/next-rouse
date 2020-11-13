@@ -36,6 +36,7 @@ const Footer = () => {
                   name="email"
                   className="m-1 p-2 appearance-none text-gray-700 text-sm"
                   placeholder="Enter your email"
+                  required
                 />
                 <input type="hidden" name="form-name" value="subscribe" />
                 <button
