@@ -8,7 +8,7 @@ const PricingCards = () => {
       <div className="w-full text-center mt-36">
         <h2 className="font-bold h1 text-gray-100 capitalize">Pricing</h2>
       </div>
-      <section className="flex flex-col lg:flex-row items-start items-center lg:justify-center w-full lg:px-10 py-20 ">
+      <section className="flex flex-col lg:flex-row  items-center lg:justify-center w-full lg:px-10 py-20 ">
         <article className="bg-gray-50 w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg">
           <h5 className="font-bold text-base">In-Studio Membership</h5>
           <h2 className="pb-4 flex justify-center font-bold border-b border-gray-300">

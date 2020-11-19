@@ -41,7 +41,7 @@ const DigitalSubModal = ({ open, setOpen }) => {
       {open && (
         <ClientOnlyPortal selector="#modal">
           <div className="fixed bg-opacity-75 bg-gray-600 top-0 right-0 bottom-0 left-0 z-50">
-            <div className="modal bg-darkBlueBg">
+            <div className="modal bg-darkBlueBg rounded-xl">
               <div className="flex justify-end">
                 <button
                   type="button"

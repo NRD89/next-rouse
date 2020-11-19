@@ -29,37 +29,37 @@ export const AuthProvider = ({ children }) => {
   // grab token value from cookie
   const token = Cookie.get("token")
 
-  useEffect(() => {
-    if (isntBrowser) {
-      return
-    }
+  // useEffect(() => {
+  //   if (isntBrowser) {
+  //     return
+  //   }
 
-    // grab token value from cookie
-    // const token = Cookie.get("token")
+  //   // grab token value from cookie
+  //   // const token = Cookie.get("token")
 
-    if (token) {
-      // Authenticate token through Strapi and place user object in defaultValues.user
-      fetch(`/api/get-customer`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token }),
-      }).then(async (res) => {
-        // if res comes back not valid, token is not valid
-        // delete the token and log the user out on client
-        if (res.statusCode) {
-          Cookie.remove("token")
-          setUser(defaultValues.user)
-          return null
-        }
-        const data = await res.json()
-        console.log(data)
-        setUser(data)
-        setLoggedIn(true)
-      })
-    }
-  }, [])
+  //   if (token) {
+  //     // Authenticate token through Strapi and place user object in defaultValues.user
+  //     fetch(`/api/get-customer`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ token }),
+  //     }).then(async (res) => {
+  //       // if res comes back not valid, token is not valid
+  //       // delete the token and log the user out on client
+  //       if (res.statusCode) {
+  //         Cookie.remove("token")
+  //         setUser(defaultValues.user)
+  //         return null
+  //       }
+  //       const data = await res.json()
+  //       console.log(data)
+  //       setUser(data)
+  //       setLoggedIn(true)
+  //     })
+  //   }
+  // }, [])
 
   //register a new user
   const registerUser = async (username, email, password) => {

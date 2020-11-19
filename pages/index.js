@@ -5,7 +5,8 @@ import OffsetCards from "../components/OffsetCards"
 import ImageTextCards from "../components/ImageTextCards"
 import Footer from "../components/Footer"
 
-const Index = () => (
+const Index = () => {
+  return (
   <div className="flex flex-col min-h-screen overflow-hidden">
     <Header />
     <Hero />
@@ -14,6 +15,6 @@ const Index = () => (
     <PricingCards />
     <Footer />
   </div>
-)
+)}
 
 export default Index
