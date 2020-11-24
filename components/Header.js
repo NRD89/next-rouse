@@ -1,36 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
+import { AuthContext } from "../context/UserAuthContext"
 import Link from "next/link"
 import Image from "./Image"
 
-// const PageHeader = styled.header`
-//   ${tw`
-//     fixed
-//     w-full
-//     z-30
-//     md:bg-opacity-90
-//     transition duration-300 ease-in-out
-//     ${!top && "bg-white blur shadow-lg"}
-//   `}
-//   .container {
-//     ${tw`
-//       max-w-6xl
-//       mx-auto
-//       px-5
-//       sm:px-6
-//     `}
-//     .flex-wrapper {
-//       ${tw`
-//         flex
-//         items-center
-//         justify-between
-//         h-16
-//         md:h-20
-//       `}
-//     }
-//   }
-// `
-
 const Header = () => {
+  const { user, setUser, logout } = useContext(AuthContext)
   const [top, setTop] = useState(true)
 
   // detect whether user has scrolled the page down by 10px
@@ -55,9 +29,7 @@ const Header = () => {
             {/* Logo */}
             <Link href="/" aria-label="Home">
               <a className="block max-w-logo py-3">
-                <Image
-                  path={"rouse-logo-white-center-symbol.png"}
-                />
+                <Image path={"rouse-logo-white-center-symbol.png"} />
               </a>
             </Link>
           </div>
@@ -79,32 +51,73 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/sign-in">
-                  <a className="font-medium text-gray-200 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                    Sign in
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <div>
-                  <Link href="/road-map">
-                    <a className="btn-sm text-gray-200 bg-darkBlueBg hover:bg-gray-800 ml-3 px-5 py-3 rounded-md">
-                      <span>Sign up</span>
-                      <svg
-                        className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1 inline-block"
-                        viewBox="0 0 12 12"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                          fillRule="nonzero"
-                        />
-                      </svg>
+              {/* {user ? (
+                <li>
+                  <Link href="/dashboard">
+                    <a className="font-medium text-gray-100 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                      Dashboard
                     </a>
                   </Link>
-                </div>
-              </li> */}
+                </li>
+              ) : null}
+              {user ? (
+                <li>
+                  <a className="font-medium text-gray-200 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                    {user.username}
+                  </a>
+                </li>
+              ) : (
+                <li>
+                  <Link href="/login">
+                    <a className="font-medium text-gray-200 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                      Sign in
+                    </a>
+                  </Link>
+                </li>
+              )}
+              {user ? (
+                <Link href="/">
+                  <a
+                    className="btn-sm text-gray-200 bg-indigo-500 hover:bg-indigo-800 ml-3 px-5 py-3 rounded-md"
+                    onClick={() => {
+                      logout()
+                      setUser(null)
+                    }}
+                  >
+                    <span>Logout</span>
+                    <svg
+                      className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1 inline-block"
+                      viewBox="0 0 12 12"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                        fillRule="nonzero"
+                      />
+                    </svg>
+                  </a>
+                </Link>
+              ) : (
+                <li>
+                  <div>
+                    <Link href="/signup">
+                      <a className="btn-sm text-gray-200 bg-indigo-500 hover:bg-indigo-800 ml-3 px-5 py-3 rounded-md">
+                        <span>Sign up</span>
+                        <svg
+                          className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1 inline-block"
+                          viewBox="0 0 12 12"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
+                            fillRule="nonzero"
+                          />
+                        </svg>
+                      </a>
+                    </Link>
+                  </div>
+                </li>
+              )} */}
             </ul>
           </nav>
         </div>

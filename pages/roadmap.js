@@ -33,8 +33,7 @@ const roadmap = () => {
                 <div className="flex items-center mb-1">
                   <div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10"></div>
                   <div className="flex-1 ml-4 font-bold text-gray-100">
-                    November 23rd{" "}
-                    <span className="text-gray-400">(updated)</span>
+                    End of November
                   </div>
                 </div>
                 <div className="ml-12">
@@ -44,7 +43,9 @@ const roadmap = () => {
               <li className="mb-2">
                 <div className="flex items-center mb-1">
                   <div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10"></div>
-                  <div className="flex-1 ml-4 font-bold text-gray-100">December 4th</div>
+                  <div className="flex-1 ml-4 font-bold text-gray-100">
+                    Beginning of December
+                  </div>
                 </div>
                 <div className="ml-12">
                   Live streaming yoga classes will begin.
@@ -53,7 +54,9 @@ const roadmap = () => {
               <li className="mb-2">
                 <div className="flex items-center mb-1">
                   <div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10"></div>
-                  <div className="flex-1 ml-4 font-bold text-gray-100">TBD in 2021….</div>
+                  <div className="flex-1 ml-4 font-bold text-gray-100">
+                    TBD in 2021….
+                  </div>
                 </div>
                 <div className="ml-12">
                   Sometime in the New Year our Rouse Yoga Studio{" "}
@@ -73,15 +76,15 @@ const roadmap = () => {
             style={{ maxWidth: `75ch` }}
           >
             <div>
-                <p className="mt-4">
-                  We will also be launching a Podcast soon. You'll have the
-                  opportunity to get to know your instructors better, listen to
-                  honest conversation about the yoga community and so much more!
-                </p>
-                <p className="mt-4">
-                  A music festival/retreat is in the works. Updates coming soon!
-                </p>
-                <p className="mt-4">Rouse Yoga appreciates your patience!</p>
+              <p className="mt-4">
+                We will also be launching a Podcast soon. You'll have the
+                opportunity to get to know your instructors better, listen to
+                honest conversation about the yoga community and so much more!
+              </p>
+              <p className="mt-4">
+                A music festival/retreat is in the works. Updates coming soon!
+              </p>
+              <p className="mt-4">Rouse Yoga appreciates your patience!</p>
             </div>
           </div>
         </div>

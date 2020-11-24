@@ -1,9 +1,11 @@
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
-const { strapiFetchUser } = require("./utils/strapi")
+import Stripe from "stripe"
+import { strapiFetchUser } from "./utils/strapi"
 const returnURL = process.env.URL || "http://localhost:8888"
 
-exports.handler = async event => {
-  const { token } = JSON.parse(event.body)
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+
+const handler = async (req, res) => {
+  const { token } = req.body
 
   const result = await strapiFetchUser({ token })
 
@@ -14,10 +16,10 @@ exports.handler = async event => {
     return_url: returnURL,
   })
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify(link.url),
-  }
+  res.status(200)
+   res.json(JSON.stringify(link.url))
 }
+
+export default handler
 
 // based on https://github.com/jlengstorf/jamstack-subscriptions/blob/master/functions/create-manage-link.js

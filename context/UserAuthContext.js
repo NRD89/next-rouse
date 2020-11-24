@@ -1,10 +1,11 @@
 import React, { createContext, useState, useEffect } from "react"
 import Cookie from "js-cookie"
-import { Router, useRouter } from "next/router"
-const apiURL = process.env.GATSBY_API_URL || "http://localhost:1337"
+import { useRouter } from "next/router"
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+import axios from "axios"
 
 const defaultValues = {
-  user: {},
+  user: null,
   loggedIn: false,
   registerUser: () => {},
   login: () => {},
@@ -13,53 +14,51 @@ const defaultValues = {
   resetPassword: () => {},
   sendSubmission: () => {},
   redirectToManage: () => {},
+  updateUser: () => {},
 }
 
 export const AuthContext = createContext(defaultValues)
 
-// Check if there is a browser
+// Check if there isn't a browser
 const isntBrowser = typeof window === "undefined"
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(defaultValues.user)
   const [loggedIn, setLoggedIn] = useState(defaultValues.loggedIn)
-  const isAuthenticated = loggedIn && Object.keys(user).length
+  const isAuthenticated = loggedIn && Object.keys(user).length > 1
   const router = useRouter()
 
   // grab token value from cookie
   const token = Cookie.get("token")
 
-  // useEffect(() => {
-  //   if (isntBrowser) {
-  //     return
-  //   }
-
-  //   // grab token value from cookie
-  //   // const token = Cookie.get("token")
-
-  //   if (token) {
-  //     // Authenticate token through Strapi and place user object in defaultValues.user
-  //     fetch(`/api/get-customer`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ token }),
-  //     }).then(async (res) => {
-  //       // if res comes back not valid, token is not valid
-  //       // delete the token and log the user out on client
-  //       if (res.statusCode) {
-  //         Cookie.remove("token")
-  //         setUser(defaultValues.user)
-  //         return null
-  //       }
-  //       const data = await res.json()
-  //       console.log(data)
-  //       setUser(data)
-  //       setLoggedIn(true)
-  //     })
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (isntBrowser) {
+      return
+    }
+    const token = Cookie.get("token")
+    if (token) {
+      // Authenticate token through Strapi and place user object in defaultValues.user
+      fetch(`/api/get-customer`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      }).then(async (res) => {
+        // if res comes back not valid, token is not valid
+        // delete the token and log the user out on client
+        if (res.statusCode) {
+          Cookie.remove("token")
+          setUser(defaultValues.user)
+          return null
+        }
+        const data = await res.json()
+        console.log(data)
+        setUser(data)
+        setLoggedIn(true)
+      })
+    }
+  }, [])
 
   //register a new user
   const registerUser = async (username, email, password) => {
@@ -95,24 +94,27 @@ export const AuthProvider = ({ children }) => {
       return
     }
 
-    const creds = {
+    const { data } = await axios.post("http://localhost:1337/auth/local", {
       identifier,
       password,
+    })
+
+    return data
+  }
+
+  const updateUser = async () => {
+    //prevent function from being ran on the server
+    if (isntBrowser) {
+      return
     }
 
-    const response = await fetch("/.netlify/functions/login-customer", {
-      method: "POST",
+    const { data } = await axios.get(`${API_URL}/users/me`, {
       headers: {
-        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(creds),
     })
-      .then((res) => res.json())
-      .catch((err) => console.error(JSON.stringify(err, null, 2)))
 
-    console.log("response =>", response)
-
-    return response
+    return data
   }
 
   const logout = () => {
@@ -222,6 +224,8 @@ export const AuthProvider = ({ children }) => {
         resetPassword,
         sendSubmission,
         redirectToManage,
+        updateUser,
+        // data,
       }}
     >
       {children}

@@ -1,10 +1,9 @@
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext } from "react"
 import Link from "next/link"
 import Cookie from "js-cookie"
 import { AuthContext } from "../context/UserAuthContext"
-import { useRouter } from "next/router"
 
-const SignUp = () => {
+const DigiSignUp = ({ navigation }) => {
   const { user, registerUser, setUser, setLoggedIn } = useContext(AuthContext)
   const [loading, setLoading] = useState(false)
   const [username, setUsername] = useState("")
@@ -13,7 +12,8 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
 
-  const router = useRouter()
+  const { go } = navigation
+  console.log(go)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -30,7 +30,7 @@ const SignUp = () => {
             setUser(res.user)
             setLoading(false)
             setLoggedIn(true)
-            router.push("/dashboard")
+            go("stripe")
           }
         })
       } catch (e) {
@@ -44,17 +44,10 @@ const SignUp = () => {
     }
   }
 
-  useEffect(() => {
-    router.prefetch("/dashboard")
-  }, [])
-
   return (
     <>
       {/* Form */}
       <div className="max-w-sm mx-auto">
-        <pre className="text-indigo-50">
-          {JSON.stringify({ user }, null, 2)}
-        </pre>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
@@ -181,4 +174,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default DigiSignUp

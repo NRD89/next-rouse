@@ -18,59 +18,57 @@ const handler = async (req, res) => {
   // res.json("Yaaas!")
   if (req.method === "POST") {
     const rawBody = await getRawBody(req)
-    const sig = req.headers["stripe-signature"];
+    const sig = req.headers["stripe-signature"]
 
-    let event;
+    let event
 
     try {
       event = stripe.webhooks.constructEvent(
         rawBody,
         sig,
         process.env.STRIPE_WEBHOOK_SECRET
-      );
+      )
     } catch (err) {
-      res.status(400).send(`Webhook Error: ${err.message}`);
-      return;
+      res.status(400).send(`Webhook Error: ${err.message}`)
+      return
     }
 
-      if (event.type === "customer.subscription.updated") {
-        const subscription = event.data.object
-  
-        const stripeID = subscription.customer
-        const subTier = subscription.items.data[0].plan.metadata.subTier
-        console.log(subTier);
-  
-        const strapiData = await fetch(`${apiURL}/users?stripeId=${stripeID}`, {
-          headers: {
-            Authorization: `Bearer ${JWT}`,
-          },
-        })
-          .then(res => res.json())
-          .catch(err => console.error(JSON.stringify(err, null, 2)))
-          console.log(strapiData);
-  
-        const response = await fetch(`${apiURL}/users/${strapiData[0].id}`, {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${JWT}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            subTier,
-          }),
-        })
-          .then(res => res.json())
-          .catch(err => console.error(JSON.stringify(err, null, 2)))
-  
-        console.log(JSON.stringify(response, null, 2))
-      }
+    if (event.type === "customer.subscription.updated") {
+      const subscription = event.data.object
 
-    
+      const stripeID = subscription.customer
+      const subTier = subscription.items.data[0].plan.metadata.subTier
+      console.log("subTier =>", subTier)
 
-    res.json({ received: true });
+      const strapiData = await fetch(`${apiURL}/users?stripeId=${stripeID}`, {
+        headers: {
+          Authorization: `Bearer ${JWT}`,
+        },
+      })
+        .then((res) => res.json())
+        .catch((err) => console.error(JSON.stringify(err, null, 2)))
+      console.log(strapiData)
+
+      const response = await fetch(`${apiURL}/users/${strapiData[0].id}`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${JWT}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          subTier,
+        }),
+      })
+        .then((res) => res.json())
+        .catch((err) => console.error(JSON.stringify(err, null, 2)))
+
+      console.log(JSON.stringify(response, null, 2))
+    }
+
+    res.json({ received: true })
   } else {
-    res.setHeader("Allow", "POST");
-    res.status(405).end("Method Not Allowed");
+    res.setHeader("Allow", "POST")
+    res.status(405).end("Method Not Allowed")
   }
 
   // const buf = await buffer(req)
