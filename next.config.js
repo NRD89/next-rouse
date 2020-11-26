@@ -5,6 +5,9 @@ const tailwindCss = require("tailwindcss")
 const nextConfig = {
   // Target must be serverless
   target: "serverless",
+  images: {
+    domains: ["localhost"],
+  },
 }
 
 const optimizedImagesConfig = {
@@ -44,8 +47,6 @@ const optimizedImagesConfig = {
 }
 
 module.exports = withPlugins(
-  [
-    [optimizedImages, optimizedImagesConfig],
-  ],
+  [[optimizedImages, optimizedImagesConfig]],
   nextConfig
 )

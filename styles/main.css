@@ -1,49 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=fallback');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=fallback");
 
 /* purgecss start ignore */
 @import "~tailwindcss/base";
 @import "~tailwindcss/components";
 /* purgecss end ignore */
 
- /* Typography */
+/* Typography */
 .h1 {
-    @apply text-4xl font-extrabold leading-tight tracking-tightish;
+  @apply text-4xl font-extrabold leading-tight;
 }
 
 .h2 {
-    @apply text-3xl font-extrabold leading-tight tracking-tightish;
+  @apply text-3xl font-extrabold leading-tight tracking-tightish;
 }
 
 .h3 {
-    @apply text-3xl font-bold leading-tight;
+  @apply text-3xl font-bold leading-tight;
 }
 
 .h4 {
-    @apply text-2xl font-bold leading-snug tracking-tight;
+  @apply text-2xl font-bold leading-snug tracking-tight;
 }
 
 @screen md {
-    .h1 {
-        @apply text-5xl;
-    }
+  .h1 {
+    @apply text-5xl;
+  }
 
-    .h2 {
-        @apply text-4xl;
-    }
+  .h2 {
+    @apply text-4xl;
+  }
+
+  .markdown blockquote {
+    @apply px-10;
+  }
 }
 
 /* Buttons */
 .btn,
 .btn-sm {
-    @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out;
+  @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out;
 }
 
 .btn {
-    @apply px-8 py-3 shadow-lg;
+  @apply px-8 py-3 shadow-lg;
 }
 
 .btn-sm {
-    @apply px-4 py-2 shadow;
+  @apply px-4 py-2 shadow;
+}
+
+.markdown p {
+  @apply mb-4 text-xl;
+}
+
+.markdown blockquote {
+  @apply italic px-4 text-tertiary-dark mb-8;
 }
 
 @import "~tailwindcss/utilities";

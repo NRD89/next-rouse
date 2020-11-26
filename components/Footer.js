@@ -12,7 +12,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer className="flex justify-center px-4 text-gray-100 bg-darkBlueBg">
+    <footer className="flex justify-center px-10 text-gray-100 bg-darkBlueBg">
       <div className="container py-6">
         <h1 className="text-center text-lg font-bold lg:text-2xl">
           There's so much more to come,
@@ -70,6 +70,9 @@ const Footer = () => {
               </Link>
               <Link href="/roadmap">
                 <a className="px-4 text-sm">Roadmap</a>
+              </Link>
+              <Link href="/instructors">
+                <a className="px-4 text-sm">Instructors</a>
               </Link>
             </div>
           </div>

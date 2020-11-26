@@ -5,11 +5,34 @@ module.exports = windmill({
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  purge: [
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./myTheme.js",
+  ],
   theme: {
     extend: {
       colors: {
+        "matte-black": "#212121",
         darkBlueBg: "#14192f",
+        "tertiary-lightest": "#DDD9FE",
+        "tertiary-lighter": "#BBB3FD",
+        "tertiary-lighter": "#BBB3FD",
+        "tertiary-light": "#8879FC",
+        tertiary: "#5540FB",
+        "tertiary-dark": "#3B2DB0",
+        "tertiary-darker": "#221A64",
+        "tertiary-darkest": "#110D32",
+        "tertiary-matte-darkest": "#292547",
+        // "primary-lightest": "#DDD9FE",
+        // "primary-lighter": "#BBB3FD",
+        // "primary-lighter": "#BBB3FD",
+        // "primary-light": "#8879FC",
+        // primary: "#5540FB",
+        // "primary-dark": "#3B2DB0",
+        // "primary-darker": "#221A64",
+        "primary-darkest": "#061D33",
+        "primary-matte-darkest": "#092b4c",
       },
       fontFamily: {
         inter: ["Inter", "Arial", "sans-serif"],
@@ -24,7 +47,10 @@ module.exports = windmill({
         scroll: "2000px",
       },
       maxWidth: {
-        logo: "280px",
+        logo: "200px",
+      },
+      boxShadow: {
+        dark40: "0px 0px 1px rgba(13, 13, 13, 0.9), 0px 2px 4px #0D0D0D",
       },
       customForms: (theme) => ({
         default: {
