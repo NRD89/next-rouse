@@ -55,13 +55,7 @@ const PricingCards = () => {
               30+ Pre-Recorded Classes
             </li>
           </ul>
-          {/* <button
-            className="btn text-indigo-600 bg-white hover:bg-gray-100 mt-10 w-full"
-            onClick={() => setOpen(true)}
-          >
-            Learn More
-          </button> */}
-          {!isAuthenticated ? (
+          {/* {!isAuthenticated ? (
             <DigitalModal />
           ) : (
             <Link href="/dashboard/#sub-update">
@@ -69,7 +63,12 @@ const PricingCards = () => {
                 Upgrade To Digital
               </a>
             </Link>
-          )}
+          )} */}
+          <Link href="/signup">
+            <a className="font-bold uppercase tracking-tightish btn text-blue-600  bg-gray-100 hover:bg-gray-300 w-full mt-10">
+              Upgrade To Digital
+            </a>
+          </Link>
         </article>
         <article className="bg-gray-50 w-4/5 lg:w-custom mb-10 lg:px-4 px-6 py-10 text-center text-primary-dark rounded-lg">
           <h5 className="font-bold text-base">In-Studio Premium</h5>
