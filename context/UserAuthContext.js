@@ -195,7 +195,8 @@ export const AuthProvider = ({ children }) => {
     return response
   }
 
-  const redirectToManage = async () => {
+  const redirectToManage = async (event) => {
+    event.preventDefault()
     const response = await fetch("/api/sub-manage-link", {
       method: "POST",
       headers: {
