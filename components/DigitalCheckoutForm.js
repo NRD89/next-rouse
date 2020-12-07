@@ -9,7 +9,7 @@ const steps = [{ id: "signup" }, { id: "stripe" }]
 
 const DigitalCheckoutForm = () => {
   const stripePromise = loadStripe(
-    "pk_test_51HCE5NE8j8J0kTAxXp4f6qvE6noE7u2jGO6gnPx1uPffvWPLeoKsWp16pipqRsnK84gX1jUDgGUCMJIrd2ohC41900nit2gxc9"
+    "pk_live_51HmVlAKDngAkWhrbaPtjo45CeyyoqOCuQ9x1MrUeDZG3vWAl7YCpIHpBkhr6HYSBP2ZC79Wbz6EivBgWkuTEuILX00SVcxm9F0"
   )
   const { step, navigation } = useStep({ initialStep: 0, steps })
   const { id } = step

@@ -44,6 +44,7 @@ const optimizedImagesConfig = {
     placeholder: true,
     placeholderSize: 20,
   },
+  // imagesPublicPath,
 }
 
 module.exports = withPlugins(

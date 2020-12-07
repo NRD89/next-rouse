@@ -20,7 +20,11 @@ const Login = () => {
       await login(email, password).then((res) => {
         console.log(res)
         Cookie.set("token", res.jwt)
-        setUser(res.user)
+        setUser({
+          email: res.user.email,
+          userName: res.user.username,
+          subTier: res.user.subTier,
+        })
         setLoading(false)
         setLoggedIn(true)
         router.push("/dashboard")
@@ -39,10 +43,7 @@ const Login = () => {
   return (
     <>
       {/* Form */}
-      <div className="max-w-sm mx-auto mt-48">
-        <pre className="text-indigo-50">
-          {JSON.stringify({ user }, null, 2)}
-        </pre>
+      <div className="max-w-sm mx-auto">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
@@ -96,30 +97,18 @@ const Login = () => {
               </button>
             </div>
           </div>
-          <div className="text-sm text-gray-500 text-center mt-3">
-            By creating an account, you agree to the{" "}
-            <a className="underline" href="#0">
-              terms & conditions
-            </a>
-            , and our{" "}
-            <a className="underline" href="#0">
-              privacy policy
-            </a>
-            .
-          </div>
         </form>
 
         {error.length > 1 ? (
           <p className="font-inter text-red-600">{error}</p>
         ) : null}
 
-        <div className="text-gray-600 text-center mt-6">
+        <div className="text-gray-500 text-center mt-6">
           Don't have a Rouse Yoga account?{" "}
-          <Link
-            href="/signup"
-            className="text-blue-600 hover:underline transition duration-150 ease-in-out"
-          >
-            <a>Sign up</a>
+          <Link href="/signup">
+            <a className="text-blue-600 hover:underline transition duration-150 ease-in-out">
+              Sign up
+            </a>
           </Link>
         </div>
       </div>

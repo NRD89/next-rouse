@@ -1,8 +1,8 @@
-const apiURL = "http://localhost:1337"
+const apiURL = process.env.API_URL
 
 const handler = async (req, res) => {
   const { name, email } = req.body
-  console.log(name, email);
+  console.log(name, email)
 
   const Name = name
   const Email = email
@@ -17,13 +17,13 @@ const handler = async (req, res) => {
       Email,
     }),
   })
-    .then(res => res.json())
-    .catch(err => console.error(err))
+    .then((res) => res.json())
+    .catch((err) => console.error(err))
 
   console.log("response =>", JSON.stringify(response))
 
   res.status(200)
-   res.json(response)
+  res.json(response)
 }
 
 export default handler

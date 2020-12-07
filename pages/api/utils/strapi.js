@@ -1,5 +1,5 @@
 import fetch from "node-fetch"
-const apiURL = "http://localhost:1337"
+const apiURL = process.env.API_URL
 // process.env.GATSBY_API_URL ||
 
 export const strapiFetchUser = async ({ token }) => {

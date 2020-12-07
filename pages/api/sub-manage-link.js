@@ -1,6 +1,6 @@
 import Stripe from "stripe"
 import { strapiFetchUser } from "./utils/strapi"
-const returnURL = process.env.URL || "http://localhost:8888"
+const returnURL = process.env.URL || "http://localhost:3000"
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
@@ -17,7 +17,7 @@ const handler = async (req, res) => {
   })
 
   res.status(200)
-   res.json(JSON.stringify(link.url))
+  res.json(JSON.stringify(link.url))
 }
 
 export default handler

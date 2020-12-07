@@ -27,7 +27,11 @@ const SignUp = () => {
             setLoading(false)
           } else {
             Cookie.set("token", res.jwt)
-            setUser(res.user)
+            setUser({
+              email: res.user.email,
+              userName: res.user.username,
+              subTier: res.user.subTier,
+            })
             setLoading(false)
             setLoggedIn(true)
             router.push("/dashboard")
@@ -52,9 +56,6 @@ const SignUp = () => {
     <>
       {/* Form */}
       <div className="max-w-sm mx-auto">
-        <pre className="text-indigo-50">
-          {JSON.stringify({ user }, null, 2)}
-        </pre>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
@@ -62,7 +63,7 @@ const SignUp = () => {
                 className="block text-gray-100 text-sm font-medium mb-1"
                 htmlFor="name"
               >
-                Name <span className="text-red-600">*</span>
+                User Name <span className="text-red-600">*</span>
               </label>
               <input
                 onChange={(e) => {
@@ -71,7 +72,7 @@ const SignUp = () => {
                 value={username}
                 id="username"
                 type="text"
-                placeholder="Username"
+                placeholder="User Name"
                 className="form-input w-full text-gray-800"
                 required
               />
@@ -150,16 +151,15 @@ const SignUp = () => {
               </button>
             </div>
           </div>
-          <div className="text-sm text-gray-500 text-center mt-3">
+          <div className="text-sm text-gray-400 text-center mt-3">
             By creating an account, you agree to the{" "}
-            <a className="underline" href="#0">
-              terms & conditions
-            </a>
-            , and our{" "}
+            <Link href="/terms-and-conditions">
+              <a className="underline">terms & conditions.</a>
+            </Link>
+            {/* , and our{" "}
             <a className="underline" href="#0">
               privacy policy
-            </a>
-            .
+            </a> */}
           </div>
         </form>
 
@@ -167,13 +167,12 @@ const SignUp = () => {
           <p className="font-inter text-red-600">{error}</p>
         ) : null}
 
-        <div className="text-gray-600 text-center mt-6">
+        <div className="text-gray-500 text-center mt-6">
           Already have a Rouse Yoga account?{" "}
-          <Link
-            href="/signin"
-            className="text-blue-600 hover:underline transition duration-150 ease-in-out"
-          >
-            <a>Sign in</a>
+          <Link href="/login">
+            <a className="text-blue-600 hover:underline transition duration-150 ease-in-out">
+              Sign In
+            </a>
           </Link>
         </div>
       </div>

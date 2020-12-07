@@ -6,12 +6,10 @@ const signup = () => {
     <Layout>
       <section>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+          <div>
             {/* Page header */}
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h1 className="h1 text-gray-100 font-inter">
-                Welcome. We exist to make entrepreneurism easier.
-              </h1>
+              <h1 className="h1 text-gray-100 font-inter">Sign Up</h1>
             </div>
             <SignUp />
           </div>

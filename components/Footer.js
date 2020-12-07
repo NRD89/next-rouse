@@ -12,7 +12,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer className="flex justify-center px-10 text-gray-100 bg-darkBlueBg">
+    <footer className="flex justify-center px-10 text-gray-100 bg-darkBlueBg pt-8">
       <div className="container py-6">
         <h1 className="text-center text-lg font-bold lg:text-2xl">
           There's so much more to come,
@@ -65,17 +65,19 @@ const Footer = () => {
           </div>
           <div className="flex mt-4 md:m-0">
             <div className="-mx-4">
-              <Link href="/about">
-                <a className="px-4 text-sm">About</a>
-              </Link>
-              <Link href="/roadmap">
-                <a className="px-4 text-sm">Roadmap</a>
-              </Link>
-              <Link href="/instructors">
-                <a className="px-4 text-sm">Instructors</a>
+              <a href="mailto:support@rouse.yoga">support@rouse.yoga</a>
+              <Link href="/terms-and-conditions">
+                <a className="px-4 text-sm">Terms and Conditions</a>
               </Link>
             </div>
           </div>
+        </div>
+        <div className="flex w-full justify-center">
+          <small>
+            © {new Date().getFullYear()}
+            {` `}
+            Rouse Yoga
+          </small>
         </div>
       </div>
     </footer>

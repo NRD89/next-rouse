@@ -1,7 +1,7 @@
 import fetch from "node-fetch"
 import Stripe from "stripe"
 import getRawBody from "raw-body"
-const apiURL = "http://localhost:1337"
+const apiURL = process.env.API_URL
 const JWT = process.env.STRAPI_ADMIN_JWT
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)

@@ -1,10 +1,16 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import Link from "next/link"
 import Cookie from "js-cookie"
 import { AuthContext } from "../context/UserAuthContext"
 
 const DigiSignUp = ({ navigation }) => {
-  const { user, registerUser, setUser, setLoggedIn } = useContext(AuthContext)
+  const {
+    user,
+    registerUser,
+    setUser,
+    setLoggedIn,
+    isAuthenticated,
+  } = useContext(AuthContext)
   const [loading, setLoading] = useState(false)
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
@@ -14,6 +20,12 @@ const DigiSignUp = ({ navigation }) => {
 
   const { go } = navigation
   console.log(go)
+
+  useEffect(() => {
+    if (isAuthenticated === true) {
+      go("stripe")
+    }
+  }, [isAuthenticated])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -27,7 +39,11 @@ const DigiSignUp = ({ navigation }) => {
             setLoading(false)
           } else {
             Cookie.set("token", res.jwt)
-            setUser(res.user)
+            setUser({
+              email: res.user.email,
+              userName: res.user.email,
+              subTier: res.user.subTier,
+            })
             setLoading(false)
             setLoggedIn(true)
             go("stripe")
@@ -52,10 +68,10 @@ const DigiSignUp = ({ navigation }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-400 text-sm font-medium mb-1"
                 htmlFor="name"
               >
-                Name <span className="text-red-600">*</span>
+                User Name <span className="text-red-600">*</span>
               </label>
               <input
                 onChange={(e) => {
@@ -73,7 +89,7 @@ const DigiSignUp = ({ navigation }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-400 text-sm font-medium mb-1"
                 htmlFor="email"
               >
                 Email <span className="text-red-600">*</span>
@@ -94,7 +110,7 @@ const DigiSignUp = ({ navigation }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-400 text-sm font-medium mb-1"
                 htmlFor="password"
               >
                 Password <span className="text-red-600">*</span>
@@ -115,7 +131,7 @@ const DigiSignUp = ({ navigation }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-400 text-sm font-medium mb-1"
                 htmlFor="password"
               >
                 Password <span className="text-red-600">*</span>

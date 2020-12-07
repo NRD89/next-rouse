@@ -1,8 +1,8 @@
 import Layout from "../../components/Layout"
 import { fetchQuery, baseUrl } from "../../utils"
 import Link from "next/link"
-import { Card, CardBody, Button, Avatar } from "@windmill/react-ui"
-import Image from "next/image"
+import { Card, CardBody, Button } from "@windmill/react-ui"
+import Head from 'next/head'
 
 const index = ({ instructors }) => {
   return (

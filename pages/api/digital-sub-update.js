@@ -1,10 +1,15 @@
 import Stripe from "stripe"
+import { strapiFetchUser } from "./utils/strapi"
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 export default async (req, res) => {
   if (req.method === "POST") {
-    const { paymentMethodId, stripeId, stripeSubId } = req.body
-    console.log(paymentMethodId, stripeId, stripeSubId)
+    const { paymentMethodId, token } = req.body
+    console.log(paymentMethodId, token)
+
+    const strapiUser = await strapiFetchUser({ token })
+    const stripeId = strapiUser.stripeId
+    const stripeSubId = strapiUser.stripeSubId
 
     try {
       // const customer = await stripe.customers.update(stripeId, {
@@ -35,7 +40,7 @@ export default async (req, res) => {
         items: [
           {
             id: retrieveSub.items.data[0].id,
-            price: "price_1HqFJbE8j8J0kTAxMmMMcScf",
+            price: process.env.DIGITAL_PRICE,
           },
         ],
         expand: ["latest_invoice.payment_intent"],

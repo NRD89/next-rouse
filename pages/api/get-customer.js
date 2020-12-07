@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:1337"
+const apiURL = process.env.API_URL
 
 const handler = async (req, res) => {
   const { token } = req.body

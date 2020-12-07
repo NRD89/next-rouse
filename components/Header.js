@@ -4,23 +4,33 @@ import Link from "next/link"
 import Image from "./Image"
 import { Dropdown, DropdownItem, Badge, Button } from "@windmill/react-ui"
 import { motion } from "framer-motion"
+import { CgProfile } from "react-icons/cg"
+import Router from "next/router"
+import { cache } from "swr"
+
+// import useAuth from "../hooks/useAuth"
 
 const Path = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="2"
-    stroke="#FFFFFF"
+    stroke="#14192f"
     strokeLinecap="square"
     {...props}
   />
 )
 
 const Header = () => {
-  const { user, setUser, logout } = useContext(AuthContext)
+  const { user, setUser, logout, isAuthenticated } = useContext(AuthContext)
+  // const { mutate } = useAuth()
   const [top, setTop] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   function toggleDropdown() {
     setIsOpen(!isOpen)
+  }
+  function togglePopUp() {
+    setIsMenuOpen(!isMenuOpen)
   }
 
   // detect whether user has scrolled the page down by 10px
@@ -52,7 +62,7 @@ const Header = () => {
 
           {/* Site navigation */}
           <nav className="flex">
-            <ul className="md:flex flex-grow justify-start flex-wrap items-center hidden">
+            <ul className="lg:flex flex-grow justify-start flex-wrap items-center hidden">
               <li>
                 <Link href="/about">
                   <a className="font-medium text-gray-100 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
@@ -74,24 +84,24 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/blog">
+              <li>
+                <Link href="/classes">
                   <a className="font-medium text-gray-100 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                    Blog
+                    Classes
                   </a>
                 </Link>
-              </li> */}
+              </li>
             </ul>
 
-            <div className="justify-end">
+            <div className="fixed z-50 bottom-4 right-6 w-16 h-16 rounded-full bg-gray-100 text-darkBlueBg lg:hidden flex justify-center items-center shadow-md">
               <motion.div
                 initial={false}
-                animate={isOpen ? "open" : "closed"}
-                className="visible md:hidden relative"
+                animate={isMenuOpen ? "open" : "closed"}
+                className=" relative"
               >
                 <button
-                  onClick={toggleDropdown}
-                  className="btn-sm bg-transparent"
+                  onClick={togglePopUp}
+                  className="bg-transparent pt-2"
                   aria-label="Notifications"
                   aria-haspopup="true"
                 >
@@ -120,9 +130,17 @@ const Header = () => {
                 </button>
                 <Dropdown
                   align="right"
-                  isOpen={isOpen}
-                  onClose={() => setIsOpen(false)}
+                  className="bottom-12"
+                  isOpen={isMenuOpen}
+                  onClose={() => setIsMenuOpen(false)}
                 >
+                  {!isAuthenticated ? (
+                    <Link href="/login">
+                      <DropdownItem>
+                        <a>Login</a>
+                      </DropdownItem>
+                    </Link>
+                  ) : null}
                   <Link href="/about">
                     <DropdownItem>
                       <a>About</a>
@@ -138,28 +156,33 @@ const Header = () => {
                       <a>Instructors</a>
                     </DropdownItem>
                   </Link>
+                  <Link href="/classes">
+                    <DropdownItem>
+                      <a>Classes</a>
+                    </DropdownItem>
+                  </Link>
                 </Dropdown>
               </motion.div>
             </div>
-            {/* <ul className="flex items-center">
-              {user ? (
+            <ul className="flex items-center">
+              {isAuthenticated ? (
                 <li className="justify-self-end">
                   <div className="relative">
-                    <Button
+                    <button
                       onClick={toggleDropdown}
-                      className="bg-tertiary"
-                      aria-label="Notifications"
+                      className="bg-transparent text-gray-100 p-2"
+                      aria-label="Profile"
                       aria-haspopup="true"
                     >
-                      {user.username}
-                    </Button>
+                      <CgProfile className="w-8 h-8" />
+                    </button>
                     <Dropdown
                       align="right"
                       className="bg-tertiary-darker"
                       isOpen={isOpen}
                       onClose={() => setIsOpen(false)}
                     >
-                      <DropdownItem>
+                      <DropdownItem className="text-gray-100">
                         <Link href="/dashboard">
                           <a>Dashboard</a>
                         </Link>
@@ -167,10 +190,11 @@ const Header = () => {
                       <Link href="/">
                         <DropdownItem
                           tag="a"
-                          className="text-gray-200 justify-between"
+                          className="text-gray-100 justify-between"
                           onClick={() => {
                             logout()
-                            setUser(null)
+                            cache.clear()
+                            window.location.href = "/"
                           }}
                         >
                           <span>Logout</span>
@@ -191,18 +215,18 @@ const Header = () => {
                 </li>
               ) : (
                 <>
-                  <li>
+                  <li className="hidden lg:block">
                     <Link href="/login">
                       <a className="font-medium text-gray-200 hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                        Sign in
+                        Login
                       </a>
                     </Link>
                   </li>
                   <li>
                     <div>
                       <Link href="/signup">
-                        <a className="btn-sm text-gray-200 bg-indigo-500 hover:bg-indigo-800 ml-3 px-5 py-3 rounded-md">
-                          <span>Sign up</span>
+                        <a className="btn-sm font-medium text-gray-200 bg-indigo-500 hover:bg-indigo-800 ml-3 px-5 py-3 rounded-md">
+                          <span>Sign Up</span>
                           <svg
                             className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1 inline-block"
                             viewBox="0 0 12 12"
@@ -219,7 +243,7 @@ const Header = () => {
                   </li>
                 </>
               )}
-            </ul> */}
+            </ul>
           </nav>
         </div>
       </div>

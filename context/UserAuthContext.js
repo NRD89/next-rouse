@@ -5,7 +5,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 import axios from "axios"
 
 const defaultValues = {
-  user: null,
+  user: { email: null, userName: "", subTier: "" },
   loggedIn: false,
   registerUser: () => {},
   login: () => {},
@@ -25,7 +25,7 @@ const isntBrowser = typeof window === "undefined"
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(defaultValues.user)
   const [loggedIn, setLoggedIn] = useState(defaultValues.loggedIn)
-  const isAuthenticated = loggedIn && Object.keys(user).length > 1
+  const isAuthenticated = loggedIn === true && user.email !== null
   const router = useRouter()
 
   // grab token value from cookie
@@ -54,8 +54,12 @@ export const AuthProvider = ({ children }) => {
         }
         const data = await res.json()
         console.log(data)
-        setUser(data)
         setLoggedIn(true)
+        setUser({
+          email: data.email,
+          userName: data.username,
+          subTier: data.subTier,
+        })
       })
     }
   }, [])
@@ -94,10 +98,13 @@ export const AuthProvider = ({ children }) => {
       return
     }
 
-    const { data } = await axios.post("http://localhost:1337/auth/local", {
-      identifier,
-      password,
-    })
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/local`,
+      {
+        identifier,
+        password,
+      }
+    )
 
     return data
   }
@@ -124,8 +131,8 @@ export const AuthProvider = ({ children }) => {
     // sync logout between multiple windows
     window.localStorage.setItem("logout", Date.now())
     //redirect to the home page
-    router.push("/")
     setLoggedIn(defaultValues.loggedIn)
+    setUser(defaultValues.user)
   }
 
   const requestPasswordReset = async (email) => {
@@ -189,7 +196,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   const redirectToManage = async () => {
-    const response = await fetch("/.netlify/functions/sub-manage-link", {
+    const response = await fetch("/api/sub-manage-link", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -220,6 +227,7 @@ export const AuthProvider = ({ children }) => {
         login,
         logout,
         setLoggedIn,
+        loggedIn,
         requestPasswordReset,
         resetPassword,
         sendSubmission,

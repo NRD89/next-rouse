@@ -2,16 +2,17 @@ import { useState, useContext, useEffect } from "react"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import { AuthContext } from "../context/UserAuthContext"
 import axios from "axios"
+import Cookie from "js-cookie"
 import { useRouter } from "next/router"
+import Link from "next/link"
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 const DigitalStripeForm = () => {
-  console.log(API_URL)
-  console.log(process.env.API_URL)
   const { user } = useContext(AuthContext)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [success, setSuccess] = useState(null)
+  const token = Cookie.get("token")
 
   const stripe = useStripe()
   const elements = useElements()
@@ -62,8 +63,7 @@ const DigitalStripeForm = () => {
     } else {
       const response = await axios.post("/api/digital-sub-update", {
         paymentMethodId: result.paymentMethod.id,
-        stripeId: user.stripeId,
-        stripeSubId: user.stripeSubId,
+        token,
       })
 
       const subscription = await response.data
@@ -142,7 +142,7 @@ const DigitalStripeForm = () => {
         <div className="flex flex-wrap -mx-3 mb-4">
           <div className="w-full px-3">
             <label
-              className="block text-gray-100 text-sm font-medium mb-1"
+              className="block text-gray-400 text-sm font-medium mb-1"
               htmlFor="card"
             >
               Card <span className="text-red-600">*</span>
@@ -164,14 +164,13 @@ const DigitalStripeForm = () => {
         </div>
         <div className="text-sm text-gray-500 text-center mt-3">
           By completing your order, you agree to the{" "}
-          <a className="underline" href="#0">
-            terms & conditions
-          </a>
-          , and our{" "}
+          <Link href="/terms-and-conditions">
+            <a className="underline">terms & conditions.</a>
+          </Link>
+          {/* , and our{" "}
           <a className="underline" href="#0">
             privacy policy
-          </a>
-          .
+          </a> */}
         </div>
       </form>
     </div>

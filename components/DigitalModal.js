@@ -6,7 +6,7 @@ import {
   ModalFooter,
   Button,
 } from "@windmill/react-ui"
-import DigitlCheckoutForm from "./DigitalCheckoutForm"
+import DigitalCheckoutForm from "./DigitalCheckoutForm"
 
 const DigitalModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -20,12 +20,21 @@ const DigitalModal = () => {
   return (
     <>
       <div>
-        <Button onClick={openModal}>Open modal</Button>
+        <button
+          onClick={openModal}
+          className="font-bold uppercase tracking-tightish btn text-blue-600  bg-gray-100 hover:bg-gray-300 w-full mt-10"
+        >
+          Go Digital
+        </button>
+        {/* <Button onClick={openModal}>Open modal</Button> */}
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <ModalHeader>Modal header</ModalHeader>
+        <ModalHeader className="text-center">
+          Digital Membership Total:{" "}
+          <span className="text-blue-600 font-extrabold">$19.99</span>
+        </ModalHeader>
         <ModalBody>
-          <DigitlCheckoutForm />
+          <DigitalCheckoutForm />
         </ModalBody>
       </Modal>
     </>

@@ -2,7 +2,7 @@ import Layout from "../components/Layout"
 
 const about = () => {
   return (
-    <Layout className="px-6">
+    <Layout>
       <div className="w-full text-center">
         <h1 className="h1 text-indigo-500 capitalize">About Rouse Yoga</h1>
       </div>

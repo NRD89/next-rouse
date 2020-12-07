@@ -19,11 +19,8 @@ const fetcher = (url) =>
     })
 
 export default function useAuth() {
-  const { data, error, mutate } = useSWR(
-    token ? "/api/get-customer" : null,
-    fetcher
-  )
-  const loading = data === undefined
+  const { data, error, mutate } = useSWR("/api/get-customer", fetcher)
+  const loading = !data
 
   return {
     data,
