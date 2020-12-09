@@ -225,7 +225,7 @@ const Header = () => {
                   <li>
                     <div>
                       <Link href="/signup">
-                        <a className="btn-sm font-medium text-gray-200 bg-indigo-500 hover:bg-indigo-800 ml-3 px-5 py-3 rounded-md">
+                        <a className="btn-sm font-medium text-gray-200 bg-tertiary hover:bg-tertiary-dark ml-3 px-5 py-3 rounded-md transition duration-150 ease-in-out">
                           <span>Sign Up</span>
                           <svg
                             className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1 inline-block"

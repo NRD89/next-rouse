@@ -2,13 +2,13 @@ import Layout from "../../components/Layout"
 import { fetchQuery, baseUrl } from "../../utils"
 import Link from "next/link"
 import { Card, CardBody, Button } from "@windmill/react-ui"
-import Head from 'next/head'
+import Head from "next/head"
 
 const index = ({ instructors }) => {
   return (
     <Layout>
       <div className="flex w-full justify-center">
-        <h1 className="h1 text-indigo-500">Instructors</h1>
+        <h1 className="h1 text-blue-500">Instructors</h1>
       </div>
       <section className="grid grid-cols-1 space-y-6 sm:space-y-0 sm:grid-cols-2 py-10 gap-1 sm:gap-6 lg:gap-10 items-stretch md:grid-cols-3 lg:grid-cols-4 max-w-screen-xl mx-auto">
         {instructors.map((instructor) => (

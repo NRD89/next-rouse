@@ -1,6 +1,6 @@
 import Stripe from "stripe"
 import { strapiFetchUser } from "./utils/strapi"
-const returnURL = process.env.URL || "http://localhost:3000"
+const returnURL = process.env.RETURN_URL || "http://localhost:3000"
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 

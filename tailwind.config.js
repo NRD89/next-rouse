@@ -33,6 +33,9 @@ module.exports = windmill({
         // "primary-darker": "#221A64",
         "primary-darkest": "#061D33",
         "primary-matte-darkest": "#092b4c",
+        instagram: "#4C5FD7",
+        facebook: "#3B5998",
+        yelp: "#af0606",
       },
       fontFamily: {
         inter: ["Inter", "Arial", "sans-serif"],

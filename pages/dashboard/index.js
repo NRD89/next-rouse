@@ -2,24 +2,35 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../context/UserAuthContext"
 import DashLayout from "../../components/DashLayout"
 import useAuth from "../../hooks/useAuth"
+import { MdOpenInNew } from "react-icons/md"
 import RequestPasswordReset from "../../components/RequestPasswordReset"
 
 const dashboard = () => {
-  const { isAuthenticated, user, redirectToManage } = useContext(AuthContext)
+  const { isAuthenticated, user, setUser, redirectToManage } = useContext(
+    AuthContext
+  )
   const { data: userData, loading, error, mutate } = useAuth()
 
   useEffect(() => {
     if (typeof window === "undefined") {
       return
-    } else if ((userData && !userData.username) || error) {
+    } else if ((userData && !userData.email) || error) {
       window.location.href = "/login"
     }
   }, [userData, error])
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return
+    } else if (userData && userData.subTier) {
+      setUser({ ...user, subTier: userData.subTier })
+    }
+  }, [userData])
+
   return (
     <DashLayout>
-      {!userData || !isAuthenticated ? (
-        <h1 className="h1 text-purple-500">Loading...</h1>
+      {!isAuthenticated || loading ? (
+        <h1 className="h1 text-blue-500">Loading...</h1>
       ) : (
         <section>
           <div className="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
@@ -86,7 +97,10 @@ const dashboard = () => {
                       onClick={redirectToManage}
                       className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full"
                     >
-                      Update Subscription
+                      {userData && userData.subTier !== "digital"
+                        ? "Go Digital"
+                        : "Update Subscription"}
+                      <MdOpenInNew className="w-6 h-6 p-1" />
                     </button>
                   </div>
                 </div>

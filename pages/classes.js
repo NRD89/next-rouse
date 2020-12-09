@@ -10,7 +10,7 @@ const classes = () => {
   return (
     <Layout>
       <div className="flex flex-col justify-center items-center w-full">
-        <h1 className="text-gray-100 h1 mb-10">Class Schedule</h1>
+        <h1 className="text-blue-500 h1 mb-10">Class Schedule</h1>
         <img
           className="mb-10"
           src="https://backend.rouse.yoga/uploads/large_live_stream_schedule_Page_1_ee55dee627.png"

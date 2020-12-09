@@ -53,7 +53,6 @@ export const AuthProvider = ({ children }) => {
           return null
         }
         const data = await res.json()
-        console.log(data)
         setLoggedIn(true)
         setUser({
           email: data.email,
@@ -210,7 +209,7 @@ export const AuthProvider = ({ children }) => {
       })
       .catch((err) => console.error(JSON.stringify(err, null, 2)))
 
-    console.log("response =>", response)
+    // console.log("response =>", response)
 
     return response
 

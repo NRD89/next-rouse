@@ -3,13 +3,14 @@ import Link from "next/link"
 import Cookie from "js-cookie"
 import { AuthContext } from "../context/UserAuthContext"
 
-const DigiSignUp = ({ navigation }) => {
+const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
   const {
     user,
     registerUser,
     setUser,
     setLoggedIn,
     isAuthenticated,
+    redirectToManage,
   } = useContext(AuthContext)
   const [loading, setLoading] = useState(false)
   const [username, setUsername] = useState("")
@@ -18,14 +19,11 @@ const DigiSignUp = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
 
-  const { go } = navigation
-  console.log(go)
-
-  useEffect(() => {
-    if (isAuthenticated === true) {
-      go("stripe")
-    }
-  }, [isAuthenticated])
+  // useEffect(() => {
+  //   if (isAuthenticated === true) {
+  //     setLoginSuccess(true)
+  //   }
+  // }, [isAuthenticated])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -46,7 +44,27 @@ const DigiSignUp = ({ navigation }) => {
             })
             setLoading(false)
             setLoggedIn(true)
-            go("stripe")
+            // go("stripe")
+            setLoginSuccess(true)
+            const token = Cookie.get("token")
+            setTimeout(() => {
+              const response = fetch("/api/sub-manage-link", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ token }),
+              })
+                .then(async (res) => await res.json())
+                .then((link) => {
+                  window.location.href = link
+                })
+                .catch((err) => console.error(JSON.stringify(err, null, 2)))
+
+              // console.log("response =>", response)
+
+              return response
+            }, 1500)
           }
         })
       } catch (e) {
@@ -153,21 +171,23 @@ const DigiSignUp = ({ navigation }) => {
             <div className="w-full px-3">
               <button
                 type="submit"
-                className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full"
+                className="btn text-white bg-tertiary hover:bg-tertiary-dark w-full"
               >
-                {loading ? "Loading..." : "Sign Up"}
+                {loading
+                  ? "Loading..."
+                  : loginSuccess
+                  ? "Going to Checkout"
+                  : "Sign Up"}
               </button>
             </div>
           </div>
           <div className="text-sm text-gray-500 text-center mt-3">
             By creating an account, you agree to the{" "}
-            <a className="underline" href="#0">
-              terms & conditions
-            </a>
-            , and our{" "}
-            <a className="underline" href="#0">
-              privacy policy
-            </a>
+            <Link href="/terms-and-conditions">
+              <a className="text-blue-600 hover:underline transition duration-150 ease-in-out font-medium">
+                terms & conditions
+              </a>
+            </Link>
             .
           </div>
         </form>
@@ -178,11 +198,10 @@ const DigiSignUp = ({ navigation }) => {
 
         <div className="text-gray-600 text-center mt-6">
           Already have a Rouse Yoga account?{" "}
-          <Link
-            href="/signin"
-            className="text-blue-600 hover:underline transition duration-150 ease-in-out"
-          >
-            <a>Sign in</a>
+          <Link href="/login">
+            <a className="text-blue-600 hover:underline transition duration-150 ease-in-out font-medium">
+              Login
+            </a>
           </Link>
         </div>
       </div>

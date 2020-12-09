@@ -36,9 +36,9 @@ const Login = () => {
     }
   }
 
-  useEffect(() => {
-    router.prefetch("/dashboard")
-  }, [])
+  // useEffect(() => {
+  //   router.prefetch("/dashboard")
+  // }, [])
 
   return (
     <>
@@ -91,7 +91,7 @@ const Login = () => {
             <div className="w-full px-3">
               <button
                 type="submit"
-                className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full"
+                className="btn text-white bg-tertiary hover:bg-tertiary-dark w-full"
               >
                 {loading ? "Loading..." : "Log in"}
               </button>
@@ -103,11 +103,11 @@ const Login = () => {
           <p className="font-inter text-red-600">{error}</p>
         ) : null}
 
-        <div className="text-gray-500 text-center mt-6">
+        <div className="text-gray-300 text-center mt-6">
           Don't have a Rouse Yoga account?{" "}
           <Link href="/signup">
-            <a className="text-blue-600 hover:underline transition duration-150 ease-in-out">
-              Sign up
+            <a className="text-blue-500 hover:underline transition duration-150 ease-in-out">
+              Login
             </a>
           </Link>
         </div>

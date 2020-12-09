@@ -145,7 +145,7 @@ const SignUp = () => {
             <div className="w-full px-3">
               <button
                 type="submit"
-                className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full"
+                className="btn text-white bg-tertiary hover:bg-tertiary-dark w-full"
               >
                 {loading ? "Loading..." : "Sign Up"}
               </button>
@@ -154,7 +154,9 @@ const SignUp = () => {
           <div className="text-sm text-gray-400 text-center mt-3">
             By creating an account, you agree to the{" "}
             <Link href="/terms-and-conditions">
-              <a className="underline">terms & conditions.</a>
+              <a className="text-blue-500 hover:underline transition duration-150 ease-in-out font-medium">
+                terms & conditions
+              </a>
             </Link>
             {/* , and our{" "}
             <a className="underline" href="#0">
@@ -167,11 +169,11 @@ const SignUp = () => {
           <p className="font-inter text-red-600">{error}</p>
         ) : null}
 
-        <div className="text-gray-500 text-center mt-6">
+        <div className="text-gray-300 text-center mt-6">
           Already have a Rouse Yoga account?{" "}
           <Link href="/login">
-            <a className="text-blue-600 hover:underline transition duration-150 ease-in-out">
-              Sign In
+            <a className="text-blue-500 hover:underline transition duration-150 ease-in-out">
+              Login
             </a>
           </Link>
         </div>

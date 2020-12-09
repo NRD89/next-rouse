@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "./Image"
+import { GrInstagram } from "react-icons/gr"
+import { GrFacebookOption } from "react-icons/gr"
+import { FaYelp } from "react-icons/fa"
 
 const Footer = () => {
   const [success, setSuccess] = useState(false)
@@ -41,7 +44,7 @@ const Footer = () => {
                 <input type="hidden" name="form-name" value="subscribe" />
                 <button
                   type="submit"
-                  className="w-full btn-sm bg-indigo-600 rounded-lg font-semibold uppercase lg:w-auto"
+                  className="w-full btn-sm bg-tertiary hover:bg-tertiary-dark rounded-lg font-semibold uppercase lg:w-auto transition duration-150 ease-in-out"
                 >
                   subscribe
                 </button>
@@ -71,6 +74,25 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+        </div>
+        <div className="flex w-full justify-center mt-6 md:mt-0 mb-6">
+          <ul className="flex flex-row">
+            <li className="p-3">
+              <a href="https://www.instagram.com/rouse_yoga">
+                <GrInstagram className="w-7 h-7 text-instagram" />
+              </a>
+            </li>
+            <li className="p-3">
+              <a href="https://www.facebook.com/rouse.yoga/">
+                <GrFacebookOption className="w-7 h-7 text-facebook" />
+              </a>
+            </li>
+            <li className="p-3">
+              <a href="https://www.yelp.com/biz/rouse-yoga-riverside">
+                <FaYelp className="w-7 h-7 text-yelp" />
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="flex w-full justify-center">
           <small>

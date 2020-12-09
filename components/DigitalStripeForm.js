@@ -19,10 +19,6 @@ const DigitalStripeForm = () => {
 
   const router = useRouter()
 
-  useEffect(() => {
-    router.prefetch("/dashboard")
-  }, [])
-
   const handleSubmit = async (event) => {
     event.preventDefault()
     setLoading(true)

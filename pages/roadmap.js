@@ -4,7 +4,7 @@ const roadmap = () => {
   return (
     <Layout>
       <div className="w-full text-center">
-        <h1 className="h1 text-indigo-500 capitalize">Roadmap</h1>
+        <h1 className="h1 text-blue-500 capitalize">Roadmap</h1>
       </div>
       <div className="w-full">
         <div
@@ -26,28 +26,6 @@ const roadmap = () => {
             style={{ left: `7px` }}
           ></div>
           <ul className="list-none m-0 p-0">
-            <li className="mb-2">
-              <div className="flex items-center mb-1">
-                <div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10"></div>
-                <div className="flex-1 ml-4 font-bold text-gray-100">
-                  End of November
-                </div>
-              </div>
-              <div className="ml-12">
-                Digital memberships will become available for purchase.
-              </div>
-            </li>
-            <li className="mb-2">
-              <div className="flex items-center mb-1">
-                <div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10"></div>
-                <div className="flex-1 ml-4 font-bold text-gray-100">
-                  Beginning of December
-                </div>
-              </div>
-              <div className="ml-12">
-                Live streaming yoga classes will begin.
-              </div>
-            </li>
             <li className="mb-2">
               <div className="flex items-center mb-1">
                 <div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10"></div>

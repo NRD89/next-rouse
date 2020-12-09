@@ -4,11 +4,9 @@ import PricingCards from "../components/PricingCards"
 import OffsetCards from "../components/OffsetCards"
 import ImageTextCards from "../components/ImageTextCards"
 import Footer from "../components/Footer"
-import DigitalModal from "../components/DigitalModal"
+// import DigitalModal from "../components/DigitalModal"
 
 const Index = () => {
-  console.log("NEXT_PUBLIC =>", process.env.NEXT_PUBLIC_API_URL)
-  console.log("reg ENV =>", process.env.API_URL)
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Header />

@@ -1,7 +1,6 @@
 // hooks/useAuth.js
 import useSWR from "swr"
 import Cookie from "js-cookie"
-// const apiURL = "http://localhost:1337"
 
 const token = Cookie.get("token")
 
