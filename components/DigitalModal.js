@@ -36,7 +36,7 @@ const DigitalModal = () => {
           >
             {isAuthenticated && user.subTier !== "digital" ? (
               <>
-                "Upgrade To Digital" <MdOpenInNew className="w-6 h-6 p-1" />
+                Upgrade To Digital <MdOpenInNew className="w-6 h-6 p-1" />
               </>
             ) : (
               "Thanks for being a member!"

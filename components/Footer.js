@@ -62,7 +62,7 @@ const Footer = () => {
           <div>
             <Link href="/" aria-label="Home">
               <a className="block max-w-logo py-3">
-                <Image path={"rouse-logo-white-center-symbol.png"} />
+                <Image path={"Rouse-Web-Logo.png"} />
               </a>
             </Link>
           </div>
