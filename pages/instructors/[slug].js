@@ -13,7 +13,7 @@ const Slug = ({ instructor }) => {
           <CardBody>
             <div className="w-full px-4 lg:order-2 flex justify-center">
               <div className="relative">
-                <img
+                <Avatar
                   alt="..."
                   src={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].avatar.formats.small.url}`}
                   loading="lazy"
@@ -93,7 +93,6 @@ export async function getStaticProps({ params }) {
     },
   }
 }
-
 export async function getStaticPaths() {
   const instructors = await fetchQuery("instructors")
   const paths = instructors.map((instructor) => {

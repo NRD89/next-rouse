@@ -83,7 +83,7 @@ const classes = ({ classList, todaysDate }) => {
                     </a>
                   </Link>
                 </TableCell>
-                <TableCell className="max-w-logo">
+                <TableCell>
                   <ClassDescDropdown
                     className="text-sm"
                     classTitle={_class.Title}
