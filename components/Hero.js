@@ -19,11 +19,9 @@ const Hero = () => {
           <main className="mt-36 mx-auto max-w-screen-xl px-4 sm:mt-24 sm:px-6 md:mt-32 lg:mt-0 lg:px-8 lg:h-screen lg:flex">
             <div className="sm:text-center lg:text-left my-auto">
               <h2 className="text-4xl tracking-tightish leading-10 font-extrabold text-white sm:text-5xl sm:leading-none md:text-6xl">
-                Clear your mind.
+                Clear Your mind.
                 <br />
-                <span className="text-tertiary">
-                  Find your <span className="ani-gradient flow">Strength</span>.
-                </span>
+                <span className="ani-gradient flow">Find Your Strength.</span>
               </h2>
               <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 Rouse Yoga helps you find purpose and power in your practice.
@@ -51,12 +49,12 @@ const Hero = () => {
       </div>
       <style jsx>{`
         .ani-gradient {
-          animation: flow 15s ease-in-out infinite;
+          animation: flow 12.5s ease-in-out infinite;
           background: linear-gradient(
             -60deg,
             #5d45f9,
             #f7ce68,
-            #5d45f9,
+            #8879fc,
             #fbab7e
           );
           background-size: 300%;

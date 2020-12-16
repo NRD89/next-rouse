@@ -1,6 +1,6 @@
 // import { useContext, useEffect } from "react"
 import Link from "next/link"
-// import { useRouter } from "next/router"
+import { useRouter } from "next/router"
 import Layout from "./Layout"
 // import { AuthContext } from "../context/UserAuthContext"
 // import Cookie from "js-cookie"
@@ -8,9 +8,9 @@ import Layout from "./Layout"
 
 const DashLayout = ({ children }) => {
   // const { isAuthenticated } = useContext(AuthContext)
-  // const router = useRouter()
+  const router = useRouter()
   // const { data: userData, loading, error, mutate } = useAuth()
-  // console.log(userData)
+  console.log(router.pathname)
   // console.log(error)
 
   // useEffect(() => {
@@ -26,18 +26,38 @@ const DashLayout = ({ children }) => {
           <ul className="flex items-center text-gray-100 justify-evenly">
             <li>
               <Link href="/dashboard">
-                <a className="h4">Dashboard</a>
+                <a
+                  className={`h4 ${
+                    router.pathname === "/dashboard"
+                      ? "border-b-2 border-tertiary"
+                      : ""
+                  }`}
+                >
+                  Profile
+                </a>
               </Link>
             </li>
             <li>
-              <Link href="/dashboard/videos-on-demand">
-                <a className="h4">Videos</a>
+              <Link href="/dashboard/video-on-demand">
+                <a
+                  className={`h4 ${
+                    router.pathname === "/dashboard/video-on-demand"
+                      ? "border-b-2 border-tertiary"
+                      : ""
+                  }`}
+                >
+                  VoD
+                </a>
               </Link>
             </li>
             <li>
               <Link href="/dashboard/live">
                 <a
-                  className="h4"
+                  className={`h4 ${
+                    router.pathname === "/dashboard/live"
+                      ? "border-b-2 border-tertiary"
+                      : ""
+                  }`}
                   // onClick={() => {
                   //   mutate("api/get-customer")
                   // }}

@@ -14,7 +14,7 @@ module.exports = windmill({
     extend: {
       colors: {
         "matte-black": "#212121",
-        darkBlueBg: "#14192f",
+        darkBlueBg: "#031332",
         "tertiary-lightest": "#DDD9FE",
         "tertiary-lighter": "#BBB3FD",
         "tertiary-lighter": "#BBB3FD",
@@ -42,6 +42,7 @@ module.exports = windmill({
       },
       spacing: {
         100: "32rem",
+        "16/9": "56.25%",
       },
       letterSpacing: {
         tightish: "-.02em",

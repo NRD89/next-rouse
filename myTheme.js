@@ -7,21 +7,27 @@ export default {
       regular: "px-4 py-2 shadow-md text-sm",
       small: "px-3 py-1 shadow-md text-sm",
     },
-    // Backdrop
-    backdrop: {
-      base:
-        "fixed inset-0 z-40 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center",
+    primary: {
+      base: "text-white bg-tertiary border border-transparent",
+      active:
+        "active:bg-tertiary-light hover:bg-tertiary-dark focus:shadow-outline-tertiary-lighter",
+      disabled: "opacity-50 cursor-not-allowed",
     },
-    avatar: {
-      base: "relative rounded-full inline-block",
-      size: {
-        xxxLarge: "w-60 h-60",
-        xxLarge: "w-40 h-40",
-        xLarge: "w-20 h-20",
-        large: "w-10 h-10",
-        regular: "w-8 h-8",
-        small: "w-6 h-6",
-      },
+  },
+  // Backdrop
+  backdrop: {
+    base:
+      "fixed inset-0 z-40 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center",
+  },
+  avatar: {
+    base: "relative rounded-full inline-block",
+    size: {
+      xxxLarge: "w-60 h-60",
+      xxLarge: "w-40 h-40",
+      xLarge: "w-20 h-20",
+      large: "w-10 h-10",
+      regular: "w-8 h-8",
+      small: "w-6 h-6",
     },
   },
 }

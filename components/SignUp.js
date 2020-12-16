@@ -48,10 +48,6 @@ const SignUp = () => {
     }
   }
 
-  useEffect(() => {
-    router.prefetch("/dashboard")
-  }, [])
-
   return (
     <>
       {/* Form */}
