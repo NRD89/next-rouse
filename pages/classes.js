@@ -11,9 +11,6 @@ import {
   Pagination,
   Avatar,
   Badge,
-  Dropdown,
-  DropdownItem,
-  Button,
 } from "@windmill/react-ui"
 import ClassDescDropdown from "../components/ClassDescDropdown"
 import { request, gql } from "graphql-request"
@@ -25,7 +22,7 @@ import Link from "next/link"
 //   ssr: false,
 // })
 
-const classes = ({ classList, todaysDate }) => {
+const classes = ({ classList }) => {
   const { classes, classesConnection } = classList
   console.log(classesConnection)
 
@@ -54,69 +51,75 @@ const classes = ({ classList, todaysDate }) => {
       <div className="flex w-full justify-center">
         <h1 className="h1 text-blue-500">Class Schedule</h1>
       </div>
-      <TableContainer className="mt-10">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableCell>Instructor</TableCell>
-              <TableCell>Class/Description</TableCell>
-              <TableCell>Date/Time</TableCell>
-              <TableCell>Style/Level</TableCell>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {classes.map((_class, index) => (
-              <TableRow key={index}>
-                <TableCell>
-                  <Link href={`/instructors/${_class.instructor.Slug}`}>
-                    <a>
-                      <div className="flex items-center text-sm">
-                        <Avatar
-                          src={`${process.env.NEXT_PUBLIC_API_URL}${_class.instructor.avatar.formats.small.url}`}
-                          loading="lazy"
-                          alt={`Instructor ${_class.instructor.Title}`}
-                        />
-                        <span className="font-semibold ml-2">
-                          {_class.instructor.Title}
-                        </span>
-                      </div>
-                    </a>
-                  </Link>
-                </TableCell>
-                <TableCell>
-                  <ClassDescDropdown
-                    className="text-sm"
-                    classTitle={_class.Title}
-                    classDesc={_class.description}
-                  />
-                </TableCell>
-                <TableCell>
-                  <span className="text-sm">
-                    {`${format(
-                      new Date(`${_class.date}T${_class.time}`),
-                      "MM-dd-yyyy h:mm aaaa"
-                    )}`}{" "}
-                    PST
-                  </span>
-                </TableCell>
-                <TableCell>
-                  <Badge type="primary">{`${_class.style} - Level ${
-                    _class.level === "one" ? 1 : _class.level === "two" ? 2 : 3
-                  }`}</Badge>
-                </TableCell>
+      <div className="flex w-full justify-center">
+        <TableContainer className="mt-10 max-w-screen-xl">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableCell>Instructor</TableCell>
+                <TableCell>Class/Description</TableCell>
+                <TableCell>Date/Time</TableCell>
+                <TableCell>Style/Level</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <TableFooter>
-          <Pagination
-            totalResults={totalResults}
-            resultsPerPage={resultsPerPage}
-            onChange={onPageChangeTable}
-            label="Table navigation"
-          />
-        </TableFooter>
-      </TableContainer>
+            </TableHeader>
+            <TableBody>
+              {classes.map((_class, index) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Link href={`/instructors/${_class.instructor.Slug}`}>
+                      <a>
+                        <div className="flex items-center text-sm">
+                          <Avatar
+                            src={`${process.env.NEXT_PUBLIC_API_URL}${_class.instructor.avatar.formats.small.url}`}
+                            loading="lazy"
+                            alt={`Instructor ${_class.instructor.Title}`}
+                          />
+                          <span className="font-semibold ml-2">
+                            {_class.instructor.Title}
+                          </span>
+                        </div>
+                      </a>
+                    </Link>
+                  </TableCell>
+                  <TableCell>
+                    <ClassDescDropdown
+                      className="text-sm"
+                      classTitle={_class.Title}
+                      classDesc={_class.description}
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <span className="text-sm">
+                      {`${format(
+                        new Date(`${_class.date}T${_class.time}`),
+                        "MM-dd-yyyy h:mm aaaa"
+                      )}`}{" "}
+                      PST
+                    </span>
+                  </TableCell>
+                  <TableCell>
+                    <Badge type="primary">{`${_class.style} - Level ${
+                      _class.level === "one"
+                        ? 1
+                        : _class.level === "two"
+                        ? 2
+                        : 3
+                    }`}</Badge>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          <TableFooter>
+            <Pagination
+              totalResults={totalResults}
+              resultsPerPage={resultsPerPage}
+              onChange={onPageChangeTable}
+              label="Table navigation"
+            />
+          </TableFooter>
+        </TableContainer>
+      </div>
     </Layout>
   )
 }

@@ -30,10 +30,6 @@ const ClassDescDropdown = ({ classTitle, classDesc }) => {
             height: 0,
           },
         }}
-        // transition={{
-        //   duration: 0.8,
-        //   ease: [0.04, 0.62, 0.23, 0.98],
-        // }}
         className="overflow-hidden"
       >
         <p className="pt-3 text-sm">{classDesc}</p>
