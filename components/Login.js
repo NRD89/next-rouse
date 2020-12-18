@@ -107,7 +107,7 @@ const Login = () => {
           Don't have a Rouse Yoga account?{" "}
           <Link href="/signup">
             <a className="text-blue-500 hover:underline transition duration-150 ease-in-out">
-              Login
+              Sign up
             </a>
           </Link>
         </div>
