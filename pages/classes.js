@@ -22,9 +22,9 @@ import Link from "next/link"
 //   ssr: false,
 // })
 
-const classes = ({ classList }) => {
+const classes = ({ classList, todaysDate }) => {
   const { classes, classesConnection } = classList
-  console.log(classesConnection)
+  console.log(todaysDate)
 
   const router = useRouter()
 
