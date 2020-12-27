@@ -1,11 +1,17 @@
 import { useState, useEffect, useContext } from "react"
 import DashLayout from "../../components/DashLayout"
 import { AuthContext } from "../../context/UserAuthContext"
-import { useRouter } from "next/router"
-// import ReactPlayer from "react-player"
 import useSWR from "swr"
 import useAuth from "../../hooks/useAuth"
 import { MdOpenInNew } from "react-icons/md"
+import dynamic from "next/dynamic"
+import { motion, AnimatePresence } from "framer-motion"
+import { RiDiscordLine, RiCloseFill } from "react-icons/ri"
+
+const WidgetBot = dynamic(() => import("@widgetbot/react-embed"), {
+  ssr: false,
+  loading: () => <p>...</p>,
+})
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
@@ -13,6 +19,7 @@ const live = () => {
   const { user, redirectToManage } = useContext(AuthContext)
   const [liveAppToken, setLiveAppToken] = useState()
   const [webRtcToken, setWebRtcToken] = useState()
+  const [isVisible, setIsVisible] = useState(false)
   const { data: userData, loading, error, mutate } = useAuth()
 
   const {
@@ -97,6 +104,56 @@ const live = () => {
           height: 100%;
         }
       `}</style>
+      <AnimatePresence initial={true}>
+        {isVisible && (
+          <div className="fixed right-0 bottom-0 md:right-5 md:bottom-5 z-10 w-full h-3/4 md:w-1/2 lg:w-1/3 ml-5">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{
+                type: "spring",
+                damping: 12,
+                mass: 0.75,
+                stiffness: 75,
+              }}
+              className="h-full"
+            >
+              <WidgetBot
+                server="788301141023653888" // Rouse Yoga
+                channel="788301860213489664" // #live-streaming-chat
+                className="w-full h-full"
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+      <div>
+        <button onClick={() => setIsVisible(!isVisible)}>
+          <motion.div initial={false} animate={isVisible ? "open" : "closed"}>
+            <motion.div
+              className="rounded-full bg-tertiary w-14 h-14 fixed right-5 bottom-5 flex items-center justify-center z-20"
+              variants={{
+                closed: { visibility: `visible`, opacity: 1, rotate: 360 },
+                open: { visibility: `hidden`, opacity: 0, rotate: 0 },
+              }}
+              transition={{ ease: `easeInOut`, duration: 0.4 }}
+            >
+              <RiDiscordLine className="w-10 h-10 text-gray-100" />
+            </motion.div>
+            <motion.div
+              className="rounded-full bg-transparent w-14 h-14 fixed right-5 bottom-5 flex items-center justify-center z-20 text-gray-100"
+              variants={{
+                closed: { visibility: `hidden`, opacity: 0, rotate: 0 },
+                open: { visibility: `visible`, opacity: 1, rotate: 360 },
+              }}
+              transition={{ ease: `easeInOut`, duration: 0.4 }}
+            >
+              <RiCloseFill className="w-10 h-10 text-gray-100" />
+            </motion.div>
+          </motion.div>
+        </button>
+      </div>
     </DashLayout>
   )
 }
