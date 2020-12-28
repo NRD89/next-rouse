@@ -90,21 +90,7 @@ const live = () => {
           </div>
         </div>
       )}
-      <style jsx>{`
-        .vid-container {
-          position: relative;
-          width: 100%;
-          height: 0;
-          padding-bottom: 56.25%;
-        }
-        .video {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-      `}</style>
+
       <AnimatePresence initial={true}>
         {isVisible && (
           <div className="fixed right-0 bottom-0 md:right-5 md:bottom-5 z-10 w-full h-3/4 md:w-1/2 lg:w-1/3 ml-5">
@@ -123,7 +109,7 @@ const live = () => {
               <WidgetBot
                 server="788301141023653888" // Rouse Yoga
                 channel="788301860213489664" // #live-streaming-chat
-                className="w-full h-full"
+                style={{ width: `100%`, height: `100%` }}
               />
             </motion.div>
           </div>
@@ -155,6 +141,21 @@ const live = () => {
           </motion.div>
         </button>
       </div>
+      <style jsx>{`
+        .vid-container {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 56.25%;
+        }
+        .video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      `}</style>
     </DashLayout>
   )
 }
