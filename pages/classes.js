@@ -15,6 +15,7 @@ import {
 import ClassDescDropdown from "../components/ClassDescDropdown"
 import { request, gql } from "graphql-request"
 import format from "date-fns/format"
+import { formatToTimeZone } from "date-fns-timezone"
 import { useRouter } from "next/router"
 import Link from "next/link"
 
@@ -133,7 +134,10 @@ export async function getServerSideProps({ query: { page = 1 } }) {
 
   const endpoint = `${API_URL}/graphql`
 
-  const todaysDate = format(new Date(), "yyyy-MM-dd")
+  const date = new Date()
+  const todaysDate = formatToTimeZone(date, "YYYY-MM-DD", {
+    timeZone: "America/Los_Angeles",
+  })
 
   const query = gql`
     query getClasses($start: Int, $todaysDate: Date) {

@@ -7,6 +7,7 @@ import { MdOpenInNew } from "react-icons/md"
 import dynamic from "next/dynamic"
 import { motion, AnimatePresence } from "framer-motion"
 import { RiDiscordLine, RiCloseFill } from "react-icons/ri"
+// import WidgetBot from "@widgetbot/react-embed"
 
 const WidgetBot = dynamic(() => import("@widgetbot/react-embed"), {
   ssr: false,

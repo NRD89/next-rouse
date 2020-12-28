@@ -11,8 +11,8 @@ const Index = () => {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Header />
       <Hero />
-      <ImageTextCards />
       <OffsetCards />
+      <ImageTextCards />
       <PricingCards />
       {/* <DigitalModal /> */}
       <Footer />
