@@ -6,7 +6,8 @@ const nextConfig = {
   // Target must be serverless
   target: "serverless",
   images: {
-    domains: ["localhost"],
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/rouse-yoga/image/upload/",
   },
 }
 

@@ -8,7 +8,7 @@ const HeroHome = () => {
       <div className="absolute inset-0 h pt-16 box-content -z-1">
         <Image
           className="absolute inset-0 w-full h-full object-cover opacity-25"
-          src="/indoors-PCD9ZJ7.jpg"
+          src="c_scale,f_auto,w_2000/v1610617520/indoors-PCD9ZJ7_zjo4bw.jpg"
           // width={1440}
           // height={577}
           alt="About"

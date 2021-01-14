@@ -19,7 +19,7 @@ const DiscordWidget = () => {
           >
             <div className="relative w-1/2 mx-auto md:mx-0 mb-6">
               <Image
-                src="/Rouse-Discord.png"
+                src="c_scale,f_auto,w_617/v1610617526/Rouse-Discord_byyaaz.png"
                 alt="Rouse logo plus Discord logo"
                 layout="responsive"
                 width={350}
