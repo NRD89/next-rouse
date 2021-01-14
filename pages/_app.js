@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({
       once: true,
-      disable: "phone",
+      disable: false,
       duration: 750,
       easing: "ease-out-quart",
     })
