@@ -23,13 +23,13 @@ const DashLayout = ({ children }) => {
     <Layout>
       <div className="mx-auto max-w-screen-xl">
         <nav className="pb-8 ">
-          <ul className="flex items-center text-gray-100 justify-evenly">
+          <ul className="flex items-center justify-evenly">
             <li>
               <Link href="/dashboard">
                 <a
-                  className={`h4 ${
+                  className={`h4 font-red-hat-display ${
                     router.pathname === "/dashboard"
-                      ? "border-b-2 border-tertiary"
+                      ? "border-b-2 border-purple-600"
                       : ""
                   }`}
                 >
@@ -40,9 +40,9 @@ const DashLayout = ({ children }) => {
             <li>
               <Link href="/dashboard/video-on-demand">
                 <a
-                  className={`h4 ${
+                  className={`h4 font-red-hat-display ${
                     router.pathname === "/dashboard/video-on-demand"
-                      ? "border-b-2 border-tertiary"
+                      ? "border-b-2 border-purple-600"
                       : ""
                   }`}
                 >
@@ -53,9 +53,9 @@ const DashLayout = ({ children }) => {
             <li>
               <Link href="/dashboard/live">
                 <a
-                  className={`h4 ${
+                  className={`h4 font-red-hat-display ${
                     router.pathname === "/dashboard/live"
-                      ? "border-b-2 border-tertiary"
+                      ? "border-b-2 border-purple-600"
                       : ""
                   }`}
                   // onClick={() => {

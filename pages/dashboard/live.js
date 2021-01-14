@@ -7,6 +7,7 @@ import { MdOpenInNew } from "react-icons/md"
 import dynamic from "next/dynamic"
 import { motion, AnimatePresence } from "framer-motion"
 import { RiDiscordLine, RiCloseFill } from "react-icons/ri"
+import DigitalModal from "../../components/DigitalModal"
 // import WidgetBot from "@widgetbot/react-embed"
 
 const WidgetBot = dynamic(() => import("@widgetbot/react-embed"), {
@@ -55,22 +56,40 @@ const live = () => {
   return (
     <DashLayout>
       {loading ? (
-        <h1 className="h2 text-blue-600">Loading...</h1>
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="h2 text-gray-900 dark:text-gray-100 font-red-hat-display animate-pulse">
+            Loading...
+          </h1>
+        </div>
       ) : userData && userData.subTier !== "digital" ? (
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-gray-200 h2 text-center">
+          <h1
+            className="h2 font-red-hat-display text-center text-gray-600 dark:text-gray-400"
+            data-aos="fade-down"
+          >
             For access to live streaming <br />
-            <span className="text-orange-400">SIGN UP</span> for a digital
-            membership!
+            <span className="text-gray-900 dark:text-gray-100">
+              SIGN UP
+            </span>{" "}
+            for a digital membership!
           </h1>
-          <div className="flex flex-wrap w-full justify-center mt-6">
+          <div
+            className="flex flex-wrap w-full justify-center mt-6"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             <div className="px-3 w-full md:w-1/4">
-              <button
-                onClick={redirectToManage}
-                className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full"
-              >
-                Go Digital <MdOpenInNew className="w-6 h-6 p-1" />
-              </button>
+              {userData && userData.subTier === "digital" ? (
+                <button
+                  onClick={redirectToManage}
+                  className="btn text-white bg-purple-600 hover:bg-purple-500 w-full"
+                >
+                  Update Subscription
+                  <MdOpenInNew className="w-6 h-6 p-1" />
+                </button>
+              ) : (
+                <DigitalModal buttonText="Start Free Trial" btnWidth="full" />
+              )}
             </div>
           </div>
         </div>

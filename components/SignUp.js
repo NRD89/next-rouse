@@ -51,12 +51,12 @@ const SignUp = () => {
   return (
     <>
       {/* Form */}
-      <div className="max-w-sm mx-auto">
-        <form onSubmit={handleSubmit}>
+      <div className="max-w-sm mx-auto pb-12 md:pb-20">
+        <form onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="150">
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1"
                 htmlFor="name"
               >
                 User Name <span className="text-red-600">*</span>
@@ -69,7 +69,7 @@ const SignUp = () => {
                 id="username"
                 type="text"
                 placeholder="User Name"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 required
               />
             </div>
@@ -77,7 +77,7 @@ const SignUp = () => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="blocktext-gray-800 dark:text-gray-300 text-sm font-medium mb-1"
                 htmlFor="email"
               >
                 Email <span className="text-red-600">*</span>
@@ -90,7 +90,7 @@ const SignUp = () => {
                 id="email"
                 type="email"
                 placeholder="email@email.com"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 required
               />
             </div>
@@ -98,7 +98,7 @@ const SignUp = () => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1"
                 htmlFor="password"
               >
                 Password <span className="text-red-600">*</span>
@@ -110,7 +110,7 @@ const SignUp = () => {
                 value={password}
                 id="password"
                 type="password"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 placeholder="Enter your password"
                 required
               />
@@ -119,10 +119,10 @@ const SignUp = () => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1"
                 htmlFor="password"
               >
-                Password <span className="text-red-600">*</span>
+                Confirm Password <span className="text-red-600">*</span>
               </label>
               <input
                 onChange={(e) => {
@@ -131,8 +131,8 @@ const SignUp = () => {
                 value={confirmPassword}
                 id="confirm-password"
                 type="password"
-                className="form-input w-full text-gray-800"
-                placeholder="Enter your password"
+                className="form-input w-full"
+                placeholder="Confirm your password"
                 required
               />
             </div>
@@ -141,18 +141,16 @@ const SignUp = () => {
             <div className="w-full px-3">
               <button
                 type="submit"
-                className="btn text-white bg-tertiary hover:bg-tertiary-dark w-full"
+                className="btn text-white bg-purple-600 hover:bg-purple-500 w-full"
               >
                 {loading ? "Loading..." : "Sign Up"}
               </button>
             </div>
           </div>
-          <div className="text-sm text-gray-400 text-center mt-3">
+          <div className="text-sm text-gray-500 text-center mt-3">
             By creating an account, you agree to the{" "}
             <Link href="/terms-and-conditions">
-              <a className="text-blue-500 hover:underline transition duration-150 ease-in-out font-medium">
-                terms & conditions
-              </a>
+              <a className="underline">terms & conditions</a>
             </Link>
             {/* , and our{" "}
             <a className="underline" href="#0">
@@ -165,10 +163,10 @@ const SignUp = () => {
           <p className="font-inter text-red-600">{error}</p>
         ) : null}
 
-        <div className="text-gray-300 text-center mt-6">
+        <div className="text-gray-500 text-center mt-6">
           Already have a Rouse Yoga account?{" "}
           <Link href="/login">
-            <a className="text-blue-500 hover:underline transition duration-150 ease-in-out">
+            <a className="text-purple-600 hover:underline transition duration-150 ease-in-out">
               Login
             </a>
           </Link>

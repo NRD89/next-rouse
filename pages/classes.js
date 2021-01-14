@@ -50,11 +50,13 @@ const classes = ({ classList, todaysDate }) => {
   return (
     <Layout>
       <div className="flex w-full justify-center">
-        <h1 className="h1 text-blue-500">Class Schedule</h1>
+        <h1 className="h1 font-red-hat-display" data-aos="fade-down">
+          Class Schedule
+        </h1>
       </div>
-      <div className="flex w-full justify-center">
-        <TableContainer className="mt-10 max-w-screen-xl">
-          <Table>
+      <div className="flex w-full justify-center" data-aos="fade-up">
+        <TableContainer className="mt-10 max-w-screen-xl border border-gray-100 dark:border-black">
+          <Table className="whitespace-nowrap">
             <TableHeader>
               <TableRow>
                 <TableCell>Instructor</TableCell>
@@ -74,6 +76,7 @@ const classes = ({ classList, todaysDate }) => {
                             src={`${process.env.NEXT_PUBLIC_API_URL}${_class.instructor.avatar.formats.small.url}`}
                             loading="lazy"
                             alt={`Instructor ${_class.instructor.Title}`}
+                            className="w-8 h-8"
                           />
                           <span className="font-semibold ml-2">
                             {_class.instructor.Title}
@@ -90,7 +93,7 @@ const classes = ({ classList, todaysDate }) => {
                     />
                   </TableCell>
                   <TableCell>
-                    <span className="text-sm">
+                    <span className="text-sm right">
                       {`${format(
                         new Date(`${_class.date}T${_class.time}`),
                         "MM-dd-yyyy h:mm aaaa"

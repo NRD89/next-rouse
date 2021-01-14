@@ -4,10 +4,11 @@ import DigitalCheckoutForm from "./DigitalCheckoutForm"
 import { AuthContext } from "../context/UserAuthContext"
 import { MdOpenInNew } from "react-icons/md"
 
-const DigitalModal = () => {
+const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
   const { isAuthenticated, user, redirectToManage } = useContext(AuthContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  // const [success, setSuccess] = useState(false)
+  const [loginSuccess, setLoginSuccess] = useState(false)
+  const [subscription, setSubscription] = useState("yearly")
 
   function openModal() {
     setIsModalOpen(true)
@@ -21,23 +22,33 @@ const DigitalModal = () => {
         {!isAuthenticated ? (
           <button
             onClick={openModal}
-            className={`font-bold uppercase tracking-tightish btn text-blue-600  bg-gray-100 hover:bg-gray-300 w-full `}
+            className={`${btnSize === "small" ? `btn-sm` : `btn`} ${
+              btnWidth === "full" ? `w-full` : ``
+            } ${
+              btnPriority === "secondary"
+                ? `bg-purple-500 hover:bg-purple-400`
+                : `bg-purple-600 hover:bg-purple-500`
+            } border-none text-white flex-shrink-0 mb-2 sm:mb-0 sm:mr-2`}
           >
-            Go Digital
+            {buttonText}
           </button>
         ) : (
           <button
-            onClick={redirectToManage}
-            className={`font-bold uppercase tracking-tightish btn text-blue-600  bg-gray-100 hover:bg-gray-300 w-full ${
+            onClick={openModal}
+            className={`${btnSize === "small" ? `btn-sm` : `btn`} ${
+              btnWidth === "full" ? `w-full` : ``
+            } ${
+              btnPriority === "secondary"
+                ? `bg-purple-500 hover:bg-purple-400`
+                : `bg-purple-600 hover:bg-purple-500`
+            } border-none text-white flex-shrink-0 mb-2 sm:mb-0 sm:mr-2 ${
               isAuthenticated && user.subTier === "digital"
                 ? "pointer-events-none"
                 : ""
             }`}
           >
             {isAuthenticated && user.subTier !== "digital" ? (
-              <>
-                Upgrade To Digital <MdOpenInNew className="w-6 h-6 p-1" />
-              </>
+              <>{buttonText}</>
             ) : (
               "Thanks for being a member!"
             )}
@@ -47,15 +58,27 @@ const DigitalModal = () => {
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalHeader className="text-center">
-          Digital Membership Total:{" "}
-          <span className="text-blue-600 font-extrabold">$19.99</span>
-          <br />
-          <small className="font-light">
-            Sign up for an account to continue to checkout.
-          </small>
+          {loginSuccess === true && (
+            <>
+              Digital Membership Total:{" "}
+              <span className="text-purple-600 font-extrabold">
+                {subscription === "yearly" ? `$199.99` : `$19.99`}
+              </span>
+            </>
+          )}
+          {loginSuccess === false && (
+            <p className="mb-6">
+              Sign up for an account to continue to checkout.
+            </p>
+          )}
         </ModalHeader>
         <ModalBody>
-          <DigitalCheckoutForm />
+          <DigitalCheckoutForm
+            loginSuccess={loginSuccess}
+            setLoginSuccess={setLoginSuccess}
+            subscription={subscription}
+            setSubscription={setSubscription}
+          />
         </ModalBody>
       </Modal>
     </>

@@ -9,12 +9,12 @@ const Slug = ({ instructor }) => {
   return (
     <Layout>
       <div className="mb-16 max-w-screen-lg mx-auto ">
-        <Card className="overflow-visible bg-gray-100 shadow-dark40">
+        <Card className="overflow-visible dark:bg-gray-800 border border-gray-100 dark:border-gray-600 shadow-xl dark:shadow-dark40">
           <CardBody>
             <div className="w-full px-4 lg:order-2 flex justify-center">
               <div className="relative">
                 <Avatar
-                  alt="..."
+                  alt={`${instructor[0].Title} Yoga Pose`}
                   src={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].avatar.formats.small.url}`}
                   loading="lazy"
                   className="w-48 h-48 absolute -m-20"
@@ -22,16 +22,14 @@ const Slug = ({ instructor }) => {
               </div>
             </div>
             <div className="flex flex-col justify-center w-full mt-32 text-center">
-              <h5 className="h5 uppercase font-semibold text-tertiary tracking-wide">
+              <h5 className="h5 font-red-hat-display uppercase font-semibold text-purple-600 tracking-widest">
                 Instructor
               </h5>
-              <h1 className="text-tertiary-darkest h1">
-                {instructor[0].Title}
-              </h1>
+              <h1 className="h1 font-red-hat-display">{instructor[0].Title}</h1>
             </div>
-            <div className="mt-10 pt-10 pb-6 border-t border-gray-300">
+            <div className="mt-10 pt-10 pb-6 border-t border-gray-300 dark:border-gray-100">
               <div className="flex flex-wrap justify-center">
-                <div className="w-full md:w-9/12 px-4 mb-4 leading-relaxed text-tertiary-darker">
+                <div className="w-full md:w-9/12 px-4 mb-4 leading-relaxed">
                   <ReactMarkdown
                     className="markdown"
                     children={instructor[0].Content}

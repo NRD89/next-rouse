@@ -2,7 +2,9 @@ import fetch from "node-fetch"
 import Stripe from "stripe"
 import getRawBody from "raw-body"
 const apiURL = process.env.API_URL
-const JWT = process.env.STRAPI_ADMIN_JWT
+// const JWT = process.env.STRAPI_ADMIN_JWT
+const identifier = process.env.ADMIN_IDENTIFIER
+const password = process.env.ADMIN_PASSWORD
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
@@ -13,9 +15,6 @@ export const config = {
 }
 
 const handler = async (req, res) => {
-  // const buf = await buffer(req)
-  // console.log(req)
-  // res.json("Yaaas!")
   if (req.method === "POST") {
     const rawBody = await getRawBody(req)
     const sig = req.headers["stripe-signature"]
@@ -34,15 +33,57 @@ const handler = async (req, res) => {
     }
 
     if (event.type === "customer.subscription.updated") {
+      const fetchAdmin = await fetch(`${apiURL}/auth/local/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          identifier,
+          password,
+        }),
+      })
+        .then((res) => res.json())
+        .catch((err) => console.error(JSON.stringify(err, null, 2)))
+
       const subscription = event.data.object
 
       const stripeID = subscription.customer
       const subTier = subscription.items.data[0].plan.metadata.subTier
       console.log("subTier =>", subTier)
+      console.log("stripeID =>", stripeID)
 
       const strapiData = await fetch(`${apiURL}/users?stripeId=${stripeID}`, {
         headers: {
-          Authorization: `Bearer ${JWT}`,
+          Authorization: `Bearer ${fetchAdmin.jwt}`,
+        },
+      })
+        .then((res) => res.json())
+        .catch((err) => console.error(JSON.stringify(err, null, 2)))
+      console.log("strapiData =>", strapiData)
+
+      const response = await fetch(`${apiURL}/users/${strapiData[0].id}`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${fetchAdmin.jwt}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          subTier,
+        }),
+      })
+        .then((res) => res.json())
+        .catch((err) => console.error(JSON.stringify(err, null, 2)))
+
+      console.log(JSON.stringify(response, null, 2))
+    } else if (event.type === "customer.subscription.deleted") {
+      const subscription = event.data.object
+
+      const stripeID = subscription.customer
+
+      const strapiData = await fetch(`${apiURL}/users?stripeId=${stripeID}`, {
+        headers: {
+          Authorization: `Bearer ${fetchAdmin.jwt}`,
         },
       })
         .then((res) => res.json())
@@ -52,11 +93,11 @@ const handler = async (req, res) => {
       const response = await fetch(`${apiURL}/users/${strapiData[0].id}`, {
         method: "PUT",
         headers: {
-          Authorization: `Bearer ${JWT}`,
+          Authorization: `Bearer ${fetchAdmin.jwt}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          subTier,
+          subTier: "canceled",
         }),
       })
         .then((res) => res.json())

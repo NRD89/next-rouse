@@ -5,11 +5,12 @@ import { fetchQuery } from "../../../utils"
 import { Badge } from "@windmill/react-ui"
 import { AiOutlinePlayCircle } from "react-icons/ai"
 import { GrYoga } from "react-icons/gr"
+import { FiUnlock } from "react-icons/fi"
 import Link from "next/link"
 
 const Index = ({ vods }) => {
   console.log(vods)
-  const { data: userData, loading, error, mutate } = useAuth()
+  const { data: userData, loading, error } = useAuth()
   useEffect(() => {
     if (typeof window === "undefined") {
       return
@@ -25,12 +26,16 @@ const Index = ({ vods }) => {
         <div className="container mt-4 mx-auto">
           <div className="flex flex-col justify-center items-center pb-10">
             <div>
-              <h1 className="h2 text-blue-500 text-center">
+              <h1
+                className="h2 font-red-hat-display text-center"
+                data-aos="fade-down"
+              >
                 Get To Know Your Instructors
               </h1>
               <p
-                className="text-gray-300 pt-5 text-lg"
-                style={{ maxWidth: `75ch` }}
+                className="pt-5 text-lg text-gray-600 dark:text-gray-400 max-w-prose"
+                data-aos="fade-down"
+                data-aos-delay="150"
               >
                 Enjoy our VoD (video on demand) classes where you get to know
                 your instructors' style and discover the class that fits your
@@ -38,13 +43,20 @@ const Index = ({ vods }) => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-12 md:pb-20"
+            data-aos-id-vids
+          >
             {vods.map((vod) => (
               <Link key={vod.id} href={`video-on-demand/${vod.Slug}`}>
-                <a>
+                <a
+                  data-aos="zoom-y-out"
+                  data-aos-delay="300"
+                  data-aos-anchor="[data-aos-id-vids]"
+                >
                   <div>
-                    <div className="bg-gray-200 w-full text-darkBlueBg rounded-lg cursor-pointer border border-blue-800 hover:shadow-dark40 hover:border-darkBlueBg transform hover:-translate-y-1 transition-all duration-200  overflow-hidden">
-                      <div className="relative pb-16/9">
+                    <div className="bg-gray-100 dark:bg-gray-800 w-full rounded-sm cursor-pointer hover:shadow-xl dark:hover:shadow-dark40 transform hover:-translate-y-1 transition-all duration-200  overflow-hidden">
+                      <div className="relative pb-9/16">
                         {" "}
                         <img
                           src={
@@ -55,8 +67,17 @@ const Index = ({ vods }) => {
                           loading="lazy"
                           className="absolute w-full h-full object-cover z-10"
                         />
-                        <div className="w-full h-full flex justify-center items-center absolute z-20 bg-tertiary bg-opacity-50">
-                          <AiOutlinePlayCircle className="w-12 h-12 text-gray-100" />
+                        <div className="w-full h-full flex justify-center items-center absolute z-20 bg-purple-600 bg-opacity-50">
+                          {userData && userData.subTier === "digital" ? (
+                            <AiOutlinePlayCircle className="w-12 h-12 text-gray-100" />
+                          ) : (
+                            <>
+                              <FiUnlock className="w-8 h-8 text-gray-100" />{" "}
+                              <p className="text-gray-100 font-bold">
+                                with Digital
+                              </p>{" "}
+                            </>
+                          )}
                         </div>
                       </div>
                       <div

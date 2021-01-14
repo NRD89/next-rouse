@@ -3,24 +3,27 @@ import Layout from "../components/Layout"
 const roadmap = () => {
   return (
     <Layout>
-      <div className="w-full text-center">
-        <h1 className="h1 text-blue-500 capitalize">Roadmap</h1>
+      <div className="pb-12 md:pb-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="h1 font-red-hat-display" data-aos="fade-down">
+            Roadmap
+          </h1>
+        </div>
       </div>
-      <div className="w-full">
-        <div
-          className="mx-auto text-gray-200 text-lg"
-          style={{ maxWidth: `75ch` }}
-        >
+      <div className="w-full" data-aos="fade-up" data-aos-delay="150">
+        <div className="mx-auto max-w-prose">
           <div>
-            <h2 className="h4 mt-4 text-gray-100">Hi everyone,</h2>
-            <p className="mt-4">
+            <h2 className="h4 mb-4 text-gray-900 dark:text-gray-100">
+              Hi everyone,
+            </h2>
+            <p className="mb-4 text-gray-600 dark:text-gray-400">
               I wanted to share some important dates coming up and what this
               means for you.
             </p>
           </div>
         </div>
         {/* Timeline */}
-        <div className="relative w-1/2 mx-auto my-10 text-gray-200">
+        <div className="relative w-1/2 mx-auto my-10  text-gray-600 dark:text-gray-400">
           <div
             className="border-r-2 border-gray-200 border-dotted absolute h-full top-0 z-0"
             style={{ left: `7px` }}
@@ -29,7 +32,7 @@ const roadmap = () => {
             <li className="mb-2">
               <div className="flex items-center mb-1">
                 <div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10"></div>
-                <div className="flex-1 ml-4 font-bold text-gray-100">
+                <div className="flex-1 ml-4 font-bold text-gray-900 dark:text-gray-100">
                   TBD in 2021….
                 </div>
               </div>
@@ -45,20 +48,17 @@ const roadmap = () => {
           </ul>
         </div>
 
-        <div
-          className="mx-auto text-gray-200 text-lg"
-          style={{ maxWidth: `75ch` }}
-        >
+        <div className="mx-auto text-gray-600 dark:text-gray-400 max-w-prose">
           <div>
-            <p className="mt-4">
+            <p className="mb-4">
               We will also be launching a Podcast soon. You'll have the
               opportunity to get to know your instructors better, listen to
               honest conversation about the yoga community and so much more!
             </p>
-            <p className="mt-4">
+            <p className="mb-4">
               A music festival/retreat is in the works. Updates coming soon!
             </p>
-            <p className="mt-4">Rouse Yoga appreciates your patience!</p>
+            <p className="mb-4">Rouse Yoga appreciates your patience!</p>
           </div>
         </div>
       </div>

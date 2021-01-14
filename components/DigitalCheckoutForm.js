@@ -8,9 +8,12 @@ import DigitalStripeForm from "../components/DigitalStripeForm"
 
 // const steps = [{ id: "signup" }, { id: "stripe" }]
 
-const DigitalCheckoutForm = () => {
-  const [loginSuccess, setLoginSuccess] = useState(false)
-
+const DigitalCheckoutForm = ({
+  loginSuccess,
+  setLoginSuccess,
+  subscription,
+  setSubscription,
+}) => {
   const stripePromise = loadStripe(
     "pk_test_51HmVlAKDngAkWhrbmLBCk0bD0StnLNK7w5SzEHLozOqYdqk3jvx2wzA92HKki2D5Q4wyVrwLjotSHzSjZJFVmrJ20014yMxFtl"
   )
@@ -22,13 +25,19 @@ const DigitalCheckoutForm = () => {
 
   return (
     <>
-      <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
-        <DigiSignUp
-          loginSuccess={loginSuccess}
-          setLoginSuccess={setLoginSuccess}
-        />
-      </motion.div>
-      {/* <AnimatePresence>
+      <AnimatePresence>
+        {!loginSuccess && (
+          <motion.div
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+          >
+            <DigiSignUp
+              loginSuccess={loginSuccess}
+              setLoginSuccess={setLoginSuccess}
+            />
+          </motion.div>
+        )}
         {loginSuccess && (
           <motion.div
             animate={{
@@ -41,11 +50,14 @@ const DigitalCheckoutForm = () => {
             exit={{ opacity: 0 }}
           >
             <Elements stripe={stripePromise}>
-              <DigitalStripeForm />
+              <DigitalStripeForm
+                subscription={subscription}
+                setSubscription={setSubscription}
+              />
             </Elements>
           </motion.div>
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
     </>
   )
 }

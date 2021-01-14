@@ -43,12 +43,12 @@ const Login = () => {
   return (
     <>
       {/* Form */}
-      <div className="max-w-sm mx-auto">
+      <div className="max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="150">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1"
                 htmlFor="email"
               >
                 Email <span className="text-red-600">*</span>
@@ -61,7 +61,7 @@ const Login = () => {
                 id="email"
                 type="email"
                 placeholder="email@email.com"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 required
               />
             </div>
@@ -69,7 +69,7 @@ const Login = () => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-100 text-sm font-medium mb-1"
+                className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1"
                 htmlFor="password"
               >
                 Password <span className="text-red-600">*</span>
@@ -81,7 +81,7 @@ const Login = () => {
                 value={password}
                 id="password"
                 type="password"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 placeholder="Enter your password"
                 required
               />
@@ -91,7 +91,7 @@ const Login = () => {
             <div className="w-full px-3">
               <button
                 type="submit"
-                className="btn text-white bg-tertiary hover:bg-tertiary-dark w-full"
+                className="btn text-white bg-purple-600 hover:bg-purple-500 w-full"
               >
                 {loading ? "Loading..." : "Log in"}
               </button>
@@ -103,10 +103,10 @@ const Login = () => {
           <p className="font-inter text-red-600">{error}</p>
         ) : null}
 
-        <div className="text-gray-300 text-center mt-6">
+        <div className="text-gray-500 text-center mt-6">
           Don't have a Rouse Yoga account?{" "}
           <Link href="/signup">
-            <a className="text-blue-500 hover:underline transition duration-150 ease-in-out">
+            <a className="text-purple-600 hover:underline transition duration-150 ease-in-out">
               Sign up
             </a>
           </Link>

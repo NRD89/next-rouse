@@ -15,7 +15,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer className="flex justify-center px-10 text-gray-100 bg-darkBlueBg pt-8">
+    <footer className="flex justify-center px-10 text-gray-100 pt-8">
       <div className="container py-6">
         <h1 className="text-center text-lg font-bold lg:text-2xl">
           There's so much more to come,
@@ -96,9 +96,9 @@ const Footer = () => {
         </div>
         <div className="flex w-full justify-center">
           <small>
-            © {new Date().getFullYear()}
+            &copy; {new Date().getFullYear()}
             {` `}
-            Rouse Yoga
+            Rouse Yoga. All rights reserved.
           </small>
         </div>
       </div>

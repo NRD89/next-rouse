@@ -19,11 +19,11 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
 
-  // useEffect(() => {
-  //   if (isAuthenticated === true) {
-  //     setLoginSuccess(true)
-  //   }
-  // }, [isAuthenticated])
+  useEffect(() => {
+    if (isAuthenticated === true) {
+      setLoginSuccess(true)
+    }
+  }, [isAuthenticated])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -46,25 +46,25 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
             setLoggedIn(true)
             // go("stripe")
             setLoginSuccess(true)
-            const token = Cookie.get("token")
-            setTimeout(() => {
-              const response = fetch("/api/sub-manage-link", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ token }),
-              })
-                .then(async (res) => await res.json())
-                .then((link) => {
-                  window.location.href = link
-                })
-                .catch((err) => console.error(JSON.stringify(err, null, 2)))
+            // const token = Cookie.get("token")
+            // setTimeout(() => {
+            //   const response = fetch("/api/sub-manage-link", {
+            //     method: "POST",
+            //     headers: {
+            //       "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify({ token }),
+            //   })
+            //     .then(async (res) => await res.json())
+            //     .then((link) => {
+            //       window.location.href = link
+            //     })
+            //     .catch((err) => console.error(JSON.stringify(err, null, 2)))
 
-              // console.log("response =>", response)
+            //   // console.log("response =>", response)
 
-              return response
-            }, 1500)
+            //   return response
+            // }, 1500)
           }
         })
       } catch (e) {
@@ -86,7 +86,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-400 text-sm font-medium mb-1"
+                className="block text-gray-600 dark:text-gray-400 text-sm font-medium mb-1"
                 htmlFor="name"
               >
                 User Name <span className="text-red-600">*</span>
@@ -99,7 +99,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
                 id="username"
                 type="text"
                 placeholder="Username"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 required
               />
             </div>
@@ -107,7 +107,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-400 text-sm font-medium mb-1"
+                className="block text-gray-600 dark:text-gray-400 text-sm font-medium mb-1"
                 htmlFor="email"
               >
                 Email <span className="text-red-600">*</span>
@@ -120,7 +120,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
                 id="email"
                 type="email"
                 placeholder="email@email.com"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 required
               />
             </div>
@@ -128,7 +128,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-400 text-sm font-medium mb-1"
+                className="block text-gray-600 dark:text-gray-400 text-sm font-medium mb-1"
                 htmlFor="password"
               >
                 Password <span className="text-red-600">*</span>
@@ -140,7 +140,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
                 value={password}
                 id="password"
                 type="password"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 placeholder="Enter your password"
                 required
               />
@@ -149,10 +149,10 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
           <div className="flex flex-wrap -mx-3 mb-4">
             <div className="w-full px-3">
               <label
-                className="block text-gray-400 text-sm font-medium mb-1"
+                className="block text-gray-600 dark:text-gray-400 text-sm font-medium mb-1"
                 htmlFor="password"
               >
-                Password <span className="text-red-600">*</span>
+                Confirm Password <span className="text-red-600">*</span>
               </label>
               <input
                 onChange={(e) => {
@@ -161,7 +161,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
                 value={confirmPassword}
                 id="confirm-password"
                 type="password"
-                className="form-input w-full text-gray-800"
+                className="form-input w-full"
                 placeholder="Enter your password"
                 required
               />
@@ -171,7 +171,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
             <div className="w-full px-3">
               <button
                 type="submit"
-                className="btn text-white bg-tertiary hover:bg-tertiary-dark w-full"
+                className="btn text-white bg-purple-600 hover:bg-purple-500 w-full"
               >
                 {loading
                   ? "Loading..."
@@ -184,9 +184,11 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
           <div className="text-sm text-gray-500 text-center mt-3">
             By creating an account, you agree to the{" "}
             <Link href="/terms-and-conditions">
-              <a className="text-blue-600 hover:underline transition duration-150 ease-in-out font-medium">
-                terms & conditions
-              </a>
+              <a className="underline">terms</a>
+            </Link>{" "}
+            ,
+            <Link href="/privacy-policy">
+              <a className="underline">privacy policy</a>
             </Link>
             .
           </div>
@@ -196,10 +198,10 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
           <p className="font-inter text-red-600">{error}</p>
         ) : null}
 
-        <div className="text-gray-600 text-center mt-6">
+        <div className="text-gray-500 text-center mt-6">
           Already have a Rouse Yoga account?{" "}
           <Link href="/login">
-            <a className="text-blue-600 hover:underline transition duration-150 ease-in-out font-medium">
+            <a className="text-purple-600 hover:underline transition duration-150 ease-in-out font-medium">
               Login
             </a>
           </Link>
