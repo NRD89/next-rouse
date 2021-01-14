@@ -16,8 +16,10 @@ export default async (req, res) => {
 
     if (subscription === "yearly") {
       subBillPeriod = process.env.DIGITAL_PRICE_YEARLY
+      console.log(subBillPeriod)
     } else {
       subBillPeriod = process.env.DIGITAL_PRICE_MONTHLY
+      console.log(subBillPeriod)
     }
 
     try {
