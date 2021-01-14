@@ -1,14 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=fallback");
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Red+Hat+Display:wght@500;700;900&family=Inter:wght@400;500;700&display=fallback");
-
-@font-face {
-  font-family: "Geomanist";
-  src: url("../public/fonts/geomanist-regular-webfont.woff2") format("woff2"),
-    url("../public/fonts/geomanist-regular-webfont.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* Start purging... */
 @tailwind base;
