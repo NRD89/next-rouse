@@ -5,7 +5,10 @@ import { VscChevronDown } from "react-icons/vsc"
 const ClassDescDropdown = ({ classTitle, classDesc }) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   return (
-    <div className="flex flex-col min-w-48 whitespace-normal">
+    <div
+      className="flex flex-col whitespace-normal"
+      style={{ minWidth: `200px` }}
+    >
       <Button
         onClick={() => toggleOpen()}
         size="small"

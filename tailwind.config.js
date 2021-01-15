@@ -80,7 +80,7 @@ module.exports = {
         "tertiary-lighter": "#BBB3FD",
         "tertiary-lighter": "#BBB3FD",
         "tertiary-light": "#8879FC",
-        tertiary: "#5540FB",
+        tertiary: "#267DEB",
         "tertiary-dark": "#3B2DB0",
         "tertiary-darker": "#221A64",
         "tertiary-darkest": "#110D32",
@@ -134,12 +134,12 @@ module.exports = {
         98: ".98",
       },
       animation: {
-        float: "float 6s ease-in-out infinite",
+        float: "float 4s ease-in-out infinite",
       },
       keyframes: {
         float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10%)" },
+          "0%, 100%": { transform: "translateY(-1.5%)" },
+          "50%": { transform: "translateY(1.5%)" },
         },
       },
       zIndex: {

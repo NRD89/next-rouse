@@ -1,5 +1,6 @@
 import Image from "next/image"
 import DigitalModal from "./DigitalModal"
+import ReactPlayer from "react-player"
 
 const HeroHome = () => {
   return (
@@ -7,8 +8,8 @@ const HeroHome = () => {
       {/* Background image */}
       <div className="absolute inset-0 h pt-16 box-content -z-1">
         <Image
-          className="absolute inset-0 w-full h-full object-cover opacity-25"
-          src="c_scale,f_auto,w_2000/v1610617520/indoors-PCD9ZJ7_zjo4bw.jpg"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          src="c_scale,f_auto,w_2000/v1610702114/rouse-hero-image_f3md0w.jpg"
           // width={1440}
           // height={577}
           alt="About"
@@ -36,7 +37,7 @@ const HeroHome = () => {
                   height="432"
                   alt="About hero"
                 /> */}
-                <video
+                {/* <video
                   className="opacity-70 rounded-sm"
                   width="768"
                   height="432"
@@ -50,7 +51,26 @@ const HeroHome = () => {
                     src="https://dp25d8rokln6s.cloudfront.net/rouse-hero-video.mp4"
                     type="video/mp4"
                   />
-                </video>
+                </video> */}
+                <ReactPlayer
+                  className="opacity-70 rounded-sm overflow-hidden"
+                  url="https://dp25d8rokln6s.cloudfront.net/rouse-hero-video.mp4"
+                  // url="http://64.225.36.253:5080/LiveApp/streams/621283582412670363663040.mp4"
+                  width="100%"
+                  height="100%"
+                  alt="About hero"
+                  muted={true}
+                  loop={true}
+                  playing={true}
+                  config={{
+                    file: {
+                      attributes: {
+                        preload: "auto",
+                      },
+                    },
+                  }}
+                  // light={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].Image.formats.medium.url}`}
+                />
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900"
                   aria-hidden="true"
@@ -62,9 +82,7 @@ const HeroHome = () => {
               >
                 <h1 className="h1 mb-4 md:text-6xl font-red-hat-display">
                   Empower Your Yoga <br />
-                  <span className="text-purple-600 dark:text-purple-500">
-                    Practice
-                  </span>
+                  <span className="text-purple-600">Practice</span>
                 </h1>
                 <h2 className="h4 mb-4 font-red-hat-display">
                   Try our Digital Membership free for 7 days

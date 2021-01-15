@@ -394,6 +394,7 @@ const Footer = () => {
             {` `}
             Rouse Yoga. All rights reserved.
           </div>
+          <div className="overflow-x-auto hidden px-2 text-purple-700 bg-purple-100"></div>
         </div>
       </div>
     </footer>

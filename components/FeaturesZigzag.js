@@ -1,6 +1,7 @@
 import React from "react"
 import Lottie from "react-lottie"
 import animationData from "../lottie/lf30_editor_mjhpwrzd.json"
+import Image from "next/image"
 
 function FeaturesZigzag() {
   const defaultOptions = {
@@ -24,14 +25,26 @@ function FeaturesZigzag() {
               Digital Yoga Class Memberships <br /> & More
             </h1>
             <div className="text-left">
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Our innovative yoga platform helps you unfold into a more
                 connected, healed, and calm YOU. With a variety of digital yoga
                 classes and instructors from around the country (United States),
                 you can choose the class that’s right for your practice.
               </p>
-              <Lottie options={defaultOptions} height={220} width={300} />
-              <p className="text-xl text-gray-600 dark:text-gray-400 pt-4">
+              {/* <Lottie options={defaultOptions} height={220} width={300} /> */}
+              <div className="w-full flex items-center justify-center my-10">
+                <div className="relative w-full sm:w-2/3">
+                  <Image
+                    className="rounded"
+                    src="c_scale,f_auto,q_80,w_800/v1610703761/rouse-star-down-dog_mnlu8p.jpg"
+                    width={400}
+                    height={267}
+                    alt="About"
+                    layout="responsive"
+                  />
+                </div>
+              </div>
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Beyond digital yoga classes, however, our vision is to deliver a
                 digital membership that fosters a community of togetherness. In
                 a world where isolation is the norm, we’re breaking down
@@ -51,7 +64,7 @@ function FeaturesZigzag() {
               >
                 <div className="relative inline-flex flex-row items-center w-full">
                   <div
-                    className="mx-auto rounded-sm opacity-70 dark:opacity-50 bg-gradient-to-r from-indigo-500"
+                    className="mx-auto rounded-sm bg-gradient-to-tl from-tertiary via-purple-600 to-purple-600"
                     // src={require("../images/zz-bg-section-1.jpg")}
                     // width="540"
                     // height="405"
@@ -66,28 +79,28 @@ function FeaturesZigzag() {
                     alt="Features 01"
                   /> */}
                   <img
-                    className="w-1/5 absolute animate-float"
+                    className="w-1/3 absolute animate-float"
                     src="/beginner-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ left: `5%` }}
+                    style={{ left: `2.5%` }}
                   />
                   <img
-                    className="w-1/5 absolute animate-float animation-delay-500"
+                    className="w-1/3 absolute animate-float animation-delay-500"
                     src="/intermediate-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ left: `40%` }}
+                    style={{ left: `33.333%` }}
                   />
                   <img
-                    className="w-1/5 absolute animate-float animation-delay-1000"
+                    className="w-1/3 absolute animate-float animation-delay-1000"
                     src="/advanced-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ right: `5%` }}
+                    style={{ right: `2.5%` }}
                   />
                 </div>
               </div>
@@ -97,7 +110,7 @@ function FeaturesZigzag() {
                 data-aos="fade-right"
               >
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <div className="font-architects-daughter text-xl text-indigo-500 mb-2">
+                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">
                     No cookie-cutter classes here
                   </div>
                   <h3 className="h3 font-red-hat-display mb-3">
@@ -113,7 +126,7 @@ function FeaturesZigzag() {
                   <ul className="text-lg text-gray-600 dark:text-gray-400 -mb-2">
                     <li className="flex items-center mb-2">
                       <svg
-                        className="w-3 h-3 fill-current text-indigo-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -123,7 +136,7 @@ function FeaturesZigzag() {
                     </li>
                     <li className="flex items-center mb-2">
                       <svg
-                        className="w-3 h-3 fill-current text-indigo-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -133,7 +146,7 @@ function FeaturesZigzag() {
                     </li>
                     <li className="flex items-center">
                       <svg
-                        className="w-3 h-3 fill-current text-indigo-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -155,7 +168,7 @@ function FeaturesZigzag() {
               >
                 <div className="relative inline-flex flex-row items-center w-full">
                   <div
-                    className="mx-auto rounded-sm opacity-70 dark:opacity-50 bg-gradient-to-l from-teal-500"
+                    className="mx-auto rounded-sm bg-gradient-to-tr from-tertiary via-purple-600 to-purple-600"
                     // src={require("../images/zz-section-2.jpg")}
                     // width="540"
                     // height="405"
@@ -170,28 +183,28 @@ function FeaturesZigzag() {
                     alt="Features 02"
                   /> */}
                   <img
-                    className="w-1/5 absolute animate-float"
+                    className="w-1/3 absolute animate-float"
                     src="/community-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ left: `5%` }}
+                    style={{ left: `2.5%` }}
                   />
                   <img
-                    className="w-1/5 absolute animate-float animation-delay-500"
+                    className="w-1/3 absolute animate-float animation-delay-500"
                     src="/acceptance-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ left: `40%` }}
+                    style={{ left: `33.333%` }}
                   />
                   <img
-                    className="w-1/5 absolute animate-float animation-delay-1000"
+                    className="w-1/3 absolute animate-float animation-delay-1000"
                     src="/inspiration-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ right: `5%` }}
+                    style={{ right: `2.5%` }}
                   />
                 </div>
               </div>
@@ -201,7 +214,7 @@ function FeaturesZigzag() {
                 data-aos="fade-left"
               >
                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                  <div className="font-architects-daughter text-xl text-teal-500 mb-2">
+                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">
                     We are here for you
                   </div>
                   <h3 className="h3 font-red-hat-display mb-3">
@@ -218,7 +231,7 @@ function FeaturesZigzag() {
                   <ul className="text-lg text-gray-600 dark:text-gray-400 -mb-2">
                     <li className="flex items-center mb-2">
                       <svg
-                        className="w-3 h-3 fill-current text-teal-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -228,7 +241,7 @@ function FeaturesZigzag() {
                     </li>
                     <li className="flex items-center mb-2">
                       <svg
-                        className="w-3 h-3 fill-current text-teal-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -238,7 +251,7 @@ function FeaturesZigzag() {
                     </li>
                     <li className="flex items-center">
                       <svg
-                        className="w-3 h-3 fill-current text-teal-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -260,7 +273,7 @@ function FeaturesZigzag() {
               >
                 <div className="relative inline-flex flex-row items-center w-full">
                   <div
-                    className="mx-auto rounded-sm opacity-70 dark:opacity-50 bg-gradient-to-r from-pink-500"
+                    className="mx-auto rounded-sm  bg-gradient-to-tl from-tertiary via-purple-600 to-purple-600"
                     // src={require("../images/zz-section-3.jpg")}
                     // width="540"
                     // height="405"
@@ -276,28 +289,28 @@ function FeaturesZigzag() {
                     // style={{ min-height: 150, max-height: 405 }}
                   /> */}
                   <img
-                    className="w-1/5 absolute animate-float"
+                    className="w-1/3 absolute animate-float"
                     src="mind-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ left: `5%` }}
+                    style={{ left: `2.5%` }}
                   />
                   <img
-                    className="w-1/5 absolute animate-float animation-delay-500"
+                    className="w-1/3 absolute animate-float animation-delay-500"
                     src="/body-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ left: `40%` }}
+                    style={{ left: `33.333%` }}
                   />
                   <img
-                    className="w-1/5 absolute animate-float animation-delay-1000"
+                    className="w-1/3 absolute animate-float animation-delay-1000"
                     src="/spirit-card.png"
                     width="116"
                     height="175"
                     alt="Features 01"
-                    style={{ right: `5%` }}
+                    style={{ right: `2.5%` }}
                   />
                 </div>
               </div>
@@ -307,7 +320,7 @@ function FeaturesZigzag() {
                 data-aos="fade-right"
               >
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <div className="font-architects-daughter text-xl text-pink-500 mb-2">
+                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">
                     Not just yoga
                   </div>
                   <h3 className="h3 font-red-hat-display mb-3">
@@ -323,7 +336,7 @@ function FeaturesZigzag() {
                   <ul className="text-lg text-gray-600 dark:text-gray-400 -mb-2">
                     <li className="flex items-center mb-2">
                       <svg
-                        className="w-3 h-3 fill-current text-pink-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -333,7 +346,7 @@ function FeaturesZigzag() {
                     </li>
                     <li className="flex items-center mb-2">
                       <svg
-                        className="w-3 h-3 fill-current text-pink-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -343,7 +356,7 @@ function FeaturesZigzag() {
                     </li>
                     <li className="flex items-center">
                       <svg
-                        className="w-3 h-3 fill-current text-pink-500 mr-2 flex-shrink-0"
+                        className="w-3 h-3 fill-current text-tertiary mr-2 flex-shrink-0"
                         viewBox="0 0 12 12"
                         xmlns="http://www.w3.org/2000/svg"
                       >
