@@ -26,6 +26,11 @@ export default class MyDocument extends Document {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5d5dff" />
           <meta name="msapplication-TileColor" content="#603cba" />
           <meta name="theme-color" content="#ffffff" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Red+Hat+Display:wght@500;700;900&family=Inter:wght@400;500;700&display=swap"
+            rel="stylesheet"
+          />
 
           <script
             dangerouslySetInnerHTML={{

@@ -5,7 +5,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 import axios from "axios"
 
 const defaultValues = {
-  user: { email: null, userName: "", subTier: "" },
+  user: { email: null, userName: "", subTier: "", hasHadTrial: null },
   loggedIn: false,
   registerUser: () => {},
   login: () => {},
@@ -58,6 +58,7 @@ export const AuthProvider = ({ children }) => {
           email: data.email,
           userName: data.username,
           subTier: data.subTier,
+          hasHadTrial: data.hasHadTrial,
         })
       })
     }

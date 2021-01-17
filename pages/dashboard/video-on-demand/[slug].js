@@ -48,7 +48,7 @@ const live = ({ vod }) => {
           </h1>
           <div className="flex flex-wrap w-full justify-center mt-6">
             <div className="px-3 w-full md:w-1/4">
-              {userData && userData.subTier === "digital" ? (
+              {userData && userData.hasHadTrial === true ? (
                 <button
                   onClick={redirectToManage}
                   className="btn text-white bg-purple-600 hover:bg-purple-500 w-full"

@@ -8,7 +8,7 @@ export default {
       small: "px-3 py-1 shadow-md text-sm",
     },
     primary: {
-      base: "text-white bg-tertiary border border-transparent",
+      base: "text-white bg-purple-600 border border-transparent",
       active:
         "active:bg-tertiary-light hover:bg-tertiary-dark focus:shadow-outline-tertiary-lighter",
       disabled: "opacity-50 cursor-not-allowed",

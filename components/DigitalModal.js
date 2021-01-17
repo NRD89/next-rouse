@@ -34,7 +34,11 @@ const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
           </button>
         ) : (
           <button
-            onClick={openModal}
+            onClick={
+              isAuthenticated && user.hasHadTrial === true
+                ? redirectToManage
+                : openModal
+            }
             className={`${btnSize === "small" ? `btn-sm` : `btn`} ${
               btnWidth === "full" ? `w-full` : ``
             } ${
@@ -47,8 +51,12 @@ const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
                 : ""
             }`}
           >
-            {isAuthenticated && user.subTier !== "digital" ? (
+            {isAuthenticated &&
+            user.subTier !== "digital" &&
+            user.hasHadTrial === false ? (
               <>{buttonText}</>
+            ) : isAuthenticated && user.hasHadTrial === true ? (
+              "Go Digital"
             ) : (
               "Thanks for being a member!"
             )}

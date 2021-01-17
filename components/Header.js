@@ -63,17 +63,6 @@ const Header = () => {
     return false
   }
 
-  // useEffect(() => {
-  //   if (typeof window === "undefined") {
-  //     return
-  //   }
-  //   if (darkMode) {
-  //     setTheme(theme === "dark")
-  //   } else {
-  //     setTheme(theme === "light")
-  //   }
-  // }, [darkMode])
-
   return (
     <header
       className={`fixed w-full z-30 bg-transparent transition duration-700 ease-in-out ${
@@ -276,7 +265,7 @@ const Header = () => {
               )}
               {user.subTier === "digital" ? null : (
                 <li>
-                  <div className="hidden md:block ml-4 lg:ml-0 text-sm">
+                  <div className="hidden md:block ml-4 text-sm">
                     <DigitalModal
                       buttonText="Start Free Trial"
                       btnSize="small"

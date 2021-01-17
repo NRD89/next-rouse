@@ -15,7 +15,7 @@ const DigitalCheckoutForm = ({
   setSubscription,
 }) => {
   const stripePromise = loadStripe(
-    "pk_live_51HmVlAKDngAkWhrbaPtjo45CeyyoqOCuQ9x1MrUeDZG3vWAl7YCpIHpBkhr6HYSBP2ZC79Wbz6EivBgWkuTEuILX00SVcxm9F0"
+    "pk_test_51HmVlAKDngAkWhrbmLBCk0bD0StnLNK7w5SzEHLozOqYdqk3jvx2wzA92HKki2D5Q4wyVrwLjotSHzSjZJFVmrJ20014yMxFtl"
   )
   // const MotionSignUp = motion.custom(DigiSignUp)
   // const { step, navigation } = useStep({ initialStep: 0, steps })

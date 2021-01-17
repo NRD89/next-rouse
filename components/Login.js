@@ -24,6 +24,7 @@ const Login = () => {
           email: res.user.email,
           userName: res.user.username,
           subTier: res.user.subTier,
+          hasHadTrial: res.user.hasHadTrial,
         })
         setLoading(false)
         setLoggedIn(true)

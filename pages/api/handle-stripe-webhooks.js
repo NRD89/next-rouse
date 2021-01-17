@@ -70,6 +70,7 @@ const handler = async (req, res) => {
         },
         body: JSON.stringify({
           subTier,
+          hasHadTrial: `${subTier === "digital" ? true : false}`,
         }),
       })
         .then((res) => res.json())

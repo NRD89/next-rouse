@@ -1,6 +1,6 @@
 import Image from "next/image"
 import DigitalModal from "./DigitalModal"
-import ReactPlayer from "react-player"
+// import ReactPlayer from "react-player"
 
 const HeroHome = () => {
   return (
@@ -37,22 +37,24 @@ const HeroHome = () => {
                   height="432"
                   alt="About hero"
                 /> */}
-                {/* <video
+                <video
                   className="opacity-70 rounded-sm"
-                  width="768"
-                  height="432"
-                  alt="About hero"
-                  autoPlay={true}
-                  muted={true}
+                  width="1000"
+                  height="562"
+                  alt="Rouse hero video of students watching live stream"
+                  autoPlay
+                  muted
                   controls={false}
-                  loop={true}
+                  loop
+                  playsInline
+                  preload="auto"
                 >
                   <source
                     src="https://dp25d8rokln6s.cloudfront.net/rouse-hero-video.mp4"
                     type="video/mp4"
                   />
-                </video> */}
-                <ReactPlayer
+                </video>
+                {/* <ReactPlayer
                   className="opacity-70 rounded-sm overflow-hidden"
                   url="https://dp25d8rokln6s.cloudfront.net/rouse-hero-video.mp4"
                   // url="http://64.225.36.253:5080/LiveApp/streams/621283582412670363663040.mp4"
@@ -65,12 +67,14 @@ const HeroHome = () => {
                   config={{
                     file: {
                       attributes: {
+                        autoPlay: true,
+                        muted: true,
                         preload: "auto",
                       },
                     },
                   }}
                   // light={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].Image.formats.medium.url}`}
-                />
+                /> */}
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900"
                   aria-hidden="true"

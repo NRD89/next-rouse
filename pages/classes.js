@@ -50,12 +50,15 @@ const classes = ({ classList, todaysDate }) => {
   return (
     <Layout>
       <div className="flex w-full justify-center">
-        <h1 className="h1 font-red-hat-display" data-aos="fade-down">
+        <h1
+          className="h1 font-red-hat-display text-center"
+          data-aos="fade-down"
+        >
           Class Schedule
         </h1>
       </div>
       <div className="flex w-full justify-center" data-aos="fade-up">
-        <TableContainer className="mt-10 max-w-screen-xl border border-gray-100 dark:border-black">
+        <TableContainer className="mt-10 max-w-screen-xl border border-gray-100 dark:border-gray-600">
           <Table className="whitespace-nowrap">
             <TableHeader>
               <TableRow>

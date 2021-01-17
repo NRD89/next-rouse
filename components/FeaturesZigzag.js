@@ -65,10 +65,6 @@ function FeaturesZigzag() {
                 <div className="relative inline-flex flex-row items-center w-full">
                   <div
                     className="mx-auto rounded-sm bg-gradient-to-tl from-tertiary via-purple-600 to-purple-600"
-                    // src={require("../images/zz-bg-section-1.jpg")}
-                    // width="540"
-                    // height="405"
-                    // alt="Features 01"
                     style={{ width: `100%`, maxWidth: 540, height: 405 }}
                   ></div>
                   {/* <img
@@ -78,30 +74,42 @@ function FeaturesZigzag() {
                     height="405"
                     alt="Features 01"
                   /> */}
-                  <img
+                  <div
                     className="w-1/3 absolute animate-float"
-                    src="/beginner-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ left: `2.5%` }}
-                  />
-                  <img
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/beginner-card_gg6tjv.png"
+                      width={192}
+                      height={475}
+                      alt="Beginner Level 1 Card"
+                      layout="responsive"
+                    />
+                  </div>
+                  <div
                     className="w-1/3 absolute animate-float animation-delay-500"
-                    src="/intermediate-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ left: `33.333%` }}
-                  />
-                  <img
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/intermediate-card_mitr8o.png"
+                      width={192}
+                      height={475}
+                      alt="Intermediate Level 2 Card"
+                      layout="responsive"
+                    />
+                  </div>
+                  <div
                     className="w-1/3 absolute animate-float animation-delay-1000"
-                    src="/advanced-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ right: `2.5%` }}
-                  />
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/advanced-card_safgr5.png"
+                      width={192}
+                      height={475}
+                      alt="Advanced Level 3 Card"
+                      layout="responsive"
+                    />
+                  </div>
                 </div>
               </div>
               {/* Content */}
@@ -182,30 +190,42 @@ function FeaturesZigzag() {
                     height="405"
                     alt="Features 02"
                   /> */}
-                  <img
+                  <div
                     className="w-1/3 absolute animate-float"
-                    src="/community-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ left: `2.5%` }}
-                  />
-                  <img
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/community-card_qbheag.png"
+                      width={192}
+                      height={475}
+                      alt="Yogi Community Card"
+                      layout="responsive"
+                    />
+                  </div>
+                  <div
                     className="w-1/3 absolute animate-float animation-delay-500"
-                    src="/acceptance-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ left: `33.333%` }}
-                  />
-                  <img
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/acceptance-card_r1f81c.png"
+                      width={192}
+                      height={475}
+                      alt="Acceptance Hand Over Heart Card"
+                      layout="responsive"
+                    />
+                  </div>
+                  <div
                     className="w-1/3 absolute animate-float animation-delay-1000"
-                    src="/inspiration-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ right: `2.5%` }}
-                  />
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/inspiration-card_lekfnf.png"
+                      width={192}
+                      height={475}
+                      alt="Inspirational Mediation Postition Card"
+                      layout="responsive"
+                    />
+                  </div>
                 </div>
               </div>
               {/* Content */}
@@ -280,38 +300,42 @@ function FeaturesZigzag() {
                     // alt="Features 02"
                     style={{ width: `100%`, maxWidth: 540, height: 405 }}
                   ></div>
-                  {/* <img
-                    className="max-w-full mx-auto md:max-w-none h-auto rounded"
-                    src={require("../images/zz-section-3.jpg")}
-                    width="540"
-                    height="405"
-                    alt="Features 02"
-                    // style={{ min-height: 150, max-height: 405 }}
-                  /> */}
-                  <img
+                  <div
                     className="w-1/3 absolute animate-float"
-                    src="mind-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ left: `2.5%` }}
-                  />
-                  <img
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/mind-card_assatz.png"
+                      width={192}
+                      height={475}
+                      alt="Mind Seed of Life Card"
+                      layout="responsive"
+                    />
+                  </div>
+                  <div
                     className="w-1/3 absolute animate-float animation-delay-500"
-                    src="/body-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ left: `33.333%` }}
-                  />
-                  <img
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/body-card_oys8tu.png"
+                      width={192}
+                      height={475}
+                      alt="Body Sri Yantra Card"
+                      layout="responsive"
+                    />
+                  </div>
+                  <div
                     className="w-1/3 absolute animate-float animation-delay-1000"
-                    src="/spirit-card.png"
-                    width="116"
-                    height="175"
-                    alt="Features 01"
                     style={{ right: `2.5%` }}
-                  />
+                  >
+                    <Image
+                      src="f_auto,q_auto:eco/v1610845478/spirit-card_fcfnu2.png"
+                      width={192}
+                      height={475}
+                      alt="Spirit Flower of Life Card"
+                      layout="responsive"
+                    />
+                  </div>
                 </div>
               </div>
               {/* Content */}
