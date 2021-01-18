@@ -2,7 +2,10 @@ import Layout from "../components/Layout"
 
 const PrivacyPolicy = () => {
   return (
-    <Layout>
+    <Layout
+      metaTitle="Privacy Policy"
+      metaDescription="Rouse Yoga's Privacy Policy."
+    >
       <div className="w-full text-center">
         <h1 className="h1 font-red-hat-display">Privacy Policy</h1>
       </div>

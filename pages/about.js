@@ -2,7 +2,10 @@ import Layout from "../components/Layout"
 
 const about = () => {
   return (
-    <Layout>
+    <Layout
+      metaTitle="About"
+      metaDescription="Mission Statement: To create a harmonious relationship between yoga and technology that cultivates a community of love and growth at a global level."
+    >
       <div className="pb-12 md:pb-20">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="h1 font-red-hat-display" data-aos="fade-down">

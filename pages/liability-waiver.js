@@ -2,7 +2,10 @@ import Layout from "../components/Layout"
 
 const LiabilityWaiver = () => {
   return (
-    <Layout>
+    <Layout
+      metaTitle="Liability Waiver"
+      metaDescription="Rouse Yoga Liability Waiver"
+    >
       <div className="w-full text-center">
         <h1 className="h1 font-red-hat-display">Rouse Yoga Liability Waiver</h1>
       </div>

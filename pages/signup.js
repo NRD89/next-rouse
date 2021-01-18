@@ -3,7 +3,10 @@ import SignUp from "../components/SignUp"
 
 const signup = () => {
   return (
-    <Layout>
+    <Layout
+      metaTitle="Signup"
+      metaDescription="Signup to become a Rouse Yoga member and checkout what our member's dashboard has to offer."
+    >
       <section>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div>

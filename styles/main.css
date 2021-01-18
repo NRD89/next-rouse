@@ -8,7 +8,7 @@
 
 /* Typography */
 p {
-  @apply text-base font-medium leading-relaxed;
+  @apply text-base leading-relaxed;
 }
 
 .h1 {

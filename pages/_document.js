@@ -1,10 +1,13 @@
 import Document, { Html, Head, Main, NextScript } from "next/document"
 
+import { GA_TRACKING_ID } from "../lib/gtag"
+
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -24,12 +27,30 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5d5dff" />
-          <meta name="msapplication-TileColor" content="#603cba" />
-          <meta name="theme-color" content="#ffffff" />
+          <meta name="msapplication-TileColor" content="#2b5797" />
+          <meta name="theme-color" content="#5D5DFF" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Red+Hat+Display:wght@500;700;900&family=Inter:wght@400;500;700&display=swap"
             rel="stylesheet"
+          />
+
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
           />
 
           <script

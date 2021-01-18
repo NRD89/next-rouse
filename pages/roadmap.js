@@ -2,7 +2,10 @@ import Layout from "../components/Layout"
 
 const roadmap = () => {
   return (
-    <Layout>
+    <Layout
+      metaTitle="Roadmap"
+      metaDescription="Here you can find future events or exciting upcoming news from Rouse Yoga."
+    >
       <div className="pb-12 md:pb-20">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="h1 font-red-hat-display" data-aos="fade-down">

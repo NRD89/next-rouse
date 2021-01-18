@@ -48,7 +48,10 @@ const classes = ({ classList, todaysDate }) => {
   }, [pageTable])
 
   return (
-    <Layout>
+    <Layout
+      metaTitle="Class Scedule"
+      metaDescription="Yoga class schedule listed from the current date. Vinyasa, Hatha, Yin, Ashtanga, Meditation, Restorative and Chair classes from beginner to advanced levels."
+    >
       <div className="flex w-full justify-center">
         <h1
           className="h1 font-red-hat-display text-center"

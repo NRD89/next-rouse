@@ -1,5 +1,4 @@
 import Header from "./Header"
-import Footer from "./Footer"
 import FooterNew from "./FooterNew"
 import Head from "next/head"
 
@@ -7,7 +6,7 @@ const Layout = ({ children, metaTitle, metaDescription }) => {
   return (
     <div className="flex flex-col overflow-hidden">
       <Head>
-        <title>{metaTitle}</title>
+        <title>{metaTitle} | Rouse Yoga</title>
         <meta name="description" content={metaDescription} />
       </Head>
       <Header />

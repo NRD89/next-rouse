@@ -2,7 +2,10 @@ import Layout from "../components/Layout"
 
 const TermsAndConditions = () => {
   return (
-    <Layout>
+    <Layout
+      metaTitle="Terms and Conditions"
+      metaDescription="Terms And Conditions agreement between User and Rouse Yoga"
+    >
       <div className="w-full text-center">
         <h1 className="h1 font-red-hat-display">Terms And Conditions</h1>
       </div>

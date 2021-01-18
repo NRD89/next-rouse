@@ -6,53 +6,10 @@ import Head from "next/head"
 
 const index = ({ instructors }) => {
   return (
-    <Layout>
-      {/* <div className="flex w-full justify-center">
-        <h1 className="h1 font-red-hat-display">Instructors</h1>
-      </div>
-      <section className="grid grid-cols-1 space-y-6 sm:space-y-0 sm:grid-cols-2 py-10 gap-1 sm:gap-6 lg:gap-10 items-stretch md:grid-cols-3 lg:grid-cols-4 max-w-screen-xl mx-auto">
-        {instructors.map((instructor) => (
-          <Card
-            key={instructor.id}
-            className="flex flex-col max-h-100  hover:shadow-xl dark:hover:shadow-dark40 rounded-sm"
-          >
-            <img
-              className="shadow-lg object-cover h-1/2 w-full"
-              alt={`${instructor.Title} Profile Image`}
-              src={
-                instructor.Image.formats !== null
-                  ? `${process.env.NEXT_PUBLIC_API_URL}${instructor.Image.formats.small.url}`
-                  : `${process.env.NEXT_PUBLIC_API_URL}${instructor.Image.url}`
-              }
-              loading="lazy"
-            />
-            <CardBody>
-              <h3 className="mb-4 font-semibold h4 text-tertiary-darkest">
-                {instructor.Title}
-              </h3>
-              <p className="mb-4 text-tertiary-darker">
-                {instructor.indexIntro}
-              </p>
-              <style jsx>{`
-                p {
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  display: -webkit-box;
-                  -webkit-line-clamp: 3;
-                  -webkit-box-orient: vertical;
-                }
-              `}</style>
-              <div>
-                <Button size="small" className="bg-tertiary-darkest">
-                  <Link href={`/instructors/${instructor.Slug}`}>
-                    <a className="text-sm text-gray-200 ">Read more</a>
-                  </Link>
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        ))}
-      </section> */}
+    <Layout
+      metaTitle="The instructors behind the screen"
+      metaDescription="Here you can get to know about our awesome instructors."
+    >
       <section>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div>

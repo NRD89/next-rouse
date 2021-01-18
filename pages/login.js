@@ -3,7 +3,10 @@ import Login from "../components/Login"
 
 const login = () => {
   return (
-    <Layout>
+    <Layout
+      metaTitle="Login"
+      metaDescription="Welcome back Rouse Yoga members! Use this page to login to your dashboard so you can watch live or pre-recorded Yoga flows."
+    >
       <section>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div>

@@ -7,7 +7,10 @@ import ReactPlayer from "react-player"
 const Slug = ({ instructor }) => {
   console.log(instructor[0])
   return (
-    <Layout>
+    <Layout
+      metaTitle={`Instructor ${instructor[0].Title}`}
+      metaDescription={instructor[0].indexIntro}
+    >
       <div className="mb-16 max-w-screen-lg mx-auto ">
         <Card className="overflow-visible dark:bg-gray-800 border border-gray-100 dark:border-gray-600 shadow-xl dark:shadow-dark40">
           <CardBody>
