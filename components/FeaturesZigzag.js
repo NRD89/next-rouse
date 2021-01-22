@@ -1,26 +1,12 @@
-import React from "react"
-import Lottie from "react-lottie"
-import animationData from "../lottie/lf30_editor_mjhpwrzd.json"
 import Image from "next/image"
 
 function FeaturesZigzag() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  }
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            {/* <div className="inline-flex text-sm font-semibold py-1 px-3 m-2 text-green-600 bg-green-200 rounded-full mb-4">
-              Reach goals that matter
-            </div> */}
             <h1 className="h2 font-red-hat-display mb-4">
               Digital Yoga Class Memberships <br /> & More
             </h1>
@@ -31,12 +17,11 @@ function FeaturesZigzag() {
                 classes and instructors from around the country (United States),
                 you can choose the class that’s right for your practice.
               </p>
-              {/* <Lottie options={defaultOptions} height={220} width={300} /> */}
               <div className="w-full flex items-center justify-center my-10">
                 <div className="relative w-full sm:w-2/3">
                   <Image
                     className="rounded"
-                    src="c_scale,f_auto,q_80,w_800/v1610703761/rouse-star-down-dog_mnlu8p.jpg"
+                    src="c_scale,f_auto,q_auto,dpr_1.5,w_400/v1610703761/rouse-star-down-dog_mnlu8p.jpg"
                     width={400}
                     height={267}
                     alt="About"
@@ -79,7 +64,7 @@ function FeaturesZigzag() {
                     style={{ left: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/beginner-card_gg6tjv.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/beginner-card_gg6tjv.png"
                       width={192}
                       height={475}
                       alt="Beginner Level 1 Card"
@@ -91,7 +76,7 @@ function FeaturesZigzag() {
                     style={{ left: `33.333%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/intermediate-card_mitr8o.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/intermediate-card_mitr8o.png"
                       width={192}
                       height={475}
                       alt="Intermediate Level 2 Card"
@@ -103,7 +88,7 @@ function FeaturesZigzag() {
                     style={{ right: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/advanced-card_safgr5.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/advanced-card_safgr5.png"
                       width={192}
                       height={475}
                       alt="Advanced Level 3 Card"
@@ -195,7 +180,7 @@ function FeaturesZigzag() {
                     style={{ left: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/community-card_qbheag.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/community-card_qbheag.png"
                       width={192}
                       height={475}
                       alt="Yogi Community Card"
@@ -207,7 +192,7 @@ function FeaturesZigzag() {
                     style={{ left: `33.333%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/acceptance-card_r1f81c.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/acceptance-card_r1f81c.png"
                       width={192}
                       height={475}
                       alt="Acceptance Hand Over Heart Card"
@@ -219,7 +204,7 @@ function FeaturesZigzag() {
                     style={{ right: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/inspiration-card_lekfnf.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/inspiration-card_lekfnf.png"
                       width={192}
                       height={475}
                       alt="Inspirational Mediation Postition Card"
@@ -305,7 +290,7 @@ function FeaturesZigzag() {
                     style={{ left: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/mind-card_assatz.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/mind-card_assatz.png"
                       width={192}
                       height={475}
                       alt="Mind Seed of Life Card"
@@ -317,7 +302,7 @@ function FeaturesZigzag() {
                     style={{ left: `33.333%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/body-card_oys8tu.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/body-card_oys8tu.png"
                       width={192}
                       height={475}
                       alt="Body Sri Yantra Card"
@@ -329,7 +314,7 @@ function FeaturesZigzag() {
                     style={{ right: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco/v1610845478/spirit-card_fcfnu2.png"
+                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/spirit-card_fcfnu2.png"
                       width={192}
                       height={475}
                       alt="Spirit Flower of Life Card"

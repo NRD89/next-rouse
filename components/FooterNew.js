@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha"
 
 const Footer = () => {
   const [email, setEmail] = useState("")
+  const [honeyPot, setHoneyPot] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(null)
@@ -18,8 +19,8 @@ const Footer = () => {
     event.preventDefault()
     setSubmitting(true)
 
-    const token = await reRef.current.executeAsync()
-    reRef.current.reset()
+    // const token = await reRef.current.executeAsync()
+    // reRef.current.reset()
 
     const response = await fetch("/api/sg-newsletter-contact-form", {
       method: "POST",
@@ -28,7 +29,7 @@ const Footer = () => {
       },
       body: JSON.stringify({
         email,
-        token,
+        honeyPot,
       }),
     })
 
@@ -36,9 +37,15 @@ const Footer = () => {
 
     if (data.errors) {
       setError(data.errors.message)
+      setTimeout(() => {
+        setError(null)
+      }, 3500)
     } else {
       setSuccess(true)
       console.log("successfully submitted to email list")
+      setTimeout(() => {
+        setSuccess(false)
+      }, 3500)
     }
 
     setSubmitting(false)
@@ -265,11 +272,11 @@ const Footer = () => {
               subscribe and stay informed.
             </p>
             <form onSubmit={handleSubmit}>
-              <ReCAPTCHA
+              {/* <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                 size="invisible"
                 ref={reRef}
-              />
+              /> */}
               <div className="flex flex-wrap mb-4">
                 <div className="w-full">
                   <label className="block text-sm sr-only" htmlFor="newsletter">
@@ -287,6 +294,17 @@ const Footer = () => {
                         setEmail(e.target.value)
                       }}
                       value={email}
+                    />
+                    <input
+                      type="checkbox"
+                      name="contact_me_by_fax_only"
+                      onChange={(e) => {
+                        setHoneyPot(e.target.checked)
+                      }}
+                      checked={honeyPot}
+                      className="hidden"
+                      tabIndex="-1"
+                      autoComplete="off"
                     />
                     <button
                       type="submit"
@@ -312,33 +330,16 @@ const Footer = () => {
                   </div>
                   {/* Success message */}
                   {success && (
-                    <p className="mt-2 text-green-600 text-sm">
+                    <p className="mt-2 text-green-600 text-sm transition-opacity">
                       Thanks for subscribing!
                     </p>
                   )}
                   {/* Error message */}
                   {error && (
-                    <p className="mt-2 text-red-600 text-sm">{error}</p>
+                    <p className="mt-2 text-red-600 text-sm transition-opacity">
+                      {error}
+                    </p>
                   )}
-                  <div className="pt-4 max-w-prose">
-                    <small className="small text-gray-600 dark:text-gray-400 ">
-                      This site is protected by reCAPTCHA and the Google{" "}
-                      <a
-                        className="underline"
-                        href="https://policies.google.com/privacy"
-                      >
-                        Privacy Policy
-                      </a>{" "}
-                      and{" "}
-                      <a
-                        className="underline"
-                        href="https://policies.google.com/terms"
-                      >
-                        Terms of Service
-                      </a>{" "}
-                      apply.
-                    </small>
-                  </div>
                 </div>
               </div>
             </form>

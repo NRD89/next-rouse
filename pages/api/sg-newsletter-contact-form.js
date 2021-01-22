@@ -2,8 +2,8 @@ const sgApiKey = process.env.SG_API_KEY
 import { recaptchaAuth } from "./utils/recaptcha-auth"
 
 const handler = async (req, res) => {
-  const { email, token } = req.body
-  const authRes = await recaptchaAuth({ token })
+  const { email, honeyPot } = req.body
+  const authRes = await recaptchaAuth({ honeyPot })
   console.log(email)
 
   if (authRes === "Success") {

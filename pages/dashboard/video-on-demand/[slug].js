@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import DashLayout from "../../../components/DashLayout"
 import { AuthContext } from "../../../context/UserAuthContext"
 import { useRouter } from "next/router"
-// import ReactPlayer from "react-player"
+import ReactPlayer from "react-player"
 import useAuth from "../../../hooks/useAuth"
 import { MdOpenInNew } from "react-icons/md"
 import { fetchQuery } from "../../../utils"
@@ -66,28 +66,35 @@ const live = ({ vod }) => {
         <div className="mx-auto max-w-screen-lg">
           <h1 className="h2 pb-10 text-blue-500 text-center">{`Flow With ${vod[0].instructors[0].Title}`}</h1>
           <div className="vid-container">
-            <iframe
+            {/* <iframe
               className="video"
               src={`https://live.rouse.yoga:5443/LiveApp/play.html?name=${vod[0].streamID}&autoplay=true&playOrder=hls&token=${liveAppToken}`}
               frameBorder="0"
               allowFullScreen
-            ></iframe>
+            ></iframe> */}
+            <ReactPlayer
+              className="react-player rounded"
+              url={`https://live.rouse.yoga:5443/LiveApp/streams/${vod[0].streamID}.m3u8?token=${liveAppToken}`}
+              // url="https://live.rouse.yoga:5443/LiveApp/streams/621283582412670363663040.mp4"
+              alt={`${vod[0].instructors[0].Title} 1 hour yoga flow video`}
+              width="100%"
+              height="100%"
+              controls={true}
+              // light={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].Image.formats.medium.url}`}
+            />
           </div>
         </div>
       )}
       <style jsx>{`
         .vid-container {
           position: relative;
-          width: 100%;
-          height: 0;
+          overflow: hidden;
           padding-bottom: 56.25%;
         }
         .video {
           position: absolute;
           top: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
         }
       `}</style>
     </DashLayout>

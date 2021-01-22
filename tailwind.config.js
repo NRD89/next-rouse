@@ -210,6 +210,7 @@ module.exports = {
       backgroundOpacity: ["dark"],
       display: ["dark"],
       opacity: ["dark"],
+      boxShadow: ["dark"],
       rotate: ["group-hover"],
       textColor: ["hover"],
       translate: ["group-hover"],

@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -31,12 +31,12 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#5D5DFF" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Red+Hat+Display:wght@500;700;900&family=Inter:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Red+Hat+Display:wght@700&family=Inter:wght@400;700&display=swap"
             rel="stylesheet"
           />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
+          {/* <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
@@ -62,6 +62,13 @@ export default class MyDocument extends Document {
               document.querySelector('html').classList.remove('dark');
           }        `,
             }}
+          /> */}
+
+          <script
+            async
+            defer
+            data-domain="rouse.yoga"
+            src="https://plausible.io/js/plausible.js"
           />
         </Head>
         <body className="font-inter antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 tracking-tight">

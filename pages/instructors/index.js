@@ -22,7 +22,7 @@ const index = ({ instructors }) => {
 
             {/* Team members */}
             <div
-              className="max-w-sm sm:max-w-5xl mx-auto sm:flex sm:flex-wrap sm:justify-center -my-6 sm:-my-8 sm:-mx-3"
+              className="max-w-sm sm:max-w-5xl mx-auto sm:flex sm:flex-wrap sm:justify-center -my-6 sm:-my-8"
               data-aos-id-team
             >
               {instructors.map((instructor) => (

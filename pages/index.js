@@ -6,6 +6,7 @@ import PricingTables from "../components/PricingTables"
 import DiscordWidget from "../components/DiscordWidget"
 import CtaFreeTrial from "../components/CtaFreeTrial"
 import FooterNew from "../components/FooterNew"
+import Stats from "../components/Stats"
 // import DigitalModal from "../components/DigitalModal"
 
 const Index = () => {
@@ -23,6 +24,7 @@ const Index = () => {
         <HeroHome />
         <FeaturesZigzag />
         <PricingTables />
+        <Stats />
         {/* <OffsetCards />
       <ImageTextCards />
       <PricingCards /> */}

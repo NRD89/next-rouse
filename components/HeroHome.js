@@ -9,7 +9,7 @@ const HeroHome = () => {
       <div className="absolute inset-0 h pt-16 box-content -z-1">
         <Image
           className="absolute inset-0 w-full h-full object-cover opacity-40"
-          src="c_scale,f_auto,w_2000/v1610702114/rouse-hero-image_f3md0w.jpg"
+          src="c_scale,f_auto,q_auto:eco,w_1500/v1610702114/rouse-hero-image_f3md0w.jpg"
           // width={1440}
           // height={577}
           alt="About"
@@ -38,7 +38,7 @@ const HeroHome = () => {
                   alt="About hero"
                 /> */}
                 <video
-                  className="opacity-70 rounded-sm"
+                  className="opacity-80 rounded-sm"
                   width="1000"
                   height="562"
                   alt="Rouse hero video of students watching live stream"
@@ -50,7 +50,7 @@ const HeroHome = () => {
                   preload="auto"
                 >
                   <source
-                    src="https://dp25d8rokln6s.cloudfront.net/rouse-hero-video.mp4"
+                    src="https://player.vimeo.com/external/502958485.hd.mp4?s=5fc97fe3868abe94ed5c500e6c145e5b43bdf43a&profile_id=174"
                     type="video/mp4"
                   />
                 </video>
@@ -86,7 +86,9 @@ const HeroHome = () => {
               >
                 <h1 className="h1 mb-4 md:text-6xl font-red-hat-display">
                   Empower Your Yoga <br />
-                  <span className="text-purple-600">Practice</span>
+                  <span className="text-purple-600 dark:text-gray-100">
+                    Practice
+                  </span>
                 </h1>
                 <h2 className="h4 mb-4 font-red-hat-display">
                   Try our Digital Membership free for 7 days
