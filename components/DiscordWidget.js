@@ -36,7 +36,7 @@ const DiscordWidget = () => {
             </p>
           </div>
           <div
-            className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-5 mb-8 md:mb-0 md:rtl flex justify-end items-center"
+            className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-5 mt-8 md:mt-0 md:rtl flex justify-center md:justify-end items-center"
             data-aos="fade-up"
           >
             <iframe
