@@ -98,6 +98,7 @@ export async function getStaticProps({ params }) {
 }
 export async function getStaticPaths() {
   const instructors = await fetchQuery("instructors")
+  console.log("instructors =>", instructors)
   const paths = instructors.map((instructor) => {
     return {
       params: { slug: String(instructor.Slug) },
