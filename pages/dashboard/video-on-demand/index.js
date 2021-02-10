@@ -21,7 +21,9 @@ const Index = ({ vods }) => {
   return (
     <DashLayout>
       {loading ? (
-        <h1 className="h2 text-blue-500">Loading...</h1>
+        <h1 className="h2 font-red-hat-display animate-pulse text-center">
+          Loading...
+        </h1>
       ) : (
         <div className="container mt-4 mx-auto">
           <div className="flex flex-col justify-center items-center pb-10">
@@ -33,7 +35,7 @@ const Index = ({ vods }) => {
                 Get To Know Your Instructors
               </h1>
               <p
-                className="pt-5 text-lg text-gray-600 dark:text-gray-400 max-w-prose"
+                className="pt-5 text-lg text-gray-700 dark:text-gray-300 max-w-prose"
                 data-aos="fade-down"
                 data-aos-delay="150"
               >
@@ -87,7 +89,7 @@ const Index = ({ vods }) => {
                         <div>
                           <Badge
                             type="primary"
-                            className="bg-tertiary-lighter inline-flex items-center"
+                            className="bg-purple-300 dark:text-gray-100 inline-flex items-center"
                           >
                             <GrYoga /> {vod.duration}
                           </Badge>

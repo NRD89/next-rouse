@@ -12,7 +12,10 @@ const signup = () => {
           <div>
             {/* Page header */}
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h1 className="h1 font-red-hat-display" data-aos="fade-down">
+              <h1
+                className="h2 sm:h1 font-red-hat-display"
+                data-aos="fade-down"
+              >
                 Join the Rouse Community
               </h1>
             </div>

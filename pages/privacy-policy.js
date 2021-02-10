@@ -7,11 +7,11 @@ const PrivacyPolicy = () => {
       metaDescription="Rouse Yoga's Privacy Policy."
     >
       <div className="w-full text-center">
-        <h1 className="h1 font-red-hat-display">Privacy Policy</h1>
+        <h1 className="h2 sm:h1 font-red-hat-display">Privacy Policy</h1>
       </div>
       <div className="w-full mt-10">
         <div className="mx-auto max-w-prose">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Protecting your private information is our priority. This Statement
             of Privacy applies to https://rouse.yoga and Rouse Yoga and governs
             data collection and usage. For the purposes of this Privacy Policy,
@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
             Collection of your Personal Information{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             In order to better provide you with products and services offered on
             our Site, Rouse Yoga may collect personally identifiable
             information, such as your:{" "}
@@ -33,31 +33,31 @@ const PrivacyPolicy = () => {
 
           <ul>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 First and Last Name
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 E-mail Address
               </p>
             </li>
           </ul>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             If you purchase Rouse Yoga's products and services, we collect
             billing and credit card information. This information is used to
             complete the purchase transaction.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Please keep in mind that if you directly disclose personally
             identifiable information or personally sensitive data through Rouse
             Yoga's public message boards, this information may be collected and
             used by others.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             We do not collect any personal information about you unless you
             voluntarily provide it to us. However, you may be required to
             provide certain personal information to us when you elect to use
@@ -77,12 +77,12 @@ const PrivacyPolicy = () => {
             Use of your Personal Information{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga collects and uses your personal information to operate
             its website(s) and deliver the services you have requested.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga may also use your personally identifiable information to
             inform you of other products or services available from Rouse Yoga
             and its affiliates.{" "}
@@ -92,12 +92,12 @@ const PrivacyPolicy = () => {
             Sharing Information with Third Parties{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga does not sell, rent or lease its customer lists to third
             parties.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga may share data with trusted partners to help perform
             statistical analysis, send you email or postal mail, provide
             customer support, or arrange for deliveries. All such third parties
@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
             maintain the confidentiality of your information.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga may disclose your personal information, without notice,
             if required to do so by law or in the good faith belief that such
             action is necessary to: (a) conform to the edicts of the law or
@@ -120,7 +120,7 @@ const PrivacyPolicy = () => {
             Tracking User Behavior{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga may keep track of the websites and pages our users visit
             within Rouse Yoga, in order to determine what Rouse Yoga services
             are the most popular. This data is used to deliver customized
@@ -133,7 +133,7 @@ const PrivacyPolicy = () => {
             Automatically Collected Information{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Information about your computer hardware and software may be
             automatically collected by Rouse Yoga. This information can include:
             your IP address, browser type, domain names, access times and
@@ -144,7 +144,7 @@ const PrivacyPolicy = () => {
 
           <h2 className="h4 font-red-hat-display mb-4">Use of Cookies </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             The Rouse Yoga website may use "cookies" to help you personalize
             your online experience. A cookie is a text file that is placed on
             your hard disk by a web page server. Cookies cannot be used to run
@@ -153,7 +153,7 @@ const PrivacyPolicy = () => {
             that issued the cookie to you.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             One of the primary purposes of cookies is to provide a convenience
             feature to save you time. The purpose of a cookie is to tell the Web
             server that you have returned to a specific page. For example, if
@@ -167,7 +167,7 @@ const PrivacyPolicy = () => {
             customized.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             You have the ability to accept or decline cookies. Most Web browsers
             automatically accept cookies, but you can usually modify your
             browser setting to decline cookies if you prefer. If you choose to
@@ -178,7 +178,7 @@ const PrivacyPolicy = () => {
 
           <h2 className="h4 font-red-hat-display mb-4">Links </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             This website contains links to other sites. Please be aware that we
             are not responsible for the content or privacy practices of such
             other sites. We encourage our users to be aware when they leave our
@@ -190,24 +190,24 @@ const PrivacyPolicy = () => {
             Security of your Personal Information{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga secures your personal information from unauthorized
             access, use, or disclosure. Rouse Yoga uses the following methods
             for this purpose:{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             {" "}
             - SSL Protocol
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             When personal information (such as a credit card number) is
             transmitted to other websites, it is protected through the use of
             encryption, such as the Secure Sockets Layer (SSL) protocol.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             We strive to take appropriate security measures to protect against
             unauthorized access to or alteration of your personal information.
             Unfortunately, no data transmission over the Internet or any
@@ -221,33 +221,33 @@ const PrivacyPolicy = () => {
 
           <h2 className="h4 font-red-hat-display mb-4">Right to Deletion </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Subject to certain exceptions set out below, on receipt of a
             verifiable request from you, we will:{" "}
           </p>
 
           <ul>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Delete your personal information from our records; and
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Direct any service providers to delete your personal information
                 from their records.
               </p>
             </li>
           </ul>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Please note that we may not be able to comply with requests to
             delete your personal information if it is necessary to:{" "}
           </p>
 
           <ul>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Complete the transaction for which the personal information was
                 collected, fulfill the terms of a written warranty or product
                 recall conducted in accordance with federal law, provide a good
@@ -257,33 +257,33 @@ const PrivacyPolicy = () => {
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Detect security incidents, protect against malicious, deceptive,
                 fraudulent, or illegal activity; or prosecute those responsible
                 for that activity;
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Debug to identify and repair errors that impair existing
                 intended functionality;
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Exercise free speech, ensure the right of another consumer to
                 exercise his or her right of free speech, or exercise another
                 right provided for by law;
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Comply with the California Electronic Communications Privacy
                 Act;
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Engage in public or peer-reviewed scientific, historical, or
                 statistical research in the public interest that adheres to all
                 other applicable ethics and privacy laws, when our deletion of
@@ -293,18 +293,18 @@ const PrivacyPolicy = () => {
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Enable solely internal uses that are reasonably aligned with
                 your expectations based on your relationship with us;
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Comply with an existing legal obligation; or
               </p>
             </li>
             <li>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Otherwise use your personal information, internally, in a lawful
                 manner that is compatible with the context in which you provided
                 the information.
@@ -316,7 +316,7 @@ const PrivacyPolicy = () => {
             Children Under Thirteen{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga does not knowingly collect personally identifiable
             information from children under the age of thirteen. If you are
             under the age of thirteen, you must get permission from your parent
@@ -327,7 +327,7 @@ const PrivacyPolicy = () => {
             E-mail Communications{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             From time to time, Rouse Yoga may contact you via email for the
             purpose of providing announcements, promotional offers, alerts,
             confirmations, surveys, and/or other general communication. In order
@@ -335,7 +335,7 @@ const PrivacyPolicy = () => {
             an email from Rouse Yoga or click on a link therein.{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             If you would like to stop receiving marketing or promotional
             communications via email from Rouse Yoga, you may opt out of such
             communications by Customers may unsubscribe by clicking on the
@@ -346,7 +346,7 @@ const PrivacyPolicy = () => {
             External Data Storage Sites{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             We may store your data on servers provided by third party hosting
             vendors with whom we have contracted.{" "}
           </p>
@@ -355,7 +355,7 @@ const PrivacyPolicy = () => {
             Changes to this Statement{" "}
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga reserves the right to change this Privacy Policy from
             time to time. We will notify you about significant changes in the
             way we treat personal information by sending a notice to the primary
@@ -369,21 +369,21 @@ const PrivacyPolicy = () => {
 
           <h2 className="h4 font-red-hat-display mb-4">Contact Information </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga welcomes your questions or comments regarding this
             Statement of Privacy. If you believe that Rouse Yoga has not adhered
             to this Statement, please contact Rouse Yoga at:{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Email Address:{" "}
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             support@rouse.yoga
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Effective as of November 11, 2020{" "}
           </p>
         </div>

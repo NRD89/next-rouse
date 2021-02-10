@@ -11,7 +11,7 @@ const Slug = ({ instructor }) => {
       metaTitle={`Instructor ${instructor[0].Title}`}
       metaDescription={instructor[0].indexIntro}
     >
-      <div className="mb-16 max-w-screen-lg mx-auto ">
+      <div className="mb-16 max-w-screen-lg mx-auto mt-20">
         <Card className="overflow-visible dark:bg-gray-800 border border-gray-100 dark:border-gray-600 shadow-xl dark:shadow-dark40">
           <CardBody>
             <div className="w-full px-4 lg:order-2 flex justify-center">
@@ -28,7 +28,9 @@ const Slug = ({ instructor }) => {
               <h5 className="h5 font-red-hat-display uppercase font-semibold text-purple-600 tracking-widest">
                 Instructor
               </h5>
-              <h1 className="h1 font-red-hat-display">{instructor[0].Title}</h1>
+              <h1 className="h2 sm:h1 font-red-hat-display">
+                {instructor[0].Title}
+              </h1>
             </div>
             <div className="mt-10 pt-10 pb-6 border-t border-gray-300 dark:border-gray-100">
               <div className="flex flex-wrap justify-center">

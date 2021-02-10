@@ -5,7 +5,7 @@ const DiscordWidget = () => {
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="max-w-3xl mx-auto text-center pb-12">
-          <h2 className="h2 font-red-hat-display">
+          <h2 className="h3 sm:h2 font-red-hat-display">
             Connect with The Rouse Community on{" "}
             <span className="text-purple-600 uppercase tracking-tighter">
               Discord

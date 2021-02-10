@@ -70,9 +70,9 @@ const CtaFreeTrial = () => {
             <h3 className="h3 font-red-hat-display mb-2">
               Take back your power.
               <br />
-              <span className="h4">Practice how you like.</span>
+              <span className="h4 leading-tight">Practice how you like.</span>
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-xl">
+            <p className="text-gray-700 dark:text-gray-300 text-xl">
               Use our intuitive and engaging platform to help you reconnect.
             </p>
 

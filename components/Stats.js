@@ -3,7 +3,7 @@ const Stats = () => {
     <section className="relative">
       {/* Background gradient (light version only) */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-128 bg-gradient-to-t from-gray-100 to-white pointer-events-none -z-10 dark:hidden"
+        className="absolute bottom-0 left-0 right-0 h-128 bg-gradient-to-t from-gray-100 via-white to-white pointer-events-none -z-10 dark:hidden"
         aria-hidden="true"
       ></div>
       {/* End background gradient (light version only) */}

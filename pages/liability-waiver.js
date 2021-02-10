@@ -7,11 +7,13 @@ const LiabilityWaiver = () => {
       metaDescription="Rouse Yoga Liability Waiver"
     >
       <div className="w-full text-center">
-        <h1 className="h1 font-red-hat-display">Rouse Yoga Liability Waiver</h1>
+        <h1 className="h2 sm:h1 font-red-hat-display">
+          Rouse Yoga Liability Waiver
+        </h1>
       </div>
       <div className="w-full mt-10">
         <div className="mx-auto max-w-prose">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             It is your responsibility to ensure you have consulted a doctor or
             physician before engaging in physical activity. Rouse Yoga is not
             responsible for any injury that occurs during your engagement in our
@@ -25,7 +27,7 @@ const LiabilityWaiver = () => {
             Please read the following:
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             I understand that yoga includes physical movements as well as an
             opportunity for relaxation, stress re-education and relief of
             muscular tension. As is the case with any physical activity, the
@@ -55,7 +57,7 @@ const LiabilityWaiver = () => {
             allowed by law in the State of California.
           </p>
 
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
             *Mental Health Services Disclaimer: Traditional yogic practices
             including but not limited to poses, breathing, and meditation are
             thought to improve some markers and symptoms related to various

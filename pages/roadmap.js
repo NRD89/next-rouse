@@ -8,7 +8,7 @@ const roadmap = () => {
     >
       <div className="pb-12 md:pb-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="h1 font-red-hat-display" data-aos="fade-down">
+          <h1 className="h2 sm:h1 font-red-hat-display" data-aos="fade-down">
             Roadmap
           </h1>
         </div>
@@ -19,14 +19,14 @@ const roadmap = () => {
             <h2 className="h4 mb-4 text-gray-900 dark:text-gray-100">
               Hi everyone,
             </h2>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
+            <p className="mb-4 text-gray-700 dark:text-gray-300">
               I wanted to share some important dates coming up and what this
               means for you.
             </p>
           </div>
         </div>
         {/* Timeline */}
-        <div className="relative w-1/2 mx-auto my-10  text-gray-600 dark:text-gray-400">
+        <div className="relative w-1/2 mx-auto my-10  text-gray-700 dark:text-gray-300">
           <div
             className="border-r-2 border-gray-200 border-dotted absolute h-full top-0 z-0"
             style={{ left: `7px` }}
@@ -51,7 +51,7 @@ const roadmap = () => {
           </ul>
         </div>
 
-        <div className="mx-auto text-gray-600 dark:text-gray-400 max-w-prose">
+        <div className="mx-auto text-gray-700 dark:text-gray-300 max-w-prose">
           <div>
             <p className="mb-4">
               We will also be launching a Podcast soon. You'll have the

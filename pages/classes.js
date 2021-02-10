@@ -54,7 +54,7 @@ const classes = ({ classList, todaysDate }) => {
     >
       <div className="flex w-full justify-center">
         <h1
-          className="h1 font-red-hat-display text-center"
+          className="h2 sm:h1 font-red-hat-display text-center"
           data-aos="fade-down"
         >
           Class Schedule
@@ -75,7 +75,13 @@ const classes = ({ classList, todaysDate }) => {
               {classes.map((_class, index) => (
                 <TableRow key={index}>
                   <TableCell>
-                    <Link href={`/instructors/${_class.instructor.Slug}`}>
+                    <Link
+                      href={
+                        _class.instructor.Title === "Adri Davidek"
+                          ? `/${_class.instructor.Slug}`
+                          : `/instructors/${_class.instructor.Slug}`
+                      }
+                    >
                       <a>
                         <div className="flex items-center text-sm">
                           <Avatar

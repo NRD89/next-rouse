@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
       metaDescription="Terms And Conditions agreement between User and Rouse Yoga"
     >
       <div className="w-full text-center">
-        <h1 className="h1 font-red-hat-display">Terms And Conditions</h1>
+        <h1 className="h2 sm:h1 font-red-hat-display">Terms And Conditions</h1>
       </div>
       <div className="w-full mt-10">
         <div className="mx-auto max-w-prose">
@@ -15,7 +15,7 @@ const TermsAndConditions = () => {
             Agreement between User and{" "}
             <a href="https://rouse.yoga">https://rouse.yoga</a>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Welcome to https://rouse.yoga. The https://rouse.yoga website (the
             "Site") is comprised of various web pages operated by Rouse Yoga.
             https://rouse.yoga is offered to you conditioned on your acceptance
@@ -24,16 +24,16 @@ const TermsAndConditions = () => {
             your agreement to all such Terms. Please read these terms carefully,
             and keep a copy of them for your reference.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             https://rouse.yoga is an E-Commerce Site.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             This website offers membership tiers to its users for yoga and dance
             classes. It will also sell fitness clothing, yoga equipment and
             other related products in the yoga industry.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Privacy</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Your use of https://rouse.yoga is subject to Rouse Yoga's Privacy
             Policy. Please review our Privacy Policy, which also governs the
             Site and informs users of our data collection practices.
@@ -41,7 +41,7 @@ const TermsAndConditions = () => {
           <h2 className="h4 font-red-hat-display mb-4">
             Electronic Communications
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Visiting https://rouse.yoga or sending emails to Rouse Yoga
             constitutes electronic communications. You consent to receive
             electronic communications and you agree that all agreements,
@@ -50,7 +50,7 @@ const TermsAndConditions = () => {
             requirement that such communications be in writing.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Your Account</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             If you use this site, you are responsible for maintaining the
             confidentiality of your account and password and for restricting
             access to your computer, and you agree to accept responsibility for
@@ -65,24 +65,24 @@ const TermsAndConditions = () => {
           <h2 className="h4 font-red-hat-display mb-4">
             Children Under Thirteen
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga does not knowingly collect, either online or offline,
             personal information from persons under the age of thirteen. If you
             are under 18, you may use https://rouse.yoga only with permission by
             a parent or guardian.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4"></p>
+          <p className="text-gray-700 dark:text-gray-300 mb-4"></p>
           <h2 className="h4 font-red-hat-display mb-4">
             Cancellation/Refund Policy
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             You may cancel your subscription at any time. Please contact us at
             support@rouse.yoga with any questions.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">
             Links to Third Party Sites/Third Party Services
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             https://rouse.yoga may contain links to other websites ("Linked
             Sites"). The Linked Sites are not under the control of Rouse Yoga
             and Rouse Yoga is not responsible for the contents of any Linked
@@ -92,7 +92,7 @@ const TermsAndConditions = () => {
             inclusion of any link does not imply endorsement by Rouse Yoga of
             the site or any association with its operators.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Certain services made available via https://rouse.yoga are delivered
             by third party sites and organizations. By using any product,
             service or functionality originating from the https://rouse.yoga
@@ -105,7 +105,7 @@ const TermsAndConditions = () => {
           <h2 className="h4 font-red-hat-display mb-4">
             No Unlawful or Prohibited Use/Intellectual Property
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             You are granted a non-exclusive, non-transferable, revocable license
             to access and use https://rouse.yoga strictly in accordance with
             these terms of use. As a condition of your use of the Site, you
@@ -117,7 +117,7 @@ const TermsAndConditions = () => {
             materials or information through any means not intentionally made
             available or provided for through the Site.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             All content included as part of the Service, such as text, graphics,
             logos, images, as well as the compilation thereof, and any software
             used on the Site, is the property of Rouse Yoga or its suppliers and
@@ -127,7 +127,7 @@ const TermsAndConditions = () => {
             restrictions contained in any such content and will not make any
             changes thereto.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             You will not modify, publish, transmit, reverse engineer,
             participate in the transfer or sale, create derivative works, or in
             any way exploit any of the content, in whole or in part, found on
@@ -146,7 +146,7 @@ const TermsAndConditions = () => {
           <h2 className="h4 font-red-hat-display mb-4">
             Use of Communication Services
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             The Site may contain bulletin board services, chat areas, news
             groups, forums, communities, personal web pages, calendars, and/or
             other message or communication facilities designed to enable you to
@@ -155,7 +155,7 @@ const TermsAndConditions = () => {
             Services only to post, send and receive messages and material that
             are proper and related to the particular Communication Service.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             By way of example, and not as a limitation, you agree that when
             using a Communication Service, you will not: defame, abuse, harass,
             stalk, threaten or otherwise violate the legal rights (such as
@@ -184,7 +184,7 @@ const TermsAndConditions = () => {
             addresses, without their consent; violate any applicable laws or
             regulations.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga has no obligation to monitor the Communication Services.
             However, Rouse Yoga reserves the right to review materials posted to
             a Communication Service and to remove any materials in its sole
@@ -192,7 +192,7 @@ const TermsAndConditions = () => {
             to any or all of the Communication Services at any time without
             notice for any reason whatsoever.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga reserves the right at all times to disclose any
             information as necessary to satisfy any applicable law, regulation,
             legal process or governmental request, or to edit, refuse to post or
@@ -207,7 +207,7 @@ const TermsAndConditions = () => {
             Managers and hosts are not authorized Rouse Yoga spokespersons, and
             their views do not necessarily reflect those of Rouse Yoga.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Materials uploaded to a Communication Service may be subject to
             posted limitations on usage, reproduction and/or dissemination. You
             are responsible for adhering to such limitations if you upload the
@@ -217,7 +217,7 @@ const TermsAndConditions = () => {
             Materials Provided to https://rouse.yoga or Posted on Any Rouse Yoga
             Web Page
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga does not claim ownership of the materials you provide to
             https://rouse.yoga (including feedback and suggestions) or post,
             upload, input or submit to any Rouse Yoga Site or our associated
@@ -231,13 +231,13 @@ const TermsAndConditions = () => {
             your Submission; and to publish your name in connection with your
             Submission.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             No compensation will be paid with respect to the use of your
             Submission, as provided herein. Rouse Yoga is under no obligation to
             post or use any Submission you may provide and may remove any
             Submission at any time in Rouse Yoga's sole discretion.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             By posting, uploading, inputting, providing or submitting your
             Submission you warrant and represent that you own or otherwise
             control all of the rights to your Submission as described in this
@@ -245,7 +245,7 @@ const TermsAndConditions = () => {
             you to provide, post, upload, input or submit the Submissions.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Third Party Accounts</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             You will be able to connect your Rouse Yoga account to third party
             accounts. By connecting your Rouse Yoga account to your third party
             account, you acknowledge and agree that you are consenting to the
@@ -255,7 +255,7 @@ const TermsAndConditions = () => {
             use this feature.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">International Users</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             The Service is controlled, operated and administered by Rouse Yoga
             from our offices within the USA. If you access the Service from a
             location outside the USA, you are responsible for compliance with
@@ -265,7 +265,7 @@ const TermsAndConditions = () => {
             regulations.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Indemnification</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             You agree to indemnify, defend and hold harmless Rouse Yoga, its
             officers, directors, employees, independent contractors, agents and
             third parties, for any losses, costs, liabilities and expenses
@@ -280,7 +280,7 @@ const TermsAndConditions = () => {
             any available defenses.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Arbitration</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             In the event the parties are not able to resolve any dispute between
             them arising out of or concerning these Terms and Conditions, or any
             provisions hereof, whether in contract, tort, or otherwise at law or
@@ -309,7 +309,7 @@ const TermsAndConditions = () => {
             survive the termination of these Terms and Conditions.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Class Action Waiver</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Any arbitration under these Terms and Conditions will take place on
             an individual basis; class arbitrations and
             class/representative/collective actions are not permitted. THE
@@ -323,14 +323,14 @@ const TermsAndConditions = () => {
             preside over any form of a representative or class proceeding.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Liability Disclaimer</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN OR
             AVAILABLE THROUGH THE SITE MAY INCLUDE INACCURACIES OR TYPOGRAPHICAL
             ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION HEREIN.
             ROUSE YOGA AND/OR ITS SUPPLIERS MAY MAKE IMPROVEMENTS AND/OR CHANGES
             IN THE SITE AT ANY TIME.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             ROUSE YOGA AND/OR ITS SUPPLIERS MAKE NO REPRESENTATIONS ABOUT THE
             SUITABILITY, RELIABILITY, AVAILABILITY, TIMELINESS, AND ACCURACY OF
             THE INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS
@@ -343,7 +343,7 @@ const TermsAndConditions = () => {
             INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY,
             FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL
             ROUSE YOGA AND/OR ITS SUPPLIERS BE LIABLE FOR ANY DIRECT, INDIRECT,
             PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL DAMAGES OR ANY DAMAGES
@@ -365,7 +365,7 @@ const TermsAndConditions = () => {
           <h2 className="h4 font-red-hat-display mb-4">
             Termination/Access Restriction
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga reserves the right, in its sole discretion, to terminate
             your access to the Site and the related services or any portion
             thereof at any time, without notice. To the maximum extent permitted
@@ -376,7 +376,7 @@ const TermsAndConditions = () => {
             any jurisdiction that does not give effect to all provisions of
             these Terms, including, without limitation, this section.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             You agree that no joint venture, partnership, employment, or agency
             relationship exists between you and Rouse Yoga as a result of this
             agreement or use of the Site. Rouse Yoga's performance of this
@@ -393,7 +393,7 @@ const TermsAndConditions = () => {
             matches the intent of the original provision and the remainder of
             the agreement shall continue in effect.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Unless otherwise specified herein, this agreement constitutes the
             entire agreement between the user and Rouse Yoga with respect to the
             Site and it supersedes all prior or contemporaneous communications
@@ -408,7 +408,7 @@ const TermsAndConditions = () => {
             in English.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Changes to Terms</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga reserves the right, in its sole discretion, to change the
             Terms under which https://rouse.yoga is offered. The most current
             version of the Terms will supersede all previous versions. Rouse
@@ -416,7 +416,7 @@ const TermsAndConditions = () => {
             informed of our updates.
           </p>
           <h2 className="h4 font-red-hat-display mb-4">Contact Us</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
             Rouse Yoga welcomes your questions or comments regarding the Terms:{" "}
             <br />
             Email Address:{" "}

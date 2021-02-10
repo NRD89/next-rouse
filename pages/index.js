@@ -22,9 +22,9 @@ const Index = () => {
       <Header />
       <main>
         <HeroHome />
+        <Stats />
         <FeaturesZigzag />
         <PricingTables />
-        <Stats />
         {/* <OffsetCards />
       <ImageTextCards />
       <PricingCards /> */}

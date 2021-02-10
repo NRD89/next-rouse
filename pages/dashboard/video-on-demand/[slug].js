@@ -33,7 +33,9 @@ const live = ({ vod }) => {
   return (
     <DashLayout>
       {loading ? (
-        <h1 className="h2">Loading...</h1>
+        <h1 className="h2 font-red-hat-display animate-pulse text-center">
+          Loading...
+        </h1>
       ) : userData && userData.subTier !== "digital" ? (
         <div className="flex flex-col justify-center items-center">
           <h1
@@ -64,7 +66,7 @@ const live = ({ vod }) => {
         </div>
       ) : (
         <div className="mx-auto max-w-screen-lg">
-          <h1 className="h2 pb-10 text-blue-500 text-center">{`Flow With ${vod[0].instructors[0].Title}`}</h1>
+          <h1 className="h2 pb-10 font-red-hat-display text-center">{`Flow With ${vod[0].instructors[0].Title}`}</h1>
           <div className="vid-container">
             {/* <iframe
               className="video"

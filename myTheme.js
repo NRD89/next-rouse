@@ -22,7 +22,7 @@ export default {
   // Modal
   modal: {
     base:
-      "w-full px-6 py-4 overflow-hidden bg-white border border-gray-100 dark:border-gray-600 rounded-t-sm dark:bg-gray-800 sm:rounded-sm sm:m-4 sm:max-w-xl shadow-2xl dark:shadow-dark40",
+      "w-full max-h-screen overflow-y-auto px-6 py-4 overflow-hidden bg-white border border-gray-100 dark:border-gray-600 rounded-t-sm dark:bg-gray-800 sm:rounded-sm sm:m-4 sm:max-w-xl shadow-2xl dark:shadow-dark40",
   },
   // Dropdown
   dropdown: {

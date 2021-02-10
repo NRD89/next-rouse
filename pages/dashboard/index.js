@@ -31,7 +31,9 @@ const dashboard = () => {
   return (
     <DashLayout>
       {!isAuthenticated || loading ? (
-        <h1 className="h1 font-red-hat-display">Loading...</h1>
+        <h1 className="h1 font-red-hat-display animate-pulse text-center">
+          Loading...
+        </h1>
       ) : (
         <section>
           <div
@@ -39,7 +41,7 @@ const dashboard = () => {
             data-aos="zoom-y-out"
           >
             <div className="px-4 pt-4">
-              <form action="#" className="flex flex-col space-y-8">
+              <form className="flex flex-col space-y-8">
                 <div>
                   <h3 className="text-2xl font-semibold font-red-hat-display">
                     User Information

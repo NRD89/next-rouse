@@ -23,7 +23,7 @@ const HeroHome = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-72 sm:pb-32 md:pt-40 md:pb-20">
+        <div className="pt-32 pb-96 xs:pb-80 sm:pb-32 md:pt-40 md:pb-20">
           <div className="text-center">
             <div className="relative flex justify-center items-center">
               <div
@@ -81,11 +81,11 @@ const HeroHome = () => {
                 ></div>
               </div>
               <div
-                className="absolute pt-72 sm:pt-40 md:pt-32"
+                className="absolute pt-80 xs:pt-72 sm:pt-40 md:pt-32 max-w-4xl"
                 data-aos="fade-down"
               >
-                <h1 className="h1 mb-4 md:text-6xl font-red-hat-display">
-                  Empower Your Yoga <br />
+                <h1 className="h1 sm:h1 mb-4 md:text-6xl font-red-hat-display">
+                  Empower Your Yoga{" "}
                   <span className="text-purple-600 dark:text-gray-100">
                     Practice
                   </span>
@@ -94,7 +94,7 @@ const HeroHome = () => {
                   Try our Digital Membership free for 7 days
                 </h2>
                 <p
-                  className="text-xl text-gray-600 max-w-prose mx-auto dark:text-gray-400"
+                  className="text-xl text-gray-700 max-w-prose mx-auto dark:text-gray-300"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
@@ -107,22 +107,8 @@ const HeroHome = () => {
                   data-aos="fade-down"
                   data-aos-delay="300"
                 >
-                  {/* <button
-                      className="btn border-none text-white bg-purple-600 hover:bg-purple-500 flex-shrink-0 mb-2 sm:mb-0 sm:mr-2"
-                      href="#0"
-                    >
-                      5 Day Free Trial
-                    </button> */}
                   <DigitalModal buttonText="Start Free Trial" />
-                  {/* <a
-                    className="btn text-gray-900 dark:text-white dark:hover:border-teal-200 hover:border-teal-800 bg-transparent border border-teal-500 flex-shrink-0"
-                    href="#0"
-                  >
-                    Go Digital
-                  </a> */}
                 </div>
-                {/* Success message */}
-                {/* <p className="text-center md:text-left mt-2 opacity-75 text-sm">Thanks for subscribing!</p> */}
               </div>
 
               {/* <div

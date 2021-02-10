@@ -96,13 +96,13 @@ const Footer = () => {
             </div>
             <div className="text-sm">
               <Link href="/terms-and-conditions">
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Terms
                 </a>
               </Link>{" "}
               ·{" "}
               <Link href="/privacy-policy">
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Privacy Policy
                 </a>
               </Link>
@@ -118,7 +118,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Web Studio
                   </a>
                 </Link>
@@ -128,7 +128,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   DynamicBox Flex
                   </a>
                 </Link>
@@ -138,7 +138,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Programming Forms
                   </a>
                 </Link>
@@ -148,7 +148,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Integrations
                   </a>
                 </Link>
@@ -158,7 +158,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Command-line
                   </a>
                 </Link>
@@ -175,7 +175,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Contact
                   </a>
                 </Link>
@@ -183,7 +183,7 @@ const Footer = () => {
               <li className="mb-2">
                 <a
                   href="mailto:support@rouse.yoga"
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out"
+                  className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out"
                 >
                   support@rouse.yoga
                 </a>
@@ -193,7 +193,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Blog
                   </a>
                 </Link>
@@ -203,7 +203,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Support Center
                   </a>
                 </Link>
@@ -213,7 +213,7 @@ const Footer = () => {
                   href="#"
                   
                 >
-                <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                   Partners
                   </a>
                 </Link> 
@@ -227,35 +227,35 @@ const Footer = () => {
             <ul className="text-sm">
               {/* <li className="mb-2">
                 <Link href="/">
-                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                  <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                     Home
                   </a>
                 </Link>
               </li> */}
               <li className="mb-2">
                 <Link href="/about">
-                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                  <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                     About Rouse Yoga
                   </a>
                 </Link>
               </li>
               <li className="mb-2">
                 <Link href="/roadmap">
-                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                  <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                     Roadmap
                   </a>
                 </Link>
               </li>
               <li className="mb-2">
                 <Link href="/instructors">
-                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                  <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                     Instructors
                   </a>
                 </Link>
               </li>
               <li className="mb-2">
                 <Link href="/classes">
-                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                  <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                     Classes
                   </a>
                 </Link>
@@ -266,7 +266,7 @@ const Footer = () => {
           {/* 5th block */}
           <div className="sm:col-span-6 md:col-span-4 lg:col-span-3 ">
             <h6 className="font-medium mb-2">Subscribe</h6>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
               There's so much more to come,
               <br />
               subscribe and stay informed.
@@ -390,7 +390,7 @@ const Footer = () => {
           </ul>
 
           {/* Copyrights note */}
-          <div className="text-sm text-gray-600 dark:text-gray-400 mr-4">
+          <div className="text-sm text-gray-700 dark:text-gray-300 mr-4">
             &copy; {new Date().getFullYear()}
             {` `}
             Rouse Yoga. All rights reserved.

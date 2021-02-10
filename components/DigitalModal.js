@@ -10,7 +10,8 @@ const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
   const [loginSuccess, setLoginSuccess] = useState(false)
   const [subscription, setSubscription] = useState("yearly")
 
-  function openModal() {
+  function openModal(event) {
+    event.preventDefault()
     setIsModalOpen(true)
   }
   function closeModal() {
@@ -55,7 +56,9 @@ const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
             user.subTier !== "digital" &&
             user.hasHadTrial === false ? (
               <>{buttonText}</>
-            ) : isAuthenticated && user.hasHadTrial === true ? (
+            ) : isAuthenticated &&
+              user.subTier !== "digital" &&
+              user.hasHadTrial === true ? (
               "Go Digital"
             ) : (
               "Thanks for being a member!"

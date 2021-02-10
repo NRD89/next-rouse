@@ -8,14 +8,17 @@ const index = ({ instructors }) => {
   return (
     <Layout
       metaTitle="The instructors behind the screen"
-      metaDescription="Here you can get to know about our awesome instructors."
+      metaDescription="Here you can get to know our awesome instructors."
     >
       <section>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div>
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h1 className="h1 font-red-hat-display" data-aos="fade-down">
+              <h1
+                className="h2 sm:h1 font-red-hat-display capitalize"
+                data-aos="fade-down"
+              >
                 The instructors behind the screen
               </h1>
             </div>
@@ -42,7 +45,7 @@ const index = ({ instructors }) => {
                     <h4 className="text-xl font-bold mb-1">
                       {instructor.Title}
                     </h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-center mb-3">
+                    <p className="text-gray-700 dark:text-gray-300 text-center mb-3">
                       {instructor.indexIntro}
                     </p>
                     <style jsx>{`
@@ -54,10 +57,16 @@ const index = ({ instructors }) => {
                         -webkit-box-orient: vertical;
                       }
                     `}</style>
-                    <div className="text-sm font-medium">
-                      <Link href={`/instructors/${instructor.Slug}`}>
+                    <div className="text-sm font-bold">
+                      <Link
+                        href={
+                          instructor.Title === "Adri Davidek"
+                            ? `/${instructor.Slug}`
+                            : `/instructors/${instructor.Slug}`
+                        }
+                      >
                         <a className="text-purple-600 hover:underline">
-                          Learn more
+                          Learn more...
                         </a>
                       </Link>
                     </div>
