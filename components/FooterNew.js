@@ -3,7 +3,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 import { FaYelp } from "react-icons/fa"
-import ReCAPTCHA from "react-google-recaptcha"
 
 const Footer = () => {
   const [email, setEmail] = useState("")

@@ -1,11 +1,11 @@
-import Layout from "../../components/Layout"
-import { fetchQuery, baseUrl } from "../../utils"
-import { Card, CardBody, Button, Avatar } from "@windmill/react-ui"
-import ReactMarkdown from "react-markdown"
-import ReactPlayer from "react-player"
+import Layout from "../../components/Layout";
+import { fetchQuery, baseUrl } from "../../utils";
+import { Card, CardBody, Button, Avatar } from "@windmill/react-ui";
+import ReactMarkdown from "react-markdown";
+import ReactPlayer from "react-player";
 
 const Slug = ({ instructor }) => {
-  console.log(instructor[0])
+  console.log(instructor[0]);
   return (
     <Layout
       metaTitle={`Instructor ${instructor[0].Title}`}
@@ -32,7 +32,7 @@ const Slug = ({ instructor }) => {
                 {instructor[0].Title}
               </h1>
             </div>
-            <div className="mt-10 pt-10 pb-6 border-t border-gray-300 dark:border-gray-100">
+            <div className="mt-10 pt-10 pb-6 border-t border-gray-300 dark:border-gray-600">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full md:w-9/12 px-4 mb-4 leading-relaxed">
                   <ReactMarkdown
@@ -42,18 +42,20 @@ const Slug = ({ instructor }) => {
                 </div>
               </div>
             </div>
-            <div className="player-wrapper w-full px-4 md:w-9/12 mx-auto mb-10">
-              <ReactPlayer
-                className="react-player rounded"
-                url={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].Video[0].url}`}
-                // url="http://64.225.36.253:5080/LiveApp/streams/621283582412670363663040.mp4"
-                alt={instructor[0].Video[0].alternativeText}
-                width="100%"
-                height="100%"
-                controls={true}
-                // light={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].Image.formats.medium.url}`}
-              />
-            </div>
+            {instructor[0].Video[0] ? (
+              <div className="player-wrapper w-full px-4 md:w-9/12 mx-auto mb-10">
+                <ReactPlayer
+                  className="react-player rounded"
+                  url={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].Video[0].url}`}
+                  // url="http://64.225.36.253:5080/LiveApp/streams/621283582412670363663040.mp4"
+                  alt={instructor[0].Video[0].alternativeText}
+                  width="100%"
+                  height="100%"
+                  controls={true}
+                  // light={`${process.env.NEXT_PUBLIC_API_URL}${instructor[0].Image.formats.medium.url}`}
+                />
+              </div>
+            ) : null}
           </CardBody>
         </Card>
       </div>
@@ -83,29 +85,29 @@ const Slug = ({ instructor }) => {
         }
       `}</style>
     </Layout>
-  )
-}
+  );
+};
 
-export default Slug
+export default Slug;
 
 export async function getStaticProps({ params }) {
-  const instructor = await fetchQuery("instructors", `${params.slug}`)
+  const instructor = await fetchQuery("instructors", `${params.slug}`);
   return {
     props: {
-      instructor,
-    },
-  }
+      instructor
+    }
+  };
 }
 export async function getStaticPaths() {
-  const instructors = await fetchQuery("instructors")
-  console.log("instructors =>", instructors)
-  const paths = instructors.map((instructor) => {
+  const instructors = await fetchQuery("instructors");
+  console.log("instructors =>", instructors);
+  const paths = instructors.map(instructor => {
     return {
-      params: { slug: String(instructor.Slug) },
-    }
-  })
+      params: { slug: String(instructor.Slug) }
+    };
+  });
   return {
     paths,
-    fallback: false,
-  }
+    fallback: false
+  };
 }

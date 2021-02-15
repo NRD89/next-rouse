@@ -49,7 +49,7 @@ const classes = ({ classList, todaysDate }) => {
 
   return (
     <Layout
-      metaTitle="Class Scedule"
+      metaTitle="Class Schedule"
       metaDescription="Yoga class schedule listed from the current date. Vinyasa, Hatha, Yin, Ashtanga, Meditation, Restorative and Chair classes from beginner to advanced levels."
     >
       <div className="flex w-full justify-center">
