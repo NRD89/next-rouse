@@ -35,7 +35,7 @@
     "lqip-loader": "^2.2.1",
     "next": "canary",
     "next-compose-plugins": "^2.2.0",
-    "next-on-netlify": "^2.6.0",
+    "next-on-netlify": "^2.8.7",
     "next-optimized-images": "^2.6.2",
     "next-themes": "^0.0.10",
     "next-videos": "1.4.0",

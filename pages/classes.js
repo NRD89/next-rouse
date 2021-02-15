@@ -19,10 +19,6 @@ import { formatToTimeZone } from "date-fns-timezone"
 import { useRouter } from "next/router"
 import Link from "next/link"
 
-// const PdfViewer = dynamic(() => import("../components/PdfViewer"), {
-//   ssr: false,
-// })
-
 const classes = ({ classList, todaysDate }) => {
   const { classes, classesConnection } = classList
   console.log(todaysDate)
