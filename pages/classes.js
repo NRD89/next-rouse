@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import Layout from "../components/Layout"
+import { useState, useEffect } from "react";
+import Layout from "../components/Layout";
 import {
   TableContainer,
   Table,
@@ -11,37 +11,38 @@ import {
   Pagination,
   Avatar,
   Badge,
-} from "@windmill/react-ui"
-import ClassDescDropdown from "../components/ClassDescDropdown"
-import { request, gql } from "graphql-request"
-import format from "date-fns/format"
-import { formatToTimeZone } from "date-fns-timezone"
-import { useRouter } from "next/router"
-import Link from "next/link"
+} from "@windmill/react-ui";
+import ClassDescDropdown from "../components/ClassDescDropdown";
+import { request, gql } from "graphql-request";
+import format from "date-fns/format";
+import { formatToTimeZone } from "date-fns-timezone";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const classes = ({ classList, todaysDate }) => {
-  const { classes, classesConnection } = classList
-  console.log(todaysDate)
+  const { classes, classesConnection } = classList;
+  //console.log(todaysDate);
+  //console.log(classesConnection.aggregate.count);
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const [pageTable, setPageTable] = useState(1)
+  const [pageTable, setPageTable] = useState(1);
 
-  const [dataTable, setDataTable] = useState([])
+  const [dataTable, setDataTable] = useState([]);
 
-  const resultsPerPage = 7
-  const totalResults = classesConnection.aggregate.count
+  const resultsPerPage = 6;
+  const totalResults = classesConnection.aggregate.count;
 
   function onPageChangeTable(p) {
-    setPageTable(p)
-    console.log(pageTable)
+    setPageTable(p);
+    //console.log(pageTable);
   }
 
   useEffect(() => {
     // setDataTable((pageTable - 1) * resultsPerPage, pageTable * resultsPerPage)
     // console.log(dataTable)
-    router.push(`/classes?page=${pageTable}`)
-  }, [pageTable])
+    router.push(`/classes?page=${pageTable}`);
+  }, [pageTable]);
 
   return (
     <Layout
@@ -71,13 +72,7 @@ const classes = ({ classList, todaysDate }) => {
               {classes.map((_class, index) => (
                 <TableRow key={index}>
                   <TableCell>
-                    <Link
-                      href={
-                        _class.instructor.Title === "Adri Davidek"
-                          ? `/${_class.instructor.Slug}`
-                          : `/instructors/${_class.instructor.Slug}`
-                      }
-                    >
+                    <Link href={`/instructors/${_class.instructor.Slug}`}>
                       <a>
                         <div className="flex items-center text-sm">
                           <Avatar
@@ -133,27 +128,27 @@ const classes = ({ classList, todaysDate }) => {
         </TableContainer>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default classes
+export default classes;
 
 export async function getServerSideProps({ query: { page = 1 } }) {
-  const { API_URL } = process.env
+  const { API_URL } = process.env;
 
-  const start = +page === 1 ? 0 : (+page - 1) * 7
+  const start = +page === 1 ? 0 : (+page - 1) * 6;
 
-  const endpoint = `${API_URL}/graphql`
+  const endpoint = `${API_URL}/graphql`;
 
-  const date = new Date()
+  const date = new Date();
   const todaysDate = formatToTimeZone(date, "YYYY-MM-DD", {
     timeZone: "America/Los_Angeles",
-  })
+  });
 
   const query = gql`
     query getClasses($start: Int, $todaysDate: Date) {
       classes(
-        limit: 7
+        limit: 6
         start: $start
         sort: "date:asc, time:asc"
         where: { date_gte: $todaysDate }
@@ -178,15 +173,15 @@ export async function getServerSideProps({ query: { page = 1 } }) {
         }
       }
     }
-  `
+  `;
 
   const variables = {
     start,
     todaysDate,
-  }
+  };
 
-  const data = await request(endpoint, query, variables)
-  console.log(JSON.stringify(data, undefined, 2))
+  const data = await request(endpoint, query, variables);
+  console.log(JSON.stringify(data, undefined, 2));
 
   return {
     props: {
@@ -194,5 +189,5 @@ export async function getServerSideProps({ query: { page = 1 } }) {
       page: page,
       todaysDate,
     },
-  }
+  };
 }
