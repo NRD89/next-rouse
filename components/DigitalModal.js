@@ -1,21 +1,21 @@
-import { useState, useContext } from "react"
-import { Modal, ModalHeader, ModalBody } from "@windmill/react-ui"
-import DigitalCheckoutForm from "./DigitalCheckoutForm"
-import { AuthContext } from "../context/UserAuthContext"
-import { MdOpenInNew } from "react-icons/md"
+import { useState, useContext } from "react";
+import { Modal, ModalHeader, ModalBody } from "@windmill/react-ui";
+import DigitalCheckoutForm from "./DigitalCheckoutForm";
+import { AuthContext } from "../context/UserAuthContext";
+import { MdOpenInNew } from "react-icons/md";
 
 const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
-  const { isAuthenticated, user, redirectToManage } = useContext(AuthContext)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [loginSuccess, setLoginSuccess] = useState(false)
-  const [subscription, setSubscription] = useState("yearly")
+  const { isAuthenticated, user, redirectToManage } = useContext(AuthContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [subscription, setSubscription] = useState("yearly");
 
   function openModal(event) {
-    event.preventDefault()
-    setIsModalOpen(true)
+    event.preventDefault();
+    setIsModalOpen(true);
   }
   function closeModal() {
-    setIsModalOpen(false)
+    setIsModalOpen(false);
   }
   return (
     <>
@@ -93,6 +93,6 @@ const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
         </ModalBody>
       </Modal>
     </>
-  )
-}
-export default DigitalModal
+  );
+};
+export default DigitalModal;

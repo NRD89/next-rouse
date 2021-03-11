@@ -41,30 +41,11 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
               email: res.user.email,
               userName: res.user.email,
               subTier: res.user.subTier,
+              hasHadTrial: res.user.hasHadTrial,
             })
             setLoading(false)
             setLoggedIn(true)
-            // go("stripe")
             setLoginSuccess(true)
-            // const token = Cookie.get("token")
-            // setTimeout(() => {
-            //   const response = fetch("/api/sub-manage-link", {
-            //     method: "POST",
-            //     headers: {
-            //       "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify({ token }),
-            //   })
-            //     .then(async (res) => await res.json())
-            //     .then((link) => {
-            //       window.location.href = link
-            //     })
-            //     .catch((err) => console.error(JSON.stringify(err, null, 2)))
-
-            //   // console.log("response =>", response)
-
-            //   return response
-            // }, 1500)
           }
         })
       } catch (e) {
@@ -162,7 +143,7 @@ const DigiSignUp = ({ loginSuccess, setLoginSuccess }) => {
                 id="confirm-password"
                 type="password"
                 className="form-input w-full"
-                placeholder="Enter your password"
+                placeholder="Confirm your password"
                 required
               />
             </div>

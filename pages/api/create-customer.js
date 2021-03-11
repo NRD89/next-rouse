@@ -33,6 +33,7 @@ const handler = async (req, res) => {
       stripeId,
       stripeSubId,
       subTier,
+      hasHadTrial: false
     }),
   })
     .then((res) => res.json())

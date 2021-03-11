@@ -1,36 +1,38 @@
-import { useState, useContext, useEffect } from "react"
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
-import { AuthContext } from "../context/UserAuthContext"
-import axios from "axios"
-import Cookie from "js-cookie"
-import { useRouter } from "next/router"
-import Link from "next/link"
-import { useTheme } from "next-themes"
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+import { useState, useContext, useEffect } from "react";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import axios from "axios";
+import Cookie from "js-cookie";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
+import { AuthContext } from "../context/UserAuthContext";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const DigitalStripeForm = ({ subscription, setSubscription }) => {
-  const { user } = useContext(AuthContext)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [success, setSuccess] = useState(null)
-  const token = Cookie.get("token")
-  const { theme } = useTheme()
+  const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const [coupon, setCoupon] = useState(null);
+  const token = Cookie.get("token");
+  const { theme } = useTheme();
 
-  const stripe = useStripe()
-  const elements = useElements()
+  const stripe = useStripe();
+  const elements = useElements();
 
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    setLoading(true)
+    event.preventDefault();
+    setLoading(true);
     const result = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
-    })
-    await handleStripePaymentMethod(result)
-    setLoading(false)
-  }
+    });
+    await handleStripePaymentMethod(result);
+    setLoading(false);
+  };
 
   // const getNewUser = async () => {
   //   const token = Cookie.get("token")
@@ -57,57 +59,71 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
 
   const handleStripePaymentMethod = async (result) => {
     if (result.error) {
-      setError(result.error.message)
+      setError(result.error.message);
     } else {
-      const response = await axios.post("/api/digital-sub-update", {
-        paymentMethodId: result.paymentMethod.id,
-        token,
-        subscription,
-      })
+      const response = await axios
+        .post("/api/digital-sub-update", {
+          paymentMethodId: result.paymentMethod.id,
+          token,
+          subscription,
+          coupon,
+        })
+        .then((res) => {
+          handleSubscription(res.data);
+        })
+        .catch((e) => {
+          setError(e.response.data.message);
+        });
 
-      const sub = await response.data
-      handleSubscription(sub)
-      console.log("sub =>", sub)
+      //const sub = await response;
+      //handleSubscription(sub);
+      //console.log("sub =>", sub);
     }
-  }
+  };
 
   const handleSubscription = (sub) => {
-    const { latest_invoice, status } = sub
-    const { payment_intent } = latest_invoice
+    const { latest_invoice, status } = sub;
+    const { payment_intent } = latest_invoice;
 
     if (payment_intent) {
-      const { client_secret, status } = payment_intent
+      const { client_secret, status } = payment_intent;
 
       if (status === "requires_action") {
         stripe.confirmCardPayment(client_secret).then(function (result) {
           if (result.error) {
             // The card was declined (i.e. insufficient funds, card has expired, etc)
-            setError(result.error.message)
+            setError(result.error.message);
           } else {
             // Success!
-            setSuccess("Successfully created a digitial membership!")
+            setSuccess("Successfully created a digitial membership!");
             setTimeout(() => {
-              router.push("/dashboard")
-            }, 2000)
+              router.push("/dashboard");
+            }, 2000);
           }
-        })
+        });
       } else {
         // No additional information was needed
-        setSuccess("Successfully created a digitial membership!")
+        setSuccess("Successfully created a digitial membership!");
         setTimeout(() => {
-          router.push("/dashboard")
-        }, 2000)
+          router.push("/dashboard");
+        }, 2000);
       }
+    } else if (status === "active") {
+      // No additional information was needed
+      setSuccess("Successfully created a digitial membership!");
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 2000);
     } else if (status === "trialing") {
       // No additional information was needed
-      setSuccess("Successfully created a digitial membership!")
+      setSuccess("Successfully created a digitial membership!");
       setTimeout(() => {
-        router.push("/dashboard")
-      }, 2000)
+        router.push("/dashboard");
+      }, 2000);
     } else {
-      console.log(`handleSubscription:: No payment information received!`)
+      console.log(`handleSubscription:: No payment information received!`);
     }
-  }
+  };
 
   const cardOptions = {
     iconStyle: "solid",
@@ -117,14 +133,11 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
         color: `${theme === "dark" ? `rgb(212, 212, 216)` : `rgb(63, 63, 69)`}`,
         fontWeight: 500,
         fontFamily: "Inter, Roboto, Open Sans, , sans-serif",
-        fontSize: "15px",
+        fontSize: "16px",
         borderColor: "rgb(212, 212, 216)",
         borderWidth: "1px",
         borderRadius: "0.25rem",
-        paddingTop: "0.75rem",
-        paddingRight: "1rem",
-        paddingBottom: "0.75rem",
-        paddingLeft: "1rem",
+
         fontSmoothing: "antialiased",
         ":-webkit-autofill": { color: "#fce883" },
         "::placeholder": { color: "#bfbfbf" },
@@ -134,7 +147,7 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
         color: "#ffc7ee",
       },
     },
-  }
+  };
 
   return (
     <div className="max-w-sm mx-auto">
@@ -170,8 +183,8 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
                   "text-gray-500 dark:text-gray-400"
                 }`}
                 onClick={(e) => {
-                  e.preventDefault()
-                  setSubscription("yearly")
+                  e.preventDefault();
+                  setSubscription("yearly");
                 }}
               >
                 Bill Yearly <span className="text-purple-500">-63%</span>
@@ -182,8 +195,8 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
                   "text-gray-500 dark:text-gray-400"
                 }`}
                 onClick={(e) => {
-                  e.preventDefault()
-                  setSubscription("monthly")
+                  e.preventDefault();
+                  setSubscription("monthly");
                 }}
               >
                 Bill Monthly
@@ -191,7 +204,7 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
             </div>
           </div>
 
-          <div className="w-full px-3">
+          <div className="w-full px-3 mb-4">
             <label
               className="block text-gray-600 dark:text-gray-400 text-sm font-medium mb-1"
               htmlFor="card"
@@ -201,6 +214,35 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
             <div className="border-gray-300 border rounded px-4 py-3">
               <CardElement options={cardOptions} />
             </div>
+          </div>
+          <div className="flex flex-wrap w-full">
+            <AnimatePresence>
+              {subscription === "monthly" ? (
+                <motion.div
+                  className="w-full px-3"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                >
+                  <label
+                    className="block text-gray-600 dark:text-gray-400 text-sm font-medium mb-1"
+                    htmlFor="coupon"
+                  >
+                    Promo Code
+                  </label>
+                  <input
+                    onChange={(e) => {
+                      setCoupon(e.target.value);
+                    }}
+                    value={coupon}
+                    id="coupon"
+                    type="text"
+                    placeholder="Promo Code"
+                    className="form-input w-full"
+                  />
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
           </div>
         </div>
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-3">
@@ -237,7 +279,7 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default DigitalStripeForm
+export default DigitalStripeForm;
