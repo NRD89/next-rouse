@@ -14,7 +14,7 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const [coupon, setCoupon] = useState(null);
+  const [coupon, setCoupon] = useState("");
   const token = Cookie.get("token");
   const { theme } = useTheme();
 
@@ -33,29 +33,6 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
     await handleStripePaymentMethod(result);
     setLoading(false);
   };
-
-  // const getNewUser = async () => {
-  //   const token = Cookie.get("token")
-
-  //   await fetch(`/api/get-customer`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ token }),
-  //   }).then(async (res) => {
-  //     // if res comes back not valid, token is not valid
-  //     // delete the token and log the user out on client
-  //     if (res.statusCode) {
-  //       console.log(res)
-  //       setUser(defaultValues.user)
-  //       return null
-  //     }
-  //     const data = await res.json()
-  //     console.log(data)
-  //     setUser(data)
-  //   })
-  // }
 
   const handleStripePaymentMethod = async (result) => {
     if (result.error) {
@@ -228,7 +205,7 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
                     className="block text-gray-600 dark:text-gray-400 text-sm font-medium mb-1"
                     htmlFor="coupon"
                   >
-                    Promo Code
+                    Promo Code**
                   </label>
                   <input
                     onChange={(e) => {
@@ -240,6 +217,7 @@ const DigitalStripeForm = ({ subscription, setSubscription }) => {
                     placeholder="Promo Code"
                     className="form-input w-full"
                   />
+                  <small>**If promo code is entered then free trial is not applicable.</small>
                 </motion.div>
               ) : null}
             </AnimatePresence>

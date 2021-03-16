@@ -13,10 +13,10 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Head>
-        <title>Home | Rouse Yoga</title>
+        <title>Online Yoga Classes & Live Streams | Rouse Yoga</title>
         <meta
           name="description"
-          content="Our innovative yoga platform offers live-streaming, VoD, and Discord technologies to create a truly interactive community. Easy to use and navigate, your membership helps you not just learn how to practice yoga, but how to find purpose in that practice."
+          content="Our innovative yoga platform offers online yoga livestreams, pre-recorded yoga classes, and Discord technologies to create a truly interactive community. Easy to use and navigate, your membership helps you not just learn how to practice yoga, but how to find purpose in that practice."
         />
       </Head>
       <Header />

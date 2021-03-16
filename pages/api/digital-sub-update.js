@@ -43,7 +43,6 @@ export default async (req, res) => {
         )}`
       );
 
-      
       const retrieveSub = await stripe.subscriptions.retrieve(stripeSubId);
       const params = {
         default_payment_method: newPaymentMethodId.id,
@@ -62,6 +61,7 @@ export default async (req, res) => {
         delete params.trial_end;
         params.coupon = coupon;
       }
+      console.log("coupon =>", coupon);
       const subscription = await stripe.subscriptions.update(
         stripeSubId,
         params
