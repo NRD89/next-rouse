@@ -9,7 +9,7 @@ const HeroHome = () => {
       <div className="absolute inset-0 h-[90vh] w-full box-content -z-1">
         <Image
           className="absolute inset-0 w-full h-full max-h-[90vh] object-cover opacity-40"
-          src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto:eco,w_1800/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
+          src="c_scale,f_auto,q_auto:eco,w_1800/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
           // src="c_scale,f_auto,q_auto:eco,w_1500/v1610702114/rouse-hero-image_f3md0w.jpg"
           // width={1440}
           // height={577}
@@ -25,9 +25,8 @@ const HeroHome = () => {
           aria-hidden="true"
         ></div>
         <div
-          className="absolute inset-0 w-full h-full mix-blend-color bg-animate animate-slow-reveal opacity-80 dark:opacity-70 transform rotate-180"
+          className="absolute inset-0 w-full h-full mix-blend-color bg-animate animate-slow-reveal opacity-80 dark:opacity-80 transform rotate-180"
           style={{
-            // backgroundImage: `url(https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco/v1616740765/mesh-gradient_jj3qx7.png)`,
             background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
             backgroundSize: `400% 400%`,
             height: `100%`,

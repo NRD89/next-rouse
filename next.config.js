@@ -6,8 +6,8 @@ const nextConfig = {
   // Target must be serverless
   target: "serverless",
   images: {
-    // loader: "cloudinary",
-    // path: "https://res.cloudinary.com/rouse-yoga/image/upload/",
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/rouse-yoga/image/upload/",
     domains: ["cdn.sanity.io", "res.cloudinary.com"],
   },
   // webpack: (config, { dev, isServer }) => {
