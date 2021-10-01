@@ -1,4 +1,4 @@
-const baseUrl = process.env.API_URL
+const baseUrl = "https://backend.rouse.yoga"
 async function fetchQuery(path, params = null) {
   let url
   if (params !== null) {

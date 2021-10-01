@@ -8,16 +8,29 @@
 
 /* Typography */
 p {
-  @apply text-base leading-relaxed;
+  @apply text-base leading-relaxed text-gray-700 dark:text-gray-300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply text-black dark:text-gray-100;
+  text-shadow: 0.05em 0.05em 0.1em rgb(0 0 0 / 26%), 0 0 0.05em rgb(15 3 86 / 22%);
 }
 
 @responsive {
   .h1 {
-    @apply text-4xl font-bold tracking-tighter;
+    @apply text-7xl font-bold uppercase tracking-tight;
   }
 
   .h2 {
-    @apply text-3xl font-bold tracking-tighter;
+    @apply text-5xl font-bold tracking-tight;
+  }
+
+  .h2-hero {
+    @apply text-5xl font-medium tracking-tight;
   }
 
   .h3 {
@@ -51,7 +64,7 @@ p {
 /* Buttons */
 .btn,
 .btn-sm {
-  @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out;
+  @apply font-medium inline-flex items-center justify-center rounded leading-snug transition duration-150 ease-in-out;
 }
 
 .btn {
@@ -172,4 +185,13 @@ p {
 
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }

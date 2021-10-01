@@ -22,13 +22,13 @@ const Index = () => {
       <Header />
       <main>
         <HeroHome />
-        <Stats />
+        {/* <Stats /> */}
         <FeaturesZigzag />
         <PricingTables />
         {/* <OffsetCards />
       <ImageTextCards />
       <PricingCards /> */}
-        <DiscordWidget />
+        {/* <DiscordWidget /> */}
         <CtaFreeTrial />
       </main>
       <FooterNew />

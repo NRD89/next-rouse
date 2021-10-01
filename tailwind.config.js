@@ -1,10 +1,7 @@
-const windmill = require("@windmill/react-ui/config")
+const windmill = require("@windmill/react-ui/config");
 
 module.exports = {
-  future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
-  },
+  mode: "jit",
   purge: [
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -14,25 +11,13 @@ module.exports = {
   theme: {
     screens: {
       xs: "375px",
-      // => @media (min-width: 375px) { ... }
-
       sm: "640px",
-      // => @media (min-width: 640px) { ... }
-
       md: "768px",
-      // => @media (min-width: 768px) { ... }
-
       lg: "1024px",
-      // => @media (min-width: 1024px) { ... }
-
       xl: "1280px",
-      // => @media (min-width: 1280px) { ... }
-
       "2xl": "1536px",
-      // => @media (min-width: 1536px) { ... }
     },
     extend: {
-      opacity: ["disabled"],
       colors: {
         gray: {
           50: "#FAFAFA",
@@ -94,7 +79,7 @@ module.exports = {
           900: "#702459",
         },
         "matte-black": "#212121",
-        darkBlueBg: "#031332",
+        darkBlueBg: "#1f1d2b",
         "tertiary-lightest": "#DDD9FE",
         "tertiary-lighter": "#BBB3FD",
         "tertiary-lighter": "#BBB3FD",
@@ -104,48 +89,40 @@ module.exports = {
         "tertiary-darker": "#221A64",
         "tertiary-darkest": "#110D32",
         "tertiary-matte-darkest": "#292547",
-        // "primary-lightest": "#DDD9FE",
-        // "primary-lighter": "#BBB3FD",
-        // "primary-lighter": "#BBB3FD",
-        // "primary-light": "#8879FC",
-        // primary: "#5540FB",
-        // "primary-dark": "#3B2DB0",
-        // "primary-darker": "#221A64",
         "primary-darkest": "#061D33",
         "primary-matte-darkest": "#092b4c",
         instagram: "#4C5FD7",
         facebook: "#3B5998",
         yelp: "#af0606",
       },
-
+      linearBorderGradients: {
+        colors: {
+          "purp-blue": ["#7146ea", "#0498eb"],
+        },
+      },
+      backgroundSize: {
+        animate: "200% 200%",
+      },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        "red-hat-display": ['"Red Hat Display"', "sans-serif"],
+        inter: ["Poppins", "sans-serif"],
+        "red-hat-display": ["Poppins", "sans-serif"],
         "architects-daughter": ['"Architects Daughter"', "sans-serif"],
       },
-      fontSize: {
-        xs: ["0.75rem", { lineHeight: "1.5" }],
-        sm: ["0.875rem", { lineHeight: "1.5" }],
-        base: ["1rem", { lineHeight: "1.5" }],
-        lg: ["1.125rem", { lineHeight: "1.5" }],
-        xl: ["1.25rem", { lineHeight: "1.5" }],
-        "2xl": ["1.63rem", { lineHeight: "1.35" }],
-        "3xl": ["2.63rem", { lineHeight: "1.24" }],
-        "4xl": ["3.5rem", { lineHeight: "1.18" }],
-        "5xl": ["4rem", { lineHeight: "1.16" }],
-        "6xl": ["5rem", { lineHeight: "1.11" }],
-      },
+      // fontSize: {
+      //   xs: ["0.75rem", { lineHeight: "1.5" }],
+      //   sm: ["0.875rem", { lineHeight: "1.5" }],
+      //   base: ["1rem", { lineHeight: "1.5" }],
+      //   lg: ["1.125rem", { lineHeight: "1.5" }],
+      //   xl: ["1.25rem", { lineHeight: "1.5" }],
+      //   "2xl": ["1.63rem", { lineHeight: "1.35" }],
+      //   "3xl": ["2.63rem", { lineHeight: "1.24" }],
+      //   "4xl": ["3.5rem", { lineHeight: "1.18" }],
+      //   "5xl": ["4rem", { lineHeight: "1.16" }],
+      //   "6xl": ["5rem", { lineHeight: "1.11" }],
+      // },
       inset: {
         "1/2": "50%",
         full: "100%",
-      },
-      letterSpacing: {
-        tighter: "-0.02em",
-        tight: "-0.01em",
-        normal: "0",
-        wide: "0.01em",
-        wider: "0.02em",
-        widest: "0.4em",
       },
       minWidth: {
         10: "2.5rem",
@@ -155,11 +132,28 @@ module.exports = {
       },
       animation: {
         float: "float 4s ease-in-out infinite",
+        "slow-reveal": "gradient 8s ease-in-out infinite",
+        blob: "blob 7s infinite",
       },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(-1.5%)" },
           "50%": { transform: "translateY(1.5%)" },
+        },
+        gradient: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        blob: {
+          "0%, 100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.2)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.8)",
+          },
         },
       },
       zIndex: {
@@ -172,9 +166,6 @@ module.exports = {
         "3/4": "75%",
         "1/1": "100%",
       },
-      // letterSpacing: {
-      //   tightish: "-.02em",
-      // },
       height: {
         scroll: "2000px",
       },
@@ -193,15 +184,11 @@ module.exports = {
             borderColor: theme("colors.gray.300"),
             borderRadius: theme("borderRadius.default"),
             "&:focus": {
-              outline: undefined,
-              boxShadow: undefined,
               borderColor: theme("colors.gray.500"),
             },
           },
           "input, textarea, multiselect, select": {
             backgroundColor: theme("colors.white"),
-            fontSize: undefined,
-            lineHeight: undefined,
             paddingTop: theme("spacing.3"),
             paddingRight: theme("spacing.4"),
             paddingBottom: theme("spacing.3"),
@@ -240,5 +227,6 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
+    require("tailwindcss-border-gradients")(),
   ],
-}
+};

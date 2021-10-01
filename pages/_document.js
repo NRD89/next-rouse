@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#5D5DFF" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Red+Hat+Display:wght@700&family=Inter:wght@400;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Poppins:wght@400;500;700;800&family=Inter:wght@400;600&display=swap"
             rel="stylesheet"
           />
 
@@ -71,7 +71,7 @@ export default class MyDocument extends Document {
             src="https://plausible.io/js/plausible.js"
           />
         </Head>
-        <body className="font-inter antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 tracking-tight">
+        <body className="font-inter antialiased bg-white text-gray-900 dark:bg-black dark:text-gray-100 tracking-tight">
           <Main />
           {/* Here we will mount our modal portal */}
           <div id="modal" />

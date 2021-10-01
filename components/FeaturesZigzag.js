@@ -21,7 +21,7 @@ function FeaturesZigzag() {
                 <div className="relative w-full sm:w-2/3">
                   <Image
                     className="rounded"
-                    src="c_scale,f_auto,q_auto,dpr_1.5,w_400/v1610703761/rouse-star-down-dog_mnlu8p.jpg"
+                    src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto,dpr_1.5,w_400/v1610703761/rouse-star-down-dog_mnlu8p.jpg"
                     width={400}
                     height={267}
                     alt="About"
@@ -64,7 +64,7 @@ function FeaturesZigzag() {
                     style={{ left: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/beginner-card_gg6tjv.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/beginner-card_gg6tjv.png"
                       width={192}
                       height={475}
                       alt="Beginner Level 1 Card"
@@ -76,7 +76,7 @@ function FeaturesZigzag() {
                     style={{ left: `33.333%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/intermediate-card_mitr8o.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/intermediate-card_mitr8o.png"
                       width={192}
                       height={475}
                       alt="Intermediate Level 2 Card"
@@ -88,7 +88,7 @@ function FeaturesZigzag() {
                     style={{ right: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/advanced-card_safgr5.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/advanced-card_safgr5.png"
                       width={192}
                       height={475}
                       alt="Advanced Level 3 Card"
@@ -176,7 +176,7 @@ function FeaturesZigzag() {
                     style={{ left: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/community-card_qbheag.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/community-card_qbheag.png"
                       width={192}
                       height={475}
                       alt="Yogi Community Card"
@@ -188,7 +188,7 @@ function FeaturesZigzag() {
                     style={{ left: `33.333%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/acceptance-card_r1f81c.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/acceptance-card_r1f81c.png"
                       width={192}
                       height={475}
                       alt="Acceptance Hand Over Heart Card"
@@ -200,7 +200,7 @@ function FeaturesZigzag() {
                     style={{ right: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/inspiration-card_lekfnf.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/inspiration-card_lekfnf.png"
                       width={192}
                       height={475}
                       alt="Inspirational Mediation Postition Card"
@@ -282,7 +282,7 @@ function FeaturesZigzag() {
                     style={{ left: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/mind-card_assatz.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/mind-card_assatz.png"
                       width={192}
                       height={475}
                       alt="Mind Seed of Life Card"
@@ -294,7 +294,7 @@ function FeaturesZigzag() {
                     style={{ left: `33.333%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/body-card_oys8tu.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/body-card_oys8tu.png"
                       width={192}
                       height={475}
                       alt="Body Sri Yantra Card"
@@ -306,7 +306,7 @@ function FeaturesZigzag() {
                     style={{ right: `2.5%` }}
                   >
                     <Image
-                      src="f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/spirit-card_fcfnu2.png"
+                      src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_192,dpr_1.5/v1610845478/spirit-card_fcfnu2.png"
                       width={192}
                       height={475}
                       alt="Spirit Flower of Life Card"

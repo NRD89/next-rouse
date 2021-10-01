@@ -1,21 +1,6 @@
 [build]
 command = "npm run build"
-functions = "out_functions"
-publish = "out_publish"
-
-[dev]
-functions = "out_functions"
-publish = "out_publish"
-# We manually set the framework to static, otherwise Netlify automatically
-# detects Next.js and redirects do not work.
-# Read more: https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
-framework = "#static"
+publish = "out"
 
 [[plugins]]
-package = "netlify-plugin-cache-nextjs"
-# These options will cache the build directory at `${NETLIFY_BASE}/frontend/.next-build`
-[plugins.inputs]
-# The path to the build directory
-# build_dir_path = "frontend"
-# Custom build directory if you aren't using `.next` (https://nextjs.org/docs/api-reference/next.config.js/setting-a-custom-build-directory)
-custom_build_dir_name = "out_publish"
+package = "@netlify/plugin-nextjs"

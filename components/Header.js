@@ -1,13 +1,13 @@
-import { useState, useEffect, useContext } from "react"
-import { AuthContext } from "../context/UserAuthContext"
-import Link from "next/link"
-import Image from "next/image"
-import { Dropdown, DropdownItem, Badge, Button } from "@windmill/react-ui"
-import { motion } from "framer-motion"
-import { CgProfile } from "react-icons/cg"
-import { useTheme } from "next-themes"
-import { cache } from "swr"
-import DigitalModal from "./DigitalModal"
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../context/UserAuthContext";
+import Link from "next/link";
+import Image from "next/image";
+import { Dropdown, DropdownItem, Badge, Button } from "@windmill/react-ui";
+import { motion } from "framer-motion";
+import { CgProfile } from "react-icons/cg";
+import { useTheme } from "next-themes";
+import { cache } from "swr";
+import DigitalModal from "./DigitalModal";
 
 // import useAuth from "../hooks/useAuth"
 
@@ -19,58 +19,60 @@ const Path = (props) => (
     strokeLinecap="square"
     {...props}
   />
-)
+);
 
 const Header = () => {
-  const { user, setUser, logout, isAuthenticated } = useContext(AuthContext)
+  const { user, setUser, logout, isAuthenticated } = useContext(AuthContext);
   // const { mutate } = useAuth()
-  const [top, setTop] = useState(true)
-  const [isOpen, setIsOpen] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [top, setTop] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   function toggleDropdown() {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
   function togglePopUp() {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpen(!isMenuOpen);
   }
 
   // detect whether user has scrolled the page down by 10px
   useEffect(() => {
     const scrollHandler = () => {
-      window.pageYOffset > 10 ? setTop(false) : setTop(true)
-    }
-    window.addEventListener("scroll", scrollHandler)
-    return () => window.removeEventListener("scroll", scrollHandler)
-  }, [top])
+      window.pageYOffset > 10 ? setTop(false) : setTop(true);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
 
-  const [isMounted, setIsMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [isMounted, setIsMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setIsMounted(true)
-  }, [])
+    setIsMounted(true);
+  }, []);
 
   const switchTheme = () => {
     if (isMounted) {
-      setTheme(theme === "dark" ? "light" : "dark")
+      setTheme(theme === "dark" ? "light" : "dark");
     }
-  }
+  };
 
   const isDarkMode = () => {
     if (theme === "dark") {
-      return true
+      return true;
     }
-    return false
-  }
+    return false;
+  };
 
   return (
     <header
-      className={`fixed w-full z-30 bg-transparent transition duration-700 ease-in-out ${
+      className={`fixed w-full z-30 ${
+        top && "bg-transparent"
+      } transition duration-700 ease-in-out ${
         !top &&
-        "bg-white blur shadow-lg bg-opacity-90 dark:bg-gray-900 dark:shadow-dark40 dark:bg-opacity-90"
+        "bg-white backdrop-filter backdrop-blur shadow-lg bg-opacity-80 dark:bg-black dark:shadow-dark40 dark:bg-opacity-75"
       }`}
     >
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
           {/* Site branding */}
           <div
@@ -123,13 +125,13 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/roadmap">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                     Roadmap
                   </a>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/instructors">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
@@ -137,13 +139,13 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/classes">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                     Classes
                   </a>
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
             <ul className="flex flex-wrap items-center justify-end">
@@ -206,7 +208,7 @@ const Header = () => {
                       >
                         <Link href="/dashboard">
                           <DropdownItem>
-                            <a>Profile</a>
+                            <a>Account</a>
                           </DropdownItem>
                         </Link>
                         <Link href="/dashboard/live">
@@ -224,9 +226,9 @@ const Header = () => {
                             tag="a"
                             className="justify-between"
                             onClick={() => {
-                              logout()
-                              cache.clear()
-                              window.location.href = "/"
+                              logout();
+                              cache.clear();
+                              window.location.href = "/";
                             }}
                           >
                             <span>Logout</span>
@@ -375,7 +377,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

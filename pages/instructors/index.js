@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Avatar } from "@windmill/react-ui";
 import Head from "next/head";
 
-const index = ({ instructors }) => {
+const index = ({  }) => {
   return (
     <Layout
       metaTitle="The instructors behind the screen"
@@ -28,7 +28,7 @@ const index = ({ instructors }) => {
               className="max-w-sm sm:max-w-5xl mx-auto sm:flex sm:flex-wrap sm:justify-center -my-6 sm:-my-8"
               data-aos-id-team
             >
-              {instructors.map(instructor => (
+              {/* {instructors.map(instructor => (
                 <div
                   key={instructor.id}
                   className="sm:w-1/2 md:w-1/3 py-6 sm:py-8 sm:px-3"
@@ -66,7 +66,7 @@ const index = ({ instructors }) => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ const index = ({ instructors }) => {
 
 export default index;
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
   // const { API_URL } = process.env
   // const response = await fetch(`http://localhost:1337/instructors`, {
   //   headers: {
@@ -87,10 +87,10 @@ export async function getStaticProps() {
   // }).catch((err) => console.error(JSON.stringify(err, null, 2)))
   // const data = await response.json()
   // console.log("instructors index =>", JSON.stringify(data))
-  const instructors = await fetchQuery("instructors");
-  return {
-    props: {
-      instructors
-    }
-  };
-}
+  // const instructors = await fetchQuery("instructors");
+  // return {
+  //   props: {
+  //     instructors
+  //   }
+  // };
+// }

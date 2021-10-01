@@ -38,3 +38,5 @@ yarn-error.log*
 /out_functions/
 
 *.mp4
+# Local Netlify folder
+.netlify

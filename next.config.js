@@ -1,13 +1,14 @@
-const withPlugins = require("next-compose-plugins")
-const optimizedImages = require("next-optimized-images")
-const tailwindCss = require("tailwindcss")
+const withPlugins = require("next-compose-plugins");
+const optimizedImages = require("next-optimized-images");
+const tailwindCss = require("tailwindcss");
 
 const nextConfig = {
   // Target must be serverless
   target: "serverless",
   images: {
-    loader: "cloudinary",
-    path: "https://res.cloudinary.com/rouse-yoga/image/upload/",
+    // loader: "cloudinary",
+    // path: "https://res.cloudinary.com/rouse-yoga/image/upload/",
+    domains: ["cdn.sanity.io", "res.cloudinary.com"],
   },
   // webpack: (config, { dev, isServer }) => {
   //   // Replace React with Preact only in client production build
@@ -21,7 +22,7 @@ const nextConfig = {
 
   //   return config
   // },
-}
+};
 
 const optimizedImagesConfig = {
   // these are the default values so you don't have to provide them if they are good enough for your use-case.
@@ -58,9 +59,9 @@ const optimizedImagesConfig = {
     placeholderSize: 20,
   },
   // imagesPublicPath,
-}
+};
 
 module.exports = withPlugins(
   [[optimizedImages, optimizedImagesConfig]],
   nextConfig
-)
+);
