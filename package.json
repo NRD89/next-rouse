@@ -9,7 +9,7 @@
     "build:base-css": "tailwindcss build ./styles/tailwind.base.css -o ./styles/base.css"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^3.9.0",
+    "@netlify/plugin-nextjs": "^3.9.2",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.11.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
