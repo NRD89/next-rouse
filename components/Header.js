@@ -25,13 +25,9 @@ const Header = () => {
   const { user, setUser, logout, isAuthenticated } = useContext(AuthContext);
   // const { mutate } = useAuth()
   const [top, setTop] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   function toggleDropdown() {
-    setIsOpen(!isOpen);
-  }
-  function togglePopUp() {
-    setIsMenuOpen(!isMenuOpen);
+    setIsOpen(!isOpen)
   }
 
   // detect whether user has scrolled the page down by 10px
@@ -139,13 +135,13 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link href="/classes">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                     Classes
                   </a>
                 </Link>
-              </li> */}
+              </li>
             </ul>
 
             <ul className="flex flex-wrap items-center justify-end">
@@ -189,101 +185,15 @@ const Header = () => {
                   </label>
                 </div>
               </li>
-              {isAuthenticated ? (
-                <>
-                  <li className="justify-self-end">
-                    <div className="relative">
-                      <button
-                        onClick={toggleDropdown}
-                        className="bg-transparent text-gray-900 dark:text-gray-100 p-2 ml-2 sm:ml-4"
-                        aria-label="Profile"
-                        aria-haspopup="true"
-                      >
-                        <CgProfile className="w-8 h-8" />
-                      </button>
-                      <Dropdown
-                        align="right"
-                        isOpen={isOpen}
-                        onClose={() => setIsOpen(false)}
-                      >
-                        <Link href="/dashboard">
-                          <DropdownItem>
-                            <a>Account</a>
-                          </DropdownItem>
-                        </Link>
-                        <Link href="/dashboard/live">
-                          <DropdownItem>
-                            <a>Live Stream</a>
-                          </DropdownItem>
-                        </Link>
-                        <Link href="/dashboard/video-on-demand">
-                          <DropdownItem>
-                            <a>Video on Demand</a>
-                          </DropdownItem>
-                        </Link>
-                        <Link href="/">
-                          <DropdownItem
-                            tag="a"
-                            className="justify-between"
-                            onClick={() => {
-                              logout();
-                              cache.clear();
-                              window.location.href = "/";
-                            }}
-                          >
-                            <span>Logout</span>
-                            <svg
-                              className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1 inline-block"
-                              viewBox="0 0 12 12"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                                fillRule="nonzero"
-                              />
-                            </svg>
-                          </DropdownItem>
-                        </Link>
-                      </Dropdown>
-                    </div>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <li className="hidden lg:block text-sm">
-                    <Link href="/login">
-                      <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                        Login
-                      </a>
-                    </Link>
-                  </li>
-                  {/* <li className="hidden md:block ml-4 lg:ml-0 text-sm">
-                    <DigitalModal
-                      buttonText="Start Free Trial"
-                      btnSize="small"
-                    />
-                  </li> */}
-                </>
-              )}
-              {user.subTier === "digital" ? null : (
-                <li>
-                  <div className="hidden md:block ml-4 text-sm">
-                    <DigitalModal
-                      buttonText="Start Free Trial"
-                      btnSize="small"
-                    />
-                  </div>
-                </li>
-              )}
               <li>
                 <div className="pl-2 sm:pl-4 w-10 h-10 rounded-full text-gray-900 dark:text-gray-100 lg:hidden flex justify-center items-center">
                   <motion.div
-                    initial={false}
-                    animate={isMenuOpen ? "open" : "closed"}
+                    // initial={false}
+                    // animate={isOpen ? "open" : "closed"}
                     className=" relative"
                   >
-                    <button
-                      onClick={togglePopUp}
+                    <Button
+                      onClick={toggleDropdown}
                       className="bg-transparent pt-2 text-gray-900 dark:text-gray-200"
                       aria-label="Nav"
                       aria-haspopup="true"
@@ -324,20 +234,15 @@ const Header = () => {
                           }}
                         />
                       </svg>
-                    </button>
+                    </Button>
                     <Dropdown
                       align="right"
-                      isOpen={isMenuOpen}
-                      onClose={() => setIsMenuOpen(false)}
+                      isOpen={isOpen}
+                      onClose={() => setIsOpen(false)}
                     >
                       <Link href="/about">
                         <DropdownItem>
                           <a>About</a>
-                        </DropdownItem>
-                      </Link>
-                      <Link href="/roadmap">
-                        <DropdownItem>
-                          <a>Roadmap</a>
                         </DropdownItem>
                       </Link>
                       <Link href="/instructors">

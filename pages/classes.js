@@ -1,192 +1,148 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Layout from "../components/Layout";
-import {
-  TableContainer,
-  Table,
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableFooter,
-  Pagination,
-  Avatar,
-  Badge,
-} from "@windmill/react-ui";
-import ClassDescDropdown from "../components/ClassDescDropdown";
-import { request, gql } from "graphql-request";
-import format from "date-fns/format";
-import { formatToTimeZone } from "date-fns-timezone";
-import { useRouter } from "next/router";
-import Link from "next/link";
+// import { fadeInUp, stagger } from "../animations/pageTransitions";
+// import Plyr from "plyr";
+// import "plyr/dist/plyr.css";
+// import { motion } from "framer-motion";
+import { groq } from "next-sanity";
+import { getClient } from "../lib/sanity.server";
+import { format, formatISO } from "date-fns";
 
-const classes = ({ classList, todaysDate }) => {
-  const { classes, classesConnection } = classList;
-  //console.log(todaysDate);
-  //console.log(classesConnection.aggregate.count);
-
-  const router = useRouter();
-
-  const [pageTable, setPageTable] = useState(1);
-
-  const [dataTable, setDataTable] = useState([]);
-
-  const resultsPerPage = 6;
-  const totalResults = classesConnection.aggregate.count;
-
-  function onPageChangeTable(p) {
-    setPageTable(p);
-    //console.log(pageTable);
-  }
-
-  useEffect(() => {
-    // setDataTable((pageTable - 1) * resultsPerPage, pageTable * resultsPerPage)
-    // console.log(dataTable)
-    router.push(`/classes?page=${pageTable}`);
-  }, [pageTable]);
+const IndexPage = ({ classes, todaysDate }) => {
+  console.log("classes =>", classes);
+  console.log("todaysDate =>", todaysDate);
 
   return (
-    <Layout
-      metaTitle="Class Schedule"
-      metaDescription="Yoga class schedule listed from the current date. Vinyasa, Hatha, Yin, Ashtanga, Meditation, Restorative and Chair classes from beginner to advanced levels."
-    >
-      <div className="flex w-full justify-center">
-        <h1
-          className="h2 sm:h1 font-red-hat-display text-center"
-          data-aos="fade-down"
-        >
-          Class Schedule
-        </h1>
-      </div>
-      <div className="flex w-full justify-center" data-aos="fade-up">
-        <TableContainer className="mt-10 max-w-screen-xl border border-gray-100 dark:border-gray-600">
-          <Table className="whitespace-nowrap">
-            <TableHeader>
-              <TableRow>
-                <TableCell>Instructor</TableCell>
-                <TableCell>Class/Description</TableCell>
-                <TableCell>Date/Time</TableCell>
-                <TableCell>Style/Level</TableCell>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {classes.map((_class, index) => (
-                <TableRow key={index}>
-                  <TableCell>
-                    <Link href={`/instructors/${_class.instructor.Slug}`}>
-                      <a>
-                        <div className="flex items-center text-sm">
-                          <Avatar
-                            src={`${process.env.NEXT_PUBLIC_API_URL}${_class.instructor.avatar.formats.small.url}`}
-                            loading="lazy"
-                            alt={`Instructor ${_class.instructor.Title}`}
-                            className="w-8 h-8"
-                          />
-                          <span className="font-semibold ml-2">
-                            {_class.instructor.Title}
-                          </span>
-                        </div>
-                      </a>
-                    </Link>
-                  </TableCell>
-                  <TableCell>
-                    <ClassDescDropdown
-                      className="text-sm"
-                      classTitle={_class.Title}
-                      classDesc={_class.description}
-                    />
-                  </TableCell>
-                  <TableCell>
-                    <span className="text-sm right">
-                      {`${format(
-                        new Date(`${_class.date}T${_class.time}`),
-                        "MM-dd-yyyy h:mm aaaa"
-                      )}`}{" "}
-                      PST
-                    </span>
-                  </TableCell>
-                  <TableCell>
-                    <Badge type="primary">{`${_class.style} - Level ${
-                      _class.level === "one"
-                        ? 1
-                        : _class.level === "two"
-                        ? 2
-                        : 3
-                    }`}</Badge>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-          <TableFooter>
-            <Pagination
-              totalResults={totalResults}
-              resultsPerPage={resultsPerPage}
-              onChange={onPageChangeTable}
-              label="Table navigation"
-            />
-          </TableFooter>
-        </TableContainer>
+    <Layout>
+      <div
+        initial="initial"
+        animate="animate"
+        // exit={{ opacity: 0 }}
+        // variants={stagger}
+        className="px-6 lg:px-8 h-full"
+      >
+        <section>
+          <div className="px-4 mx-auto">
+            <div className="max-w-4xl pt-24 mx-auto">
+              <div className="relative">
+                <div
+                  className="absolute inset-0 flex items-center"
+                  aria-hidden="true"
+                >
+                  <div className="w-full border-t border-white"></div>
+                </div>
+                <div className="relative flex justify-start">
+                  <span className="pr-3 text-lg font-medium text-white bg-[hsl(221,48%,5%)]">
+                    {" "}
+                    All classes{" "}
+                  </span>
+                </div>
+              </div>
+              <div
+                // variants={fadeInUp}
+                className="space-y-8 lg:divide-y lg:divide-gray-400 divide-solid"
+              >
+                {classes.map((_class, index) => (
+                  <div
+                    key={index}
+                    className="pt-8 sm:flex lg:items-start group"
+                  >
+                    <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
+                      <img
+                        className="w-full rounded-md lg:h-32 lg:w-32"
+                        src="https://images.unsplash.com/photo-1616651181620-9906d6e43fc3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGF0dGVybnxlbnwwfDJ8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60"
+                        alt="text"
+                      />
+                    </div>
+                    <div>
+                      <span className="text-sm text-gray-300">
+                        {`${format(
+                          new Date(_class.classDateTime),
+                          "MM-dd-yyyy h:mm aaaa"
+                        )}`}{" "}
+                      </span>
+                      <p className="mt-3 text-lg font-medium leading-6">
+                        <a
+                          href="./blog-post.html"
+                          className="text-xl text-gray-100 group-hover:text-gray-300 lg:text-2xl"
+                        >
+                          {_class.title}
+                        </a>
+                      </p>
+                      <p className="mt-2 text-lg text-gray-300">
+                        {_class.description}
+                      </p>
+                      <div class="mt-8">
+                          <a
+                            href="https://app.rouse.yoga"
+                            className="
+                            w-1/3
+                            items-center
+                            block
+                            px-10
+                            py-3.5
+                            text-base
+                            font-medium
+                            text-center text-purple-500
+                            transition
+                            duration-500
+                            ease-in-out
+                            transform
+                            border-2 border-white
+                            shadow-md
+                            rounded-xl
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-offset-2
+                            focus:ring-gray-500
+                            bg-white
+                            text-center
+                          "
+                          >
+                            {" "}
+                            Reserve{" "}
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </Layout>
   );
 };
 
-export default classes;
+export default IndexPage;
 
-export async function getServerSideProps({ query: { page = 1 } }) {
-  const { API_URL } = process.env;
+export async function getServerSideProps() {
+  const todaysDate = new Date().toISOString();
 
-  const start = +page === 1 ? 0 : (+page - 1) * 6;
+  const classesQuery = groq`
+  *[_type == 'class' && classDateTime >= $todaysDate]{
+    _id,
+    title,
+    description,
+    instructor->{
+      name,
+      "slug": slug.current
+    },
+    mainImage,
+    publishedAt,
+    classDateTime,
+    style,
+    level
+  } | order(classDateTime asc)
+`;
+  const params = { todaysDate: todaysDate };
 
-  const endpoint = `${API_URL}/graphql`;
-
-  const date = new Date();
-  const todaysDate = formatToTimeZone(date, "YYYY-MM-DD", {
-    timeZone: "America/Los_Angeles",
-  });
-
-  const query = gql`
-    query getClasses($start: Int, $todaysDate: Date) {
-      classes(
-        limit: 6
-        start: $start
-        sort: "date:asc, time:asc"
-        where: { date_gte: $todaysDate }
-      ) {
-        date
-        time
-        Title
-        style
-        description
-        level
-        instructor {
-          Title
-          Slug
-          avatar {
-            formats
-          }
-        }
-      }
-      classesConnection(where: { date_gte: $todaysDate }) {
-        aggregate {
-          count
-        }
-      }
-    }
-  `;
-
-  const variables = {
-    start,
-    todaysDate,
-  };
-
-  const data = await request(endpoint, query, variables);
-  console.log(JSON.stringify(data, undefined, 2));
+  const classes = await getClient().fetch(classesQuery, params);
 
   return {
     props: {
-      classList: data,
-      page: page,
+      classes,
       todaysDate,
     },
   };

@@ -3,6 +3,7 @@ import { Modal, ModalHeader, ModalBody } from "@windmill/react-ui";
 import DigitalCheckoutForm from "./DigitalCheckoutForm";
 import { AuthContext } from "../context/UserAuthContext";
 import { MdOpenInNew } from "react-icons/md";
+import Link from "next/link";
 
 const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
   const { isAuthenticated, user, redirectToManage } = useContext(AuthContext);
@@ -21,20 +22,21 @@ const DigitalModal = ({ buttonText, btnSize, btnWidth, btnPriority }) => {
     <>
       <div>
         {!isAuthenticated ? (
-          <button
-            onClick={openModal}
-            className={`${btnSize === "small" ? `btn-sm` : `btn`} ${
-              btnWidth === "full" ? `w-full` : ``
-            } ${
-              btnPriority === "secondary"
-                ? `bg-purple-500 hover:bg-purple-400`
-                : btnPriority === "cta"
-                ? `hover:from-blue-500 hover:to-blue-600 border border-solid border-white rounded-lg uppercase bg-gradient-to-tr from-blue-600 to-blue-500`
-                : `bg-purple-600 hover:bg-purple-500`
-            } text-white flex-shrink-0 mb-2 sm:mb-0 sm:mr-2`}
-          >
-            {buttonText}
-          </button>
+          <Link href="/classes">
+            <a
+              className={`${btnSize === "small" ? `btn-sm` : `btn`} ${
+                btnWidth === "full" ? `w-full` : ``
+              } ${
+                btnPriority === "secondary"
+                  ? `bg-purple-500 hover:bg-purple-400`
+                  : btnPriority === "cta"
+                  ? `hover:from-blue-500 hover:to-blue-600 border border-solid border-white rounded-lg uppercase bg-gradient-to-tr from-blue-600 to-blue-500`
+                  : `bg-purple-600 hover:bg-purple-500`
+              } text-white flex-shrink-0 mb-2 sm:mb-0 sm:mr-2`}
+            >
+              <p>{buttonText}</p>
+            </a>
+          </Link>
         ) : (
           <button
             onClick={
