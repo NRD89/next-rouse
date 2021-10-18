@@ -1811,10 +1811,10 @@
     rollup-plugin-terser "^7.0.2"
     typescript "^4.1.5"
 
-"@netlify/plugin-nextjs@^3.9.0":
-  version "3.9.0"
-  resolved "https://registry.npmjs.org/@netlify/plugin-nextjs/-/plugin-nextjs-3.9.0.tgz"
-  integrity sha512-EqZjRbN/cGBpBmU50U4YA9r/b2cR++ZNK0sOJGbxtdqAjk0GMU3iNkuWbs8aO/4pjRRiNNmcAWsdOIgquF3CZg==
+"@netlify/plugin-nextjs@^3.9.2":
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/@netlify/plugin-nextjs/-/plugin-nextjs-3.9.2.tgz#9a9cd820a611e256e52fe3def800ed04962ff237"
+  integrity sha512-fa7G5p2p8uOHstb0aaS6P8qKJ/ixcrpQzJwz92LPUBVXAsUnhspes7lPIDbxmLt+DZiA9DBW9z1IlUGK98WIGQ==
   dependencies:
     "@babel/core" "^7.15.0"
     "@netlify/functions" "^0.7.2"
@@ -2427,19 +2427,17 @@
   resolved "https://registry.npmjs.org/@tailwindcss/aspect-ratio/-/aspect-ratio-0.2.0.tgz"
   integrity sha512-v5LyHkwXj/4lI74B06zUrmWEdmSqS43+jw717pkt3fAXqb7ALwu77A8t7j+Bej+ZbdlIIqNMYheGN7wSGV1A6w==
 
-"@tailwindcss/custom-forms@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@tailwindcss/custom-forms/-/custom-forms-0.2.1.tgz"
-  integrity sha512-XdP5XY6kxo3x5o50mWUyoYWxOPV16baagLoZ5uM41gh6IhXzhz/vJYzqrTb/lN58maGIKlpkxgVsQUNSsbAS3Q==
-  dependencies:
-    lodash "^4.17.11"
-    mini-svg-data-uri "^1.0.3"
-    traverse "^0.6.6"
-
 "@tailwindcss/forms@^0.2.1":
   version "0.2.1"
   resolved "https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.2.1.tgz"
   integrity sha512-czfvEdY+J2Ogfd6RUSr/ZSUmDxTujr34M++YLnp2cCPC3oJ4kFvFMaRXA6cEXKw7F1hJuapdjXRjsXIEXGgORg==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
+
+"@tailwindcss/forms@^0.3.2":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.3.4.tgz#e4939dc16450eccf4fd2029770096f38cbb556d4"
+  integrity sha512-vlAoBifNJUkagB+PAdW4aHMe4pKmSLroH398UPgIogBFc91D2VlHUxe4pjxQhiJl0Nfw53sHSJSQBSTQBZP3vA==
   dependencies:
     mini-svg-data-uri "^1.2.3"
 
@@ -2713,19 +2711,17 @@
   resolved "https://registry.npmjs.org/@ungap/from-entries/-/from-entries-0.2.1.tgz"
   integrity sha512-CAqefTFAfnUPwYqsWHXpOxHaq1Zo5UQ3m9Zm2p09LggGe57rqHoBn3c++xcoomzXKynAUuiBMDUCQvKMnXjUpA==
 
-"@windmill/react-ui@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.npmjs.org/@windmill/react-ui/-/react-ui-0.4.1.tgz"
-  integrity sha512-bWwNCB8h30Ac8k9wKNiBQU0QZVSI2jsKM0VuZf2Jk5Hm4/orzG+al91YqAcaAPi3x/CEHs4cF8pNZjGrDz0/+Q==
+"@windmill/react-ui@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@windmill/react-ui/-/react-ui-0.6.0.tgz#259ee5d8b08088d4b0258fdc7595760dda6b09fe"
+  integrity sha512-VjvRC0YI8V/uUMWU70XL0jHzBYmRGPMlvauLjdHJ0h60cSFm2ZrcvwIVktPi9eWw9au2cXov13rkwvVmPM/Yww==
   dependencies:
-    "@tailwindcss/custom-forms" "0.2.1"
+    "@tailwindcss/forms" "^0.3.2"
     classnames "2.2.6"
-    color "3.1.2"
     deepmerge "4.2.2"
-    prop-types "15.7.2"
+    postcss "^8.2.15"
     react-focus-lock "2.4.1"
     react-transition-group "4.4.1"
-    tailwindcss-multi-theme "1.0.4"
 
 accepts@~1.3.7:
   version "1.3.7"
@@ -4205,7 +4201,7 @@ color@3.0.x:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
-color@3.1.2, color@^3.1.1:
+color@^3.1.1:
   version "3.1.2"
   resolved "https://registry.npmjs.org/color/-/color-3.1.2.tgz"
   integrity sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==
@@ -8922,7 +8918,7 @@ min-document@^2.19.0:
   dependencies:
     dom-walk "^0.1.0"
 
-mini-svg-data-uri@^1.0.3, mini-svg-data-uri@^1.2.3:
+mini-svg-data-uri@^1.2.3:
   version "1.2.3"
   resolved "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.2.3.tgz"
   integrity sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ==
@@ -9069,6 +9065,11 @@ nanoid@^3.1.25:
   version "3.1.28"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.28.tgz"
   integrity sha512-gSu9VZ2HtmoKYe/lmyPFES5nknFrHa+/DT9muUFWFMi6Jh9E1I7bkvlQ8xxf1Kos9pi9o8lBnIOkatMhKX/YUw==
+
+nanoid@^3.1.28:
+  version "3.1.30"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.30.tgz#63f93cc548d2a113dc5dfbc63bfa09e2b9b64362"
+  integrity sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -10266,6 +10267,11 @@ phin@^2.9.1:
   resolved "https://registry.npmjs.org/phin/-/phin-2.9.3.tgz"
   integrity sha512-CzFr90qM24ju5f88quFC/6qohjC144rehe5n6DH900lgXmUe86+xCKc10ev56gRKC4/BkHUoG4uSiQgBiIXwDA==
 
+picocolors@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-0.2.1.tgz#570670f793646851d1ba135996962abad587859f"
+  integrity sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==
+
 picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.2.2"
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.2.2.tgz"
@@ -10755,6 +10761,15 @@ postcss@^8.1.7:
   dependencies:
     nanocolors "^0.2.2"
     nanoid "^3.1.25"
+    source-map-js "^0.6.2"
+
+postcss@^8.2.15:
+  version "8.3.9"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.9.tgz#98754caa06c4ee9eb59cc48bd073bb6bd3437c31"
+  integrity sha512-f/ZFyAKh9Dnqytx5X62jgjhhzttjZS7hMsohcI7HEI5tjELX/HxCy3EFhsRxyzGvrzFF+82XPvCS8T9TFleVJw==
+  dependencies:
+    nanoid "^3.1.28"
+    picocolors "^0.2.1"
     source-map-js "^0.6.2"
 
 potrace@^2.1.2:
@@ -11932,6 +11947,20 @@ sharp@^0.29.0:
     tar-fs "^2.1.1"
     tunnel-agent "^0.6.0"
 
+sharp@^0.29.1:
+  version "0.29.1"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.29.1.tgz#f60b50f24f399464a24187c86bd2da41aae50b85"
+  integrity sha512-DpgdAny9TuS+oWCQ7MRS8XyY9x6q1+yW3a5wNx0J3HrGuB/Jot/8WcT+lElHY9iJu2pwtegSGxqMaqFiMhs4rQ==
+  dependencies:
+    color "^4.0.1"
+    detect-libc "^1.0.3"
+    node-addon-api "^4.1.0"
+    prebuild-install "^6.1.4"
+    semver "^7.3.5"
+    simple-get "^3.1.0"
+    tar-fs "^2.1.1"
+    tunnel-agent "^0.6.0"
+
 shebang-command@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/shebang-command/-/shebang-command-1.2.0.tgz"
@@ -12653,11 +12682,6 @@ tailwindcss-border-gradients@^2.0.3:
     color "^3.1.1"
     lodash "^4.17.11"
 
-tailwindcss-multi-theme@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/tailwindcss-multi-theme/-/tailwindcss-multi-theme-1.0.4.tgz"
-  integrity sha512-iwq4c039Urx6q2j9YDvGF5GmOs6vx5AMIQdscSIH9cPHmDhQE38eE7/4SeoZxB+6TY+xvZeLa/6UV9iRovoEuA==
-
 tailwindcss@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-2.2.4.tgz"
@@ -12967,11 +12991,6 @@ tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz"
   integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
-
-traverse@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.npmjs.org/traverse/-/traverse-0.6.6.tgz"
-  integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
 
 treeify@^1.1.0:
   version "1.1.0"
