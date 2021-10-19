@@ -47,27 +47,30 @@ const IndexPage = ({ classes, todaysDate }) => {
                     key={index}
                     className="pt-8 sm:flex lg:items-start group"
                   >
-                    <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
+                    {/* <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
                       <img
                         className="w-full rounded-md lg:h-32 lg:w-32"
                         src="https://images.unsplash.com/photo-1616651181620-9906d6e43fc3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGF0dGVybnxlbnwwfDJ8MHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=900&amp;q=60"
                         alt="text"
                       />
-                    </div>
+                    </div> */}
                     <div>
-                      <span className="text-sm text-gray-300">
+                      <span className="text-3xl font-semibold text-gray-200">
                         {`${format(
                           new Date(_class.classDateTime),
-                          "MM-dd-yyyy h:mm aaaa"
+                          "EEEE, MMMM dd h:mm aaaa"
                         )}`}{" "}
                       </span>
                       <p className="mt-3 text-lg font-medium leading-6">
                         <a
-                          href="./blog-post.html"
+                          href="#"
                           className="text-xl text-gray-100 group-hover:text-gray-300 lg:text-2xl"
                         >
                           {_class.title}
                         </a>
+                      </p>
+                      <p className="mt-2 text-md text-gray-400">
+                        Taught by: {_class.instructor.name}
                       </p>
                       <p className="mt-2 text-lg text-gray-300">
                         {_class.description}
@@ -76,14 +79,16 @@ const IndexPage = ({ classes, todaysDate }) => {
                           <a
                             href="https://app.rouse.yoga"
                             className="
-                            w-1/3
+                            sm:w-1/2
+                            md:w-1/3
                             items-center
                             block
                             px-10
                             py-3.5
                             text-base
-                            font-medium
-                            text-center text-purple-500
+                            font-bold
+                            uppercase
+                            text-center text-purple-600
                             transition
                             duration-500
                             ease-in-out
@@ -96,7 +101,6 @@ const IndexPage = ({ classes, todaysDate }) => {
                             focus:ring-offset-2
                             focus:ring-gray-500
                             bg-white
-                            text-center
                           "
                           >
                             {" "}

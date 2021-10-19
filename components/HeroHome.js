@@ -73,7 +73,7 @@ const HeroHome = () => {
                     Try our Digital Membership free for 7 days
                   </small> */}
                   <DigitalModal
-                    buttonText="View Classes"
+                    buttonText="Sign Up Today!"
                     btnPriority="cta"
                   />
                   <div className="max-w-3xl mx-auto text-center pb-3">

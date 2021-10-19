@@ -8,14 +8,11 @@ function FeaturesZigzag() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h2 className="h2 font-red-hat-display mb-4">
-              Digital Yoga Class Memberships <br /> & More
+            Yoga classes, memberships <br /> & More
             </h2>
             <div className="text-left">
               <p className="text-xl text-gray-700 dark:text-gray-300">
-                Our innovative yoga platform helps you unfold into a more
-                connected, healed, and calm YOU. With a variety of digital yoga
-                classes and instructors from around the Nation, you can choose
-                the class that’s right for your practice.
+              We offer in-studio and online yoga classes both designed to bring variety and convenience to your yoga practice. You choose the class that’s right for you!
               </p>
               <div className="w-full flex items-center justify-center my-10">
                 <div className="relative w-full sm:w-2/3">

@@ -73,12 +73,12 @@ const CtaFreeTrial = () => {
               <span className="h4 leading-tight">Practice how you like.</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-xl">
-              Use our intuitive and engaging platform to help you reconnect.
+              Use our teachings and classes to help you reconnect.
             </p>
 
             {/* CTA button */}
             <div className="flex justify-center mt-8">
-              <DigitalModal buttonText="Start Free Trial" />
+              <DigitalModal buttonText="Sign Up Today!" />
             </div>
           </div>
         </div>

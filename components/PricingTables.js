@@ -45,12 +45,12 @@ function PricingTables() {
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">199.99</span>
+                  <span className="h3">649.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /$
                   </span>
                   <span className="font-medium text-red-500 dark:text-red-400 line-through">
-                    419.88
+                    779.99
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
@@ -59,7 +59,7 @@ function PricingTables() {
               </div>
               <div className="mt-24">
                 <DigitalModal
-                  buttonText="Start Free Trial"
+                  buttonText="Sign Up Today"
                   btnSize="small"
                   btnWidth="full"
                 />
@@ -80,21 +80,19 @@ function PricingTables() {
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">19.99</span>
+                  <span className="h3">64.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
-                    /$
+                    /monthly
                   </span>
-                  <span className="font-medium text-red-500 dark:text-red-400 line-through">
-                    34.99
-                  </span>
+                  
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
-                  — Billed monthly
+                  — Grand Opening Special
                 </div>
               </div>
               <div className="mt-24">
                 <DigitalModal
-                  buttonText="Start Free Trial"
+                  buttonText="Sign Up Today"
                   btnSize="small"
                   btnWidth="full"
                   btnPriority="secondary"
@@ -111,7 +109,7 @@ function PricingTables() {
               <div className="flex-grow mb-4 pb-4">
                 <div className="flex justify-between items-center mb-1">
                   <div className="text-xl font-bold font-red-hat-display">
-                    In-Studio
+                    Online
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
@@ -122,7 +120,7 @@ function PricingTables() {
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
-                  — In studio membership.
+                  — Online membership.
                 </div>
               </div>
               <div className="mt-24">
@@ -162,9 +160,9 @@ function PricingTables() {
                   >
                     <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                   </svg>
-                  <span>Unlimited live streams</span>
+                  <span>Unlimited in-studio classes</span>
                 </li>
-                <li className="flex items-center mb-2">
+                {/* <li className="flex items-center mb-2">
                   <svg
                     className="w-3 h-3 fill-current text-purple-500 mr-3 flex-shrink-0"
                     viewBox="0 0 12 12"
@@ -183,7 +181,7 @@ function PricingTables() {
                     <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                   </svg>
                   <span>Live chat with instructors</span>
-                </li>
+                </li> */}
                 {/*<li className="flex items-center mb-2">
                   <svg
                     className="w-3 h-3 fill-current text-purple-500 mr-3 flex-shrink-0"

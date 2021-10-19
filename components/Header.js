@@ -25,9 +25,9 @@ const Header = () => {
   const { user, setUser, logout, isAuthenticated } = useContext(AuthContext);
   // const { mutate } = useAuth()
   const [top, setTop] = useState(true);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   function toggleDropdown() {
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
 
   // detect whether user has scrolled the page down by 10px
@@ -128,13 +128,13 @@ const Header = () => {
                   </a>
                 </Link>
               </li> */}
-              <li>
+              {/* <li>
                 <Link href="/instructors">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                     Instructors
                   </a>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/classes">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
@@ -188,21 +188,22 @@ const Header = () => {
               <li>
                 <div className="pl-2 sm:pl-4 w-10 h-10 rounded-full text-gray-900 dark:text-gray-100 lg:hidden flex justify-center items-center">
                   <motion.div
-                    // initial={false}
-                    // animate={isOpen ? "open" : "closed"}
+                    initial={false}
+                    animate={isOpen ? "open" : "closed"}
                     className=" relative"
                   >
-                    <Button
-                      onClick={toggleDropdown}
-                      className="bg-transparent pt-2 text-gray-900 dark:text-gray-200"
+                    <button
+                      // onClick={toggleDropdown}
+                      className="bg-transparent pt-2 text-gray-900 dark:text-gray-200 "
                       aria-label="Nav"
                       aria-haspopup="true"
                     >
                       <svg
+                        onClick={toggleDropdown}
                         width="25"
                         height="25"
                         viewBox="0 0 25 25"
-                        className="stroke-current  text-gray-900 dark:text-gray-200"
+                        className="stroke-current  text-gray-900 dark:text-gray-200 -z-10"
                       >
                         <Path
                           // stroke={
@@ -234,7 +235,7 @@ const Header = () => {
                           }}
                         />
                       </svg>
-                    </Button>
+                    </button>
                     <Dropdown
                       align="right"
                       isOpen={isOpen}
@@ -245,34 +246,21 @@ const Header = () => {
                           <a>About</a>
                         </DropdownItem>
                       </Link>
-                      <Link href="/instructors">
+                      {/* <Link href="/instructors">
                         <DropdownItem>
                           <a>Instructors</a>
                         </DropdownItem>
-                      </Link>
+                      </Link> */}
                       <Link href="/classes">
                         <DropdownItem>
                           <a>Classes</a>
                         </DropdownItem>
                       </Link>
-                      {!isAuthenticated ? (
-                        <>
-                          <Link href="/login">
-                            <DropdownItem>
-                              <a>Login</a>
-                            </DropdownItem>
-                          </Link>
-                        </>
-                      ) : null}
-                      {user.subTier === "digital" ? null : (
-                        <div className="block md:hidden">
-                          <DigitalModal
-                            buttonText="Start Free Trial"
-                            btnSize="small"
-                            btnWidth="full"
-                          />
-                        </div>
-                      )}
+                      <>
+                        <DropdownItem>
+                          <a href="https://app.rouse.yoga">Sign up/Login</a>
+                        </DropdownItem>
+                      </>
                     </Dropdown>
                   </motion.div>
                 </div>
