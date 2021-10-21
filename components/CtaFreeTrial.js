@@ -73,7 +73,7 @@ const CtaFreeTrial = () => {
               <span className="h4 leading-tight">Practice how you like.</span> */}
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-xl">
-              Use our classes to help strengthen the connection to your body and mind.
+              Use our classes to help strengthen the connection between your body and mind.
             </p>
 
             {/* CTA button */}

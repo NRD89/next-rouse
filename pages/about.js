@@ -18,9 +18,9 @@ const about = () => {
         <div className="mx-auto max-w-prose">
           <Image
             className="rounded-xl"
-            src="c_scale,f_auto,q_auto,dpr_2,w_490/v1634787843/5F0699FF-897D-4DCD-ABD2-C5A1035007B8_1_201_a_khwpxz.jpg"
-            width={490}
-            height={276}
+            src="c_scale,f_auto,q_auto,dpr_2,w_653/v1634787843/5F0699FF-897D-4DCD-ABD2-C5A1035007B8_1_201_a_khwpxz.jpg"
+            width={653}
+            height={368}
             alt="About"
             layout="responsive"
           />
