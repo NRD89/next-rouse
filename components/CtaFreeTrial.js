@@ -5,14 +5,14 @@ const CtaFreeTrial = () => {
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         {/* CTA box */}
-        <div className="relative border rounded-sm border-gray-100 dark:border-gray-600 shadow-2xl dark:shadow-dark40 bg-white dark:bg-gray-800 py-10 px-8 md:py-16 md:px-12">
+        <div className="relative border rounded-xl border-gray-100 dark:border-gray-600 shadow-2xl dark:shadow-dark40 bg-white dark:bg-gray-800 py-10 px-8 md:py-16 md:px-12">
           {/* Background illustration */}
           <div
-            className="absolute inset-0 left-auto  pointer-events-none"
+            className="absolute inset-0 left-auto pointer-events-none"
             aria-hidden="true"
           >
             <svg
-              className="h-full"
+              className="h-full rounded-xl"
               width="400"
               height="232"
               viewBox="0 0 400 232"
@@ -27,8 +27,8 @@ const CtaFreeTrial = () => {
                   r="39.386%"
                   id="box-gr-a"
                 >
-                  <stop stopColor="#3ABAB4" offset="0%" />
-                  <stop stopColor="#3ABAB4" stopOpacity="0" offset="100%" />
+                  <stop stopColor="#267DEB" offset="0%" />
+                  <stop stopColor="#267DEB" stopOpacity="0" offset="100%" />
                 </radialGradient>
                 <radialGradient
                   cx="50%"
@@ -38,9 +38,9 @@ const CtaFreeTrial = () => {
                   r="39.386%"
                   id="box-gr-b"
                 >
-                  <stop stopColor="rgb(93, 93, 255)" offset="0%" />
+                  <stop stopColor="#5D45F9" offset="0%" />
                   <stop
-                    stopColor="rgb(93, 93, 255)"
+                    stopColor="#5D45F9"
                     stopOpacity="0"
                     offset="100%"
                   />
@@ -68,12 +68,12 @@ const CtaFreeTrial = () => {
           <div className="relative max-w-3xl mx-auto text-center">
             {/* CTA header */}
             <h3 className="h3 font-red-hat-display mb-2">
-              Take back your power.
-              <br />
-              <span className="h4 leading-tight">Practice how you like.</span>
+            Go beyond your practice with Rouse Yoga.
+              {/* <br />
+              <span className="h4 leading-tight">Practice how you like.</span> */}
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-xl">
-              Use our teachings and classes to help you reconnect.
+              Use our classes to help strengthen the connection to your body and mind.
             </p>
 
             {/* CTA button */}

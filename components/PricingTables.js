@@ -14,12 +14,11 @@ function PricingTables() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12">
             <h2 className="h2 font-red-hat-display mb-4 text-gray-100">
-              Join An Innovative Yoga Platform
+              Join The Rouse Yoga Community
             </h2>
-            <div className="text-left">
+            <div className="text-center">
               <p className="text-xl text-gray-400">
-                Our innovative yoga platform offers live-streaming, VoD, and
-                Discord technologies to create a truly interactive community.
+                Our innovative yoga platform offers in-studio memberships, live-streaming <small>(coming soon)</small> and VoD <small>(coming soon)</small> to create a truly interactive community.
                 Easy to use and navigate, your membership helps you not just
                 learn how to practice yoga, but how to find purpose in that
                 practice.
@@ -31,7 +30,7 @@ function PricingTables() {
           <div className="max-w-xs mx-auto grid gap-6 md:gap-4 sm:grid-cols-2 lg:grid-cols-4 items-start sm:max-w-none md:max-w-2xl lg:max-w-none">
             {/* Pricing table 1 */}
             <div
-              className="flex flex-col h-full p-6 bg-white dark:bg-gray-800 shadow-dark40 border-2 border-gray-600 dark:border-purple-600 rounded-sm"
+              className="flex flex-col h-full p-6 bg-white dark:bg-gray-800 shadow-dark40 border-2 border-gray-600 dark:border-purple-600 rounded-xl"
               data-aos="fade-down"
             >
               <div className="flex-grow mb-4 pb-4">
@@ -40,7 +39,7 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                    -63%
+                    $54.17<small>/mo</small>
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
@@ -68,7 +67,7 @@ function PricingTables() {
 
             {/* Pricing table 2 */}
             <div
-              className="flex flex-col h-full p-6 bg-white dark:bg-gray-800 shadow rounded-sm border border-gray-600"
+              className="flex flex-col h-full p-6 bg-white dark:bg-gray-800 shadow rounded-xl border border-gray-600"
               data-aos="fade-down"
               data-aos-delay="150"
             >
@@ -102,7 +101,7 @@ function PricingTables() {
 
             {/* Pricing table 3 */}
             <div
-              className="flex flex-col h-full p-6 bg-white dark:bg-gray-800 shadow rounded-sm border border-gray-600"
+              className="flex flex-col h-full p-6 bg-white dark:bg-gray-800 shadow rounded-xl border border-gray-600"
               data-aos="fade-down"
               data-aos-delay="300"
             >

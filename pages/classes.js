@@ -29,10 +29,10 @@ const IndexPage = ({ classes, todaysDate }) => {
                   className="absolute inset-0 flex items-center"
                   aria-hidden="true"
                 >
-                  <div className="w-full border-t border-white"></div>
+                  <div className="w-full border-t border-gray-900 dark:border-gray-100"></div>
                 </div>
                 <div className="relative flex justify-start">
-                  <span className="pr-3 text-lg font-medium text-white bg-[hsl(221,48%,5%)]">
+                  <span className="pr-3 text-lg font-medium text-gray-900 dark:text-gray-100 bg-white dark:bg-black">
                     {" "}
                     All classes{" "}
                   </span>
@@ -55,30 +55,25 @@ const IndexPage = ({ classes, todaysDate }) => {
                       />
                     </div> */}
                     <div>
-                      <span className="text-3xl font-semibold text-gray-200">
+                      <span className="text-2xl font-semibold text-gray-900 dark:text-gray-200">
                         {`${format(
                           new Date(_class.classDateTime),
-                          "EEEE, MMMM dd h:mm aaaa"
+                          "EEEE, MMMM dd 'at' h:mm aaaa"
                         )}`}{" "}
                       </span>
-                      <p className="mt-3 text-lg font-medium leading-6">
-                        <a
-                          href="#"
-                          className="text-xl text-gray-100 group-hover:text-gray-300 lg:text-2xl"
-                        >
-                          {_class.title}
-                        </a>
+                      <p className="mt-3 text-xl text-gray-800 dark:text-gray-200 lg:text-2xl leading-6">
+                        {_class.title}
                       </p>
-                      <p className="mt-2 text-md text-gray-400">
+                      <p className="mt-2 text-md text-gray-600 dark:text-gray-400">
                         Taught by: {_class.instructor.name}
                       </p>
-                      <p className="mt-2 text-lg text-gray-300">
+                      <p className="mt-2 text-lg text-gray-700 dark:text-gray-300">
                         {_class.description}
                       </p>
                       <div class="mt-8">
-                          <a
-                            href="https://app.rouse.yoga"
-                            className="
+                        <a
+                          href="https://app.rouse.yoga"
+                          className=" 
                             sm:w-1/2
                             md:w-1/3
                             items-center
@@ -86,26 +81,27 @@ const IndexPage = ({ classes, todaysDate }) => {
                             px-10
                             py-3.5
                             text-base
-                            font-bold
+                            font-medium
                             uppercase
-                            text-center text-purple-600
-                            transition
+                            text-center text-white tracking-wider hover:tracking-widest
+                            transition-all
                             duration-500
                             ease-in-out
                             transform
-                            border-2 border-white
                             shadow-md
-                            rounded-xl
+                            rounded-md
                             focus:outline-none
                             focus:ring-2
                             focus:ring-offset-2
                             focus:ring-gray-500
-                            bg-white
+                            border border-solid border-white 
+                            bg-gradient-to-l from-blue-600 via-blue-400 to-blue-600 
+                            bg-size-200 bg-pos-0 hover:bg-pos-100
                           "
-                          >
-                            {" "}
-                            Reserve{" "}
-                          </a>
+                        >
+                          {" "}
+                          Reserve{" "}
+                        </a>
                       </div>
                     </div>
                   </div>

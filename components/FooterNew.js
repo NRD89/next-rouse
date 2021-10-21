@@ -238,20 +238,20 @@ const Footer = () => {
                   </a>
                 </Link>
               </li>
-              <li className="mb-2">
+              {/* <li className="mb-2">
                 <Link href="/roadmap">
                   <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                     Roadmap
                   </a>
                 </Link>
-              </li>
-              <li className="mb-2">
+              </li> */}
+              {/* <li className="mb-2">
                 <Link href="/instructors">
                   <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
                     Instructors
                   </a>
                 </Link>
-              </li>
+              </li> */}
               <li className="mb-2">
                 <Link href="/classes">
                   <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
