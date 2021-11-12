@@ -258,9 +258,9 @@ const Header = () => {
                           <a>Instructors</a>
                         </DropdownItem>
                       </Link> */}
-                      <Link href="/classes">
+                      <Link href="/class-schedule">
                         <DropdownItem>
-                          <a>Classes</a>
+                          <a>Schedule</a>
                         </DropdownItem>
                       </Link>
                       <>
