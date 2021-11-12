@@ -4,12 +4,12 @@ import DigitalModal from "./DigitalModal";
 
 const HeroHome = () => {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden">
+    <section className="relative min-h-[80vh] w-full overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 h-[90vh] w-full box-content -z-1">
+      <div className="absolute inset-0 h-[80vh] w-full box-content -z-1">
         <Image
-          className="absolute inset-0 w-full h-full max-h-[90vh] object-cover opacity-40"
-          src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_15,dpr_2.0,w_1400/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
+          className="absolute inset-0 w-full h-full max-h-[80vh] object-cover opacity-40"
+          src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_55,w_2000/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
           // src="c_scale,f_auto,q_auto:eco,w_1500/v1610702114/rouse-hero-image_f3md0w.jpg"
           // width={1440}
           // height={577}
@@ -39,7 +39,7 @@ const HeroHome = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-96 xs:pb-80 sm:pb-32 md:pt-48 md:pb-20">
+        <div className="pt-32 pb-32 md:pt-48 md:pb-20">
           <div className="text-center">
             <div className="relative flex justify-center items-center">
               <div
@@ -83,7 +83,7 @@ const HeroHome = () => {
                     </h2>
                   </div>
                   <div
-                    className="grid grid-cols-2 gap-4 lg:gap-6 md:grid-cols-4 text-center"
+                    className="grid gap-2 lg:gap-6 grid-cols-4 text-center"
                     data-aos-id-stats
                   >
                     {/* 1st item */}
