@@ -143,12 +143,11 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#pricing"
-                  className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
-                >
-                  Pricing
-                </a>
+                <Link href="/#pricing">
+                  <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                    Pricing
+                  </a>
+                </Link>
               </li>
             </ul>
 
