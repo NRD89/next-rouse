@@ -1,8 +1,11 @@
-import DigitalModal from "./DigitalModal"
+import DigitalModal from "./DigitalModal";
 
 function PricingTables() {
   return (
-    <section className="relative bg-gray-900 border-t border-transparent dark:border-gray-800">
+    <section
+      id="pricing"
+      className="relative bg-gray-900 border-t border-transparent dark:border-gray-800"
+    >
       {/* Background gradient (dark version only) */}
       <div
         className="absolute inset-0 opacity-25 bg-gradient-to-b from-gray-800 to-gray-900 pointer-events-none hidden dark:block"
@@ -18,10 +21,12 @@ function PricingTables() {
             </h2>
             <div className="text-center">
               <p className="text-xl text-gray-400">
-                Our innovative yoga platform offers in-studio memberships, live-streaming <small>(coming soon)</small> and VoD <small>(coming soon)</small> to create a truly interactive community.
-                Easy to use and navigate, your membership helps you not just
-                learn how to practice yoga, but how to find purpose in that
-                practice.
+                Our innovative yoga platform offers in-studio memberships,
+                live-streaming <small>(coming soon)</small> and VoD{" "}
+                <small>(coming soon)</small> to create a truly interactive
+                community. Easy to use and navigate, your membership helps you
+                not just learn how to practice yoga, but how to find purpose in
+                that practice.
               </p>
             </div>
           </div>
@@ -39,17 +44,17 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                    $54.17<small>/mo</small>
+                    $62.50<small>/mo</small>
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">649.99</span>
+                  <span className="h3">749.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /$
                   </span>
                   <span className="font-medium text-red-500 dark:text-red-400 line-through">
-                    779.99
+                    899.88
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
@@ -79,14 +84,17 @@ function PricingTables() {
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">64.99</span>
+                  <span className="h3">74.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /monthly
                   </span>
-                  
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
-                  — Grand Opening Special
+                  — Save $
+                  <span className="font-semibold text-gray-600 dark:text-gray-300">
+                    164.89
+                  </span>{" "}
+                  a month*
                 </div>
               </div>
               <div className="mt-24">
@@ -108,26 +116,40 @@ function PricingTables() {
               <div className="flex-grow mb-4 pb-4">
                 <div className="flex justify-between items-center mb-1">
                   <div className="text-xl font-bold font-red-hat-display">
-                    Online
+                    Drop In
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">TBD</span>
+                  <span className="h3">20</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
-                    /monthly
+                    /per class
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
-                  — Online membership.
+                  —{" "}
+                  <span>
+                    First class is{" "}
+                    <b
+                      className="underline text-lg text-gray-800 dark:text-gray-300"
+                      style={{
+                        textDecorationColor: "rgb(93, 93, 255)",
+                        textUnderlineOffset: "1px",
+                        textDecorationThickness: "2px",
+                      }}
+                    >
+                      FREE
+                    </b>
+                    !
+                  </span>
                 </div>
               </div>
               <div className="mt-24">
                 <a
+                  href="https://app.rouse.yoga"
                   className="btn-sm disabled:opacity-50 text-white bg-purple-500 hover:bg-purple-400 dark:text-purple-400 dark:bg-gray-700 dark:hover:bg-gray-600 w-full"
-                  disabled
                 >
-                  Coming Soon
+                  Take a Class!
                 </a>
               </div>
             </div>
@@ -150,7 +172,7 @@ function PricingTables() {
               <div className="text-lg font-bold font-red-hat-display mb-4 mt-4 sm:mt-0 text-gray-100">
                 All plans include:
               </div>
-              <ul className="text-gray-400 -mb-2 flex-grow">
+              <ul className="text-gray-400 flex-grow mb-4">
                 <li className="flex items-center mb-2">
                   <svg
                     className="w-3 h-3 fill-current text-purple-500 mr-3 flex-shrink-0"
@@ -232,12 +254,56 @@ function PricingTables() {
                   <span>Smart forms and reports</span>
                 </li> */}
               </ul>
+              {/* <div className="text-lg font-bold font-red-hat-display mb-4 mt-4 sm:mt-0 text-gray-100">
+                Drop in class price:
+              </div>
+              <ul className="text-gray-400 flex-grow mb-4">
+                <li className="flex items-center mb-2">
+                  <svg
+                    className="w-3 h-3 fill-current text-purple-500 mr-3 flex-shrink-0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                  </svg>
+                  <span>
+                    First class is{" "}
+                    <b
+                      className="underline text-gray-300"
+                      style={{
+                        textDecorationColor: "rgb(93, 93, 255)",
+                        textUnderlineOffset: "1px",
+                        textDecorationThickness: "2px",
+                      }}
+                    >
+                      FREE
+                    </b>
+                    !
+                  </span>
+                </li>
+                <li className="flex items-center mb-2">
+                  <svg
+                    className="w-3 h-3 fill-current text-purple-500 mr-3 flex-shrink-0"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
+                  </svg>
+                  <span>$20 after the first class</span>
+                </li>
+              </ul> */}
             </div>
           </div>
         </div>
       </div>
+      <div className="w-full text-gray-400 text-center pb-4">
+        <small className="text-gray-300 text-center">
+          *Based on drop in prices and average student attending 3 classes per
+          week.
+        </small>
+      </div>
     </section>
-  )
+  );
 }
 
-export default PricingTables
+export default PricingTables;

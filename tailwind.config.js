@@ -136,8 +136,8 @@ module.exports = {
         98: ".98",
       },
       animation: {
-        float: "float 4s ease-in-out infinite",
-        "slow-reveal": "gradient 8s ease-in-out infinite",
+        float: "float 5s ease-in-out infinite",
+        "slow-reveal": "gradient 9s ease-in-out infinite",
         blob: "blob 7s infinite",
       },
       keyframes: {

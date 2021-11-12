@@ -7,7 +7,11 @@ import { splitDate, imageProps } from "../lib/misc";
 
 const BlogListItem = ({ post }) => {
   const { description, instructor, mainImage, publishedAt, slug, title } = post;
-  console.log("blog list item =>", post);
+  console.log("mainImage.asset.path =>", mainImage);
+
+  const sanityIoImageLoader = ({ src, width, quality }) => {
+    return `${src}`
+  }
 
   return (
     <article className="flex flex-col h-full">
@@ -17,11 +21,11 @@ const BlogListItem = ({ post }) => {
             <figure className="relative h-0 pb-9/16 ">
               <Image
                 className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                // loader={sanityIoImageLoader}
                 src={
                   mainImage.asset.path !== undefined || null
                     ? `https://cdn.sanity.io/${mainImage.asset.path}`
-                    : imageProps(mainImage).src
-                }
+                    : imageProps(mainImage).src}
                 width="540"
                 height="304"
                 alt="News 01"

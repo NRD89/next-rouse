@@ -6,6 +6,17 @@
 @tailwind utilities;
 /* Stop purging. */
 
+html {
+  --plyr-color-main: linear-gradient(145deg, #7146ea 0%, #0498eb 92.33%);
+  --plyr-video-background: rgb(37, 40, 54);
+  --plyr-range-fill-background: #7146ea;
+  scroll-behavior: smooth;
+}
+
+.plyr {
+  @apply rounded-lg;
+}
+
 /* Typography */
 p {
   @apply text-base leading-relaxed text-gray-700 dark:text-gray-300;

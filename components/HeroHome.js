@@ -9,7 +9,7 @@ const HeroHome = () => {
       <div className="absolute inset-0 h-[90vh] w-full box-content -z-1">
         <Image
           className="absolute inset-0 w-full h-full max-h-[90vh] object-cover opacity-40"
-          src="c_scale,f_auto,q_auto:eco,w_1800/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
+          src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto:eco,w_1800/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
           // src="c_scale,f_auto,q_auto:eco,w_1500/v1610702114/rouse-hero-image_f3md0w.jpg"
           // width={1440}
           // height={577}
@@ -56,7 +56,7 @@ const HeroHome = () => {
                   </span>
                 </h1>
                 <p
-                  className="text-xl text-gray-700 max-w-prose mx-auto dark:text-gray-300"
+                  className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >

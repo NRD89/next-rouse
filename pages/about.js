@@ -18,10 +18,11 @@ const about = () => {
         <div className="mx-auto max-w-prose">
           <Image
             className="rounded-xl"
-            src="c_scale,f_auto,q_auto,dpr_2,w_653/v1634787843/5F0699FF-897D-4DCD-ABD2-C5A1035007B8_1_201_a_khwpxz.jpg"
+            src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,dpr_2.0,f_auto,q_69,w_653/v1634787843/5F0699FF-897D-4DCD-ABD2-C5A1035007B8_1_201_a_khwpxz.jpg"
             width={653}
             height={368}
             alt="About"
+            quality="40"
             layout="responsive"
           />
           <p className="mb-4 mt-6 text-gray-700 dark:text-gray-300">

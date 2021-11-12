@@ -1,5 +1,7 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import Layout from "../components/Layout";
+import ScrollToTop from "../components/ScrollToTop";
 // import { fadeInUp, stagger } from "../animations/pageTransitions";
 // import Plyr from "plyr";
 // import "plyr/dist/plyr.css";
@@ -8,12 +10,19 @@ import { groq } from "next-sanity";
 import { getClient } from "../lib/sanity.server";
 import { format, formatISO } from "date-fns";
 
-const IndexPage = ({ classes, todaysDate }) => {
+const ClassSchedule = ({ classes, todaysDate }) => {
   console.log("classes =>", classes);
   console.log("todaysDate =>", todaysDate);
 
   return (
     <Layout>
+      <Head>
+        <title>Class Schedule | Rouse Yoga</title>
+        <meta
+          name="description"
+          content="Rouse Yoga Riverside class schedule."
+        />
+      </Head>
       <div
         initial="initial"
         animate="animate"
@@ -67,6 +76,21 @@ const IndexPage = ({ classes, todaysDate }) => {
                       <p className="mt-2 text-md text-gray-600 dark:text-gray-400">
                         Taught by: {_class.instructor.name}
                       </p>
+                      <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 bg-gradient-to-tr from-blue-800 via-blue-700 to-blue-800 rounded mr-2 border border-gray-400">
+                        Level: {_class.level}
+                      </span>
+                      <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-gray-100 bg-gradient-to-tr from-indigo-800 via-indigo-700 to-indigo-800 rounded mr-2 border border-gray-400">
+                        {_class.style.map((class_style, index, { length }) => (
+                          <span className="mr-1 capitalize">
+                            {class_style}
+                            {length - 1 === index
+                              ? null
+                              : _class.style.length > 1
+                              ? ","
+                              : null}
+                          </span>
+                        ))}
+                      </span>
                       <p className="mt-2 text-lg text-gray-700 dark:text-gray-300">
                         {_class.description}
                       </p>
@@ -111,11 +135,12 @@ const IndexPage = ({ classes, todaysDate }) => {
           </div>
         </section>
       </div>
+      <ScrollToTop />
     </Layout>
   );
 };
 
-export default IndexPage;
+export default ClassSchedule;
 
 export async function getServerSideProps() {
   const todaysDate = new Date().toISOString();

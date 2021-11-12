@@ -136,11 +136,19 @@ const Header = () => {
                 </Link>
               </li> */}
               <li>
-                <Link href="/classes">
+                <Link href="/class-schedule">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                    Classes
+                    Schedule
                   </a>
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="#pricing"
+                  className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+                >
+                  Pricing
+                </a>
               </li>
             </ul>
 
@@ -259,6 +267,11 @@ const Header = () => {
                       <>
                         <DropdownItem>
                           <a href="https://app.rouse.yoga">Sign up/Login</a>
+                        </DropdownItem>
+                      </>
+                      <>
+                        <DropdownItem>
+                          <a href="#pricing">Pricing</a>
                         </DropdownItem>
                       </>
                     </Dropdown>
