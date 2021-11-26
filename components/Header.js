@@ -3,11 +3,10 @@ import { AuthContext } from "../context/UserAuthContext";
 import Link from "next/link";
 import Image from "next/image";
 import { Dropdown, DropdownItem, Badge, Button } from "@windmill/react-ui";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { CgProfile } from "react-icons/cg";
 import { useTheme } from "next-themes";
-import { cache } from "swr";
-import DigitalModal from "./DigitalModal";
+import { Menu } from "@headlessui/react";
 
 // import useAuth from "../hooks/useAuth"
 
@@ -20,6 +19,39 @@ const Path = (props) => (
     {...props}
   />
 );
+
+const variants = {
+  open: {
+    rotateX: 0,
+    y: 0,
+    scaleX: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      mass: 2.5,
+      damping: 50,
+      stiffness: 400,
+      type: "spring",
+    },
+    display: "block",
+  },
+  closed: {
+    rotateX: -15,
+    y: -320,
+    scaleX: 0,
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      mass: 0.5,
+      damping: 60,
+      stiffness: 500,
+      type: "spring",
+    },
+    transitionEnd: {
+      display: "none",
+    },
+  },
+};
 
 const Header = () => {
   const { user, setUser, logout, isAuthenticated } = useContext(AuthContext);
@@ -149,6 +181,13 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
+              <li>
+                <Link href="/events">
+                  <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                    Events
+                  </a>
+                </Link>
+              </li>
             </ul>
 
             <ul className="flex flex-wrap items-center justify-end">
@@ -194,6 +233,97 @@ const Header = () => {
               </li>
               <li>
                 <div className="pl-2 sm:pl-4 w-10 h-10 rounded-full text-gray-900 dark:text-gray-100 lg:hidden flex justify-center items-center">
+                  {/* <Menu>
+                    {({ open }) => (
+                      <>
+                        <Menu.Button className="ml-auto group inline-flex items-center space-x-2 focus:outline-none">
+                          <svg
+                            onClick={toggleDropdown}
+                            width="25"
+                            height="25"
+                            viewBox="0 0 25 25"
+                            className="stroke-current  text-gray-900 dark:text-gray-200 -z-10"
+                          >
+                            <Path
+                              // stroke={
+                              //   isDarkMode ? `rgb(212,212,216)` : `rgb(29,29,32)`
+                              // }
+                              animate={{ d: open ? "M 3 16.5 L 19 2.5" : "M 2 2.5 L 25 2.5"}}
+                              variants={{
+                                closed: { d: "M 2 2.5 L 25 2.5" },
+                                open: { d: "M 3 16.5 L 19 2.5" },
+                              }}
+                            />
+                            <Path
+                              // stroke={
+                              //   isDarkMode ? `rgb(212,212,216)` : `rgb(29,29,32)`
+                              // }
+                              d="M 2 9.423 L 25 9.423"
+                              variants={{
+                                closed: { opacity: 1 },
+                                open: { opacity: 0 },
+                              }}
+                              transition={{ duration: 0.1 }}
+                            />
+                            <Path
+                              // stroke={
+                              //   isDarkMode ? `rgb(212,212,216)` : `rgb(29,29,32)`
+                              // }
+                              animate={{ d: open ? "M 3 2.5 L 19 16.346" : "M 2 16.346 L 25 16.346"}}
+                            />
+                          </svg>
+                        </Menu.Button>
+                        <AnimatePresence exitBeforeEnter>
+                          {open && (
+                            <Menu.Items
+                              as={motion.div}
+                              initial="closed"
+                              animate="open"
+                              exit="closed"
+                              variants={variants}
+                              // transition={{
+                              //   duration: 0.3,
+                              // }}
+                              static
+                              className="absolute right-6 md:right-8 top-20 bg-gradient-to-bl from-blueGray-800 to-blueGray-900 text-gray-100 rounded-lg focus:outline-none border border-blueGray-700 overflow-hidden z-10"
+                            >
+                              <div className="p-2">
+                                <Menu.Item>
+                                  <Link href="/about">
+                                    <a className="block px-4 py-2 whitespace-nowrap rounded-lg border border-transparent hover:bg-blueGray-700">
+                                      About
+                                    </a>
+                                  </Link>
+                                </Menu.Item>
+                                <Menu.Item>
+                                  <Link href="/class-schedule">
+                                    <a className="block px-4 py-2 whitespace-nowrap rounded-lg border border-transparent hover:bg-blueGray-700">
+                                      Schedule
+                                    </a>
+                                  </Link>
+                                </Menu.Item>
+                                <Menu.Item>
+                                  <Link href="/events">
+                                    <a className="block px-4 py-2 whitespace-nowrap rounded-lg border border-transparent hover:bg-blueGray-700">
+                                      Events
+                                    </a>
+                                  </Link>
+                                </Menu.Item>
+                                <Menu.Item>
+                                  <a
+                                    href="https://app.rouse.yoga"
+                                    className="block px-4 py-2 whitespace-nowrap rounded-lg border border-transparent hover:bg-blueGray-700"
+                                  >
+                                    Sign up/Login
+                                  </a>
+                                </Menu.Item>
+                              </div>
+                            </Menu.Items>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    )}
+                  </Menu> */}
                   <motion.div
                     initial={false}
                     animate={isOpen ? "open" : "closed"}
@@ -261,6 +391,11 @@ const Header = () => {
                       <Link href="/class-schedule">
                         <DropdownItem>
                           <a>Schedule</a>
+                        </DropdownItem>
+                      </Link>
+                      <Link href="/events">
+                        <DropdownItem>
+                          <a>Events</a>
                         </DropdownItem>
                       </Link>
                       <>

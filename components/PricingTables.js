@@ -44,12 +44,12 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                    $62.50<small>/mo</small>
+                    $54.17<small>/mo</small>
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">749.99</span>
+                  <span className="h3">649.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /$
                   </span>
@@ -84,15 +84,18 @@ function PricingTables() {
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">74.99</span>
+                  <span className="h3">64.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
-                    /monthly
+                    /$
+                  </span>
+                  <span className="font-medium text-red-500 dark:text-red-400 line-through">
+                    74.99
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
                   — Save $
                   <span className="font-semibold text-gray-600 dark:text-gray-300">
-                    164.89
+                    175.01
                   </span>{" "}
                   a month*
                 </div>
@@ -168,6 +171,9 @@ function PricingTables() {
                     d="M80.959 10.448l-5.502-8.292 1.666-1.105 8.596 12.953-15.534.62-.08-1.999 9.944-.397-7.182-3.672C45.251-3.737 21.787 1.633 2.216 24.726L.69 23.435C20.836-.338 45.252-5.926 73.73 6.752l7.23 3.696z"
                   />
                 </svg>
+              </div>
+              <div className="text-3xl text-center font-bold font-red-hat-display mb-4 mt-4 sm:mt-0 text-purple-400">
+                Black Friday<br />Weekend Sale
               </div>
               <div className="text-lg font-bold font-red-hat-display mb-4 mt-4 sm:mt-0 text-gray-100">
                 All plans include:
