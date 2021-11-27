@@ -230,7 +230,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
                 bg-size-200 bg-pos-0 hover:bg-pos-100
               "
             >
-              {loading ? "Loading..." : "Purchase Class"}
+              {loading ? "Loading..." : "Purchase Event"}
             </button>
           </div>
         </div>

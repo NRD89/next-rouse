@@ -3,29 +3,41 @@ import Plyr from "plyr";
 import "plyr/dist/plyr.css";
 import ReactMarkdown from "react-markdown";
 import EventPaymentModal from "./EventPaymentModal";
+import useSWR from "swr";
 import { groq } from "next-sanity";
 import { getClient } from "../lib/sanity.server";
+import { format } from "date-fns";
 
 const attendeeQuery = groq`
   count(*[_type == 'attendee' && references(*[_type=="event" && _id == $id]._id)])
 `;
 
 function EventListItem({ event }) {
-  const [attendees, setAttendees] = useState();
-  console.log("attendees =>", attendees);
-
   const params = { id: event._id };
+  async function fetcher(query, serializedParams) {
+    const params = JSON.parse(serializedParams);
+    await getClient().fetch(query, params);
+  }
+
+  const { data, error } = useSWR(
+    groq`
+      count(*[_type == 'attendee' && references(*[_type=="event" && _id == "${event._id}"]._id)])
+    `,
+    (query) => getClient().fetch(query)
+  );
+  const [attendees, setAttendees] = useState();
+  console.log("data =>", data);
 
   useEffect(() => {
     const player = new Plyr("#player");
 
-    async function fetchattendees() {
-      const getAttendees = await getClient().fetch(attendeeQuery, params);
-      console.log("use effect =>", getAttendees);
-      setAttendees(getAttendees);
-    }
+    // async function fetchattendees() {
+    //   const getAttendees = await getClient().fetch(attendeeQuery, params);
+    //   console.log("use effect =>", getAttendees);
+    //   setAttendees(getAttendees);
+    // }
 
-    fetchattendees();
+    // fetchattendees();
   }, []);
   return (
     <div data-aos="fade-down" data-aos-delay="200">
@@ -46,11 +58,11 @@ function EventListItem({ event }) {
                                     w-72
                                     h-72
                                     mix-blend-multiply
-                                    dark:mix-blend-lighten
+                                    dark:mix-blend-difference
                                     filter
                                     blur-xl
                                     opacity-70
-                                    dark:opacity-50
+                                    dark:opacity-30
                                     animate-blob
                                   "
                   ></div>
@@ -65,11 +77,11 @@ function EventListItem({ event }) {
                                     w-72
                                     h-72
                                     mix-blend-multiply
-                                    dark:mix-blend-lighten
+                                    dark:mix-blend-difference
                                     filter
                                     blur-xl
                                     opacity-70
-                                    dark:opacity-50
+                                    dark:opacity-30
                                     animate-blob
                                     animation-delay-4000
                                   "
@@ -123,7 +135,7 @@ function EventListItem({ event }) {
               </span>
               <h1
                 className="
-                    mb-8
+                    mb-4
                     text-4xl
                     font-bold
                     leading-none
@@ -135,6 +147,12 @@ function EventListItem({ event }) {
               >
                 {event.guest_host}
               </h1>
+              <p className="text-xl font-semibold  mb-4">
+                {`${format(
+                  new Date(event.eventDateTime),
+                  "EEEE, MMMM dd 'at' h:mm aaaa"
+                )}`}{" "}
+              </p>
               <div
                 className="prose prose-xl prose-purple mb-8"
                 data-aos="fade-up"
@@ -152,9 +170,9 @@ function EventListItem({ event }) {
                 />
               </div>
               <p className="font-medium text-lg">
-                {`${attendees + 8}`}/{`${event.max_capacity + 8}`} Spots Left
+                {`${data + 8}`}/{`${event.max_capacity + 8}`} Spots Left
               </p>
-              {attendees >= event.max_capacity ? (
+              {data >= event.max_capacity ? (
                 <p className="text-xl uppercase font-bold mt-4 text-gray-900 dark:text-gray-100 tracking-wide">
                   Event Full
                 </p>

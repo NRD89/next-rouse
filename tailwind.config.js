@@ -102,11 +102,11 @@ module.exports = {
       },
       backgroundSize: {
         animate: "200% 200%",
-        'size-200': '200% 200%',
+        "size-200": "200% 200%",
       },
       backgroundPosition: {
-        'pos-0': '0% 0%',
-        'pos-100': '100% 100%',
+        "pos-0": "0% 0%",
+        "pos-100": "100% 100%",
       },
       fontFamily: {
         inter: ["Poppins", "sans-serif"],
@@ -139,6 +139,7 @@ module.exports = {
         float: "float 5s ease-in-out infinite",
         "slow-reveal": "gradient 9s ease-in-out infinite",
         blob: "blob 7s infinite",
+        teeter: "teeter 1.5s infinite"
       },
       keyframes: {
         float: {
@@ -159,6 +160,10 @@ module.exports = {
           "66%": {
             transform: "translate(-20px, 20px) scale(0.8)",
           },
+        },
+        teeter: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
         },
       },
       zIndex: {

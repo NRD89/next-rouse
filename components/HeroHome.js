@@ -1,8 +1,51 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import DigitalModal from "./DigitalModal";
 // import ReactPlayer from "react-player"
 
 const HeroHome = () => {
+  const calculateTimeLeft = () => {
+    let year = new Date().getFullYear();
+    let difference = +new Date(`11/30/2021`) - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+      // setYear(new Date().getFullYear());
+    }, 1000);
+    // Clear timeout if the component is unmounted
+    return () => clearTimeout(timer);
+  });
+
+  const timerComponents = [];
+
+  Object.keys(timeLeft).forEach((interval) => {
+    if (!timeLeft[interval]) {
+      return;
+    }
+
+    timerComponents.push(
+      <span className="text-xs md:text-sm font-medium text-white">
+        {timeLeft[interval]} {interval}{" "}
+      </span>
+    );
+  });
+
   return (
     <section className="relative min-h-[80vh] w-full overflow-hidden">
       {/* Background image */}
@@ -39,7 +82,7 @@ const HeroHome = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-32 md:pt-48 md:pb-20">
+        <div className="pt-32 pb-32 md:pt-40 md:pb-20">
           <div className="text-center">
             <div className="relative flex justify-center items-center">
               <div
@@ -49,21 +92,54 @@ const HeroHome = () => {
               {/* <div className="absolute -top-20 -left-2 w-96 h-96 bg-purple-500 rounded-full mix-blend-color filter blur-xl "></div>
               <div className="absolute -top-8 left-80 w-96 h-96 bg-blue-500 rounded-full mix-blend-color filter blur-xl "></div> */}
               <div className="max-w-4xl" data-aos="fade-down">
-                <h1 className="mb-4 font-red-hat-display">
-                  <span className="h1 sm:h1 md:text-9xl">Empower</span>
+                <div className="bg-red-500 w-64 md:w-72 mx-auto rounded-lg mb-4">
+                  {timerComponents.length ? (
+                    timerComponents
+                  ) : (
+                    <span>Time's up!</span>
+                  )}
+                </div>
+                <h1 className="mb-4 font-red-hat-display relative">
+                  {/* <span className="absolute text-xs bg-red-500 px-4 py-2 text-gray-50 uppercase rounded-2xl animate-teeter inset-x-0 mx-auto w-48 -bottom-10">
+                    Weekend Sale
+                  </span> */}
+                  <span className="text-5xl font-bold uppercase md:text-7xl tracking-tight">
+                    Black Friday
+                  </span>
                   <br />
-                  <span className="h2-hero md:text-6xl uppercase dark:text-gray-100">
-                    Your Yoga Practice
+                  <span className="text-2xl">&</span>
+                  <br />
+                  <span className="font-bold text-5xl md:text-7xl uppercase dark:text-gray-100 tracking-tight">
+                    Cyber Monday
                   </span>
                 </h1>
+                <p className="text-base font-semibold bg-transparent border-2 border-red-500 px-2 py-1 text-gray-900 dark:text-gray-50 uppercase rounded-xl animate-teeter mx-auto w-36 mb-4">
+                  Weekend Sale
+                </p>
                 <p
+                  className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
+                  data-aos="fade-down"
+                  data-aos-delay="150"
+                >
+                  Lock in{" "}
+                  <span className="font-bold text-gray-900 dark:text-gray-50">
+                    $10
+                  </span>{" "}
+                  off monthly and{" "}
+                  <span className="font-bold text-gray-900 dark:text-gray-50">
+                    $100
+                  </span>{" "}
+                  off yearly subscriptions, until you unsubscribe!{" "}
+                  <span className="text-2xl animate-bounce">🤯</span>
+                </p>
+                {/* <p
                   className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
                   Discover the healing power of Yoga with classes designed to
                   empower your body, mind, and soul.
-                </p>
+                </p> */}
                 {/* CTA form */}
                 <div
                   className="flex flex-col justify-center max-w-sm mx-auto sm:max-w-md mt-8"
@@ -73,10 +149,7 @@ const HeroHome = () => {
                   {/* <small className="text-sm mb-4 text-gray-700 dark:text-gray-300 font-red-hat-display">
                     Try our Digital Membership free for 7 days
                   </small> */}
-                  <DigitalModal
-                    buttonText="Sign Up Today!"
-                    btnPriority="cta"
-                  />
+                  <DigitalModal buttonText="Seal The Deal!" btnPriority="cta" />
                   <div className="max-w-3xl mx-auto text-center pb-3">
                     <h2 className="text-sm mt-7 font-medium font-red-hat-display">
                       As Seen On:
