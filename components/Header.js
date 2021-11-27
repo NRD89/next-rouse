@@ -1,10 +1,8 @@
-import { useState, useEffect, useContext } from "react";
-import { AuthContext } from "../context/UserAuthContext";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Dropdown, DropdownItem, Badge, Button } from "@windmill/react-ui";
 import { AnimatePresence, motion } from "framer-motion";
-import { CgProfile } from "react-icons/cg";
 import { useTheme } from "next-themes";
 import { Menu } from "@headlessui/react";
 
@@ -54,7 +52,6 @@ const variants = {
 };
 
 const Header = () => {
-  const { user, setUser, logout, isAuthenticated } = useContext(AuthContext);
   // const { mutate } = useAuth()
   const [top, setTop] = useState(true);
   const [isOpen, setIsOpen] = useState(false);

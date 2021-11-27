@@ -242,7 +242,7 @@ module.exports = {
       variants: ["responsive"],
       // required
       gradients: {
-        "purp-blue": ["#ED64A6", "#7146ea"], // must be two colors
+        "purp-blue": ["#D53F8C", "#667EEA"], // must be two colors
         ex2: { easing: "ease-in-out", steps: 5, color: ["#4ae", "#0da"] },
         ex3: {
           easing: "cubic-bezier(0.48, 0.3, 0.64, 1)",

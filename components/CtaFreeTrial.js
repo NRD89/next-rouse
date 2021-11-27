@@ -1,4 +1,4 @@
-import DigitalModal from "./DigitalModal"
+import Button from "./Button"
 
 const CtaFreeTrial = () => {
   return (
@@ -78,7 +78,7 @@ const CtaFreeTrial = () => {
 
             {/* CTA button */}
             <div className="flex justify-center mt-8">
-              <DigitalModal buttonText="Sign Up Today!" />
+              <Button buttonText="Sign Up Today!" />
             </div>
           </div>
         </div>

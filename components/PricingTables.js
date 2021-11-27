@@ -1,4 +1,4 @@
-import DigitalModal from "./DigitalModal";
+import Button from "./Button";
 
 function PricingTables() {
   return (
@@ -62,7 +62,7 @@ function PricingTables() {
                 </div>
               </div>
               <div className="mt-24">
-                <DigitalModal
+                <Button
                   buttonText="Sign Up Today"
                   btnSize="small"
                   btnWidth="full"
@@ -101,7 +101,7 @@ function PricingTables() {
                 </div>
               </div>
               <div className="mt-24">
-                <DigitalModal
+                <Button
                   buttonText="Sign Up Today"
                   btnSize="small"
                   btnWidth="full"

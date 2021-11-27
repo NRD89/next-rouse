@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import DigitalModal from "./DigitalModal";
+import Button from "./Button"
 // import ReactPlayer from "react-player"
 
 const HeroHome = () => {
@@ -72,7 +72,7 @@ const HeroHome = () => {
           className="absolute inset-0 w-full h-full mix-blend-color bg-animate animate-slow-reveal opacity-80 dark:opacity-80 transform rotate-180 bg-easing-r-purp-blue"
           style={{
             // background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
-            backgroundSize: `400% 400%`,
+            backgroundSize: `300% 300%`,
             height: `100%`,
             backgroundRepeat: `no-repeat`,
             perspective: `1000px`,
@@ -149,7 +149,7 @@ const HeroHome = () => {
                   {/* <small className="text-sm mb-4 text-gray-700 dark:text-gray-300 font-red-hat-display">
                     Try our Digital Membership free for 7 days
                   </small> */}
-                  <DigitalModal buttonText="Seal The Deal!" btnPriority="cta" />
+                  <Button buttonText="Seal The Deal!" btnPriority="cta" />
                   <div className="max-w-3xl mx-auto text-center pb-3">
                     <h2 className="text-sm mt-7 font-medium font-red-hat-display">
                       As Seen On:
