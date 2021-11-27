@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@netlify/plugin-nextjs": "^3.9.2",
+    "@slightlyoff/lite-vimeo": "^0.1.2",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.11.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
@@ -28,6 +29,7 @@
     "graphql-request": "^3.3.0",
     "isomorphic-unfetch": "^3.1.0",
     "js-cookie": "^2.2.1",
+    "lite-vimeo-embed": "^0.1.0",
     "netlify-cli": "^6.9.24",
     "next": "11.0.1",
     "next-compose-plugins": "^2.2.0",
@@ -45,6 +47,7 @@
     "react-dom": "17.0.2",
     "react-hooks-helper": "^1.6.0",
     "react-icons": "^3.11.0",
+    "react-lazyload": "^3.2.0",
     "react-lottie": "^1.2.3",
     "react-markdown": "^5.0.3",
     "react-pdf": "^5.0.0",
@@ -52,6 +55,7 @@
     "sharp": "^0.29.2",
     "stripe": "^8.121.0",
     "swr": "^0.3.9",
+    "tailwind-easing-gradients": "^1.0.2",
     "tailwindcss": "^2.2.4",
     "tailwindcss-border-gradients": "^2.0.3",
     "timezone-support": "^2.0.2"

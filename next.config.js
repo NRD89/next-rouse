@@ -10,6 +10,7 @@
     // path: "https://res.cloudinary.com/rouse-yoga/image/upload/",
     domains: ["cdn.sanity.io", "res.cloudinary.com"],
   },
+  generateBuildId: () => 'build'
 };
 
 module.exports = nextConfig;

@@ -69,9 +69,9 @@ const HeroHome = () => {
           aria-hidden="true"
         ></div>
         <div
-          className="absolute inset-0 w-full h-full mix-blend-color bg-animate animate-slow-reveal opacity-80 dark:opacity-80 transform rotate-180"
+          className="absolute inset-0 w-full h-full mix-blend-color bg-animate animate-slow-reveal opacity-80 dark:opacity-80 transform rotate-180 bg-easing-r-purp-blue"
           style={{
-            background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
+            // background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
             backgroundSize: `400% 400%`,
             height: `100%`,
             backgroundRepeat: `no-repeat`,

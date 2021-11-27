@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import LazyLoad from "react-lazyload";
 import Plyr from "plyr";
 import "plyr/dist/plyr.css";
 import ReactMarkdown from "react-markdown";
@@ -28,6 +29,9 @@ function EventListItem({ event }) {
   const [attendees, setAttendees] = useState();
   console.log("data =>", data);
 
+  const adjustedCount = data + 8;
+  const adjustedCapacity = event.max_capacity + 8;
+
   useEffect(() => {
     const player = new Plyr("#player");
 
@@ -52,8 +56,8 @@ function EventListItem({ event }) {
                                     absolute
                                     top-0
                                     rounded-full
-                                    bg-purple-400
-                                    dark:bg-purple-800
+                                    bg-blue-400
+                                    dark:bg-blue-700
                                     -left-4
                                     w-72
                                     h-72
@@ -90,13 +94,15 @@ function EventListItem({ event }) {
                     <div className="w-full flex items-center justify-center my-10">
                       <div className="relative w-full">
                         <div className="plyr__video-embed" id="player">
-                          <iframe
-                            src="https://player.vimeo.com/video/648925365"
-                            allowFullScreen
-                            allowtransparency="true"
-                            allow="autoplay"
-                            className="w-full h-full rounded-lg"
-                          ></iframe>
+                          <LazyLoad className="plyr__video-embed" id="player" height={256}>
+                            <iframe
+                              src="https://player.vimeo.com/video/648925365"
+                              allowFullScreen
+                              allowtransparency="true"
+                              allow="autoplay"
+                              className="w-full h-full rounded-xl"
+                            ></iframe>
+                          </LazyLoad>
                         </div>
                       </div>
                     </div>
@@ -170,7 +176,11 @@ function EventListItem({ event }) {
                 />
               </div>
               <p className="font-medium text-lg">
-                {`${data + 8}`}/{`${event.max_capacity + 8}`} Spots Left
+                <span className="font-bold text-gray-900 dark:text-gray-50">
+                  {`${adjustedCapacity - adjustedCount}`}/
+                  {`${adjustedCapacity}`}
+                </span>{" "}
+                Spots Available
               </p>
               {data >= event.max_capacity ? (
                 <p className="text-xl uppercase font-bold mt-4 text-gray-900 dark:text-gray-100 tracking-wide">

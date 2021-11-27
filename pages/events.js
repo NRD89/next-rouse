@@ -46,11 +46,12 @@ const Events = ({ events }) => {
           {/* Background image */}
           <div className="absolute inset-0 h-72 pt-16 box-content -z-1">
             <Image
-              className="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-30"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.35] dark:opacity-40"
               src="/rouse_mural_comp.jpg"
               alt="About"
               layout="fill"
               priority
+              quality="35"
             />
             <div
               className="absolute inset-0 bg-gradient-to-t from-white dark:from-black"

@@ -139,7 +139,7 @@ module.exports = {
         float: "float 5s ease-in-out infinite",
         "slow-reveal": "gradient 9s ease-in-out infinite",
         blob: "blob 7s infinite",
-        teeter: "teeter 1.5s infinite"
+        teeter: "teeter 1.5s infinite",
       },
       keyframes: {
         float: {
@@ -238,5 +238,30 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
     require("tailwindcss-border-gradients")(),
+    require("tailwind-easing-gradients")({
+      variants: ["responsive"],
+      // required
+      gradients: {
+        "purp-blue": ["#ED64A6", "#7146ea"], // must be two colors
+        ex2: { easing: "ease-in-out", steps: 5, color: ["#4ae", "#0da"] },
+        ex3: {
+          easing: "cubic-bezier(0.48, 0.3, 0.64, 1)",
+          color: ["#4ae", "#0da"],
+        },
+        ex4: { easing: "steps(4, skip-none)", color: ["#4ae", "#0da"] },
+      },
+      // defaults
+      alphaDecimals: 5,
+      colorMode: "lrgb",
+      type: "linear",
+      easing: "ease", // default settings
+      colorStops: 15,
+      directions: {
+        t: "to top",
+        r: "to right",
+        b: "to bottom",
+        l: "to left",
+      },
+    }),
   ],
 };

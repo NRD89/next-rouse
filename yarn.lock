@@ -2012,6 +2012,11 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
+"@slightlyoff/lite-vimeo@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@slightlyoff/lite-vimeo/-/lite-vimeo-0.1.2.tgz#907fea46c390427e3fe5ec799cf60ec8c4188919"
+  integrity sha512-KkmMgogBfAHyk+Q1MvDWmTmif5uYIKzWLoW/vbxLzafC4GldU1ssKoo7VZ+cBtH19RFHFVrxy+PMd7IRghAT6Q==
+
 "@stripe/react-stripe-js@^1.1.2":
   version "1.2.2"
   resolved "https://registry.npmjs.org/@stripe/react-stripe-js/-/react-stripe-js-1.2.2.tgz"
@@ -3385,6 +3390,13 @@ chroma-js@^1.3.7:
   resolved "https://registry.npmjs.org/chroma-js/-/chroma-js-1.4.1.tgz"
   integrity sha512-jTwQiT859RTFN/vIf7s+Vl/Z2LcMrvMv3WUFmd/4u76AdlFC0NTNgqEEFPcRiHmAswPsMiQEDZLM8vX8qXpZNQ==
 
+chroma-js@^2.0.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.1.2.tgz#1075cb9ae25bcb2017c109394168b5cf3aa500ec"
+  integrity sha512-ri/ouYDWuxfus3UcaMxC1Tfp3IE9K5iQzxc2hSxbBRVNQFut1UuGAsZmiAf2mOUubzGJwgMSv9lHg+XqLaz1QQ==
+  dependencies:
+    cross-env "^6.0.3"
+
 ci-info@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/ci-info/-/ci-info-2.0.0.tgz"
@@ -3991,6 +4003,13 @@ critters@^0.0.7:
     parse5 "^6.0.1"
     parse5-htmlparser2-tree-adapter "^6.0.1"
     pretty-bytes "^5.3.0"
+
+cross-env@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-6.0.3.tgz#4256b71e49b3a40637a0ce70768a6ef5c72ae941"
+  integrity sha512-+KqxF6LCvfhWvADcDPqo64yVIB31gv/jQulX2NGzKS/g3GEVz6/pt4wjHFtFWsHMddebWD/sDthJemzM4MaAag==
+  dependencies:
+    cross-spawn "^7.0.0"
 
 cross-fetch@^3.0.6:
   version "3.0.6"
@@ -4646,7 +4665,7 @@ duplexer3@^0.1.4:
   resolved "https://registry.npmjs.org/duplexer3/-/duplexer3-0.1.4.tgz"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
-easing-coordinates@^2.0.0:
+easing-coordinates@^2.0.0, easing-coordinates@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/easing-coordinates/-/easing-coordinates-2.0.2.tgz"
   integrity sha512-uQpJaLQX2CKVnN27YvN4sL4pXyEFGAv00y4zgrC46H0EBHrDhJc/8OsT2CQ5/6yz6+d+u8ACGd9bo4v83FNVlg==
@@ -7135,6 +7154,11 @@ listr@^0.14.3:
     p-map "^2.0.0"
     rxjs "^6.3.3"
 
+lite-vimeo-embed@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/lite-vimeo-embed/-/lite-vimeo-embed-0.1.0.tgz#476030cfa80ee4f63e62155bbfe4e1ded71da8c8"
+  integrity sha512-XFzPdv4NaWlyaM9WpBaS5CIUkf+laIRZEXQGsBb2ZdDWkuMmnzfAZ5nriYv3a3MVx5tEEetGN0sNaUhAVRXr1g==
+
 load-json-file@^5.2.0:
   version "5.3.0"
   resolved "https://registry.npmjs.org/load-json-file/-/load-json-file-5.3.0.tgz"
@@ -9592,6 +9616,11 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+ramda@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
+  integrity sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
+
 ramda@^0.27.1:
   version "0.27.1"
   resolved "https://registry.npmjs.org/ramda/-/ramda-0.27.1.tgz"
@@ -9711,6 +9740,11 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-lazyload@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-lazyload/-/react-lazyload-3.2.0.tgz#497bd06a6dbd7015e3376e1137a67dc47d2dd021"
+  integrity sha512-zJlrG8QyVZz4+xkYZH5v1w3YaP5wEFaYSUWC4CT9UXfK75IfRAIEdnyIUF+dXr3kX2MOtL1lUaZmaQZqrETwgw==
 
 react-lottie@^1.2.3:
   version "1.2.3"
@@ -10979,6 +11013,15 @@ symbol-observable@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
+
+tailwind-easing-gradients@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tailwind-easing-gradients/-/tailwind-easing-gradients-1.0.2.tgz#f21d6b2b153ecf418a8895805c5e760a0929d74a"
+  integrity sha512-q4NNbxoCsQP8kL/i+kOD43Bdyvz/Ok/nC98jLOc6l8H7x3LbV2HK9hvSnB/fwK8jp6FNfFBUmHuiCa0QV5rG2A==
+  dependencies:
+    chroma-js "^2.0.2"
+    easing-coordinates "^2.0.2"
+    ramda "^0.26.1"
 
 tailwindcss-border-gradients@^2.0.3:
   version "2.0.3"

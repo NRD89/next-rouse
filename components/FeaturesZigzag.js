@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Image from "next/image";
+import LazyLoad from "react-lazyload";
 import Plyr from "plyr";
 import "plyr/dist/plyr.css";
 
@@ -24,15 +25,17 @@ function FeaturesZigzag() {
               </p>
               <div className="w-full flex items-center justify-center my-10">
                 <div className="relative w-full">
-                  <div className="plyr__video-embed" id="player">
-                    <iframe
-                      src="https://player.vimeo.com/video/644946081?h=55222ca26e"
-                      allowFullScreen
-                      allowtransparency="true"
-                      allow="autoplay"
-                      className="w-full h-full rounded-lg"
-                    ></iframe>
-                  </div>
+                  <LazyLoad height={432}>
+                    <div className="plyr__video-embed" id="player">
+                      <iframe
+                        src="https://player.vimeo.com/video/644946081?h=55222ca26e"
+                        allowFullScreen
+                        allowtransparency="true"
+                        allow="autoplay"
+                        className="w-full h-full rounded-xl"
+                      ></iframe>
+                    </div>
+                  </LazyLoad>
                   {/* <Image
                     className="rounded"
                     src="c_scale,f_auto,q_auto,dpr_1.5,w_400/v1610703761/rouse-star-down-dog_mnlu8p.jpg"
