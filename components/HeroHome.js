@@ -49,16 +49,16 @@ const HeroHome = () => {
   return (
     <section className="relative min-h-[80vh] w-full overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 h-[80vh] w-full box-content -z-1">
+      <div className="absolute inset-0 h-[55vh] md:h-[75vh] w-full box-content -z-1">
         <Image
-          className="absolute inset-0 w-full h-full max-h-[80vh] object-cover opacity-40"
+          className="absolute inset-0 w-full h-1/2 max-h-[80vh] object-cover opacity-40"
           src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_55,w_2000/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
           // src="c_scale,f_auto,q_auto:eco,w_1500/v1610702114/rouse-hero-image_f3md0w.jpg"
           // width={1440}
           // height={577}
           alt="About"
           layout="fill"
-          quality="35"
+          quality="75"
           priority
         />
         {/* <div className="absolute top-[25%] left-[45%] w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply dark:mix-blend-multiply filter blur-lg opacity:60 dark:opacity-70 animate-blob animation-delay-4000"></div>
