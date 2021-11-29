@@ -64,7 +64,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
           console.log("Successful payment");
           setSuccess(true);
         } else {
-          setError(true)
+          setError(true);
         }
       } catch (error) {
         console.log("Error", error);
@@ -137,8 +137,9 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
         {error ? <p className="text-red-600">{error}</p> : null}
 
         {success ? (
-          <p className="text-center text-xl font-semibold uppercase text-green-500 dark:text-green-400">
-            Thank you for purchasing!
+          <p className="text-center text-xl leading-8">
+            <span className="font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-l from-purple-700 via-pink-600 to-purple-700 mb-4">Thank you for purchasing!</span><br />
+            Check your email for receipt.
           </p>
         ) : (
           <>
@@ -146,7 +147,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
               <div className="w-full">
                 <label
                   className="block text-gray-400 text-sm font-medium mb-1"
-                  htmlFor="coupon"
+                  htmlFor="email"
                 >
                   Email <span className="text-red-600">*</span>
                 </label>
@@ -161,7 +162,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
                   className="form-input w-full"
                   required
                 />
-                <div className="text-gray-400 w-100 text-center mt-1">
+                <div className="text-gray-600 dark:text-gray-400 font-medium w-100 text-center mt-1">
                   <small>
                     Use membership email address to get membership price.
                   </small>
@@ -206,36 +207,42 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
               <div className="w-full px-3">
                 <button
                   type="submit"
-                  className="
-                w-full 
-                items-center
-                block
-                px-10
-                py-3.5
-                text-base
-                font-medium
-                uppercase
-                text-center text-white tracking-wider hover:tracking-widest
-                transition-all
-                duration-500
-                ease-in-out
-                transform
-                shadow-md
-                rounded-md
-                focus:outline-none
-                focus:ring-2
-                focus:ring-offset-2
-                focus:ring-gray-500
-                border border-solid border-white 
-                bg-gradient-to-l from-blue-600 via-blue-400 to-blue-600 
-                bg-size-200 bg-pos-0 hover:bg-pos-100
-              "
+                  className={
+                    `w-full 
+                    items-center
+                    block
+                    px-10
+                    py-3.5
+                    text-base
+                    font-medium
+                    uppercase
+                    text-center text-white tracking-wider hover:tracking-widest
+                    transition-all
+                    duration-500
+                    ease-in-out
+                    transform
+                    shadow-md
+                    rounded-md
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-offset-2
+                    focus:ring-gray-500
+                    border border-solid border-white 
+                    bg-gradient-to-l from-blue-600 via-blue-400 to-blue-600 
+                    bg-size-200 bg-pos-0 hover:bg-pos-100
+                    ${loading ? "pointer-events-none" : null}`
+                  }
+                  disabled={loading}
                 >
-                  {loading ? "Loading..." : "Purchase Event"}
+                  {loading ? (
+                    <span className="animate-pulse">Loading...</span>
+                  ) : (
+                    "Purchase Event"
+                  )}
                 </button>
               </div>
             </div>
-            <div className="text-xs text-center text-gray-400 mt-3">
+            <div className="text-xs text-center text-gray-700 dark:text-gray-400 mt-3">
               By purchasing, you agree to the{" "}
               <a
                 href="https://rouse.yoga/terms-and-conditions"

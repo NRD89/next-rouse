@@ -102,7 +102,7 @@ const DropInPayment = ({ regular_price, membership_price, id }) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-md px-6 pt-10 pb-8 my-8 overflow-hidden text-left align-middle transition-all transform bg-gradient-to-bl from-white via-gray-300 to-white text-gray-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100 rounded-xl focus:outline-none border border-gray-500 dark:border-gray-700 shadow-xl">
+              <div className="inline-block w-full max-w-md px-6 pt-10 pb-8 my-8 overflow-hidden text-left align-middle transition-all transform bg-gradient-to-bl from-white via-gray-200 to-white text-gray-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100 rounded-xl focus:outline-none border border-gray-500 dark:border-gray-700 shadow-xl">
                 <button
                   type="button"
                   className="absolute right-2 top-2 inline-flex justify-center px-3 py-1 text-sm font-bold text-red-700 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"

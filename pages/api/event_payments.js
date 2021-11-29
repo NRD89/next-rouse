@@ -38,6 +38,7 @@ export default async function handler(req, res) {
         currency: "USD",
         description: `${name} purchased event for ${event_id}.`,
         payment_method: id,
+        receipt_email: email,
         confirm: true,
       });
       console.log("Payment", payment);
