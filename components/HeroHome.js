@@ -121,7 +121,7 @@ const HeroHome = () => {
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
-                  <span className="underline font-bold" style={{textDecorationColor: "red"}}>Last chance</span> for{" "}
+                  <span className="underline font-bold text-gray-900 dark:text-gray-50" style={{textDecorationColor: "red"}}>Last chance</span> for{" "}
                   <span className="font-bold text-gray-900 dark:text-gray-50">
                     $10
                   </span>{" "}
