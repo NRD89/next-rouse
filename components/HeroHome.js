@@ -6,7 +6,7 @@ import Button from "./Button"
 const HeroHome = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
-    let difference = +new Date(`11/30/2021`) - +new Date();
+    let difference = +new Date(`12/01/2021`) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -103,25 +103,25 @@ const HeroHome = () => {
                   {/* <span className="absolute text-xs bg-red-500 px-4 py-2 text-gray-50 uppercase rounded-2xl animate-teeter inset-x-0 mx-auto w-48 -bottom-10">
                     Weekend Sale
                   </span> */}
-                  <span className="text-5xl font-bold uppercase md:text-7xl tracking-tight">
+                  {/* <span className="text-5xl font-bold uppercase md:text-7xl tracking-tight">
                     Black Friday
                   </span>
                   <br />
                   <span className="text-2xl">&</span>
-                  <br />
-                  <span className="font-bold text-5xl md:text-7xl uppercase dark:text-gray-100 tracking-tight">
-                    Cyber Monday
+                  <br /> */}
+                  <span className="font-bold text-5xl md:text-8xl uppercase dark:text-gray-100 tracking-tight">
+                    Cyber<br/><span className="line-through" style={{textDecorationColor: "red"}}>Monday</span>
                   </span>
                 </h1>
-                <p className="text-base font-semibold bg-transparent border-2 border-red-500 px-2 py-1 text-gray-900 dark:text-gray-50 uppercase rounded-xl animate-teeter mx-auto w-36 mb-4">
-                  Weekend Sale
+                <p className="text-lg font-semibold bg-gray-900 dark:bg-gray-50 px-2 py-1 dark:text-gray-900 text-gray-50 uppercase rounded-xl animate-teeter mx-auto w-40 mb-4">
+                  Extended Sale
                 </p>
                 <p
                   className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
-                  Lock in{" "}
+                  <span className="underline font-bold" style={{textDecorationColor: "red"}}>Last chance</span> for{" "}
                   <span className="font-bold text-gray-900 dark:text-gray-50">
                     $10
                   </span>{" "}
