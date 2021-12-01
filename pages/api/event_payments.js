@@ -31,10 +31,11 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
       const payment = await stripe.paymentIntents.create({
-        amount:
-          usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
-            ? membership_price
-            : regular_price,
+        amount: !usersSubTier?.data?.users?.[0]
+          ? regular_price
+          : usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
+          ? membership_price
+          : regular_price,
         currency: "USD",
         description: `${name} purchased event for ${event_id}.`,
         payment_method: id,

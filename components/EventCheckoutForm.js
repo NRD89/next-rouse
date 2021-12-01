@@ -60,10 +60,10 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
         });
         console.log("response =>", response.data);
 
-        if (response.data.success) {
+        if (response.data.success === true) {
           console.log("Successful payment");
           setSuccess(true);
-        } else {
+        } else if (response.data.success === false) {
           setError(true);
         }
       } catch (error) {
