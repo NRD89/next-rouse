@@ -64,7 +64,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
           console.log("Successful payment");
           setSuccess(true);
         } else if (response.data.success === false) {
-          setError(true);
+          setError("Oops, something went wrong. Please try again.");
         }
       } catch (error) {
         console.log("Error", error);
@@ -134,7 +134,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
   return (
     <div className="max-w-sm mx-auto">
       <form onSubmit={handleSubmit}>
-        {error ? <p className="text-red-600">{error}</p> : null}
+        {error ? <p className="bg-red-600 font-medium text-center rounded-md mb-3">{error}</p> : null}
 
         {success ? (
           <p className="text-center text-xl leading-8">
