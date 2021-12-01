@@ -97,6 +97,18 @@ const Header = () => {
         "bg-white backdrop-filter backdrop-blur shadow-lg bg-opacity-80 dark:bg-black dark:shadow-dark40 dark:bg-opacity-75"
       }`}
     >
+      <div
+        style={{
+          textDecorationColor: "#60a5fa",
+          textDecorationThickness: "2px",
+          textUnderlineOffset: "2px",
+        }}
+        className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-white flex justify-center font-medium uppercase items-center py-1 underline`}
+      >
+        <Link href="/events">
+          <a>Sound Healing Event 12/4</a>
+        </Link>
+      </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
           {/* Site branding */}
