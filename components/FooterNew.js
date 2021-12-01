@@ -1,22 +1,23 @@
-import { useState, useEffect, useRef } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { useTheme } from "next-themes"
-import { FaYelp } from "react-icons/fa"
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Carbonbadge from "react-carbonbadge";
+import { useTheme } from "next-themes";
+import { FaYelp } from "react-icons/fa";
 
 const Footer = () => {
-  const [email, setEmail] = useState("")
-  const [honeyPot, setHoneyPot] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [error, setError] = useState(null)
-  const reRef = useRef()
+  const [email, setEmail] = useState("");
+  const [honeyPot, setHoneyPot] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
+  const reRef = useRef();
 
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    setSubmitting(true)
+    event.preventDefault();
+    setSubmitting(true);
 
     // const token = await reRef.current.executeAsync()
     // reRef.current.reset()
@@ -30,25 +31,32 @@ const Footer = () => {
         email,
         honeyPot,
       }),
-    })
+    });
 
-    const data = await response.json()
+    const data = await response.json();
 
     if (data.errors) {
-      setError(data.errors.message)
+      setError(data.errors.message);
       setTimeout(() => {
-        setError(null)
-      }, 3500)
+        setError(null);
+      }, 3500);
     } else {
-      setSuccess(true)
-      console.log("successfully submitted to email list")
+      setSuccess(true);
+      console.log("successfully submitted to email list");
       setTimeout(() => {
-        setSuccess(false)
-      }, 3500)
+        setSuccess(false);
+      }, 3500);
     }
 
-    setSubmitting(false)
-  }
+    setSubmitting(false);
+  };
+
+  const isDarkMode = () => {
+    if (theme === "dark") {
+      return true;
+    }
+    return false;
+  };
 
   return (
     <footer>
@@ -290,7 +298,7 @@ const Footer = () => {
                       placeholder="Your email"
                       required
                       onChange={(e) => {
-                        setEmail(e.target.value)
+                        setEmail(e.target.value);
                       }}
                       value={email}
                     />
@@ -298,7 +306,7 @@ const Footer = () => {
                       type="checkbox"
                       name="contact_me_by_fax_only"
                       onChange={(e) => {
-                        setHoneyPot(e.target.checked)
+                        setHoneyPot(e.target.checked);
                       }}
                       checked={honeyPot}
                       className="hidden"
@@ -394,11 +402,11 @@ const Footer = () => {
             {` `}
             Rouse Yoga. All rights reserved.
           </div>
-          <div className="overflow-x-auto hidden px-2 text-purple-700 bg-purple-100"></div>
+          <Carbonbadge darkMode={isDarkMode()} />
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

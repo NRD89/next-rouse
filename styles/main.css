@@ -194,8 +194,10 @@ h5 {
   -webkit-backdrop-filter: blur(3px);
 }
 
-.grecaptcha-badge {
-  visibility: hidden;
+#wcb_2 {
+  height: 0;
+  display: none!important;
+  margin: 0!important;
 }
 
 @layer utilities {
