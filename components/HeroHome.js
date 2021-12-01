@@ -49,7 +49,7 @@ const HeroHome = () => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 h-[55vh] md:h-[75vh] w-full box-content -z-1">
+      <div className="absolute inset-0 h-[55vh] md:h-[75vh] max-h-[748px] w-full box-content -z-1">
         <Image
           className="absolute inset-0 w-full h-1/2 max-h-[80vh] object-cover opacity-40"
           src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_55,w_2000/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
@@ -65,7 +65,7 @@ const HeroHome = () => {
         <div className="absolute top-[20%] left-[35%] w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply dark:mix-blend-multiply filter blur-lg opacity:60 dark:opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute top-[25%] left-[25%] w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply dark:mix-blend-multiply filter blur-lg opacity:60 dark:opacity-70 animate-blob"></div> */}
         <div
-          className="absolute inset-0 bg-gradient-to-t from-white dark:from-black"
+          className="absolute h-full inset-0 bg-gradient-to-t from-white dark:from-black"
           aria-hidden="true"
         ></div>
         <div
