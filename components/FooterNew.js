@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Carbonbadge from "react-carbonbadge";
 import { useTheme } from "next-themes";
 import { FaYelp } from "react-icons/fa";
 
@@ -402,7 +401,6 @@ const Footer = () => {
             {` `}
             Rouse Yoga. All rights reserved.
           </div>
-          <Carbonbadge darkMode={isDarkMode()} />
         </div>
       </div>
     </footer>

@@ -194,6 +194,10 @@ h5 {
   -webkit-backdrop-filter: blur(3px);
 }
 
+#wcb.carbonbadge {
+  @apply text-left md:text-center;
+}
+
 #wcb_2 {
   height: 0;
   display: none!important;

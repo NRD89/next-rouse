@@ -103,10 +103,10 @@ const Header = () => {
           textDecorationThickness: "2px",
           textUnderlineOffset: "2px",
         }}
-        className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-white flex justify-center font-medium uppercase items-center py-1 underline`}
+        className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-sm md:text-base text-white flex justify-center font-medium uppercase items-center py-1 underline`}
       >
         <Link href="/events">
-          <a>Sound Healing Event 12/4</a>
+          <a>Sound Bath Event on 12/4 @ 7:00pm</a>
         </Link>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">

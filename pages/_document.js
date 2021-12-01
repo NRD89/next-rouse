@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#5D5DFF" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Poppins:wght@400;500;700;800&family=Inter:wght@400;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Poppins:wght@400;500;700;800&display=swap"
             rel="stylesheet"
           />
 
@@ -61,6 +61,8 @@ export default class MyDocument extends Document {
             />
           </noscript>
           {/* <!-- End Facebook Pixel Code --> */}
+
+          
 
           <script
             async
