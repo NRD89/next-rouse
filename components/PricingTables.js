@@ -44,12 +44,12 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                    $54.17<small>/mo</small>
+                    $62.50<small>/mo</small>
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">649.99</span>
+                  <span className="h3">749.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /$
                   </span>
@@ -84,18 +84,15 @@ function PricingTables() {
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">64.99</span>
+                  <span className="h3">74.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
-                    /$
-                  </span>
-                  <span className="font-medium text-red-500 dark:text-red-400 line-through">
-                    74.99
+                    /mo
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
                   — Save $
                   <span className="font-semibold text-gray-600 dark:text-gray-300">
-                    175.01
+                    164.89
                   </span>{" "}
                   a month*
                 </div>
