@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Button from "./Button"
+import Button from "./Button";
 // import ReactPlayer from "react-player"
 
 const HeroHome = () => {
@@ -47,7 +47,7 @@ const HeroHome = () => {
   });
 
   return (
-    <section className="relative min-h-[80vh] w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 h-[55vh] md:h-[75vh] w-full box-content -z-1">
         <Image
@@ -92,54 +92,28 @@ const HeroHome = () => {
               {/* <div className="absolute -top-20 -left-2 w-96 h-96 bg-purple-500 rounded-full mix-blend-color filter blur-xl "></div>
               <div className="absolute -top-8 left-80 w-96 h-96 bg-blue-500 rounded-full mix-blend-color filter blur-xl "></div> */}
               <div className="max-w-4xl" data-aos="fade-down">
-                <div className="bg-red-500 w-64 md:w-72 mx-auto rounded-lg mb-4">
+                {/* <div className="bg-red-500 w-64 md:w-72 mx-auto rounded-lg mb-4">
                   {timerComponents.length ? (
                     timerComponents
                   ) : (
                     <span>Time's up!</span>
                   )}
-                </div>
-                <h1 className="mb-4 font-red-hat-display relative">
-                  {/* <span className="absolute text-xs bg-red-500 px-4 py-2 text-gray-50 uppercase rounded-2xl animate-teeter inset-x-0 mx-auto w-48 -bottom-10">
-                    Weekend Sale
-                  </span> */}
-                  {/* <span className="text-5xl font-bold uppercase md:text-7xl tracking-tight">
-                    Black Friday
-                  </span>
+                </div> */}
+                <h1 className="mb-4 font-red-hat-display">
+                  <span className="h1 sm:h1 md:text-9xl">Empower</span>
                   <br />
-                  <span className="text-2xl">&</span>
-                  <br /> */}
-                  <span className="font-bold text-5xl md:text-8xl uppercase dark:text-gray-100 tracking-tight">
-                    Cyber<br/><span className="line-through" style={{textDecorationColor: "red"}}>Monday</span>
+                  <span className="h2-hero md:text-6xl uppercase dark:text-gray-100">
+                    Your Yoga Practice
                   </span>
                 </h1>
-                <p className="text-lg font-semibold bg-gray-900 dark:bg-gray-50 px-2 py-1 dark:text-gray-900 text-gray-50 uppercase rounded-xl animate-teeter mx-auto w-40 mb-4">
-                  Extended Sale
-                </p>
                 <p
-                  className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
-                  data-aos="fade-down"
-                  data-aos-delay="150"
-                >
-                  <span className="underline font-bold text-gray-900 dark:text-gray-50" style={{textDecorationColor: "red"}}>Last chance</span> for{" "}
-                  <span className="font-bold text-gray-900 dark:text-gray-50">
-                    $10
-                  </span>{" "}
-                  off monthly and{" "}
-                  <span className="font-bold text-gray-900 dark:text-gray-50">
-                    $100
-                  </span>{" "}
-                  off yearly subscriptions, until you unsubscribe!{" "}
-                  <span className="text-2xl animate-bounce">🤯</span>
-                </p>
-                {/* <p
                   className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
                   Discover the healing power of Yoga with classes designed to
                   empower your body, mind, and soul.
-                </p> */}
+                </p>
                 {/* CTA form */}
                 <div
                   className="flex flex-col justify-center max-w-sm mx-auto sm:max-w-md mt-8"

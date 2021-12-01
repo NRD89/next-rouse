@@ -41,7 +41,7 @@ h5 {
   }
 
   .h2-hero {
-    @apply text-5xl font-medium tracking-tight;
+    @apply text-3xl font-medium tracking-tight;
   }
 
   .h3 {
