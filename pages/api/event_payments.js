@@ -5,6 +5,8 @@ export default async function handler(req, res) {
   const { id, event_id, regular_price, membership_price, email, name } =
     req.body;
 
+  let lowercaseEmail = email.toLowerCase();
+
   const usersSubTier = await fetch("https://graphql.rouse.yoga/v1/graphql", {
     method: "POST",
     headers: {
@@ -20,7 +22,7 @@ export default async function handler(req, res) {
           }  
           `,
       variables: {
-        email: email,
+        email: lowercaseEmail,
       },
     }),
   })
@@ -39,7 +41,7 @@ export default async function handler(req, res) {
         currency: "USD",
         description: `${name} purchased event for ${event_id}.`,
         payment_method: id,
-        receipt_email: email,
+        receipt_email: lowercaseEmail,
         confirm: true,
       });
       console.log("Payment", payment);
@@ -50,7 +52,7 @@ export default async function handler(req, res) {
             _type: "attendee",
             event: { _type: "reference", _ref: event_id },
             name: name,
-            email: email,
+            email: lowercaseEmail,
           },
         },
       ];
