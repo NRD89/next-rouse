@@ -66,7 +66,7 @@ function EventListItem({ event }) {
                                     filter
                                     blur-xl
                                     opacity-70
-                                    dark:opacity-30
+                                    dark:opacity-50
                                     animate-blob
                                   "
                   ></div>
@@ -76,7 +76,7 @@ function EventListItem({ event }) {
                                     rounded-full
                                     bg-pink-300
                                     dark:bg-pink-800
-                                    -bottom-24
+                                    -bottom-10
                                     right-20
                                     w-72
                                     h-72
@@ -85,7 +85,7 @@ function EventListItem({ event }) {
                                     filter
                                     blur-xl
                                     opacity-70
-                                    dark:opacity-30
+                                    dark:opacity-40
                                     animate-blob
                                     animation-delay-4000
                                   "

@@ -103,11 +103,9 @@ const Header = () => {
           textDecorationThickness: "2px",
           textUnderlineOffset: "2px",
         }}
-        className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-sm md:text-base text-white flex justify-center font-medium uppercase items-center py-1 underline`}
+        className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-xs xs:text-sm md:text-base text-gray-50 flex justify-center font-medium uppercase items-center py-1 underline`}
       >
-        <Link href="/events">
-          <a>Sound Bath Event on 12/4 @ 7:00pm</a>
-        </Link>
+        <a href="https://app.rouse.yoga">Sign up and get your first class <strong className="text-white tracking-wide">FREE</strong>!</a>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
