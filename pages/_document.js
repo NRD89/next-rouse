@@ -62,7 +62,7 @@ export default class MyDocument extends Document {
           </noscript>
           {/* <!-- End Facebook Pixel Code --> */}
 
-          
+          <meta name="facebook-domain-verification" content="pn6fxdti0vzpaacjqym8c4dcofe0wl" />
 
           <script
             async
