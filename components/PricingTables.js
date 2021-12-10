@@ -44,12 +44,12 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                    $62.50<small>/mo</small>
+                    $49.99<small>/mo</small>
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">749.99</span>
+                  <span className="h3">599.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /$
                   </span>
@@ -59,6 +59,9 @@ function PricingTables() {
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
                   — Billed yearly
+                </div>
+                <div className="text-gray-600 dark:text-gray-300 uppercase">
+                  — 4 Months FREE
                 </div>
               </div>
               <div className="mt-24">
@@ -84,15 +87,18 @@ function PricingTables() {
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">74.99</span>
+                  <span className="h3">64.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
-                    /mo
+                    /$
+                  </span>
+                  <span className="font-medium text-red-500 dark:text-red-400 line-through">
+                    74.99
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
                   — Save $
                   <span className="font-semibold text-gray-600 dark:text-gray-300">
-                    164.89
+                    174.89
                   </span>{" "}
                   a month*
                 </div>

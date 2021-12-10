@@ -15,7 +15,7 @@ function FeaturesZigzag() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h2 className="h2 font-red-hat-display mb-4">
-              Yoga classes, memberships <br /> & More
+              Yoga classes & memberships <br /> for Riverside, CA
             </h2>
             <div className="text-left">
               <p className="text-xl text-gray-700 dark:text-gray-300">

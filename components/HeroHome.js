@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "./Button";
-// import ReactPlayer from "react-player"
+import Snowfall from "react-snowfall";
 
 const HeroHome = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
-    let difference = +new Date(`12/01/2021`) - +new Date();
+    let difference = +new Date(`01/02/2022`) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -48,6 +48,10 @@ const HeroHome = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
+      <Snowfall
+        speed={[-0.5, 0.5]}
+        snowflakeCount={150}
+      />
       {/* Background image */}
       <div className="absolute inset-0 h-[55vh] md:h-[75vh] max-h-[748px] w-full box-content -z-1">
         <Image
@@ -69,15 +73,15 @@ const HeroHome = () => {
           aria-hidden="true"
         ></div>
         <div
-          className="absolute inset-0 w-full h-full mix-blend-color bg-animate animate-slow-reveal opacity-80 dark:opacity-80 transform rotate-180 bg-easing-r-purp-blue"
-          style={{
-            // background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
-            backgroundSize: `300% 300%`,
-            height: `100%`,
-            backgroundRepeat: `no-repeat`,
-            perspective: `1000px`,
-            // backfaceVisibility: `hidden`,
-          }}
+          className="absolute inset-0 w-full h-full mix-blend-color opacity-80 dark:opacity-80  bg-gradient-to-r from-blue-900 dark:from-blue-400 to-blue-500 dark:to-blue-200"
+          // style={{
+          //   // background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
+          //   backgroundSize: `300% 300%`,
+          //   height: `100%`,
+          //   backgroundRepeat: `no-repeat`,
+          //   perspective: `1000px`,
+          //   // backfaceVisibility: `hidden`,
+          // }}
         ></div>
       </div>
 
@@ -92,28 +96,50 @@ const HeroHome = () => {
               {/* <div className="absolute -top-20 -left-2 w-96 h-96 bg-purple-500 rounded-full mix-blend-color filter blur-xl "></div>
               <div className="absolute -top-8 left-80 w-96 h-96 bg-blue-500 rounded-full mix-blend-color filter blur-xl "></div> */}
               <div className="max-w-4xl" data-aos="fade-down">
-                {/* <div className="bg-red-500 w-64 md:w-72 mx-auto rounded-lg mb-4">
+                <div className="bg-red-500 w-64 md:w-72 mx-auto rounded-lg mb-4">
                   {timerComponents.length ? (
                     timerComponents
                   ) : (
                     <span>Time's up!</span>
                   )}
-                </div> */}
-                <h1 className="mb-4 font-red-hat-display">
-                  <span className="h1 sm:h1 md:text-9xl">Empower</span>
-                  <br />
+                </div>
+                <h1 className="mb-4 font-red-hat-display text-4xl md:text-7xl font-bold uppercase text-indigo-900 dark:text-blue-300">
+                  ❄️ Holiday <span className="text-blue-50">Sale</span> ❄️
+                  {/* <span className="h1 sm:h1 md:text-7xl">Empower</span> */}
+                  {/* <br />
                   <span className="h2-hero md:text-6xl uppercase dark:text-gray-100">
                     Your Yoga Practice
-                  </span>
+                  </span> */}
                 </h1>
                 <p
+                  className="text-xl md:text-2xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-100"
+                  data-aos="fade-down"
+                  data-aos-delay="150"
+                >
+                  Rouse Yoga offers the gift of{" "}
+                  <strong
+                    className="font-black text-gray-900 dark:text-white underline"
+                    style={{ textDecorationColor: "rgb(147, 197, 253)" }}
+                  >
+                    $10
+                  </strong>{" "}
+                  off Monthly and{" "}
+                  <strong
+                    className="font-black text-gray-900 dark:text-white underline"
+                    style={{ textDecorationColor: "rgb(147, 197, 253)" }}
+                  >
+                    $300
+                  </strong>{" "}
+                  off Yearly subscriptions!
+                </p>
+                {/* <p
                   className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
                   Discover the healing power of Yoga with classes designed to
                   empower your body, mind, and soul.
-                </p>
+                </p> */}
                 {/* CTA form */}
                 <div
                   className="flex flex-col justify-center max-w-sm mx-auto sm:max-w-md mt-8"
@@ -123,7 +149,7 @@ const HeroHome = () => {
                   {/* <small className="text-sm mb-4 text-gray-700 dark:text-gray-300 font-red-hat-display">
                     Try our Digital Membership free for 7 days
                   </small> */}
-                  <Button buttonText="Discover Today!" btnPriority="cta" />
+                  <Button buttonText="Subscribe and Save!" btnPriority="cta" />
                   <div className="max-w-3xl mx-auto text-center pb-3">
                     <h2 className="text-sm mt-7 font-medium font-red-hat-display">
                       As Seen On:
