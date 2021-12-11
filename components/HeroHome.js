@@ -53,9 +53,9 @@ const HeroHome = () => {
         snowflakeCount={150}
       />
       {/* Background image */}
-      <div className="absolute inset-0 h-[55vh] md:h-[75vh] max-h-[748px] w-full box-content -z-1">
+      <div className="absolute inset-0 h-full max-h-[748px] w-full box-content -z-1">
         <Image
-          className="absolute inset-0 w-full h-1/2 max-h-[80vh] object-cover opacity-40"
+          className="absolute inset-0 w-full h-full max-h-[748px] object-cover opacity-40"
           src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_55,w_2000/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
           // src="c_scale,f_auto,q_auto:eco,w_1500/v1610702114/rouse-hero-image_f3md0w.jpg"
           // width={1440}
@@ -73,7 +73,7 @@ const HeroHome = () => {
           aria-hidden="true"
         ></div>
         <div
-          className="absolute inset-0 w-full h-full mix-blend-color opacity-80 dark:opacity-80  bg-gradient-to-r from-blue-900 dark:from-blue-400 to-blue-500 dark:to-blue-200"
+          className="absolute inset-0 w-full h-full mix-blend-color opacity-80 dark:opacity-80  bg-gradient-to-tr from-blue-900 dark:from-blue-400 to-blue-500 dark:to-blue-200"
           // style={{
           //   // background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
           //   backgroundSize: `300% 300%`,
