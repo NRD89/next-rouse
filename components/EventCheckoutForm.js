@@ -24,25 +24,30 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    const result = await stripe.createPaymentMethod({
-      type: "card",
-      card: elements.getElement(CardElement),
-    });
-    // update the local data immediately, but disable the revalidation
-    // mutate(
-    //   ["https://graphql.rouse.yoga/api/rest/class-count", session?.token],
-    //   async (usersClass) => {
-    //     console.log("usersClass mutate =>",usersClass);
-    //     return {
-    //       classes: [
-    //         { class_user_aggregate: { aggregate: { count: ...newCount } } },
-    //         ...usersClass.classes,
-    //       ],
-    //     };
-    //   },
-    //   false
-    // );
-    await handleStripePaymentMethod(result);
+
+    if (regular_price === 0) {
+      const response = await axios.post("/api/event_payments", {
+        event_id,
+        regular_price,
+        membership_price,
+        email,
+        name,
+      });
+      console.log("response =>", response.data);
+
+      if (response.data.success === true) {
+        console.log("Successful payment");
+        setSuccess(true);
+      } else if (response.data.success === false) {
+        setError("Oops, something went wrong. Please try again.");
+      }
+    } else if (regular_price > 0) {
+      const result = await stripe.createPaymentMethod({
+        type: "card",
+        card: elements.getElement(CardElement),
+      });
+      await handleStripePaymentMethod(result);
+    }
     setLoading(false);
   };
 
@@ -134,12 +139,19 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
   return (
     <div className="max-w-sm mx-auto">
       <form onSubmit={handleSubmit}>
-        {error ? <p className="bg-red-600 font-medium text-center rounded-md mb-3">{error}</p> : null}
+        {error ? (
+          <p className="bg-red-600 font-medium text-center rounded-md mb-3">
+            {error}
+          </p>
+        ) : null}
 
         {success ? (
           <p className="text-center text-xl leading-8">
-            <span className="font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-l from-purple-700 via-pink-600 to-purple-700 mb-4">Thank you for purchasing!</span><br />
-            Check your email for receipt.
+            <span className="font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-l from-purple-700 via-pink-600 to-purple-700 mb-4">
+              Thank you for reserving!
+            </span>
+            <br />
+            { regular_price > 0 ? "Check your email for receipt." : null}
           </p>
         ) : (
           <>
@@ -190,25 +202,26 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
                 />
               </div>
             </div>
-            <div className="flex flex-wrap -mx-3">
-              <div className="w-full px-3 pb-3">
-                <label
-                  className="block text-gray-400 text-sm font-medium mb-1"
-                  htmlFor="card"
-                >
-                  Card <span className="text-red-600">*</span>
-                </label>
-                <div className="border-gray-700 dark:border-gray-300 border rounded px-4 py-3 bg-transparent">
-                  <CardElement options={lightCardOptions} />
+            {regular_price === 0 ? null : (
+              <div className="flex flex-wrap -mx-3">
+                <div className="w-full px-3 pb-3">
+                  <label
+                    className="block text-gray-400 text-sm font-medium mb-1"
+                    htmlFor="card"
+                  >
+                    Card <span className="text-red-600">*</span>
+                  </label>
+                  <div className="border-gray-700 dark:border-gray-300 border rounded px-4 py-3 bg-transparent">
+                    <CardElement options={lightCardOptions} />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             <div className="flex flex-wrap -mx-3 mt-3">
               <div className="w-full px-3">
                 <button
                   type="submit"
-                  className={
-                    `w-full 
+                  className={`w-full 
                     items-center
                     block
                     px-10
@@ -230,8 +243,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
                     border border-solid border-white 
                     bg-gradient-to-l from-blue-600 via-blue-400 to-blue-600 
                     bg-size-200 bg-pos-0 hover:bg-pos-100
-                    ${loading ? "pointer-events-none" : null}`
-                  }
+                    ${loading ? "pointer-events-none" : null}`}
                   disabled={loading}
                 >
                   {loading ? (

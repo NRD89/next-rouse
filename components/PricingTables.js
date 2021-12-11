@@ -44,7 +44,7 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                    $49.99<small>/mo</small>
+                  <small className="mr-1 uppercase">save</small>$300
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">

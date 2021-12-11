@@ -6,7 +6,9 @@ import ReactMarkdown from "react-markdown";
 import EventPaymentModal from "./EventPaymentModal";
 import useSWR from "swr";
 import { groq } from "next-sanity";
+import Image from "next/image";
 import { getClient } from "../lib/sanity.server";
+import { splitDate, imageProps } from "../lib/misc";
 import { format } from "date-fns";
 
 const attendeeQuery = groq`
@@ -14,6 +16,7 @@ const attendeeQuery = groq`
 `;
 
 function EventListItem({ event }) {
+  console.log("event =>", event);
   const params = { id: event._id };
   async function fetcher(query, serializedParams) {
     const params = JSON.parse(serializedParams);
@@ -90,11 +93,15 @@ function EventListItem({ event }) {
                                     animation-delay-4000
                                   "
                   ></div>
-                  <div className="relative">
-                    <div className="w-full flex items-center justify-center my-10">
+                  <div className="relative w-full h-full text-center">
+                    {/* <div className="w-full flex items-center justify-center my-10">
                       <div className="relative w-full">
                         <div className="plyr__video-embed" id="player">
-                          <LazyLoad className="plyr__video-embed" id="player" height={256}>
+                          <LazyLoad
+                            className="plyr__video-embed"
+                            id="player"
+                            height={256}
+                          >
                             <iframe
                               src="https://player.vimeo.com/video/648925365"
                               allowFullScreen
@@ -105,20 +112,20 @@ function EventListItem({ event }) {
                           </LazyLoad>
                         </div>
                       </div>
-                    </div>
-                    {/* <Image
-                                    className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                                    // loader={sanityIoImageLoader}
-                                    src={
-                                      event.event_image.asset.path !==
-                                        undefined || null
-                                        ? `https://cdn.sanity.io/${event.event_image.asset.path}`
-                                        : imageProps(event.event_image).src
-                                    }
-                                    width="540"
-                                    height="270"
-                                    alt="News 01"
-                                  /> */}
+                    </div> */}
+                    <Image
+                      className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                      // loader={sanityIoImageLoader}
+                      src={
+                        event.event_image.asset.path !== undefined || null
+                          ? `https://cdn.sanity.io/${event.event_image.asset.path}`
+                          : imageProps(event.event_image).src
+                      }
+                      // layout="fill"
+                      width="450"
+                      height="450"
+                      alt={event.title}
+                    />
                   </div>
                 </div>
               </div>
@@ -136,8 +143,8 @@ function EventListItem({ event }) {
                 xl:mt-0
               "
             >
-              <span className="mb-8 text-xs font-bold tracking-widest text-blue-400 uppercase">
-                {event.title}
+              <span className="mb-8 text-sm font-bold tracking-widest text-blue-400 uppercase">
+              {event.guest_host ? event.guest_host : event.instructor.name} presents
               </span>
               <h1
                 className="
@@ -151,7 +158,7 @@ function EventListItem({ event }) {
                     lg:text-5xl
                 "
               >
-                {event.guest_host}
+                {event.title}
               </h1>
               <p className="text-xl font-semibold  mb-4">
                 {`${format(
@@ -177,8 +184,8 @@ function EventListItem({ event }) {
               </div>
               <p className="font-medium text-lg">
                 <span className="font-bold text-gray-900 dark:text-gray-50">
-                  {`${adjustedCapacity - adjustedCount}`}/
-                  {`${adjustedCapacity}`}
+                  {`${event.max_capacity - data}`}/
+                  {`${event.max_capacity}`}
                 </span>{" "}
                 Spots Available
               </p>

@@ -6,8 +6,10 @@ import EventList from "../components/EventList"
 import { groq } from "next-sanity";
 import { getClient } from "../lib/sanity.server";
 
+const todaysDate = new Date().toISOString();
+
 const eventsQuery = groq`
-  *[_type == 'event']{
+  *[_type == 'event' && eventDateTime >= $todaysDate]{
     _id,
     title,
     description,
@@ -27,6 +29,8 @@ const eventsQuery = groq`
   } | order(eventDateTime desc) [0..3]
 `;
 
+const params = { todaysDate: todaysDate };
+
 const Events = ({ events }) => {
   console.log("events =>", events);
 
@@ -36,7 +40,7 @@ const Events = ({ events }) => {
         <title>Yoga events | Rouse Yoga</title>
         <meta
           name="description"
-          content="Our innovative yoga platform offers online yoga livestreams, pre-recorded yoga classes, and Discord technologies to create a truly interactive community. Easy to use and navigate, your membership helps you not just learn how to practice yoga, but how to find purpose in that practice."
+          content="Rouse Yoga studio offers free and paid events to the Riverside community. These events range from free childrens yoga to incredible sound baths hosted by professional sound healers."
         />
       </Head>
       <Header />
@@ -86,7 +90,7 @@ const Events = ({ events }) => {
 export default Events;
 
 export async function getStaticProps() {
-  const events = await getClient().fetch(eventsQuery);
+  const events = await getClient().fetch(eventsQuery, params);
 
   return {
     props: { events },

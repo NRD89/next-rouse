@@ -103,7 +103,7 @@ const HeroHome = () => {
                     <span>Time's up!</span>
                   )}
                 </div>
-                <h1 className="mb-4 font-red-hat-display text-4xl md:text-7xl font-bold uppercase text-indigo-900 dark:text-blue-300">
+                <h1 className="mb-4 font-red-hat-display text-4xl md:text-7xl tracking-tight font-black uppercase text-indigo-900 dark:text-blue-300">
                   ❄️ Holiday <span className="text-blue-50">Sale</span> ❄️
                   {/* <span className="h1 sm:h1 md:text-7xl">Empower</span> */}
                   {/* <br />

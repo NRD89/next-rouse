@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     .catch((err) => console.error(JSON.stringify(err, null, 2)));
   console.log("userHasClass =>", usersSubTier?.data?.users?.[0]);
 
-  if (req.method === "POST") {
+  if (req.method === "POST" && regular_price > 0) {
     try {
       const payment = await stripe.paymentIntents.create({
         amount: !usersSubTier?.data?.users?.[0]
@@ -81,6 +81,46 @@ export default async function handler(req, res) {
       console.log("Error", error);
       res.json({
         message: "Payment failed",
+        success: false,
+      });
+    }
+  } else if (req.method === "POST" && regular_price === 0) {
+    try {
+      const mutations = [
+        {
+          create: {
+            _type: "attendee",
+            event: { _type: "reference", _ref: event_id },
+            name: name,
+            email: lowercaseEmail,
+          },
+        },
+      ];
+
+      const createAttendee = await fetch(
+        `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-06-07/data/mutate/${process.env.NEXT_PUBLIC_SANITY_DATASET}`,
+        {
+          method: "post",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${process.env.SANITY_WRITE_TOKEN}`,
+          },
+          body: JSON.stringify({ mutations }),
+        }
+      )
+        .then((response) => response.json())
+        .then((result) => console.log("result =>", result))
+        .catch((error) => console.error("error =>", error));
+      console.log("createAttendee =>", createAttendee);
+
+      res.json({
+        message: "Reservation successful",
+        success: true,
+      });
+    } catch (error) {
+      console.log("Error", error);
+      res.json({
+        message: "Oops, reservation was not succesful",
         success: false,
       });
     }
