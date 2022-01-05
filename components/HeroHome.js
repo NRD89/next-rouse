@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "./Button";
 import Snowfall from "react-snowfall";
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
 
 const HeroHome = () => {
+  const { width, height } = useWindowSize();
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
     let difference = +new Date(`01/02/2022`) - +new Date();
@@ -48,10 +51,6 @@ const HeroHome = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <Snowfall
-        speed={[-0.5, 0.5]}
-        snowflakeCount={150}
-      />
       {/* Background image */}
       <div className="absolute inset-0 h-full max-h-[748px] w-full box-content -z-1">
         <Image
@@ -73,15 +72,15 @@ const HeroHome = () => {
           aria-hidden="true"
         ></div>
         <div
-          className="absolute inset-0 w-full h-full mix-blend-color opacity-80 dark:opacity-80  bg-gradient-to-tr from-blue-900 dark:from-blue-400 to-blue-500 dark:to-blue-200"
-          // style={{
-          //   // background: `linear-gradient(-45deg, #267DEB, #5D45F9, #000000)`,
-          //   backgroundSize: `300% 300%`,
-          //   height: `100%`,
-          //   backgroundRepeat: `no-repeat`,
-          //   perspective: `1000px`,
-          //   // backfaceVisibility: `hidden`,
-          // }}
+          className="absolute inset-0 w-full h-full mix-blend-color opacity-80 dark:opacity-80"
+          style={{
+            background: `linear-gradient(-45deg, #267DEB, #97266D, #267DEB)`,
+            backgroundSize: `100%`,
+            height: `100%`,
+            backgroundRepeat: `no-repeat`,
+            perspective: `1000px`,
+            backfaceVisibility: `hidden`,
+          }}
         ></div>
       </div>
 
@@ -96,41 +95,57 @@ const HeroHome = () => {
               {/* <div className="absolute -top-20 -left-2 w-96 h-96 bg-purple-500 rounded-full mix-blend-color filter blur-xl "></div>
               <div className="absolute -top-8 left-80 w-96 h-96 bg-blue-500 rounded-full mix-blend-color filter blur-xl "></div> */}
               <div className="max-w-4xl" data-aos="fade-down">
-                <div className="bg-red-500 w-64 md:w-72 mx-auto rounded-lg mb-4">
+                {/* <div className="bg-red-500 w-64 md:w-72 mx-auto rounded-lg mb-4">
                   {timerComponents.length ? (
                     timerComponents
                   ) : (
                     <span>Time's up!</span>
                   )}
-                </div>
-                <h1 className="mb-4 font-red-hat-display text-4xl md:text-7xl tracking-tight font-black uppercase text-indigo-900 dark:text-blue-300">
-                  ❄️ Holiday <span className="text-blue-50">Sale</span> ❄️
+                </div> */}
+                <h1 className="mb-4 font-red-hat-display text-5xl md:text-7xl tracking-tight font-black uppercase text-indigo-900 dark:text-pink-300">
+                  New Year <br className="md:hidden"/> <span className="text-blue-50">New You</span>
                   {/* <span className="h1 sm:h1 md:text-7xl">Empower</span> */}
                   {/* <br />
                   <span className="h2-hero md:text-6xl uppercase dark:text-gray-100">
                     Your Yoga Practice
                   </span> */}
                 </h1>
+                <div className="w-full flex mb-4">
+                  <div className="px-5 py-2 bg-gray-100 dark:bg-black border border-blue-400 rounded-full mx-auto animate-teeter">
+                    <p className="uppercase text-blue-900 dark:text-indigo-100 font-bold">
+                      Double Sale
+                    </p>
+                  </div>
+                </div>
                 <p
-                  className="text-xl md:text-2xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-100"
+                  className="text-xl md:text-2xl font-medium text-gray-900 max-w-[640px] mx-auto dark:text-gray-100"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
-                  Rouse Yoga offers the gift of{" "}
+                  Get your first month for{" "}
                   <strong
                     className="font-black text-gray-900 dark:text-white underline"
                     style={{ textDecorationColor: "rgb(147, 197, 253)" }}
                   >
-                    $10
+                    $29.99
                   </strong>{" "}
-                  off Monthly and{" "}
+                  and just{" "}
                   <strong
                     className="font-black text-gray-900 dark:text-white underline"
                     style={{ textDecorationColor: "rgb(147, 197, 253)" }}
                   >
-                    $300
-                  </strong>{" "}
-                  off Yearly subscriptions!
+                    $64.99
+                  </strong>
+                  <small>
+                    /
+                    <span
+                      className="line-through"
+                      style={{ textDecorationColor: "red" }}
+                    >
+                      $74.99
+                    </span>
+                  </small>{" "}
+                  per month after!
                 </p>
                 {/* <p
                   className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
@@ -149,7 +164,7 @@ const HeroHome = () => {
                   {/* <small className="text-sm mb-4 text-gray-700 dark:text-gray-300 font-red-hat-display">
                     Try our Digital Membership free for 7 days
                   </small> */}
-                  <Button buttonText="Subscribe and Save!" btnPriority="cta" />
+                  <Button buttonText="Namaste and Save!" btnPriority="cta" />
                   <div className="max-w-3xl mx-auto text-center pb-3">
                     <h2 className="text-sm mt-7 font-medium font-red-hat-display">
                       As Seen On:

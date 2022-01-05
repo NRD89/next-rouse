@@ -44,12 +44,12 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                  <small className="mr-1 uppercase">save</small>$300
+                    <small className="mr-1 uppercase">save</small>$250
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
                   <span className="h4 text-gray-600 dark:text-gray-400">$</span>
-                  <span className="h3">599.99</span>
+                  <span className="h3">649.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /$
                   </span>
@@ -59,9 +59,6 @@ function PricingTables() {
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
                   — Billed yearly
-                </div>
-                <div className="text-gray-600 dark:text-gray-300 uppercase">
-                  — 4 Months FREE
                 </div>
               </div>
               <div className="mt-24">
@@ -93,6 +90,19 @@ function PricingTables() {
                   </span>
                   <span className="font-medium text-red-500 dark:text-red-400 line-through">
                     74.99
+                  </span>
+                </div>
+                <div className="text-gray-700 dark:text-gray-200 uppercase">
+                  — First month $
+                  <span
+                    className="font-bold text-gray-800 dark:text-gray-50 underline"
+                    style={{
+                      textDecorationColor: "rgb(93, 93, 255)",
+                      textUnderlineOffset: "1px",
+                      textDecorationThickness: "2px",
+                    }}
+                  >
+                    29.99
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
