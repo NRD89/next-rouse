@@ -26,7 +26,7 @@ const eventsQuery = groq`
     regular_price,
     membership_price,
     max_capacity,
-  } | order(eventDateTime desc) [0..3]
+  } | order(eventDateTime asc)
 `;
 
 const params = { todaysDate: todaysDate };
