@@ -48,7 +48,7 @@ export async function getStaticProps({ params, preview = false }) {
     slug: params.slug,
   });
 
-  console.log("post =>", post);
+  console.log(`Building slug: ${params.slug}`)
   return {
     props: {
       preview,
@@ -65,7 +65,7 @@ export async function getStaticPaths() {
   );
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 

@@ -98,14 +98,23 @@ const Header = () => {
       }`}
     >
       <div
-        style={{
-          textDecorationColor: "#60a5fa",
-          textDecorationThickness: "2px",
-          textUnderlineOffset: "2px",
-        }}
-        className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-xs xs:text-sm md:text-base text-gray-50 flex justify-center font-medium uppercase items-center py-1 underline`}
+        className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-xs xs:text-sm md:text-base text-gray-50 flex justify-center font-medium uppercase items-center py-1`}
       >
-        <a href="https://app.rouse.yoga">Sign up and get your first class <strong className="text-white tracking-wide">FREE</strong>!</a>
+        {/* <a href="https://app.rouse.yoga">Sign up and get your first class <strong className="text-white tracking-wide">FREE</strong>!</a> */}
+        💙{" "}
+        <Link href="/events">
+          <a
+            className="underline"
+            style={{
+              textDecorationColor: "#60a5fa",
+              textDecorationThickness: "2px",
+              textUnderlineOffset: "2px",
+            }}
+          >
+            Check out our Valentines day Events!
+          </a>
+        </Link>
+        <span className="ml-1">💙</span>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
