@@ -197,6 +197,7 @@ function EventListItem({ event }) {
                 <EventPaymentModal
                   regular_price={event.regular_price}
                   membership_price={event.membership_price}
+                  coupon_codes={event.coupon_codes}
                   id={event._id}
                 />
               )}

@@ -2,10 +2,21 @@ import fetch from "node-fetch";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
-  const { id, event_id, regular_price, membership_price, email, name } =
+  const { id, event_id, regular_price, membership_price, coupon, email, name } =
     req.body;
 
   let lowercaseEmail = email.toLowerCase();
+  let uppercaseCoupon = () => {
+    coupon ? coupon.toUpperCase() : null;
+  };
+
+  // const figureOutPrice = () => {
+  //   !usersSubTier?.data?.users?.[0] && uppercaseCoupon == "INWARDVIP"
+  //     ? regular_price - 2500
+  //     : usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
+  //     ? membership_price
+  //     : regular_price;
+  // };
 
   const usersSubTier = await fetch("https://graphql.rouse.yoga/v1/graphql", {
     method: "POST",
@@ -33,11 +44,12 @@ export default async function handler(req, res) {
   if (req.method === "POST" && regular_price > 0) {
     try {
       const payment = await stripe.paymentIntents.create({
-        amount: !usersSubTier?.data?.users?.[0]
-          ? regular_price
-          : usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
-          ? membership_price
-          : regular_price,
+        amount:
+          !usersSubTier?.data?.users?.[0] && uppercaseCoupon === "INWARDVIP"
+            ? regular_price - 2500
+            : usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
+            ? membership_price
+            : regular_price,
         currency: "USD",
         description: `${name} purchased event for ${event_id}.`,
         payment_method: id,

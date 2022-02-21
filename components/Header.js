@@ -101,7 +101,6 @@ const Header = () => {
         className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-xs xs:text-sm md:text-base text-gray-50 flex justify-center font-medium uppercase items-center py-1`}
       >
         {/* <a href="https://app.rouse.yoga">Sign up and get your first class <strong className="text-white tracking-wide">FREE</strong>!</a> */}
-        💙{" "}
         <Link href="/events">
           <a
             className="underline"
@@ -111,10 +110,9 @@ const Header = () => {
               textUnderlineOffset: "2px",
             }}
           >
-            Check out our Valentines day Events!
+            Check out our upcoming Events!
           </a>
         </Link>
-        <span className="ml-1">💙</span>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
@@ -246,6 +244,15 @@ const Header = () => {
                     </span>
                   </label>
                 </div>
+              </li>
+              <li className="hidden lg:block">
+                {" "}
+                <a
+                  className="px-3 py-1 bg-blue-500 rounded-md ml-4 border border-gray-50 text-white font-medium uppercase tracking-tight"
+                  href="https://app.rouse.yoga"
+                >
+                  Login/Sign up
+                </a>
               </li>
               <li>
                 <div className="pl-2 sm:pl-4 w-10 h-10 rounded-full text-gray-900 dark:text-gray-100 lg:hidden flex justify-center items-center">

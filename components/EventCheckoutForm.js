@@ -4,17 +4,26 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
+import { Switch } from "@headlessui/react";
 // import { useSession } from "next-auth/client";
 // import { mutate } from "swr";
 // import { GraphQLClient } from "graphql-request";
 
-const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
+const CheckoutForm = ({
+  regular_price,
+  membership_price,
+  coupon_codes,
+  event_id,
+}) => {
   //   const [session] = useSession();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [coupon, setCoupon] = useState(null);
+  const [enabled, setEnabled] = useState(false);
   const { theme } = useTheme();
   const subscription = "monthly";
 
@@ -60,6 +69,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
           event_id,
           regular_price,
           membership_price,
+          coupon,
           email,
           name,
         });
@@ -151,17 +161,17 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
               Thank you for reserving!
             </span>
             <br />
-            { regular_price > 0 ? "Check your email for receipt." : null}
+            {regular_price > 0 ? "Check your email for receipt." : null}
           </p>
         ) : (
           <>
             <div className="flex flex-wrap w-full">
               <div className="w-full">
                 <label
-                  className="block text-gray-400 text-sm font-medium mb-1"
+                  className="block text-gray-500 dark:text-gray-300 text-sm font-medium mb-1"
                   htmlFor="email"
                 >
-                  Email <span className="text-red-600">*</span>
+                  Email <span className="text-red-600 dark:text-red-500">*</span>
                 </label>
                 <input
                   onChange={(e) => {
@@ -174,7 +184,7 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
                   className="form-input w-full"
                   required
                 />
-                <div className="text-gray-600 dark:text-gray-400 font-medium w-100 text-center mt-1">
+                <div className="text-gray-600 dark:text-gray-300 font-medium w-100 text-center mt-1">
                   <small>
                     Use membership email address to get membership price.
                   </small>
@@ -184,10 +194,10 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
             <div className="flex flex-wrap w-full mb-2">
               <div className="w-full">
                 <label
-                  className="block text-gray-400 text-sm font-medium mb-1"
+                  className="block text-gray-500 dark:text-gray-300 text-sm font-medium mb-1"
                   htmlFor="coupon"
                 >
-                  Name <span className="text-red-600">*</span>
+                  Name <span className="text-red-600 dark:text-red-500">*</span>
                 </label>
                 <input
                   onChange={(e) => {
@@ -203,19 +213,43 @@ const CheckoutForm = ({ regular_price, membership_price, event_id }) => {
               </div>
             </div>
             {regular_price === 0 ? null : (
-              <div className="flex flex-wrap -mx-3">
-                <div className="w-full px-3 pb-3">
-                  <label
-                    className="block text-gray-400 text-sm font-medium mb-1"
-                    htmlFor="card"
-                  >
-                    Card <span className="text-red-600">*</span>
-                  </label>
-                  <div className="border-gray-700 dark:border-gray-300 border rounded px-4 py-3 bg-transparent">
-                    <CardElement options={lightCardOptions} />
+              <>
+                <div className="flex flex-wrap w-full mb-2">
+                  {coupon_codes?.[0] ? (
+                    <div className="w-full">
+                      <label
+                        className="block text-gray-500 dark:text-gray-300 text-sm font-medium mb-1"
+                        htmlFor="coupon"
+                      >
+                        Promo Code
+                      </label>
+                      <input
+                        onChange={(e) => {
+                          setCoupon(e.target.value);
+                        }}
+                        value={coupon}
+                        id="coupon"
+                        type="text"
+                        placeholder="Promo Code"
+                        className="form-input w-full"
+                      />
+                    </div>
+                  ) : null}
+                </div>
+                <div className="flex flex-wrap -mx-3">
+                  <div className="w-full px-3 pb-3">
+                    <label
+                      className="block text-gray-500 dark:text-gray-400 text-sm font-medium mb-1"
+                      htmlFor="card"
+                    >
+                      Card <span className="text-red-600">*</span>
+                    </label>
+                    <div className="border-gray-700 dark:border-gray-300 border rounded px-4 py-3 bg-transparent">
+                      <CardElement options={lightCardOptions} />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </>
             )}
             <div className="flex flex-wrap -mx-3 mt-3">
               <div className="w-full px-3">

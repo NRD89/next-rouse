@@ -25,6 +25,7 @@ const eventsQuery = groq`
     style,
     regular_price,
     membership_price,
+    coupon_codes,
     max_capacity,
   } | order(eventDateTime asc)
 `;

@@ -102,34 +102,34 @@ const HeroHome = () => {
                     <span>Time's up!</span>
                   )}
                 </div> */}
-                <h1 className="mb-4 font-red-hat-display text-5xl md:text-7xl tracking-tight font-black uppercase text-indigo-900 dark:text-pink-300">
-                  New Year <br className="md:hidden"/> <span className="text-blue-50">New You</span>
+                <h1 className="mb-4 font-red-hat-display tracking-tight font-black uppercase text-indigo-900 dark:text-pink-300 text-5xl md:text-7xl">
+                  New Member<br/><span className="text-blue-50">Special</span>
                   {/* <span className="h1 sm:h1 md:text-7xl">Empower</span> */}
                   {/* <br />
                   <span className="h2-hero md:text-6xl uppercase dark:text-gray-100">
                     Your Yoga Practice
                   </span> */}
                 </h1>
-                <div className="w-full flex mb-4">
+                {/* <div className="w-full flex mb-4">
                   <div className="px-5 py-2 bg-gray-100 dark:bg-black border border-blue-400 rounded-full mx-auto animate-teeter">
                     <p className="uppercase text-blue-900 dark:text-indigo-100 font-bold">
                       Double Sale
                     </p>
                   </div>
-                </div>
+                </div> */}
                 <p
                   className="text-xl md:text-2xl font-medium text-gray-900 max-w-[640px] mx-auto dark:text-gray-100"
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
-                  Get your first month for{" "}
+                  Get <strong className="uppercase">unlimited</strong> yoga your first month for just{" "}
                   <strong
                     className="font-black text-gray-900 dark:text-white underline"
                     style={{ textDecorationColor: "rgb(147, 197, 253)" }}
                   >
                     $29.99
                   </strong>{" "}
-                  and just{" "}
+                  and{" "}
                   <strong
                     className="font-black text-gray-900 dark:text-white underline"
                     style={{ textDecorationColor: "rgb(147, 197, 253)" }}
@@ -164,7 +164,7 @@ const HeroHome = () => {
                   {/* <small className="text-sm mb-4 text-gray-700 dark:text-gray-300 font-red-hat-display">
                     Try our Digital Membership free for 7 days
                   </small> */}
-                  <Button buttonText="Namaste and Save!" btnPriority="cta" />
+                  <Button buttonText="Purchase Now!" btnPriority="cta" />
                   <div className="max-w-3xl mx-auto text-center pb-3">
                     <h2 className="text-sm mt-7 font-medium font-red-hat-display">
                       As Seen On:
