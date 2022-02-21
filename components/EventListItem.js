@@ -182,13 +182,13 @@ function EventListItem({ event }) {
                   // }
                 />
               </div>
-              <p className="font-medium text-lg">
+              {/* <p className="font-medium text-lg">
                 <span className="font-bold text-gray-900 dark:text-gray-50">
                   {`${event.max_capacity - data}`}/
                   {`${event.max_capacity}`}
                 </span>{" "}
                 Spots Available
-              </p>
+              </p> */}
               {data >= event.max_capacity ? (
                 <p className="text-xl uppercase font-bold mt-4 text-gray-900 dark:text-gray-100 tracking-wide">
                   Event Full
