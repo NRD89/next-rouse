@@ -6,9 +6,7 @@ export default async function handler(req, res) {
     req.body;
 
   let lowercaseEmail = email.toLowerCase();
-  let uppercaseCoupon = () => {
-    coupon ? coupon.toUpperCase() : null;
-  };
+  let uppercaseCoupon = coupon ? coupon.toUpperCase() : null;
 
   // const figureOutPrice = () => {
   //   !usersSubTier?.data?.users?.[0] && uppercaseCoupon == "INWARDVIP"
@@ -45,8 +43,9 @@ export default async function handler(req, res) {
     try {
       const payment = await stripe.paymentIntents.create({
         amount:
-          !usersSubTier?.data?.users?.[0] && uppercaseCoupon === "INWARDVIP"
-            ? regular_price - 2500
+          !usersSubTier?.data?.users?.[0] &&
+          coupon?.toUpperCase() === "INWARDVIP"
+            ? membership_price
             : usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
             ? membership_price
             : regular_price,
@@ -56,7 +55,7 @@ export default async function handler(req, res) {
         receipt_email: lowercaseEmail,
         confirm: true,
       });
-      console.log("Payment", payment);
+      console.log("Payment =>", payment, "Coupon =>", uppercaseCoupon);
 
       const mutations = [
         {
