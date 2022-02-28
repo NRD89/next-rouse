@@ -101,7 +101,7 @@ const Header = () => {
         className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-xs xs:text-sm md:text-base text-gray-50 flex justify-center font-medium uppercase items-center py-1`}
       >
         {/* <a href="https://app.rouse.yoga">Sign up and get your first class <strong className="text-white tracking-wide">FREE</strong>!</a> */}
-        <Link href="/events">
+        <Link href="/inward-fest">
           <a
             className="underline"
             style={{
@@ -110,7 +110,7 @@ const Header = () => {
               textUnderlineOffset: "2px",
             }}
           >
-            Check out our upcoming Events!
+            Buy Tickets to Inward Fest!
           </a>
         </Link>
       </div>
