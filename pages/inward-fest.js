@@ -43,7 +43,7 @@ const InwardFest = () => {
               <div className="relative shadow-xl overflow-hidden">
                 <Image
                   className="absolute inset-0 h-full w-full object-cover"
-                  src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:good/v1645998303/IF_LINEUP_pvzslk.jpg"
+                  src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto:eco,w_1200/v1645998303/IF_LINEUP_pvzslk.jpg"
                   alt=""
                   layout="responsive"
                   width={640}

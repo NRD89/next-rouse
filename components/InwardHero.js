@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { urlFor } from "../lib/sanity";
-import { splitDate, imageProps } from "../lib/misc";
 import Button from "./Button";
 
 const InwardHero = () => {
@@ -11,9 +9,10 @@ const InwardHero = () => {
       <div className="absolute inset-0 h-96 pt-16 box-content -z-1">
         <Image
           className="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-40"
-          src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco/v1645996300/026e4685f8a05b3cc44d7ce1f2b5bfa1bdeb8fc6-2846x1897_pyg1lv.jpg"
+          src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_30/v1645996300/026e4685f8a05b3cc44d7ce1f2b5bfa1bdeb8fc6-2846x1897_pyg1lv.jpg"
           alt="About"
           layout="fill"
+          quality={30}
           priority
         />
         <div
@@ -31,10 +30,10 @@ const InwardHero = () => {
                 {/* Title and excerpt */}
                 <div className="text-center">
                   <h1 className="h1 font-red-hat-display mb-4">Inward Fest</h1>
-                  <h3 className="text-xl text-gray-100 font-medium">
+                  <h3 className="text-xl text-gray-800 dark:text-gray-100 font-medium">
                     Ticket Price:{" "}
                     <span
-                      className="text-white font-bold"
+                      className="text-gray-900 dark:text-gray-50 font-bold"
                     >
                       $100
                     </span>
