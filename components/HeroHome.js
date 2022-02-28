@@ -164,7 +164,7 @@ const HeroHome = () => {
                   {/* <small className="text-sm mb-4 text-gray-700 dark:text-gray-300 font-red-hat-display">
                     Try our Digital Membership free for 7 days
                   </small> */}
-                  <Button buttonText="Purchase Now!" btnPriority="cta" />
+                  <Button btnText="Purchase Now!" btnPriority="cta" btnLink="https://app.rouse.yoga" />
                   <div className="max-w-3xl mx-auto text-center pb-3">
                     <h2 className="text-sm mt-7 font-medium font-red-hat-display">
                       As Seen On:

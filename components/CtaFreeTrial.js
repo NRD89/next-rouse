@@ -78,7 +78,7 @@ const CtaFreeTrial = () => {
 
             {/* CTA button */}
             <div className="flex justify-center mt-8">
-              <Button buttonText="Sign Up Today!" />
+              <Button btnText="Sign Up Today!" btnLink="https://app.rouse.yoga" />
             </div>
           </div>
         </div>

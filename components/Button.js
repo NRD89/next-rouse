@@ -1,8 +1,8 @@
-const Button = ({ btnSize, btnPriority, btnWidth, buttonText }) => {
+const Button = ({ btnSize, btnPriority, btnWidth, btnText, btnLink }) => {
   return (
     <div>
       <a
-        href="https://app.rouse.yoga"
+        href={btnLink}
         className={`${btnSize === "small" ? `btn-sm` : `btn`} ${
           btnWidth === "full" ? `w-full` : ``
         } ${
@@ -13,7 +13,7 @@ const Button = ({ btnSize, btnPriority, btnWidth, buttonText }) => {
             : `bg-purple-600 hover:bg-purple-500`
         } text-white flex-shrink-0 mb-2 sm:mb-0 sm:mr-2`}
       >
-        {buttonText}
+        {btnText}
       </a>
     </div>
   );

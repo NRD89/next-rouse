@@ -63,9 +63,10 @@ function PricingTables() {
               </div>
               <div className="mt-24">
                 <Button
-                  buttonText="Sign Up Today"
+                  btnText="Sign Up Today"
                   btnSize="small"
                   btnWidth="full"
+                  btnLink="https://app.rouse.yoga"
                 />
               </div>
             </div>
@@ -115,10 +116,11 @@ function PricingTables() {
               </div>
               <div className="mt-24">
                 <Button
-                  buttonText="Sign Up Today"
+                  btnText="Sign Up Today"
                   btnSize="small"
                   btnWidth="full"
                   btnPriority="secondary"
+                  btnLink="https://app.rouse.yoga"
                 />
               </div>
             </div>
