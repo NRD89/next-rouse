@@ -35,14 +35,14 @@ const InwardFest = () => {
       <Header />
       <InwardHero />
 
-      <div className="relative py-16">
-        <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
+      <div className="relative">
+        <div className="lg:mx-auto lg:max-w-6xl lg:px-6 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
           <div className="relative sm:py-16 lg:py-0">
             <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
               {/* Testimonial card*/}
               <div className="relative shadow-xl overflow-hidden">
                 <Image
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover rounded-xl"
                   src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto:eco,w_1200/v1645998303/IF_LINEUP_pvzslk.jpg"
                   alt=""
                   layout="responsive"
@@ -98,7 +98,7 @@ const InwardFest = () => {
       </div>
 
       <div className="">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto py-16 px-4 sm:py-24 sm:px-6">
           <div className="text-center">
             <h2 className="text-base font-semibold text-indigo-600 dark:text-indigo-500 tracking-wide uppercase">
               Location
@@ -122,9 +122,9 @@ const InwardFest = () => {
                 33°24'01.8"N 115°45'39.1"W
               </a>
             </p>
-            <div className="max-w-7xl mx-auto mt-8 space-y-6 md:grid md:grid-cols-2 md:space-y-0 gap-4">
+            <div className="max-w-7xl mx-auto mt-8 space-y-4 grid grid-cols-1 md:grid-cols-2 md:space-y-0 gap-4">
               <Image
-                className="w-full"
+                className="w-full rounded-xl"
                 src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,h_1074,q_auto:eco,w_1237/v1646002721/image_6483441_1_srsuny.jpg"
                 alt="About"
                 layout="responsive"
@@ -132,7 +132,7 @@ const InwardFest = () => {
                 height={1074}
               />
               <Image
-                className="w-full mt-4 md:mt-0"
+                className="w-full rounded-xl" 
                 src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,h_1049,q_auto:eco,w_1206/v1646002732/image_6483441_2_fcqqd3.jpg"
                 alt="About"
                 layout="responsive"
@@ -144,7 +144,7 @@ const InwardFest = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+      <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:py-20">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900">
@@ -181,13 +181,13 @@ const InwardFest = () => {
       </div>
 
       {/* CTA */}
-      <div className="bg-black">
-        <div className="max-w-3xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
-          <h2 className="text-xl font-extrabold text-white sm:text-2xl mb-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+        <div className="w-full bg-gradient-to-tr from-gray-900 via-gray-700 to-gray-900 border border-gray-900 dark:border-gray-600 mx-auto text-center py-16 sm:py-20 rounded-2xl">
+          <h2 className="text-base font-extrabold text-white sm:text-2xl mb-4">
             <span className="block">
-              We are excited to spend the weekend with everyone,
+              We are excited to spend the weekend with you.
             </span>
-            <span className="block">Much love and see you at Inward!</span>
+            <span className="block">Much love, see you at Inward!</span>
           </h2>
           {/* <p className="mt-4 text-lg leading-6 text-indigo-200">
             Ac euismod vel sit maecenas id pellentesque eu sed consectetur.
