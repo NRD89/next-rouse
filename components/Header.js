@@ -161,9 +161,9 @@ const Header = () => {
           <nav className="flex lg:flex-grow">
             <ul className="lg:flex flex-grow flex-wrap items-center hidden text-sm">
               <li>
-                <Link href="/about">
+                <Link href="/classes">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                    About
+                    Classes
                   </a>
                 </Link>
               </li>

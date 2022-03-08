@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import InwardHero from "../components/InwardHero";
@@ -32,11 +33,18 @@ const InwardFest = () => {
   ];
   return (
     <>
+     <Head>
+        <title>Inward Fest by Rouse & Sandland | Rouse Yoga</title>
+        <meta
+          name="description"
+          content="Rouse Yoga Studio and Sandland present the first Inward Fest. This festival brings together elements of Yoga, EDM and Burning Man to show that harmonious vibrations can bring together people of diverse backgrounds, music taste and spirituality."
+        />
+      </Head>
       <Header />
       <InwardHero />
 
       <div className="relative">
-        <div className="lg:mx-auto lg:max-w-6xl lg:px-6 lg:grid lg:grid-cols-2 lg:gap-24 lg:items-start">
+        <div className="lg:mx-auto lg:max-w-6xl lg:px-6 lg:grid lg:grid-cols-2 lg:gap-20 lg:items-start">
           <div className="relative sm:py-16 lg:py-0">
             <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
               {/* Testimonial card*/}

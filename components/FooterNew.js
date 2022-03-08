@@ -266,6 +266,20 @@ const Footer = () => {
                   </a>
                 </Link>
               </li>
+              <li className="mb-2">
+                <Link href="/class-schedule">
+                  <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                    Class Schedule
+                  </a>
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/events">
+                  <a className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:underline transition duration-150 ease-in-out">
+                    Events
+                  </a>
+                </Link>
+              </li>
             </ul>
           </div>
 
