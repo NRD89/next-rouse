@@ -28,7 +28,27 @@ const InwardFest = () => {
     {
       question: "What should I bring?",
       answer:
-        "Tent or RV, warm and cold clothes (hot days and cold nights), stakes for tent camping or easy ups (it will be windy), canopy/insta shade, food, drinks and yoga mat(s).",
+        "Tent or RV, warm and cold clothes (hot days and cold nights), stakes for tent camping or easy ups (it will be windy), canopy/insta shade, shower slippers, toiletries food, drinks, yoga mat(s) and general camping gear.",
+    },
+    {
+      question: "Can I bring a stove?",
+      answer:
+        "Yes stoves are permitted we just asked that he’s caution.",
+    },
+    {
+      question: "I didn’t receive A ticket for the festival what do I do?",
+      answer:
+        "Because this festival is a more intimate festival we will be checking everyone in when they enter so provide your name your email address or proof that you purchase an email for those of you who got sent email confirmation.",
+    },
+    {
+      question: "What’s the schedule of events?",
+      answer:
+        "We have photos on our website and our Instagram of all of the set times we will also have them posted at the festival.",
+    },
+    {
+      question: "What’s the address to the festival?",
+      answer:
+        "Because the festival takes place on a private plot of land we sent you a location pen so please refer to the location pen to get directions to the festival don’t worry you won’t get lost we will have signs posted to make sure you don’t make a wrong turn from the highway.",
     },
   ];
   return (
@@ -146,6 +166,55 @@ const InwardFest = () => {
                 layout="responsive"
                 width={1206}
                 height={1049}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="">
+        <div className="max-w-6xl mx-auto py-16 px-4 sm:py-24 sm:px-6">
+          <div className="text-center">
+            <h2 className="text-base font-semibold text-indigo-600 dark:text-indigo-500 tracking-wide uppercase">
+              Artists and Performers
+            </h2>
+            <p className="mt-1 text-xl font-extrabold text-gray-900 sm:text-2xl sm:tracking-tight lg:text-3xl">
+              Set and Event Times
+            </p>
+            <div className="max-w-7xl mx-auto mt-8 space-y-4 grid grid-cols-1 md:grid-cols-2 md:space-y-0 gap-4">
+              <Image
+                className="w-full rounded-xl"
+                src="/IF_friday_set_times.jpeg"
+                alt="Inward Fest Friday Set Times"
+                layout="responsive"
+                width={1080}
+                height={1347}
+              />
+              <Image
+                className="w-full rounded-xl" 
+                src="/if_saturday_set_times.jpeg"
+                alt="Inward Fest Saturday Set Times"
+                layout="responsive"
+                width={1080}
+                height={1347}
+              />
+            </div>
+            <div className="max-w-7xl mx-auto mt-8 space-y-4 grid grid-cols-1 md:grid-cols-2 md:space-y-0 gap-4">
+              <Image
+                className="w-full rounded-xl"
+                src="/if_friday_events.jpeg"
+                alt="Inward Fest Friday Set Times"
+                layout="responsive"
+                width={1080}
+                height={1347}
+              />
+              <Image
+                className="w-full rounded-xl" 
+                src="/if_saturday_events.jpeg"
+                alt="Inward Fest Saturday Set Times"
+                layout="responsive"
+                width={1080}
+                height={1347}
               />
             </div>
           </div>

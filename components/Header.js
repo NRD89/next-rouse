@@ -413,6 +413,11 @@ const Header = () => {
                           <a>About</a>
                         </DropdownItem>
                       </Link>
+                      <Link href="/classes">
+                        <DropdownItem>
+                          <a>Classes</a>
+                        </DropdownItem>
+                      </Link>
                       {/* <Link href="/instructors">
                         <DropdownItem>
                           <a>Instructors</a>
