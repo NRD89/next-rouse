@@ -3,7 +3,7 @@ import Button from "./Button"
 const CtaFreeTrial = () => {
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:pb-28">
         {/* CTA box */}
         <div className="relative border rounded-xl border-gray-100 dark:border-gray-600 shadow-2xl dark:shadow-dark40 bg-white dark:bg-gray-800 py-10 px-8 md:py-16 md:px-12">
           {/* Background illustration */}

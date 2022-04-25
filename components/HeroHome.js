@@ -53,7 +53,7 @@ const HeroHome = () => {
     <section className="relative w-full overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 h-full max-h-[748px] w-full box-content -z-1">
-        <Image
+        {/* <Image
           className="absolute inset-0 w-full h-full max-h-[748px] object-cover opacity-40"
           src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_55,w_2000/v1616231889/Alfred_Beach_W2_3_tue3xe.jpg"
           // src="c_scale,f_auto,q_auto:eco,w_1500/v1610702114/rouse-hero-image_f3md0w.jpg"
@@ -63,7 +63,14 @@ const HeroHome = () => {
           layout="fill"
           quality="75"
           priority
-        />
+        /> */}
+        <video
+          className="absolute inset-0 w-full h-full max-h-[748px] object-cover "
+          src="https://player.vimeo.com/progressive_redirect/playback/697797207/rendition/720p?loc=external&signature=b1a381132bf18dc2ec9edff92b455d370ef0289c522f0494aaf5e63469e1ab6e"
+          autoPlay
+          muted
+          loop
+        ></video>
         {/* <div className="absolute top-[25%] left-[45%] w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply dark:mix-blend-multiply filter blur-lg opacity:60 dark:opacity-70 animate-blob animation-delay-4000"></div>
         <div className="absolute top-[20%] left-[35%] w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply dark:mix-blend-multiply filter blur-lg opacity:60 dark:opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute top-[25%] left-[25%] w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply dark:mix-blend-multiply filter blur-lg opacity:60 dark:opacity-70 animate-blob"></div> */}
@@ -72,9 +79,9 @@ const HeroHome = () => {
           aria-hidden="true"
         ></div>
         <div
-          className="absolute inset-0 w-full h-full mix-blend-color opacity-80 dark:opacity-80"
+          className="absolute inset-0 w-full h-full  opacity-30 dark:opacity-10 bg-white dark:bg-black"
           style={{
-            background: `linear-gradient(-45deg, #267DEB, #97266D, #267DEB)`,
+            // background: `linear-gradient(-45deg, #97266D, #267DEB, #97266D)`,
             backgroundSize: `100%`,
             height: `100%`,
             backgroundRepeat: `no-repeat`,
@@ -85,7 +92,7 @@ const HeroHome = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-32 md:pt-40 md:pb-20">
+        <div className="pt-32 pb-32 md:pt-44 md:pb-44">
           <div className="text-center">
             <div className="relative flex justify-center items-center">
               <div
@@ -102,14 +109,17 @@ const HeroHome = () => {
                     <span>Time's up!</span>
                   )}
                 </div> */}
-                <h1 className="mb-4 font-red-hat-display tracking-tight font-black uppercase text-indigo-900 dark:text-pink-300 text-5xl md:text-7xl">
-                  New Member<br/><span className="text-blue-50">Special</span>
+                <h1 className="mb-3 font-red-hat-display tracking-tight font-black uppercase text-black dark:text-white text-4xl sm:text-5xl md:text-7xl ">
+                  Go Beyond Yoga
                   {/* <span className="h1 sm:h1 md:text-7xl">Empower</span> */}
-                  {/* <br />
+                  <br />
                   <span className="h2-hero md:text-6xl uppercase dark:text-gray-100">
-                    Your Yoga Practice
-                  </span> */}
+                    With Rouse
+                  </span>
                 </h1>
+                {/* <h2 className="font-black uppercase text-black text-5xl mb-4">
+                  With Rouse
+                </h2> */}
                 {/* <div className="w-full flex mb-4">
                   <div className="px-5 py-2 bg-gray-100 dark:bg-black border border-blue-400 rounded-full mx-auto animate-teeter">
                     <p className="uppercase text-blue-900 dark:text-indigo-100 font-bold">
@@ -122,7 +132,15 @@ const HeroHome = () => {
                   data-aos="fade-down"
                   data-aos-delay="150"
                 >
-                  Get <strong className="uppercase">unlimited</strong> yoga your first month for just{" "}
+                  Get our new member special today!
+                </p>
+                {/* <p
+                  className="text-xl md:text-2xl font-medium text-gray-900 max-w-[640px] mx-auto dark:text-gray-100"
+                  data-aos="fade-down"
+                  data-aos-delay="150"
+                >
+                  Get <strong className="uppercase">unlimited</strong> yoga your
+                  first month for just{" "}
                   <strong
                     className="font-black text-gray-900 dark:text-white underline"
                     style={{ textDecorationColor: "rgb(147, 197, 253)" }}
@@ -146,7 +164,7 @@ const HeroHome = () => {
                     </span>
                   </small>{" "}
                   per month after!
-                </p>
+                </p> */}
                 {/* <p
                   className="text-xl font-medium text-gray-700 max-w-[640px] mx-auto dark:text-gray-300"
                   data-aos="fade-down"
@@ -157,15 +175,20 @@ const HeroHome = () => {
                 </p> */}
                 {/* CTA form */}
                 <div
-                  className="flex flex-col justify-center max-w-sm mx-auto sm:max-w-md mt-8"
+                  className="flex flex-col justify-center max-w-sm mx-auto sm:max-w-md mt-6"
                   data-aos="fade-down"
                   data-aos-delay="300"
                 >
                   {/* <small className="text-sm mb-4 text-gray-700 dark:text-gray-300 font-red-hat-display">
                     Try our Digital Membership free for 7 days
                   </small> */}
-                  <Button btnText="Purchase Now!" btnPriority="cta" btnLink="https://app.rouse.yoga" />
-                  <div className="max-w-3xl mx-auto text-center pb-3">
+                  <Button
+                    btnText="Join Now"
+                    btnPriority="cta"
+                    btnLink="https://app.rouse.yoga"
+                    style={{ minWidth: `200px` }}
+                  />
+                  {/* <div className="max-w-3xl mx-auto text-center pb-3">
                     <h2 className="text-sm mt-7 font-medium font-red-hat-display">
                       As Seen On:
                     </h2>
@@ -174,7 +197,6 @@ const HeroHome = () => {
                     className="grid gap-2 lg:gap-6 grid-cols-4 text-center"
                     data-aos-id-stats
                   >
-                    {/* 1st item */}
                     <div
                       className="bg-transparent py-1 px-4"
                       data-aos="fade-down"
@@ -193,7 +215,6 @@ const HeroHome = () => {
                         </svg>
                       </div>
                     </div>
-                    {/* 2nd item */}
                     <div
                       className="bg-transparent py-1 px-4"
                       data-aos="fade-down"
@@ -216,7 +237,6 @@ const HeroHome = () => {
                         </svg>
                       </div>
                     </div>
-                    {/* 3rd item */}
                     <div
                       className="bg-transparent py-1 px-4"
                       data-aos="fade-down"
@@ -236,7 +256,6 @@ const HeroHome = () => {
                         </svg>
                       </div>
                     </div>
-                    {/* 4th item */}
                     <div
                       className="bg-transparent py-1 px-4"
                       data-aos="fade-down"
@@ -261,7 +280,7 @@ const HeroHome = () => {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

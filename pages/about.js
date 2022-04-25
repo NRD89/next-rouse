@@ -1,5 +1,7 @@
 import Layout from "../components/Layout";
 import Image from "next/image";
+import LazyLoad from "react-lazyload";
+import "plyr/dist/plyr.css";
 
 const about = () => {
   return (
@@ -16,7 +18,30 @@ const about = () => {
       </div>
       <div className="w-full" data-aos="fade-up" data-aos-delay="150">
         <div className="mx-auto max-w-prose">
-          <Image
+          <div className="w-full flex items-center justify-center my-10">
+            <div className="relative w-full">
+              <LazyLoad height={432}>
+                <div className="plyr__video-embed" id="player">
+                  <iframe
+                    src="https://player.vimeo.com/video/702691465?h=9e88345ecd"
+                    allowFullScreen
+                    allowtransparency="true"
+                    allow="autoplay"
+                    className="w-full h-full rounded-xl"
+                  ></iframe>
+                </div>
+              </LazyLoad>
+              {/* <Image
+                    className="rounded"
+                    src="c_scale,f_auto,q_auto,dpr_1.5,w_400/v1610703761/rouse-star-down-dog_mnlu8p.jpg"
+                    width={400}
+                    height={267}
+                    alt="About"
+                    layout="responsive"
+                  /> */}
+            </div>
+          </div>
+          {/* <Image
             className="rounded-xl"
             src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,dpr_2.0,f_auto,q_69,w_653/v1634787843/5F0699FF-897D-4DCD-ABD2-C5A1035007B8_1_201_a_khwpxz.jpg"
             width={653}
@@ -24,7 +49,7 @@ const about = () => {
             alt="About"
             quality="40"
             layout="responsive"
-          />
+          /> */}
           <p className="mb-4 mt-6 text-gray-700 dark:text-gray-300">
             Thank you for taking time to visit the Rouse Yoga community. We
             exist today because of you. With a heart of gratitude and

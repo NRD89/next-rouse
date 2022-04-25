@@ -101,20 +101,19 @@ const Header = () => {
         className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-xs xs:text-sm md:text-base text-gray-50 flex justify-center font-medium uppercase items-center py-1`}
       >
         {/* <a href="https://app.rouse.yoga">Sign up and get your first class <strong className="text-white tracking-wide">FREE</strong>!</a> */}
-        <Link href="/inward-fest">
-          <a
-            className="underline"
-            style={{
-              textDecorationColor: "#60a5fa",
-              textDecorationThickness: "2px",
-              textUnderlineOffset: "2px",
-            }}
-          >
-            Buy Tickets to Inward Fest!
-          </a>
-        </Link>
+        <a
+          href="https://app.rouse.yoga"
+          className="underline"
+          style={{
+            textDecorationColor: "#60a5fa",
+            textDecorationThickness: "2px",
+            textUnderlineOffset: "2px",
+          }}
+        >
+          Get Over 50% off your first Month!
+        </a>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
           {/* Site branding */}
           <div

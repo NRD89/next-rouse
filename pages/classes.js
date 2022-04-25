@@ -169,6 +169,7 @@ export default function Example() {
   const sortedArray = classes.sort(function (a, b) {
     return a.name.localeCompare(b.name);
   });
+
   return (
     <Layout
       metaTitle="Yoga Classes"
@@ -196,14 +197,14 @@ export default function Example() {
                   <div className="space-y-4">
                     <div className="aspect-w-3 aspect-h-2 relative">
                       <Image
-                        className="object-cover shadow-lg rounded-lg opacity-30 brightness-100 dark:opacity-60 dark:brightness-25"
+                        className="object-cover shadow-lg rounded-lg opacity-20 brightness-100 dark:opacity-60 dark:brightness-25"
                         src="/rouse_class_bg.jpeg"
                         alt=""
                         layout="fill"
-                        quality={35}
+                        quality={5}
                       />
                       <div
-                        className="absolute inset-0 bg-gradient-to-tr from-pink-300 to-blue-300 dark:from-pink-800 dark:to-blue-800 rounded-lg opacity-75 dark:opacity-70 mix-blend-color"
+                        className="absolute inset-0 bg-gradient-to-tr from-pink-300 to-blue-300 dark:from-pink-800 dark:to-blue-800 rounded-lg opacity-100 dark:opacity-70 mix-blend-color"
                         aria-hidden="true"
                       ></div>
                       <div className="absolute inset-0 w-full h-full flex justify-center items-center px-2 text-center">

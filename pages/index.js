@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import HeroHome from "../components/HeroHome";
-import FeaturesZigzag from "../components/FeaturesZigzag";
+import HomeFeaturesSection from "../components/HomeFeaturesSection"
+import HomeZigzag from "../components/HomeZigzag";
 import PricingTables from "../components/PricingTables";
 import DiscordWidget from "../components/DiscordWidget";
+import HomeFAQ from "../components/HomeFAQ"
 import CtaFreeTrial from "../components/CtaFreeTrial";
 import FooterNew from "../components/FooterNew";
 import Stats from "../components/Stats";
@@ -22,14 +24,15 @@ const Index = () => {
       <Header />
       <main>
         <HeroHome />
-        {/* <Stats /> */}
-        <FeaturesZigzag />
+        <HomeFeaturesSection />
+        <HomeZigzag />
         <PricingTables />
+        <HomeFAQ />
+        <CtaFreeTrial />
         {/* <OffsetCards />
       <ImageTextCards />
       <PricingCards /> */}
         {/* <DiscordWidget /> */}
-        <CtaFreeTrial />
       </main>
       <FooterNew />
     </div>

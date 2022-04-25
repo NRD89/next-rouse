@@ -4,11 +4,11 @@ function PricingTables() {
   return (
     <section
       id="pricing"
-      className="relative bg-gray-900 border-t border-transparent dark:border-gray-800"
+      className="relative border-t border-transparent dark:border-gray-800"
     >
       {/* Background gradient (dark version only) */}
       <div
-        className="absolute inset-0 opacity-25 bg-gradient-to-b from-gray-800 to-gray-900 pointer-events-none hidden dark:block"
+        className="absolute inset-0 opacity-100 dark:opacity-60 bg-gradient-to-b from-gray-800 to-gray-900 pointer-events-none"
         aria-hidden="true"
       ></div>
       {/* End background gradient (dark version only) */}
@@ -19,16 +19,6 @@ function PricingTables() {
             <h2 className="h2 font-red-hat-display mb-4 text-gray-100">
               Join The Rouse Yoga Community
             </h2>
-            <div className="text-center">
-              <p className="text-xl text-gray-400">
-                Our innovative yoga platform offers in-studio memberships,
-                live-streaming <small>(coming soon)</small> and VoD{" "}
-                <small>(coming soon)</small> to create a truly interactive
-                community. Easy to use and navigate, your membership helps you
-                not just learn how to practice yoga, but how to find purpose in
-                that practice.
-              </p>
-            </div>
           </div>
 
           {/* Pricing tables */}
@@ -44,7 +34,7 @@ function PricingTables() {
                     Yearly
                   </div>
                   <div className="inline-flex px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400 bg-purple-200 dark:bg-purple-600 dark:bg-opacity-25 rounded-full">
-                    <small className="mr-1 uppercase">save</small>$250
+                    <small className="mr-1 uppercase">save</small>$129.89
                   </div>
                 </div>
                 <div className="font-red-hat-display inline-flex items-baseline mb-2">
@@ -54,7 +44,7 @@ function PricingTables() {
                     /$
                   </span>
                   <span className="font-medium text-red-500 dark:text-red-400 line-through">
-                    899.88
+                    779.88
                   </span>
                 </div>
                 <div className="text-gray-500 dark:text-gray-400">
@@ -88,9 +78,6 @@ function PricingTables() {
                   <span className="h3">64.99</span>
                   <span className="font-medium text-gray-500 dark:text-gray-400">
                     /$
-                  </span>
-                  <span className="font-medium text-red-500 dark:text-red-400 line-through">
-                    74.99
                   </span>
                 </div>
                 <div className="text-gray-700 dark:text-gray-200 uppercase">
@@ -314,7 +301,7 @@ function PricingTables() {
           </div>
         </div>
       </div>
-      <div className="w-full text-gray-400 text-center pb-4">
+      <div className="w-full text-center pb-4 relative">
         <small className="text-gray-300 text-center">
           *Based on drop in prices and average student attending 3 classes per
           week.
