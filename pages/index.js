@@ -18,7 +18,7 @@ const Index = () => {
         <title>Riverside Yoga Studio | Rouse Yoga</title>
         <meta
           name="description"
-          content="Rouse Yoga offers yoga classes to Riverside, California. Our classes are designed to bring variety and convenience to your yoga practice. You choose the class that’s right for you!"
+          content="Rouse Yoga offers yoga classes to Riverside, California. Our classes are designed to bring variety and convenience to your yoga practice. Choose from Vinyasa, Ashtanga, Yin, Hot Yoga and our unique combo classes to find the class that best suites you!"
         />
       </Head>
       <Header />
@@ -29,10 +29,6 @@ const Index = () => {
         <PricingTables />
         <HomeFAQ />
         <CtaFreeTrial />
-        {/* <OffsetCards />
-      <ImageTextCards />
-      <PricingCards /> */}
-        {/* <DiscordWidget /> */}
       </main>
       <FooterNew />
     </div>

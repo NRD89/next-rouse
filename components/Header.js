@@ -202,9 +202,9 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/inward-fest">
+                <Link href="/teacher-training">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
-                    Inward Fest
+                    Training
                   </a>
                 </Link>
               </li>
@@ -437,9 +437,9 @@ const Header = () => {
                           <a>Events</a>
                         </DropdownItem>
                       </Link>
-                      <Link href="/inward-fest">
+                      <Link href="/teacher-training">
                         <DropdownItem>
-                          <a>Inward Fest</a>
+                          <a>Training</a>
                         </DropdownItem>
                       </Link>
                       <>

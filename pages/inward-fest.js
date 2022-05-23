@@ -61,7 +61,14 @@ const InwardFest = () => {
         />
       </Head>
       <Header />
-      <InwardHero />
+      <InwardHero
+        title="Inward Fest"
+        btn={false}
+        btnLink={process.env.NEXT_PUBLIC_INWARD_PAYMENT_LINK}
+        imgURL="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_30/v1645996300/026e4685f8a05b3cc44d7ce1f2b5bfa1bdeb8fc6-2846x1897_pyg1lv.jpg"
+        priceType="Ticket"
+        price="100"
+      />
 
       <div className="relative">
         <div className="lg:mx-auto lg:max-w-6xl lg:px-6 lg:grid lg:grid-cols-2 lg:gap-20 lg:items-start">

@@ -29,7 +29,7 @@ function FeaturesZigzag() {
                     <LazyLoad height={540}>
                       <video
                         className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
-                        src="https://player.vimeo.com/progressive_redirect/playback/702748083/rendition/1080p?loc=external&signature=1dcfd466aff6cdc5f81f4a88f532f7fdc8bf1a5a9190791c2bbf25c108b90d6c"
+                        src="/Studio_Section.mp4"
                         autoPlay
                         muted
                         loop
@@ -107,7 +107,7 @@ function FeaturesZigzag() {
                     <LazyLoad height={540}>
                     <video
                       className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
-                      src="https://player.vimeo.com/progressive_redirect/playback/702757651/rendition/1080p?loc=external&signature=0063f80483ab83ed592122d50f8cfb3f27472410b40e89dd4bedd9f7e04d507f"
+                      src="/Community_Section_2.mp4"
                       autoPlay
                       muted
                       loop
@@ -191,7 +191,7 @@ function FeaturesZigzag() {
                     <LazyLoad height={540}>
                     <video
                       className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
-                      src="https://player.vimeo.com/progressive_redirect/playback/702509018/rendition/1080p?loc=external&signature=0686714a8193a6498c585bb4a6a13e32e831c5f6d782b491eb4b9a7387506c7e"
+                      src="/Instructors_Section.mp4"
                       autoPlay
                       muted
                       loop
