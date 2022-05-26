@@ -29,7 +29,7 @@ function FeaturesZigzag() {
                     <LazyLoad height={540}>
                       <video
                         className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
-                        src="/Studio_Section.mp4"
+                        src="https://player.vimeo.com/progressive_redirect/playback/702748083/rendition/1080p/file.mp4?loc=external&signature=ed03edc7f3ad86e97380c70e073b7b228a7f91027795a0d0dab88f5517601c0f"
                         autoPlay
                         muted
                         loop
@@ -105,13 +105,13 @@ function FeaturesZigzag() {
                     style={{ width: `100%` }}
                   >
                     <LazyLoad height={540}>
-                    <video
-                      className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
-                      src="/Community_Section_2.mp4"
-                      autoPlay
-                      muted
-                      loop
-                    ></video>
+                      <video
+                        className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
+                        src="https://player.vimeo.com/progressive_redirect/playback/702757651/rendition/1080p/file.mp4?loc=external&signature=280a97f1e77bdd6fc6a5b28fed72cd0d7b406b1a55b3285c07b167ed55d1a933"
+                        autoPlay
+                        muted
+                        loop
+                      ></video>
                     </LazyLoad>
                   </div>
                   {/* <img
@@ -189,13 +189,13 @@ function FeaturesZigzag() {
                     style={{ width: `100%` }}
                   >
                     <LazyLoad height={540}>
-                    <video
-                      className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
-                      src="/Instructors_Section.mp4"
-                      autoPlay
-                      muted
-                      loop
-                    ></video>
+                      <video
+                        className="absolute inset-0 w-full h-full object-cover opacity-80 dark:opacity-80 rounded-none sm:rounded-xl"
+                        src="https://player.vimeo.com/progressive_redirect/playback/702509018/rendition/1080p/file.mp4?loc=external&signature=ea9b57f42722944d1ca80f7832fa42a678e3ecc148f380e55ed0ec0be1bd85d3"
+                        autoPlay
+                        muted
+                        loop
+                      ></video>
                     </LazyLoad>
                   </div>
                 </div>
