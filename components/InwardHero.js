@@ -3,8 +3,16 @@ import Image from "next/image";
 import Button from "./Button";
 import axios from "axios";
 
-const InwardHero = ({ title, btn, btnLink, imgURL, priceType, price }) => {
-  
+const InwardHero = ({
+  title,
+  btn,
+  btnLink,
+  imgURL,
+  priceType,
+  price,
+  sale,
+  discountPrice,
+}) => {
   return (
     <section className="relative">
       {/* Background image */}
@@ -34,9 +42,20 @@ const InwardHero = ({ title, btn, btnLink, imgURL, priceType, price }) => {
                   <h1 className="h1 font-red-hat-display mb-4">{title}</h1>
                   <h3 className="text-xl text-gray-800 dark:text-gray-100 font-medium">
                     {priceType} Price:{" "}
-                    <span className="text-gray-900 dark:text-gray-50 font-bold">
-                      ${price}
-                    </span>
+                    {sale ? (
+                      <>
+                        <span className="text-blue-600 dark:text-blue-400 font-bold">
+                          ${discountPrice}
+                        </span>
+                        <span className="text-gray-900 dark:text-gray-50 font-bold line-through ml-1">
+                          ${price}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-gray-900 dark:text-gray-50 font-bold">
+                        ${price}
+                      </span>
+                    )}
                   </h3>
                 </div>
                 {/* Article meta */}
