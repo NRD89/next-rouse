@@ -21,10 +21,12 @@ const TeacherTraining = () => {
   return (
     <>
       <Head>
-        <title>Inward Fest by Rouse & Sandland | Rouse Yoga</title>
+        <title>Yoga Teacher Training | Rouse Yoga</title>
         <meta
           name="description"
-          content="Rouse Yoga Studio and Sandland present the first Inward Fest. This festival brings together elements of Yoga, EDM and Burning Man to show that harmonious vibrations can bring together people of diverse backgrounds, music taste and spirituality."
+          content="Join the Rouse Family and Yoga Love Om for an empowering and
+          uplifting 200 Hour Teacher Training. Don't just learn the
+          basics of yoga, discover who you are as an instructor."
         />
       </Head>
       <Header />

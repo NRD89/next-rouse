@@ -53,10 +53,12 @@ const InwardFest = () => {
   return (
     <>
       <Head>
-        <title>Inward Fest by Rouse & Sandland | Rouse Yoga</title>
+        <title>Azension by Rouse & Sandland | Rouse Yoga</title>
         <meta
           name="description"
-          content="Rouse Yoga Studio and Sandland present the first Inward Fest. This festival brings together elements of Yoga, EDM and Burning Man to show that harmonious vibrations can bring together people of diverse backgrounds, music taste and spirituality."
+          content="Rouse Yoga Studio and Sandland present the first Azension Festival. Join us at Azension, a yoga music festival to get your body
+          moving while exploring deep spiritual connections with
+          electronic music."
         />
       </Head>
       <Header />
