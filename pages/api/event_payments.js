@@ -2,9 +2,18 @@ import fetch from "node-fetch";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
-  const { id, event_id, regular_price, membership_price, coupon, email, name } =
-    req.body;
-
+  const {
+    id,
+    event_title,
+    event_date_time,
+    event_id,
+    regular_price,
+    membership_price,
+    coupon,
+    email,
+    name,
+  } = req.body;
+  console.log("body => ", req.body);
   let lowercaseEmail = email.toLowerCase();
   let uppercaseCoupon = coupon ? coupon.toUpperCase() : null;
 
@@ -16,7 +25,7 @@ export default async function handler(req, res) {
   //     : regular_price;
   // };
 
-  const usersSubTier = await fetch("https://graphql.rouse.yoga/v1/graphql", {
+  const usersSubTier = await fetch(process.env.API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -43,14 +52,11 @@ export default async function handler(req, res) {
     try {
       const payment = await stripe.paymentIntents.create({
         amount:
-          !usersSubTier?.data?.users?.[0] &&
-          coupon?.toUpperCase() === "INWARDVIP"
-            ? membership_price
-            : usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
+          usersSubTier?.data?.users?.[0].sub_tier === "in-studio"
             ? membership_price
             : regular_price,
         currency: "USD",
-        description: `${name} purchased event for ${event_id}.`,
+        description: `${name} purchased event for ${event_title} on ${event_date_time}.`,
         payment_method: id,
         receipt_email: lowercaseEmail,
         confirm: true,

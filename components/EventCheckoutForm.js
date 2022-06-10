@@ -15,6 +15,8 @@ const CheckoutForm = ({
   membership_price,
   coupon_codes,
   event_id,
+  event_title,
+  event_date_time,
 }) => {
   //   const [session] = useSession();
   const [loading, setLoading] = useState(false);
@@ -37,6 +39,8 @@ const CheckoutForm = ({
     if (regular_price === 0) {
       const response = await axios.post("/api/event_payments", {
         event_id,
+        event_title,
+        event_date_time,
         regular_price,
         membership_price,
         email,
@@ -67,6 +71,8 @@ const CheckoutForm = ({
         const response = await axios.post("/api/event_payments", {
           id,
           event_id,
+          event_title,
+          event_date_time,
           regular_price,
           membership_price,
           coupon,
@@ -171,7 +177,8 @@ const CheckoutForm = ({
                   className="block text-gray-500 dark:text-gray-300 text-sm font-medium mb-1"
                   htmlFor="email"
                 >
-                  Email <span className="text-red-600 dark:text-red-500">*</span>
+                  Email{" "}
+                  <span className="text-red-600 dark:text-red-500">*</span>
                 </label>
                 <input
                   onChange={(e) => {
