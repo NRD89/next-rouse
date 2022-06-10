@@ -199,6 +199,8 @@ function EventListItem({ event }) {
                   membership_price={event.membership_price}
                   coupon_codes={event.coupon_codes}
                   id={event._id}
+                  eventTitle={event.title}
+                  eventDateTime={event.eventDateTime}
                 />
               )}
             </div>

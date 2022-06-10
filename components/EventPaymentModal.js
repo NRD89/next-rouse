@@ -7,15 +7,17 @@ import { formatPrice } from "../lib/misc";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
-const DropInPayment = ({
+const EventPaymentModal = ({
   regular_price,
   membership_price,
   coupon_codes,
   id,
+  eventTitle,
+  eventDateTime,
 }) => {
   let [isOpen, setIsOpen] = useState(false);
 
-  console.log("format price =>", regular_price);
+  console.log("format price =>", eventTitle, eventDateTime);
 
   function closeModal() {
     setIsOpen(false);
@@ -154,6 +156,8 @@ const DropInPayment = ({
                     membership_price={membership_price}
                     coupon_codes={coupon_codes}
                     event_id={id}
+                    event_title={eventTitle}
+                    event_date_time={eventDateTime}
                   />
                 </Elements>
               </div>
@@ -165,4 +169,4 @@ const DropInPayment = ({
   );
 };
 
-export default DropInPayment;
+export default EventPaymentModal;
