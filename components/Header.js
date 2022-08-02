@@ -101,17 +101,18 @@ const Header = () => {
         className={`w-full bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 text-xs xs:text-sm md:text-base text-gray-50 flex justify-center font-medium uppercase items-center py-1`}
       >
         {/* <a href="https://app.rouse.yoga">Sign up and get your first class <strong className="text-white tracking-wide">FREE</strong>!</a> */}
-        <a
-          href="https://app.rouse.yoga"
-          className="underline"
-          style={{
-            textDecorationColor: "#60a5fa",
-            textDecorationThickness: "2px",
-            textUnderlineOffset: "2px",
-          }}
-        >
-          Get Over 50% off your first Month!
-        </a>
+        <Link  href="/holistic-corner" aria-label="Holistic Corner">
+          <a
+            className="underline"
+            style={{
+              textDecorationColor: "#60a5fa",
+              textDecorationThickness: "2px",
+              textUnderlineOffset: "2px",
+            }}
+          >
+            Holistic Corner Grand Opening Aug. 6th!
+          </a>
+        </Link>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between">
@@ -205,6 +206,13 @@ const Header = () => {
                 <Link href="/teacher-training">
                   <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
                     Training
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/holistic-corner">
+                  <a className="font-medium hover:text-gray-500 px-5 py-3 flex items-center transition duration-150 ease-in-out">
+                    Holistic Corner
                   </a>
                 </Link>
               </li>
@@ -440,6 +448,11 @@ const Header = () => {
                       <Link href="/teacher-training">
                         <DropdownItem>
                           <a>Training</a>
+                        </DropdownItem>
+                      </Link>
+                      <Link href="/holistic-corner">
+                        <DropdownItem>
+                          <a>Holistic Corner</a>
                         </DropdownItem>
                       </Link>
                       <>
