@@ -292,7 +292,7 @@ const HolisticCorner = () => {
                     What Services do you offer?
                   </label>
                 </div>
-                <input type="hidden" name="form-name" value="subscribe" />
+                <input type="hidden" name="form-name" value="holistic-corner-vendors" />
                 <Button
                   btnText="Submit"
                   btnPriority="secondary"
