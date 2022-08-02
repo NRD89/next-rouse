@@ -204,6 +204,37 @@ h5 {
   margin: 0!important;
 }
 
+.input:focus ~ .placeholder,  /* Input has focus */
+.input:not(:placeholder-shown) ~ .placeholder  /* Input has a value */ {
+  transform: translateY(-25px);
+  opacity: 100%;
+}
+
+.form-input-wrapper {
+  @apply relative !border border-gray-400 dark:border-gray-700 rounded-md !px-3 !py-1 shadow-sm focus-within:!ring-1 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all bg-white;
+}
+
+.form-text-input {
+  @apply block w-full border-0 px-0 focus:ring-0 sm:text-sm dark:bg-gray-900;
+}
+
+.form-text-label {
+  @apply absolute left-2 top-3 pointer-events-none inline-block px-1 bg-white dark:bg-gray-900 dark:text-gray-50 text-sm font-medium text-gray-900 transition-transform opacity-70;
+}
+
+.placeholder {
+  backface-visibility: hidden;
+  transition: all 150ms ease-out;
+}
+
+@media only screen and (min-width: 768px) {
+  .input:focus ~ .placeholder,  /* Input has focus */
+  .input:not(:placeholder-shown) ~ .placeholder  /* Input has a value */ {
+    transform: translateY(-22px);
+    opacity: 100%;
+  }
+}
+
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;
@@ -212,3 +243,4 @@ h5 {
     animation-delay: 4s;
   }
 }
+

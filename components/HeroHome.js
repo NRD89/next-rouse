@@ -65,7 +65,7 @@ const HeroHome = () => {
           priority
         /> */}
         <video
-          className="absolute inset-0 w-full h-full max-h-[748px] object-cover "
+          className="absolute inset-0 w-full h-full max-h-[748px] object-cover"
           src="https://player.vimeo.com/progressive_redirect/playback/697797207/rendition/720p?loc=external&signature=b1a381132bf18dc2ec9edff92b455d370ef0289c522f0494aaf5e63469e1ab6e"
           poster="/home_hero_poster.jpg"
           preload
