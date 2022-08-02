@@ -22,7 +22,7 @@ const InwardHero = ({
         <Image
           className="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-40"
           src={imgURL}
-          alt=""
+          alt={title}
           layout="fill"
           quality={70}
           priority

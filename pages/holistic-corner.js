@@ -21,9 +21,10 @@ const HolisticCorner = () => {
         <title>Holistic Corner | Rouse Yoga</title>
         <meta
           name="description"
-          content="Join the Rouse Family and Yoga Love Om for an empowering and
-          uplifting 200 Hour Teacher Training. Don't just learn the
-          basics of yoga, discover who you are as an instructor."
+          content="Welcome to the RY Holistic Corner a wellness and healing
+          center. Our services include: massage therapy, reiki healing, private yoga
+          sessions, Thai massage, private sound baths, energy work and
+          so much more!"
         />
       </Head>
       <Header />
@@ -33,7 +34,7 @@ const HolisticCorner = () => {
         btnLink="https://rouseyoga.as.me/"
         btnText="Reserve Sessions"
         subHeading="Come visit us during our grand opening event and try out our holistic services. All private sessions are donation based!"
-        imgURL="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_5,w_2854/v1659344865/holistic_corner_vine_hero_gikhvw.jpg"
+        imgURL="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_10,w_2854/v1659344865/hollistic_corner_vine_hero_gikhvw.jpg"
       />
 
       <div className="relative">
@@ -75,7 +76,7 @@ const HolisticCorner = () => {
                 <p className="text-lg">
                   As a member of the community you have access to many wellness
                   experts with a heart to improve your overall health, physical,
-                  mental, emotional and spiritual well being. Some our our
+                  mental, emotional and spiritual well being. Some of our
                   services include: massage therapy, reiki healing, private yoga
                   sessions, Thai massage, private sound baths, energy work and
                   so much more.
