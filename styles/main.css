@@ -11,6 +11,7 @@ html {
   --plyr-video-background: rgb(37, 40, 54);
   --plyr-range-fill-background: #7146ea;
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 .plyr {

@@ -94,7 +94,7 @@ const HolisticCorner = () => {
         </div>
       </div>
 
-      <div className="mx-auto my-20 max-w-6xl px-4 lg:my-36">
+      <div id="practitioner-form" className="mx-auto my-20 max-w-6xl px-4 lg:my-36">
         <div className="mx-auto flex w-full max-w-prose flex-col items-center justify-center text-center">
           <h2 className="text-base font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-500">
             For Practitioners
@@ -103,6 +103,25 @@ const HolisticCorner = () => {
             Looking for a space to host your private wellness and holistic
             services?
           </h3>
+          <p className="mt-2 text-lg font-medium">
+            Inquire about renting one of our themed rooms below.
+          </p>
+          <div className="mt-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 animate-bounce"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 13l-5 5m0 0l-5-5m5 5V6"
+              />
+            </svg>
+          </div>
         </div>
         <ul
           role="list"
@@ -135,7 +154,7 @@ const HolisticCorner = () => {
               </div>
             </div>
           </li>
-          <li className="">
+          <li>
             <div className="relative space-y-4 lg:max-w-none">
               <div className="mb-20 lg:mb-0">
                 <Image
@@ -302,7 +321,8 @@ const HolisticCorner = () => {
         <div className="mx-auto w-full rounded-2xl border border-gray-900 bg-gradient-to-tr from-gray-900 via-gray-700 to-gray-900 py-16 text-center dark:border-gray-600 sm:py-20">
           <h2 className="mx-auto mb-4 max-w-[40ch] text-base font-extrabold text-white sm:text-2xl">
             <span className="block">
-              Want to try out our holistic services? <br/>Reserve a private session!
+              Want to try out our holistic services? <br />
+              Reserve a private session!
             </span>
           </h2>
           {/* <p className="mt-4 text-lg leading-6 text-indigo-200">
