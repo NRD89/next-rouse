@@ -33,24 +33,24 @@ const HolisticCorner = () => {
         btn={false}
         btnLink="https://rouseyoga.as.me/"
         btnText="Reserve Sessions"
-        subHeading="Come visit us during our grand opening event and try out our holistic services. All private sessions are donation based!"
+        subHeading="Come visit us and try out our services. Get 1 on 1 time with a holistic professional today."
         imgURL="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_10,w_2854/v1659344865/hollistic_corner_vine_hero_gikhvw.jpg"
       />
 
       <div className="relative">
-        <div className="md:pt-20 lg:mx-auto lg:max-w-6xl lg:px-6 lg:grid lg:grid-cols-2 lg:gap-20 lg:items-start">
-          <div className="sm:py-16 lg:py-0 relative md:sticky md:top-28">
-            <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none">
+        <div className="md:pt-20 lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-2 lg:items-start lg:gap-20 lg:px-6">
+          <div className="relative sm:py-16 md:top-28 lg:sticky lg:py-0">
+            <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0">
               {/* Testimonial card*/}
-              <div className="relative shadow-xl overflow-hidden rounded-xl">
+              <div className="relative overflow-hidden rounded-xl shadow-xl">
                 <Image
-                  className="absolute inset-0 h-full w-full object-cover rounded-xl"
-                  src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco/v1659345507/HC_Grand_Opening_w1aydv.png"
+                  className="absolute inset-0 h-full w-full rounded-xl object-cover"
+                  src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco/v1660719110/IMG_4837_polkmv.jpg"
                   alt="Holistic Corner grand opening flyer"
                   layout="responsive"
                   width={640}
                   height={807}
-                  blurDataURL="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto:low,w_44/v1659345507/HC_Grand_Opening_w1aydv.png"
+                  blurDataURL="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:low,w_44/v1660719110/IMG_4837_polkmv.jpg"
                   placeholder="blur"
                 />
               </div>
@@ -63,10 +63,10 @@ const HolisticCorner = () => {
               {/* <h2 className="text-base font-semibold text-indigo-600 dark:text-indigo-500 tracking-wide uppercase">
                 Presented By:
               </h2> */}
-              <h3 className="text-3xl text-center text-gray-900 font-extrabold tracking-tight sm:text-4xl">
+              <h3 className="text-center text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 Welcome to the RY Holistic Corner
               </h3>
-              <div className="mt-6 space-y-6 prose-lg">
+              <div className="prose-lg mt-6 space-y-6">
                 <p className="text-lg">
                   Welcome to the RY Holistic Corner a wellness and healing
                   center you can call home. We are a community based space
@@ -77,42 +77,26 @@ const HolisticCorner = () => {
                   As a member of the community you have access to many wellness
                   experts with a heart to improve your overall health, physical,
                   mental, emotional and spiritual well being. Some of our
-                  services include: massage therapy, reiki healing, private yoga
-                  sessions, Thai massage, private sound baths, energy work and
-                  so much more.
+                  services include:
                 </p>
-                <p className="text-lg">
-                  We are excited to have our{" "}
-                  <strong className="italic font-semibold">
-                    Grand Opening August 6th from 8am to 8pm
-                  </strong>
-                  . For our opening event we will be offering a chance for the
-                  community to come try services and get to know what we have to
-                  offer. All services offered will be donation based but must be
-                  reserved ahead of time.
-                </p>
-                <p className="text-lg">
-                  Come join the Rouse Family in its new expansion and reserve
-                  the service of your choice.
-                </p>
-                <p className="text-lg">
-                  Refreshments and light snacks will be provided throughout the
-                  day.
-                </p>
-                <p className="text-lg">
-                  To close out the Grand Opening Event we will be offering a
-                  special community event for all to enjoy. Stay tuned for more
-                  info! Event details will announced Tuesday at 12pm!
-                </p>
+                <ul>
+                  <li>- Massage Therapy</li>
+                  <li>- Reiki Healing</li>
+                  <li>- Private Yoga Sessions</li>
+                  <li>- Thai Massage</li>
+                  <li>- Private Sound Baths</li>
+                  <li>- Energy Work</li>
+                  <li>- and so much more!</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="px-4 max-w-6xl mx-auto my-20 lg:my-36">
-        <div className="flex flex-col justify-center items-center w-full max-w-prose text-center mx-auto">
-          <h2 className="text-base font-semibold text-indigo-600 dark:text-indigo-500 tracking-wide uppercase">
+      <div className="mx-auto my-20 max-w-6xl px-4 lg:my-36">
+        <div className="mx-auto flex w-full max-w-prose flex-col items-center justify-center text-center">
+          <h2 className="text-base font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-500">
             For Practitioners
           </h2>
           <h3 className="mt-1 text-xl font-extrabold text-gray-900 sm:text-2xl sm:tracking-tight lg:text-3xl">
@@ -122,13 +106,13 @@ const HolisticCorner = () => {
         </div>
         <ul
           role="list"
-          className="gap-y-12 space-y-64 md:grid sm:gap-x-6 sm:gap-y-8 sm:space-y-0 md:grid-cols-3 lg:gap-x-8 mt-12 min-h-[500px]"
+          className="mt-12 min-h-[500px] gap-y-12 space-y-64 sm:gap-x-6 sm:gap-y-8 sm:space-y-0 md:grid md:grid-cols-3 lg:gap-x-8"
         >
           <li className="lg:justify-self-auto">
-            <div className="space-y-4 relative lg:max-w-none">
+            <div className="relative space-y-4 lg:max-w-none">
               <div className="mb-20 lg:mb-0">
                 <Image
-                  className="absolute inset-0 h-full w-full object-cover rounded-xl"
+                  className="absolute inset-0 h-full w-full rounded-xl object-cover"
                   src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto:eco,w_1200/v1659410546/earth_room_oi2frh.jpg"
                   alt="earth room"
                   layout="responsive"
@@ -138,8 +122,8 @@ const HolisticCorner = () => {
                   placeholder="blur"
                 />
               </div>
-              <div className="absolute -bottom-56 border border-green-300 bg-gradient-to-tr from-green-100 via-green-200 to-green-100 dark:border-green-700 dark:from-green-900 dark:via-green-800 dark:to-green-900 shadow-md rounded-xl mx-3 !py-4 px-4 space-y-2 z-10 min-h-[248px] md:min-h-[296px]">
-                <div className="space-y-1 sm:space-y-0 text-center font-bold text-sm w-full">
+              <div className="absolute -bottom-56 z-10 mx-3 min-h-[248px] space-y-2 rounded-xl border border-green-300 bg-gradient-to-tr from-green-100 via-green-200 to-green-100 !py-4 px-4 shadow-md dark:border-green-700 dark:from-green-900 dark:via-green-800 dark:to-green-900 md:min-h-[296px]">
+                <div className="w-full space-y-1 text-center text-sm font-bold sm:space-y-0">
                   <h5>Earth Room</h5>
                 </div>
                 <p>
@@ -152,10 +136,10 @@ const HolisticCorner = () => {
             </div>
           </li>
           <li className="">
-            <div className="space-y-4 relative lg:max-w-none">
+            <div className="relative space-y-4 lg:max-w-none">
               <div className="mb-20 lg:mb-0">
                 <Image
-                  className="absolute inset-0 h-full w-full object-cover rounded-xl"
+                  className="absolute inset-0 h-full w-full rounded-xl object-cover"
                   src="https://res.cloudinary.com/rouse-yoga/image/upload/c_scale,f_auto,q_auto:eco,w_1200/v1659410545/cosoms_room_ateccs.jpg"
                   alt="earth room"
                   layout="responsive"
@@ -166,8 +150,8 @@ const HolisticCorner = () => {
                 />
               </div>
 
-              <div className="absolute -bottom-56 border border-purple-300 bg-gradient-to-tr from-purple-100 via-purple-200 to-purple-100 dark:border-purple-700 dark:from-purple-900 dark:via-purple-800 dark:to-purple-900 shadow-md rounded-xl mx-3 !py-4 px-4 space-y-2 z-10 min-h-[296px]">
-                <div className="space-y-1 sm:space-y-0 text-center font-bold text-sm w-full">
+              <div className="absolute -bottom-56 z-10 mx-3 min-h-[296px] space-y-2 rounded-xl border border-purple-300 bg-gradient-to-tr from-purple-100 via-purple-200 to-purple-100 !py-4 px-4 shadow-md dark:border-purple-700 dark:from-purple-900 dark:via-purple-800 dark:to-purple-900">
+                <div className="w-full space-y-1 text-center text-sm font-bold sm:space-y-0">
                   <h5>Cosmos Room</h5>
                 </div>
                 <p>
@@ -181,10 +165,10 @@ const HolisticCorner = () => {
             </div>
           </li>
           <li className="lg:justify-self-auto">
-            <div className="space-y-4 relative lg:max-w-none">
+            <div className="relative space-y-4 lg:max-w-none">
               <div className="mb-56 lg:mb-0">
                 <Image
-                  className="absolute inset-0 h-full w-full object-cover rounded-xl"
+                  className="absolute inset-0 h-full w-full rounded-xl object-cover"
                   src="https://res.cloudinary.com/rouse-yoga/image/upload/f_auto,q_auto:eco,w_1200/v1659410546/energy_room_auvcwt.jpg"
                   alt="earth room"
                   layout="responsive"
@@ -195,8 +179,8 @@ const HolisticCorner = () => {
                 />
               </div>
 
-              <div className="absolute -bottom-56 border border-yellow-300 bg-gradient-to-tr from-yellow-100 via-yellow-200 to-yellow-100 dark:border-yellow-700 dark:from-yellow-900 dark:via-yellow-800 dark:to-yellow-900 shadow-md rounded-xl mx-3 !py-4 px-4 space-y-2 z-10 min-h-[248px] md:min-h-[296px]">
-                <div className="space-y-1 sm:space-y-0 text-center font-bold text-sm w-full">
+              <div className="absolute -bottom-56 z-10 mx-3 min-h-[248px] space-y-2 rounded-xl border border-yellow-300 bg-gradient-to-tr from-yellow-100 via-yellow-200 to-yellow-100 !py-4 px-4 shadow-md dark:border-yellow-700 dark:from-yellow-900 dark:via-yellow-800 dark:to-yellow-900 md:min-h-[296px]">
+                <div className="w-full space-y-1 text-center text-sm font-bold sm:space-y-0">
                   <h5>Energy Room</h5>
                 </div>
                 <p>
@@ -211,12 +195,12 @@ const HolisticCorner = () => {
         </ul>
       </div>
 
-      <div className="max-w-6xl mx-auto py-16 px-4 sm:py-24 sm:px-6">
-        <p className="text-xl text-gray-700 dark:text-gray-100 font-medium max-w-[40ch] text-center mx-auto">
+      <div className="mx-auto max-w-6xl py-16 px-4 sm:py-24 sm:px-6">
+        <p className="mx-auto max-w-[40ch] text-center text-xl font-medium text-gray-700 dark:text-gray-100">
           Fill out the form below to receive more info and get a tour of the
           spaces.
         </p>
-        <div className="flex justify-center mt-6">
+        <div className="mt-6 flex justify-center">
           <form
             name="holistic-corner-vendors"
             method="POST"
@@ -226,8 +210,8 @@ const HolisticCorner = () => {
             className="w-full"
           >
             <div className="w-full">
-              <div className="flex flex-col space-y-6 max-w-xl mx-auto">
-                <div className="form-input-wrapper dark:bg-gray-900 group dark:focus-within:bg-black">
+              <div className="mx-auto flex max-w-xl flex-col space-y-6">
+                <div className="form-input-wrapper group dark:bg-gray-900 dark:focus-within:bg-black">
                   <input
                     type="text"
                     id="name"
@@ -243,7 +227,7 @@ const HolisticCorner = () => {
                     Name
                   </label>
                 </div>
-                <div className="form-input-wrapper dark:bg-gray-900 group dark:focus-within:bg-black">
+                <div className="form-input-wrapper group dark:bg-gray-900 dark:focus-within:bg-black">
                   <input
                     type="email"
                     id="email"
@@ -259,7 +243,7 @@ const HolisticCorner = () => {
                     Email
                   </label>
                 </div>
-                <div className="form-input-wrapper dark:bg-gray-900 group dark:focus-within:bg-black">
+                <div className="form-input-wrapper group dark:bg-gray-900 dark:focus-within:bg-black">
                   <input
                     type="tel"
                     id="phone"
@@ -275,7 +259,7 @@ const HolisticCorner = () => {
                     Phone
                   </label>
                 </div>
-                <div className="form-input-wrapper dark:bg-gray-900 group dark:focus-within:bg-black">
+                <div className="form-input-wrapper group dark:bg-gray-900 dark:focus-within:bg-black">
                   <textarea
                     id="services"
                     name="services"
@@ -293,7 +277,11 @@ const HolisticCorner = () => {
                     What Services do you offer?
                   </label>
                 </div>
-                <input type="hidden" name="form-name" value="holistic-corner-vendors" />
+                <input
+                  type="hidden"
+                  name="form-name"
+                  value="holistic-corner-vendors"
+                />
                 <Button
                   btnText="Submit"
                   btnPriority="secondary"
@@ -304,18 +292,17 @@ const HolisticCorner = () => {
             </div>
           </form>
           {success.length > 1 ? (
-            <p className="font-inter mt-2 text-green-500">{success}</p>
+            <p className="mt-2 font-inter text-green-500">{success}</p>
           ) : null}
         </div>
       </div>
 
       {/* CTA */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
-        <div className="w-full bg-gradient-to-tr from-gray-900 via-gray-700 to-gray-900 border border-gray-900 dark:border-gray-600 mx-auto text-center py-16 sm:py-20 rounded-2xl">
-          <h2 className="text-base font-extrabold text-white sm:text-2xl mb-4 max-w-[40ch] mx-auto">
+      <div className="mx-auto mb-16 max-w-6xl px-4 sm:px-6">
+        <div className="mx-auto w-full rounded-2xl border border-gray-900 bg-gradient-to-tr from-gray-900 via-gray-700 to-gray-900 py-16 text-center dark:border-gray-600 sm:py-20">
+          <h2 className="mx-auto mb-4 max-w-[40ch] text-base font-extrabold text-white sm:text-2xl">
             <span className="block">
-              Want to try out our holistic services? Reserve a donation based
-              private session!
+              Want to try out our holistic services? <br/>Reserve a private session!
             </span>
           </h2>
           {/* <p className="mt-4 text-lg leading-6 text-indigo-200">

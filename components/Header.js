@@ -110,7 +110,7 @@ const Header = () => {
               textUnderlineOffset: "2px",
             }}
           >
-            Holistic Corner Grand Opening Aug. 6th!
+            Book Private Holistic Services!
           </a>
         </Link>
       </div>
