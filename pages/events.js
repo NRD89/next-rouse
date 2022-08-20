@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../components/Header";
+import HeaderNew from "../components/HeaderNew";
 import FooterNew from "../components/FooterNew";
 import EventList from "../components/EventList"
 import { groq } from "next-sanity";
@@ -44,7 +44,7 @@ const Events = ({ events }) => {
           content="Rouse Yoga studio offers free and paid events to the Riverside community. These events range from free childrens yoga to incredible sound baths hosted by professional sound healers."
         />
       </Head>
-      <Header />
+      <HeaderNew />
       <main>
         {/*  Page sections */}
         <section className="relative">

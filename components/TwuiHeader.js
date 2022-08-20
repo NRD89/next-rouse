@@ -2,12 +2,16 @@
 import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
+  BookmarkAltIcon,
   CalendarIcon,
   ClipboardListIcon,
+  CursorClickIcon,
   MenuIcon,
   PhoneIcon,
   PlayIcon,
+  RefreshIcon,
   CurrencyDollarIcon,
+  SupportIcon,
   GlobeIcon,
   XIcon,
   AcademicCapIcon,
@@ -21,7 +25,6 @@ import DarkLogo from "../public/ry_logo.svg";
 import LightLogo from "../public/ry_logo_light.svg";
 import { useTheme } from "next-themes";
 import { LightSwitch } from "../components/LightSwitch";
-import { HeaderBanner } from "./HeaderBanner";
 
 const solutions = [
   {
@@ -49,6 +52,10 @@ const solutions = [
     href: "/holistic-corner",
     icon: GlobeIcon,
   },
+];
+const callsToAction = [
+  { name: "Watch Demo", href: "#", icon: PlayIcon },
+  { name: "Contact Sales", href: "#", icon: PhoneIcon },
 ];
 const resources = [
   {
@@ -78,6 +85,15 @@ const resources = [
     icon: HeartIcon,
   },
 ];
+const recentPosts = [
+  { id: 1, name: "Boost your conversion rate", href: "#" },
+  {
+    id: 2,
+    name: "How to use search engine optimization to drive traffic to your site",
+    href: "#",
+  },
+  { id: 3, name: "Improve your customer experience", href: "#" },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -99,7 +115,18 @@ export default function Example() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
-  const { theme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const switchTheme = () => {
+    if (isMounted) {
+      setTheme(theme === "dark" ? "light" : "dark");
+    }
+  };
 
   const isDarkMode = () => {
     if (theme === "dark") {
@@ -117,13 +144,12 @@ export default function Example() {
         "bg-white bg-opacity-80 shadow-lg backdrop-blur backdrop-filter dark:bg-black dark:bg-opacity-75 dark:shadow-dark40"
       }`}
     >
-      <HeaderBanner />
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between py-3 md:space-x-10 lg:justify-start">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             {/* Site branding */}
             <div
-              className="m-0 -mb-1 max-w-[180px]"
+              className="m-0 max-w-[180px] -mb-1"
               style={{ minWidth: `125px` }}
             >
               {/* Logo */}
@@ -139,15 +165,12 @@ export default function Example() {
             </div>
           </div>
           <div className="-my-2 -mr-2 lg:hidden">
-            <Popover.Button className="focus:outline-none inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 hover:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-100 dark:hover:bg-gray-900">
+            <Popover.Button className="focus:outline-none inline-flex items-center justify-center rounded-md p-2 text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900 hover:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <Popover.Group
-            as="nav"
-            className="hidden lg:flex lg:space-x-4 xl:space-x-6"
-          >
+          <Popover.Group as="nav" className="hidden space-x-6 lg:flex">
             <Link href="/classes">
               <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-500">
                 Classes
@@ -180,13 +203,11 @@ export default function Example() {
                       "focus:outline-none group inline-flex items-center rounded-md text-base font-medium hover:text-gray-900 focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:bg-black"
                     )}
                   >
-                    <span>Events & More</span>
+                    <span>Events</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open
-                          ? "text-gray-700 dark:text-gray-400"
-                          : "text-gray-500 dark:text-gray-200",
-                        "ml-1 h-5 w-5 group-hover:text-gray-500"
+                        open ? "text-gray-600" : "text-gray-400",
+                        "ml-2 h-5 w-5 group-hover:text-gray-500"
                       )}
                       aria-hidden="true"
                     />
@@ -202,7 +223,7 @@ export default function Example() {
                     leaveTo="opacity-0 translate-y-1"
                   >
                     <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
-                      <div className="overflow-hidden rounded-lg border border-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 dark:border-gray-800">
+                      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white px-5 py-6 dark:bg-gray-900 sm:gap-8 sm:p-8">
                           {resources.map((item) => (
                             <Link href={item.href} key={item.name}>
@@ -266,7 +287,7 @@ export default function Example() {
             {/* Desktop lights switch */}
             <LightSwitch />
             <a
-              className="ml-4 rounded-md border border-gray-50 bg-blue-500 px-3 py-1 text-[0.9rem] font-medium uppercase tracking-tight text-white"
+              className="ml-4 rounded-md border border-gray-50 bg-blue-500 px-3 py-1 font-medium uppercase tracking-tight text-white"
               href="https://app.rouse.yoga"
             >
               Login/Sign up
@@ -351,7 +372,7 @@ export default function Example() {
               <div>
                 <a
                   href="https://app.rouse.yoga"
-                  className="flex w-full items-center justify-center rounded-md border border-gray-50 bg-blue-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700 max-w-xs mx-auto"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Login/Sign up
                 </a>
@@ -360,7 +381,6 @@ export default function Example() {
           </div>
         </Popover.Panel>
       </Transition>
-      
     </Popover>
   );
 }

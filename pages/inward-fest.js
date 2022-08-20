@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 import Button from "../components/Button";
-import Header from "../components/Header";
+import HeaderNew from "../components/HeaderNew";
 import InwardHero from "../components/InwardHero";
 import FooterNew from "../components/FooterNew";
 
@@ -60,7 +60,7 @@ const InwardFest = () => {
           content="Rouse Yoga Studio and Sandland present the first Inward Fest. This festival brings together elements of Yoga, EDM and Burning Man to show that harmonious vibrations can bring together people of diverse backgrounds, music taste and spirituality."
         />
       </Head>
-      <Header />
+      <HeaderNew />
       <InwardHero
         title="Inward Fest"
         btn={false}

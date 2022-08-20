@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 import Button from "../components/Button";
-import Header from "../components/Header";
+import HeaderNew from "../components/HeaderNew";
 import InwardHero from "../components/InwardHero";
 import FooterNew from "../components/FooterNew";
 import axios from "axios";
@@ -29,7 +29,7 @@ const TeacherTraining = () => {
           basics of yoga, discover who you are as an instructor."
         />
       </Head>
-      <Header />
+      <HeaderNew />
       <InwardHero
         title="200 HR Teacher Training"
         btn={true}
@@ -135,7 +135,7 @@ const TeacherTraining = () => {
             Training Dates
           </h2>
           <h3 className="mt-1 text-xl font-extrabold text-gray-900 sm:text-2xl sm:tracking-tight lg:text-3xl">
-            June 12, 2022 - August 7, 2022
+            October 16, 2022 - December 4, 2022
           </h3>
           <p class="text-2xl mt-6 text-center">
             This is a hybrid class that takes place in-studio and online. Every
@@ -154,28 +154,14 @@ const TeacherTraining = () => {
             Pricing Information
           </h3>
           <p class="text-2xl mt-6 max-w-[55ch] text-center">
-            Our teacher training cost is $<strong>2,700</strong> but if paid up
-            front we offer a $<strong>200</strong> discount. If you would like
-            to set up a payment plan contact{" "}
-            <a
-              href="mailto:support@rouse.yoga"
-              className="underline"
-              style={{
-                textDecorationColor: "#60a5fa",
-                textDecorationThickness: "2px",
-                textUnderlineOffset: "2px",
-              }}
-            >
-              support@rouse.yoga
-            </a>
-            .{/* with an option to sign up for a payment plan through */}
-            {/* <a href="https://www.klarna.com/us/what-is-klarna/" target="_blank">
+            Our teacher training cost is $<strong>2,700</strong> with an option to sign up for a payment plan through
+            <a href="https://www.klarna.com/us/what-is-klarna/" target="_blank">
               <img
                 class="ml-2 h-7 inline"
                 src="https://res.cloudinary.com/rouse-yoga/image/upload/v1653287548/Klarna_marketing_badge_pink_rgb.svg_j3fw3g.svg"
                 loading="lazy"
               />
-            </a> */}
+            </a>
           </p>
         </div>
       </div>

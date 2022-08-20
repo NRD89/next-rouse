@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "./Button";
-import Snowfall from "react-snowfall";
 import useWindowSize from "react-use/lib/useWindowSize";
-import Confetti from "react-confetti";
 
 const HeroHome = () => {
   const { width, height } = useWindowSize();

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Button from "../components/Button";
-import Header from "../components/Header";
+import HeaderNew from "../components/HeaderNew";
 import InwardHero from "../components/InwardHero";
 import FooterNew from "../components/FooterNew";
 import axios from "axios";
@@ -27,7 +27,7 @@ const HolisticCorner = () => {
           so much more!"
         />
       </Head>
-      <Header />
+      <HeaderNew />
       <InwardHero
         title="Holistic Corner"
         btn={false}

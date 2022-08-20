@@ -1,9 +1,10 @@
-const Button = ({ btnSize, btnPriority, btnWidth, btnText, btnLink, btn, btnType }) => {
+const Button = ({ btnSize, btnPriority, btnWidth, btnText, btnLink, btn, btnType, btnId }) => {
   return (
     <div>
       {btn ? (
         <button
           onClick={btnLink}
+          id={btnId ? btnId : null}
           type={btnType}
           className={`${btnSize === "small" ? `btn-sm` : `btn`} ${
             btnWidth === "full" ? `w-full` : ``

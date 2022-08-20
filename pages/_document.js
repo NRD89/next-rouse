@@ -62,7 +62,10 @@ export default class MyDocument extends Document {
           </noscript>
           {/* <!-- End Facebook Pixel Code --> */}
 
-          <meta name="facebook-domain-verification" content="pn6fxdti0vzpaacjqym8c4dcofe0wl" />
+          <meta
+            name="facebook-domain-verification"
+            content="pn6fxdti0vzpaacjqym8c4dcofe0wl"
+          />
 
           <script
             async
@@ -70,8 +73,37 @@ export default class MyDocument extends Document {
             data-domain="rouse.yoga"
             src="https://plausible.io/js/plausible.js"
           />
+          {/* Noscript content for added SEO */}
+          <noscript>
+            <a
+              href="https://www.eventbrite.com/e/azension-tickets-372252586507"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Buy Tickets on Eventbrite
+            </a>
+          </noscript>
+
+          <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+          <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
+              var exampleCallback = function() {
+                console.log('Order complete!');
+            };
+            window.EBWidgets.createWidget({
+                widgetType: 'checkout',
+                eventId: '372252586507',
+                modal: true,
+                modalTriggerElementId: 'eventbrite-widget-modal-trigger-372252586507',
+                onOrderComplete: exampleCallback
+            });`,
+            }}
+          ></script>
         </Head>
-        <body className="font-inter antialiased bg-white text-gray-900 dark:bg-black dark:text-gray-100 tracking-tight">
+        <body className="bg-white font-inter tracking-tight text-gray-900 antialiased dark:bg-black dark:text-gray-100">
           <Main />
           {/* Here we will mount our modal portal */}
           <div id="modal" />

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "../../components/Header";
+import HeaderNew from "../../components/HeaderNew";
 import HeroBlog from "../../components/HeroBlog";
 import BlogList from "../../components/BlogList";
 import FooterNew from "../../components/FooterNew";
@@ -53,7 +53,7 @@ const Blog = ({ posts, featured }) => {
           content="Our innovative yoga platform offers online yoga livestreams, pre-recorded yoga classes, and Discord technologies to create a truly interactive community. Easy to use and navigate, your membership helps you not just learn how to practice yoga, but how to find purpose in that practice."
         />
       </Head>
-      <Header />
+      <HeaderNew />
       <main>
         {/*  Page sections */}
         <HeroBlog data={featured[0].post} />

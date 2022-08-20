@@ -4,14 +4,14 @@ const returnURL = process.env.RETURN_URL || "http://localhost:3000";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const handler = async (req, res) => {
-  const coupon = await stripe.coupons.create({
-    duration: "once",
-    amount_off: 20000,
-    currency: "usd",
-  });
+  // const coupon = await stripe.coupons.create({
+  //   duration: "once",
+  //   amount_off: 20000,
+  //   currency: "usd",
+  // });
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    // payment_method_types: ["card", "klarna", "affirm"],
+    payment_method_types: ["card", "klarna", "affirm"],
     line_items: [
       {
         price_data: {
@@ -24,7 +24,7 @@ const handler = async (req, res) => {
         quantity: 1,
       },
     ],
-    discounts: [{ coupon: coupon.id }],
+    // discounts: [{ coupon: coupon.id }],
     mode: "payment",
     shipping_address_collection: {
       // Specify which shipping countries Checkout should provide as options for shipping locations

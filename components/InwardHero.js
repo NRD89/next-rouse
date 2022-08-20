@@ -8,6 +8,7 @@ const InwardHero = ({
   btn,
   btnLink,
   btnText,
+  btnId,
   imgURL,
   priceType,
   price,
@@ -77,6 +78,7 @@ const InwardHero = ({
                       // btnLink={process.env.NEXT_PUBLIC_INWARD_PAYMENT_LINK}
                       btnLink={btnLink}
                       btn={btn}
+                      btnId={btnId}
                     />
                   </div>
                 </div>
