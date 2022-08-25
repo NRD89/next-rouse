@@ -132,7 +132,7 @@ const Azension = () => {
                     Festival Day 2 - Schedule announcement coming soon!
                   </li>
                   <li>
-                    - <span className="font-semibold">September 24th</span>:
+                    - <span className="font-semibold">September 25th</span>:
                     Check out day - All attendees must leave by 1 pm
                   </li>
                 </ul>

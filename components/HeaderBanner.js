@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const HeaderBanner = () => {
+const HeaderBanner = () => {
   return (
     <div
       className={`flex w-full items-center justify-center bg-gradient-to-l from-purple-700 via-pink-800 to-purple-700 py-1 text-xs font-medium uppercase text-gray-50 xs:text-sm md:text-base`}
@@ -21,3 +21,5 @@ export const HeaderBanner = () => {
     </div>
   );
 };
+
+export default HeaderBanner;

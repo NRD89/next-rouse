@@ -20,8 +20,8 @@ import Image from "next/image";
 import DarkLogo from "../public/ry_logo.svg";
 import LightLogo from "../public/ry_logo_light.svg";
 import { useTheme } from "next-themes";
-import { LightSwitch } from "../components/LightSwitch";
-import { HeaderBanner } from "./HeaderBanner";
+import { LightSwitch } from "./LightSwitch";
+import HeaderBanner from "./HeaderBanner";
 
 const solutions = [
   {
@@ -139,7 +139,7 @@ export default function Example() {
             </div>
           </div>
           <div className="-my-2 -mr-2 lg:hidden">
-            <Popover.Button className="focus:outline-none inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 hover:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-100 dark:hover:bg-gray-900">
+            <Popover.Button className="focus:outline-none inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-100 hover:text-gray-700 focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-100 dark:hover:bg-gray-900">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -149,22 +149,22 @@ export default function Example() {
             className="hidden lg:flex lg:space-x-4 xl:space-x-6"
           >
             <Link href="/classes">
-              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-500">
+              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-700 dark:hover:text-gray-300">
                 Classes
               </a>
             </Link>
             <Link href="/class-schedule">
-              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-500">
+              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-700 dark:hover:text-gray-300">
                 Schedule
               </a>
             </Link>
             <Link href="/#pricing">
-              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-500">
+              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-700 dark:hover:text-gray-300">
                 Pricing
               </a>
             </Link>
             <Link href="/holistic-corner">
-              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-500">
+              <a className="flex items-center font-medium transition duration-150 ease-in-out hover:text-gray-700 dark:hover:text-gray-300">
                 Holistic Corner
               </a>
             </Link>
@@ -186,7 +186,7 @@ export default function Example() {
                         open
                           ? "text-gray-700 dark:text-gray-400"
                           : "text-gray-500 dark:text-gray-200",
-                        "ml-1 h-5 w-5 group-hover:text-gray-500"
+                        "ml-1 h-5 w-5 group-hover:text-gray-700 dark:group-hover:text-gray-300"
                       )}
                       aria-hidden="true"
                     />
@@ -202,7 +202,7 @@ export default function Example() {
                     leaveTo="opacity-0 translate-y-1"
                   >
                     <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
-                      <div className="overflow-hidden rounded-lg border border-gray-100 shadow-lg ring-1 ring-black ring-opacity-5 dark:border-gray-800">
+                      <div className="overflow-hidden rounded-lg border border-gray-100 shadow-lg dark:shadow-dark40 ring-1 ring-black ring-opacity-5 dark:border-gray-800">
                         <div className="relative grid gap-6 bg-white px-5 py-6 dark:bg-gray-900 sm:gap-8 sm:p-8">
                           {resources.map((item) => (
                             <Link href={item.href} key={item.name}>
@@ -310,7 +310,7 @@ export default function Example() {
                 <div className="-mr-2 inline-flex items-center space-x-2">
                   {/* Desktop lights switch */}
                   <LightSwitch />
-                  <Popover.Button className="focus:outline-none inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-gray-100 hover:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-100 dark:hover:bg-gray-800">
+                  <Popover.Button className="focus:outline-none inline-flex items-center justify-center rounded-md p-2 text-gray-900 hover:bg-gray-100 hover:text-gray-700 focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:text-gray-100 dark:hover:bg-gray-800">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
