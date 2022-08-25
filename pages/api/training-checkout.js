@@ -10,7 +10,6 @@ const handler = async (req, res) => {
   //   currency: "usd",
   // });
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ["card"],
     payment_method_types: ["card", "affirm"],
     line_items: [
       {
@@ -35,7 +34,7 @@ const handler = async (req, res) => {
   });
 
   res.status(200);
-  res.json(JSON.stringify(session.url));
+  res.json(session.url);
 };
 
 export default handler;
