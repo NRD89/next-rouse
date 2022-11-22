@@ -3,7 +3,7 @@ command = "npm run build"
 publish = ".next"
 
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+package = "netlify-plugin-one"
 
 [functions]
   external_node_modules = ["sharp"]
