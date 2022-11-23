@@ -4,7 +4,7 @@
  const nextConfig = {
   // Target must be serverless
   // target: "experimental-serverless-trace",
-  target: "serverless",
+  // target: "serverless",
   images: {
     // loader: "cloudinary",
     // path: "https://res.cloudinary.com/rouse-yoga/image/upload/",
