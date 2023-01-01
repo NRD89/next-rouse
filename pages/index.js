@@ -8,10 +8,10 @@ import DiscordWidget from "../components/DiscordWidget";
 import HomeFAQ from "../components/HomeFAQ"
 import CtaFreeTrial from "../components/CtaFreeTrial";
 import FooterNew from "../components/FooterNew";
-import Stats from "../components/Stats";
-// import DigitalModal from "../components/DigitalModal"
+import { groq } from "next-sanity";
+import { getClient } from "../lib/sanity.server";
 
-const Index = () => {
+const Index = ({ prices }) => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Head>
@@ -26,7 +26,7 @@ const Index = () => {
         <HeroHome />
         <HomeFeaturesSection />
         <HomeZigzag />
-        <PricingTables />
+        <PricingTables prices={prices} />
         <HomeFAQ />
         <CtaFreeTrial />
       </main>
@@ -36,3 +36,24 @@ const Index = () => {
 };
 
 export default Index;
+
+export async function getStaticProps() {
+  const pricesQuery = groq`
+    *[_type == 'membership_price'] {
+      _id,
+      title,
+      description,
+      features,
+      stripe_price_id,
+      stripe_coupon,
+      regular_price,
+      discounted_price
+    } | order(regular_price asc)
+  `;
+
+  const prices = await getClient().fetch(pricesQuery);
+
+  return {
+    props: { prices },
+  };
+}
