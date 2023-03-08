@@ -143,7 +143,7 @@ const TeacherTraining = () => {
             Training Dates
           </h2>
           <h3 className="mt-1 text-xl font-extrabold text-gray-900 sm:text-2xl sm:tracking-tight lg:text-3xl">
-            October 16, 2022 - December 4, 2022
+            March 12, 2023 - April 30, 2023
           </h3>
           <p class="mt-6 text-center text-2xl">
             This is a hybrid class that takes place in-studio and online. Every

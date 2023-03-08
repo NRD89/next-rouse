@@ -24,11 +24,11 @@ function PricingTables({ prices }) {
           </div>
 
           {/* Pricing tables */}
-          <div className="max-w-xs mx-auto grid gap-6 md:gap-4 sm:grid-cols-2 lg:grid-cols-4 items-start sm:max-w-none md:max-w-2xl lg:max-w-none">
+          <div className="max-w-xs mx-auto flex gap-6 md:gap-4 flex-wrap lg:flex-nowrap justify-center sm:max-w-none md:max-w-2xl lg:max-w-none w-full">
           {prices.map((price) => (
             <div
               key={price.title}
-              className="divide-y divide-gray-600 rounded-lg border border-gray-600 shadow-sm"
+              className="divide-y divide-gray-600 rounded-lg border border-gray-600 shadow-sm flex-1 md:w-1/2 lg:max-w-[33.333333%]"
             >
               <div className="p-6">
                 <h2 className="text-lg font-bold leading-6 text-gray-100">
@@ -46,7 +46,7 @@ function PricingTables({ prices }) {
                         : price.regular_price}
                     </span>{" "}
                     <span className="text-base font-medium text-gray-300">
-                      /mo
+                      {price.title === "Yearly" ? "/yr" : "/mo"}
                     </span>
                   </p>
                     <div className={`text-base ml-2 ${price.discounted_price ? 'text-gray-200'
@@ -61,7 +61,7 @@ function PricingTables({ prices }) {
                       </span>{" "}
                       <span className={`text-sm ${price.discounted_price ? 'text-gray-300'
                         : 'text-transparent' }`}>
-                      /mo
+                      {price.title === "Yearly" ? "/yr" : "/mo"}
                     </span>
                     </div>
                 </div>
