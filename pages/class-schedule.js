@@ -53,7 +53,7 @@ const ClassSchedule = ({ classes, todaysDate }) => {
               >
                 {classes.map((_class, index) => (
                   <div
-                    key={index}
+                    key={_class._id}
                     className="pt-8 sm:flex lg:items-start group"
                   >
                     {/* <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
@@ -99,7 +99,6 @@ const ClassSchedule = ({ classes, todaysDate }) => {
                           href="https://app.rouse.yoga"
                           className=" 
                             sm:w-1/2
-                            md:w-1/3
                             items-center
                             block
                             px-10
@@ -140,10 +139,10 @@ const ClassSchedule = ({ classes, todaysDate }) => {
   );
 };
 
+const todaysDate = new Date().toISOString();
 export default ClassSchedule;
 
-export async function getServerSideProps() {
-  const todaysDate = new Date().toISOString();
+export async function getStaticProps() {
 
   const classesQuery = groq`
   *[_type == 'class' && classDateTime >= $todaysDate]{
